@@ -4,7 +4,8 @@ angular.module('civicMakersClientApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ngRoute'
+  'ngRoute',
+  'ngMaterial'
 ])
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider
