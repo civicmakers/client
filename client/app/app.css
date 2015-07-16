@@ -36,6 +36,17 @@
     margin: 10px;
 }
 
+.horizontal-repeat {
+    display:block;
+}
+
+.project-card {
+  display:inline-block;
+  background-color: gainsboro !important;
+  width:400px;
+  height:150px;
+}
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
     .container {

@@ -9,7 +9,7 @@ angular.module('civicMakersClientApp')
         projectData: '='
       },
       link: function (scope, element, attrs) {
-        console.log("plan", scope.projectData)
+        console.log("Plan: ", scope.projectData)
       }
     };
   });

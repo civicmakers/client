@@ -8,15 +8,19 @@
       </div>
 
       <div layout="row" flex>
-        <div layout="column" layout-fill layout-align="center start">
-        <h2>Projects</h2>
-        <h5>{{projects.length}} Projects</h5>
-        <project-card ng-repeat="project in projects" project-data="project"></project-card>
+        <div layout="column" layout-fill layout-align="center start" class="horizontal-repeat">
+          <h2>Projects</h2>
+          <h5>{{projects.length}} Projects</h5>
+          <project-card ng-repeat="project in projects" project-data="project"></project-card>
         </div>
       </div>
 
       <div layout="row" flex>
-        <h2>Tools</h2>
+        <div layout="column" layout-fill layout-align="center start" class="horizontal-repeat">
+          <h2>Tools</h2>
+          <h5>{{tools.length}} Tools</h5>
+          <tool-card ng-repeat="tool in tools" tool-data="tool"></tool-card>
+        </div>
       </div>
 
       <div layout="row" flex>

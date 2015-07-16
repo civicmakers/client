@@ -24,7 +24,7 @@ angular.module('civicMakersClientApp')
               "type": "projects",
               "id": "abc123",
               "attributes": {
-                "name": "JSON API paints my bikeshed!",
+                "name": "JSON API!",
                 "description": "JSON API paints my bikeshed!",
                 "images": [
                   {
@@ -59,7 +59,7 @@ angular.module('civicMakersClientApp')
               "id": "abc123",
               "attributes": {
                 "name": "Design & Development",
-                "description": "JSON API paints my bikeshed!",
+                "description": "Designin'!",
                 "images": [
                   {
                     "url": "https://www.google.com/image.jpg"
