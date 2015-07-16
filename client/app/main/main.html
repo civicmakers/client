@@ -2,11 +2,29 @@
   <div layout="row" layout-fill flex layout-align="center center">
 
     <div layout-fill flex>
-      <div layout="row" flex>one</div>
-      <div layout="row" flex>two</div>
-      <div layout="row" flex>three</div>
-    </div>
 
+      <div layout="row" flex class="intro-row">
+
+      </div>
+
+      <div layout="row" flex>
+        <div layout="column" layout-fill layout-align="center start">
+        <h2>Projects</h2>
+        <h5>{{projects.length}} Projects</h5>
+        <project-card ng-repeat="project in projects" project-data="project"></project-card>
+        </div>
+      </div>
+
+      <div layout="row" flex>
+        <h2>Tools</h2>
+      </div>
+
+      <div layout="row" flex>
+        <h2>Authors</h2>
+      </div>
+
+    </div>
+<!--
     <div layout-fill flex>asdf
     </div>
 
@@ -14,7 +32,7 @@
     </div>
 
     <div layout-fill flex>sdf
-    </div>
+    </div> -->
 
   </div>
 </div>

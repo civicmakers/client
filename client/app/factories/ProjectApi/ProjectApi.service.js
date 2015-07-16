@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('civicMakersClientApp')
-  .factory('ProjectApi', function (ApiConfig) {
+  .factory('ProjectApi', function () {
 
     var service = {
       getAllProjects: getAllProjects
