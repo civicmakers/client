@@ -1,33 +1,56 @@
-<div layout="column" layout-fill layout-align="center center">
-  <div layout="row" layout-fill flex layout-align="center center">
+<div layout-fill>
+  <!-- <div layout="row" layout-fill flex layout-align="center center"> -->
 
-    <div layout-fill flex>
+    <!-- <div layout-fill flex> -->
 
       <div layout="row" flex class="intro-row">
-
+        <div layout="column" flex>
+          <p>Call to action!</p>
+          <p>Endorsements!</p>
+          <p>Value proposition</p>
+        </div>
+        <div layout="column" flex>
+          <input type="text" placeholder="Search..."/>
+        </div>
       </div>
 
       <div layout="row" flex>
         <div layout="column" layout-fill layout-align="center start" class="horizontal-repeat">
-          <h2>Projects</h2>
-          <h5>{{projects.length}} Projects</h5>
+          <div layout="row" flex>
+            <h2>Projects</h2>
+            <h5>{{projects.length}} Projects</h5>
+            <div flex></div>
+            <a href="/projects">See All</a>
+          </div>
           <project-card ng-repeat="project in projects" project-data="project"></project-card>
         </div>
       </div>
 
       <div layout="row" flex>
         <div layout="column" layout-fill layout-align="center start" class="horizontal-repeat">
-          <h2>Tools</h2>
-          <h5>{{tools.length}} Tools</h5>
+          <div layout="row" flex>
+            <h2>Tools</h2>
+            <h5>{{tools.length}} Tools</h5>
+            <div flex></div>
+            <a href="/tools">See All</a>
+          </div>
           <tool-card ng-repeat="tool in tools" tool-data="tool"></tool-card>
         </div>
       </div>
 
       <div layout="row" flex>
-        <h2>Authors</h2>
+        <div layout="column" layout-fill layout-align="center start" class="horizontal-repeat">
+          <div layout="row" flex>
+            <h2>Authors</h2>
+            <h5>{{authors.length}} Authors</h5>
+            <div flex></div>
+            <a href="/authors">See All</a>
+          </div>
+          <author-card ng-repeat="author in authors" author-data="author"></author-card>
+        </div>
       </div>
 
-    </div>
+    <!-- </div> -->
 <!--
     <div layout-fill flex>asdf
     </div>
@@ -38,5 +61,5 @@
     <div layout-fill flex>sdf
     </div> -->
 
-  </div>
+  <!-- </div> -->
 </div>

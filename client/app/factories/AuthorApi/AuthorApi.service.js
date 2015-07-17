@@ -21,32 +21,40 @@ angular.module('civicMakersClientApp')
         {
           "data": [
             {
-              "type": "projects",
+              "type": "profiles",
               "id": "abc123",
               "attributes": {
-                "name": "JSON API!",
-                "description": "JSON API paints my bikeshed!",
-                "images": [
+                "name": "Joebob!",
+                "description": "My name is Joebob!",
+                "created_at": "1997-07-16T19:20+01:00",
+                "avatars": [
                   {
                     "url": "https://www.google.com/image.jpg"
                   }
                 ],
-                "created_at": "1997-07-16T19:20+01:00"
+                "url": "https://www.google.com",
+                "social_links": {
+                  "facebook": "https://www.google.com",
+                  "twitter": "https://www.google.com",
+                  "linkedin": "https://www.google.com"
+                }
               },
               "relationships": {
-                "project_components": {
+                "system_owned_tools": {
                   "data": [
                     {
-                      "type": "project_components",
+                      "type": "tools",
                       "id": "abc123"
                     }
                   ]
                 },
-                "creator": {
-                  "data": {
-                    "type": "profiles",
-                    "id": "abc123"
-                  }
+                "projects": {
+                  "data": [
+                    {
+                      "type": "projects",
+                      "id": "abc123"
+                    }
+                  ]
                 }
               }
             }
@@ -55,20 +63,26 @@ angular.module('civicMakersClientApp')
         {
           "data": [
             {
-              "type": "project_components",
+              "type": "profiles",
               "id": "abc123",
               "attributes": {
-                "name": "Design & Development",
-                "description": "Designin'!",
-                "images": [
+                "name": "Bobjoe!",
+                "description": "My name is Bobjoe!",
+                "created_at": "1997-07-16T19:20+01:00",
+                "avatars": [
                   {
                     "url": "https://www.google.com/image.jpg"
                   }
                 ],
-                "created_at": "1997-07-16T19:20+01:00",
+                "url": "https://www.google.com",
+                "social_links": {
+                  "facebook": "https://www.google.com",
+                  "twitter": "https://www.google.com",
+                  "linkedin": "https://www.google.com"
+                }
               },
               "relationships": {
-                "tools": {
+                "system_owned_tools": {
                   "data": [
                     {
                       "type": "tools",
@@ -76,17 +90,61 @@ angular.module('civicMakersClientApp')
                     }
                   ]
                 },
-                "project": {
-                  "data": {
-                    "type": "projects",
-                    "id": "abc123"
+                "projects": {
+                  "data": [
+                    {
+                      "type": "projects",
+                      "id": "abc123"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "type": "profiles",
+              "id": "abc123",
+              "attributes": {
+                "name": "Nother name!",
+                "description": "Dat nother name desription!",
+                "created_at": "1997-07-16T19:20+01:00",
+                "avatars": [
+                  {
+                    "url": "https://www.google.com/image.jpg"
                   }
+                ],
+                "url": "https://www.google.com",
+                "social_links": {
+                  "facebook": "https://www.google.com",
+                  "twitter": "https://www.google.com",
+                  "linkedin": "https://www.google.com"
+                }
+              },
+              "relationships": {
+                "system_owned_tools": {
+                  "data": [
+                    {
+                      "type": "tools",
+                      "id": "abc123"
+                    }
+                  ]
+                },
+                "projects": {
+                  "data": [
+                    {
+                      "type": "projects",
+                      "id": "abc123"
+                    }
+                  ]
                 }
               }
             }
           ]
         }
-      ];
+      ]
 
       return dummyData
     }

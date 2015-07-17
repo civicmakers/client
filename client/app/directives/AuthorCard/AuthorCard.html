@@ -1,1 +1,7 @@
-<div>this is the AuthorCard directive</div>
+<a ng-href="/author/{{::authorData.data[0].id}}">
+  <md-card class="card">
+    <h3>{{::authorData.data[0].attributes.name}}</h3>
+    <img ng-src="{{::authorData.data[0].attributes.images[0]}}">
+    <p>{{::authorData.data[0].attributes.description}}</p>
+  </md-card>
+</a>

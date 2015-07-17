@@ -19,6 +19,11 @@
  * App-wide Styles
  */
 
+ a {
+    text-decoration: none;
+    color:inherit;
+ }
+
 .browsehappy {
     margin: 0.2em 0;
     background: #ccc;
@@ -40,11 +45,28 @@
     display:block;
 }
 
-.project-card {
-  display:inline-block;
-  background-color: gainsboro !important;
-  width:400px;
-  height:150px;
+.card {
+    display:inline-block;
+    background-color: gainsboro !important;
+    width:400px;
+    height:450px;
+    padding:10px;
+}
+
+.card:hover {
+    -webkit-box-shadow:inset 0px 0px 0px 2px gray;
+    -moz-box-shadow:inset 0px 0px 0px 2px gray;
+    box-shadow:inset 0px 0px 0px 2px gray
+}
+
+input[type="text"] {
+    margin:10px;
+}
+
+.intro-row {
+    background-color: purple;
+    color: white;
+    text-align: center;
 }
 
 /* Responsive: Portrait tablets and up */

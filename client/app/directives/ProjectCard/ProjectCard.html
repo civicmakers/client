@@ -1,5 +1,7 @@
-<md-card class="project-card">
-  <h3>{{::projectData.data[0].attributes.name}}</h3>
-  <img ng-src="{{::projectData.data[0].attributes.images[0]}}">
-  <p>{{::projectData.data[0].attributes.description}}</p>
-</md-card>
+<a ng-href="/project/{{::projectData.data[0].id}}">
+  <md-card class="card">
+    <h3>{{::projectData.data[0].attributes.name}}</h3>
+    <img ng-src="{{::projectData.data[0].attributes.images[0]}}">
+    <p>{{::projectData.data[0].attributes.description}}</p>
+  </md-card>
+</a>
