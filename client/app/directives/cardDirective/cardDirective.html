@@ -1,0 +1,10 @@
+<!-- <a ng-if="data.data[0].type === 'profiles'" ng-href="/author/{{::data.data[0].id}}">
+<a ng-if="data.data[0].type === 'projects'" ng-href="/project/{{::data.data[0].id}}">
+<a ng-if="data.data[0].type === 'tools'" ng-href="/tool/{{::data.data[0].id}}"> -->
+<a ng-href="/{{type(data.data[0].type)}}/{{::data.data[0].id}}">
+  <md-card class="card">
+    <h3>{{::data.data[0].attributes.name}}</h3>
+    <img class="project-img" ng-if="data.data[0].type === 'projects'" ng-src="{{::data.data[0].attributes.images[0]}}">
+    <p>{{::data.data[0].attributes.description}}</p>
+  </md-card>
+</a>
