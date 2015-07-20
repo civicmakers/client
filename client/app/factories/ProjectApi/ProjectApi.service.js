@@ -55,7 +55,7 @@ angular.module('civicMakersClientApp')
         {
           "data": [
             {
-              "type": "project_components",
+              "type": "projects",
               "id": "abc123",
               "attributes": {
                 "name": "Design & Development",
@@ -89,7 +89,7 @@ angular.module('civicMakersClientApp')
         {
           "data": [
             {
-              "type": "project_components",
+              "type": "projects",
               "id": "abc123",
               "attributes": {
                 "name": "PRoject 2",
