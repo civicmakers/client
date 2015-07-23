@@ -1,8 +1,9 @@
 'use strict';
 
 angular.module('civicMakersClientApp')
-  .controller('ProjectCtrl', function ($scope, $routeParams) {
+  .controller('ProjectCtrl', function ($scope, $routeParams, ProjectApi) {
 
-    console.log("stateParams",$routeParams)
+    console.log("routeParams",$routeParams)
+    $scope.project = ProjectApi.queryProject($routeParams.projectID);
 
   });

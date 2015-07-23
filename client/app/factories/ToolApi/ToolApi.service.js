@@ -4,7 +4,8 @@ angular.module('civicMakersClientApp')
   .factory('ToolApi', function () {
 
     var service = {
-      getAllTools: getAllTools
+      getAllTools: getAllTools,
+      queryTool: queryTool
     }
 
     return service

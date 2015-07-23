@@ -4,7 +4,8 @@ angular.module('civicMakersClientApp')
   .factory('AuthorApi', function () {
 
     var service = {
-      getAllAuthors: getAllAuthors
+      getAllAuthors: getAllAuthors,
+      queryAuthor: queryAuthor
     }
 
     return service

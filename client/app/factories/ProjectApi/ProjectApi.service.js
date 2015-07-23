@@ -4,7 +4,8 @@ angular.module('civicMakersClientApp')
   .factory('ProjectApi', function () {
 
     var service = {
-      getAllProjects: getAllProjects
+      getAllProjects: getAllProjects,
+      queryProject: queryProject
     }
 
     return service
@@ -163,7 +164,7 @@ angular.module('civicMakersClientApp')
           ]
         };
 
-        return dummyProject
+        return dummyProject;
     }
 
   });
