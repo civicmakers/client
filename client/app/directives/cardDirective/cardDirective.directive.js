@@ -20,6 +20,8 @@ angular.module('civicMakersClientApp')
               return 'project';
             case 'profiles':
               return 'author';
+            case 'topics':
+              return 'topic';
             }
           }
         }
