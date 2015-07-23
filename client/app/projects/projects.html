@@ -1,3 +1,15 @@
-<div class="col-md-12">
-This is the projects view.
+<div layout-fill>
+
+      <div layout="row" flex>
+        <div layout="column" layout-fill layout-align="center start" class="horizontal-repeat">
+          <div layout="row" flex>
+            <a href="/projects"><h2>Projects</h2></a>
+            <h5>{{projects.length}} Projects</h5>
+            <div flex></div>
+            <a href="/projects">See All</a>
+          </div>
+          <card-directive ng-repeat="project in projects" data="project"></card-directive>
+        </div>
+      </div>
+
 </div>

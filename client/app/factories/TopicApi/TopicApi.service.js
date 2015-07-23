@@ -1,15 +1,15 @@
 'use strict';
 
 angular.module('civicMakersClientApp')
-  .factory('ToolApi', function () {
+  .factory('TopicApi', function () {
 
     var service = {
-      getAllTools: getAllTools
+      getAllTopics: getAllTopics
     }
 
     return service
 
-    function getAllTools(){
+    function getAllTopics(){
       // return ApiConfig
       //           .apiRequest({
       //               url: '.....',
@@ -17,6 +17,7 @@ angular.module('civicMakersClientApp')
       //           });
 
       //THIS  IS DUMMY DATA THAT WILL BE REPLACED WHEN THE ACTUAL API IS WORKING:
+      //Fix Topic dummy data
       var dummyData = [
         {
           "data": [
@@ -128,10 +129,10 @@ angular.module('civicMakersClientApp')
       return dummyData
     };
 
-    function queryTool(id){
-      console.log('ToolID: ', id)
+    function queryTopic(id){
+      console.log('TopicID: ', id)
       // TODO: when API is ready inplement query
-      var dummyTool = {
+      var dummyTopic = {
           "data": [
             {
               "type": "tools",
@@ -167,7 +168,7 @@ angular.module('civicMakersClientApp')
           ]
         };
         
-        return dummyTool
+        return dummyTopic
     }
 
   });

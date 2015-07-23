@@ -3,7 +3,7 @@
 angular.module('civicMakersClientApp')
   .factory('ApiConfig', function () {
 
-//TODO: CONFIGURE THIS TEMPLATE TO WORK:
+//TODO: CONFIGURE THIS TO WORK ONCE API IS READY:
 
     // var deferred = $q.defer();
 

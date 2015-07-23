@@ -1,6 +1,6 @@
 'use strict';
 
 angular.module('civicMakersClientApp')
-  .controller('AuthorsCtrl', function ($scope) {
-    $scope.message = 'Hello';
+  .controller('AuthorsCtrl', function ($scope, AuthorApi) {
+    $scope.authors = AuthorApi.getAllAuthors();
   });
