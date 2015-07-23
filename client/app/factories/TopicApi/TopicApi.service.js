@@ -4,7 +4,8 @@ angular.module('civicMakersClientApp')
   .factory('TopicApi', function () {
 
     var service = {
-      getAllTopics: getAllTopics
+      getAllTopics: getAllTopics,
+      queryTopic: queryTopic
     }
 
     return service
@@ -22,7 +23,7 @@ angular.module('civicMakersClientApp')
         {
           "data": [
             {
-              "type": "tools",
+              "type": "topics",
               "id": "abc123",
               "attributes": {
                 "name": "Tools, tools, tools!",
@@ -57,7 +58,7 @@ angular.module('civicMakersClientApp')
         {
           "data": [
             {
-              "type": "tools",
+              "type": "topics",
               "id": "abc123",
               "attributes": {
                 "name": "That tool doe!",
@@ -92,7 +93,7 @@ angular.module('civicMakersClientApp')
         {
           "data": [
             {
-              "type": "tools",
+              "type": "topics",
               "id": "abc123",
               "attributes": {
                 "name": "Yep yep tool!",
@@ -135,7 +136,7 @@ angular.module('civicMakersClientApp')
       var dummyTopic = {
           "data": [
             {
-              "type": "tools",
+              "type": "topics",
               "id": "abc123",
               "attributes": {
                 "name": "Tools, tools, tools!",

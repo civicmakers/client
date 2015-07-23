@@ -1,3 +1,6 @@
-<div class="col-md-12">
-This is the author view.
+<div>
+	<h1>{{author.data[0].attributes.name}}</h1>
+	<img src="{{author.data[0].attributes.avatars[0].url}}">
+	<p>{{author.data[0].attributes.description}}</p>
+	{{author}}
 </div>
