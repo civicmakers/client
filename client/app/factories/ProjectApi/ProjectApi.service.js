@@ -163,6 +163,7 @@ angular.module('civicMakersClientApp')
     function queryProject(id){
       console.log('ProjectID: ', id)
       // TODO: when API is ready inplement query
+      // TODO: MAKE A PROMISE TO GET PROJECT COMPONENTS and have that data available.
       var dummyProject = {
           "data": [
             {
