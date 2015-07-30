@@ -30,7 +30,7 @@ angular.module('civicMakersClientApp')
                 "created_at": "1997-07-16T19:20+01:00",
                 "avatars": [
                   {
-                    "url": "https://www.google.com/image.jpg"
+                    "url": "http://robohash.org/sitsequiquia.png"
                   }
                 ],
                 "url": "https://www.google.com",
@@ -72,7 +72,7 @@ angular.module('civicMakersClientApp')
                 "created_at": "1997-07-16T19:20+01:00",
                 "avatars": [
                   {
-                    "url": "https://www.google.com/image.jpg"
+                    "url": "http://robohash.org/my-own-slug.png"
                   }
                 ],
                 "url": "https://www.google.com",
@@ -114,7 +114,7 @@ angular.module('civicMakersClientApp')
                 "created_at": "1997-07-16T19:20+01:00",
                 "avatars": [
                   {
-                    "url": "https://www.google.com/image.jpg"
+                    "url": "http://robohash.org/sitsequiquia.png"
                   }
                 ],
                 "url": "https://www.google.com",
@@ -144,7 +144,49 @@ angular.module('civicMakersClientApp')
               }
             }
           ]
-        }
+        },
+        {
+          "data": [
+            {
+              "type": "profiles",
+              "id": "abc123",
+              "attributes": {
+                "name": "Bobert!",
+                "description": "My name is Bobert!",
+                "created_at": "1997-07-16T19:20+01:00",
+                "avatars": [
+                  {
+                    "url": "http://robohash.org/my-own-slug.png"
+                  }
+                ],
+                "url": "https://www.google.com",
+                "social_links": {
+                  "facebook": "https://www.google.com",
+                  "twitter": "https://www.google.com",
+                  "linkedin": "https://www.google.com"
+                }
+              },
+              "relationships": {
+                "system_owned_tools": {
+                  "data": [
+                    {
+                      "type": "tools",
+                      "id": "abc123"
+                    }
+                  ]
+                },
+                "projects": {
+                  "data": [
+                    {
+                      "type": "projects",
+                      "id": "abc123"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
       ]
 
       return dummyData
@@ -164,7 +206,7 @@ angular.module('civicMakersClientApp')
                 "created_at": "1997-07-16T19:20+01:00",
                 "avatars": [
                   {
-                    "url": "https://www.google.com/image.jpg"
+                    "url": "http://robohash.org/sitsequiquia.png?size=300x300"
                   }
                 ],
                 "url": "https://www.google.com",
@@ -195,7 +237,7 @@ angular.module('civicMakersClientApp')
             }
           ]
         };
-        
+
         return dummyAuthor
     }
 

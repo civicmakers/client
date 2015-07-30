@@ -3,6 +3,9 @@
 /**
  *Font Awesome Fonts
  */
+body, html {
+    background-color: gainsboro;
+}
 
 @font-face {
     font-family: 'FontAwesome';
@@ -33,7 +36,7 @@
 
 
 .main-toolbar {
-    background-color: gainsboro !important;
+    background-color: #9B9B9B !important;
 }
 
 .main-img {
@@ -47,25 +50,31 @@
 }
 
 .card {
+    display: inline-block;
+    background-color: white !important;
+    width: 300px;
+    height: 400px;
+    margin: 5px;
+}
+
+.tool-topic-card {
     display:inline-block;
-    background-color: gainsboro !important;
-    width:400px;
-    height:450px;
+    background-color: white !important;
+    width:300px;
+    height:125px;
     padding:10px;
 }
 
-.topic-card {
+.tool-topic-card:hover {
     display:inline-block;
-    background-color: gainsboro !important;
-    width:400px;
+    background-color: white !important;
+    width:300px;
     height:125px;
     padding:10px;
 }
 
 .card:hover {
-    -webkit-box-shadow:inset 0px 0px 0px 2px gray;
-    -moz-box-shadow:inset 0px 0px 0px 2px gray;
-    box-shadow:inset 0px 0px 0px 2px gray
+    box-shadow: 0px 0px 0px 2px gray
 }
 
 .card-repeat {
@@ -74,6 +83,11 @@
 
 .title-info {
     margin: 10px;
+}
+
+.page-img {
+    height: 250px;
+    width:250px;
 }
 
 .title-row {
