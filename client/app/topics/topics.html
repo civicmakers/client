@@ -1,3 +1,17 @@
-<div class="col-md-12">
-This is the topics view.
+<div layout-fill>
+
+  <div layout="row" flex>
+    <div layout="column" layout-fill layout-align="center start" class="horizontal-repeat">
+      <div layout="row" class="title-info" flex>
+        <a href="/topics"><h1>Topics</h1></a>
+        <div flex></div>
+        <div class="seemore">
+          <h4>{{topics.length}} Topics</h4>
+          <h5><a href="/topics">See All</a></h5>
+        </div>
+      </div>
+      <card-directive ng-repeat="topic in topics" data="topic"></card-directive>
+    </div>
+  </div>
+
 </div>

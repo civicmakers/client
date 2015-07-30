@@ -4,7 +4,8 @@ angular.module('civicMakersClientApp')
   .factory('ProjectApi', function () {
 
     var service = {
-      getAllProjects: getAllProjects
+      getAllProjects: getAllProjects,
+      queryProject: queryProject
     }
 
     return service
@@ -123,5 +124,47 @@ angular.module('civicMakersClientApp')
       ];
 
       return dummyData
+    };
+
+    function queryProject(id){
+      console.log('ProjectID: ', id)
+      // TODO: when API is ready inplement query
+      var dummyProject = {
+          "data": [
+            {
+              "type": "projects",
+              "id": "abc123",
+              "attributes": {
+                "name": "JSON API!",
+                "description": "JSON API paints my bikeshed!",
+                "images": [
+                  {
+                    "url": "https://www.google.com/image.jpg"
+                  }
+                ],
+                "created_at": "1997-07-16T19:20+01:00"
+              },
+              "relationships": {
+                "project_components": {
+                  "data": [
+                    {
+                      "type": "project_components",
+                      "id": "abc123"
+                    }
+                  ]
+                },
+                "creator": {
+                  "data": {
+                    "type": "profiles",
+                    "id": "abc123"
+                  }
+                }
+              }
+            }
+          ]
+        };
+
+        return dummyProject;
     }
+
   });

@@ -1,3 +1,17 @@
-<div class="col-md-12">
-This is the authors view.
+<div layout-fill>
+
+  <div layout="row" flex>
+    <div layout="column" layout-fill layout-align="center start" class="horizontal-repeat">
+      <div layout="row" class="title-info" flex>
+        <a href="/authors"><h1>Authors</h1></a>
+        <div flex></div>
+        <div class="seemore">
+          <h4>{{authors.length}} Authors</h4>
+          <h5><a href="/authors">See All</a></h5>
+        </div>
+      </div>
+      <card-directive ng-repeat="author in authors" data="author"></card-directive>
+    </div>
+  </div>
+
 </div>

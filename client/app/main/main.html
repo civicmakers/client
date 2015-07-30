@@ -4,7 +4,7 @@
         <div layout="column" flex>
           <p>Call to action!</p>
           <p>Endorsements!</p>
-          <p>Value proposition</p>
+          <p>Value proposition!</p>
         </div>
         <div layout="column" flex>
           <p>SearchSearchSearchSearchSearch</p>
@@ -14,8 +14,8 @@
 
       <div layout="row" flex>
         <div layout="column" layout-fill layout-align="center start" class="horizontal-repeat">
-          <div layout="row" class="title-info" flex>
-            <h2>Projects</h2>
+          <div layout="row" class="title-row" flex>
+            <a href="/projects"><h1>Projects</h1></a>
             <div flex></div>
             <div class="seemore">
               <h4>{{projects.length}} Projects</h4>
@@ -31,21 +31,7 @@
       <div layout="row" flex>
         <div layout="column" layout-fill layout-align="center start" class="horizontal-repeat">
           <div layout="row" class="title-info" flex>
-            <h2>Tools</h2>
-            <div flex></div>
-            <div class="seemore">
-              <h4>{{tools.length}} Tools</h4>
-              <h5><a href="/tools">See All</a></h5>
-            </div>
-          </div>
-          <card-directive ng-repeat="tool in tools" data="tool"></card-directive>
-        </div>
-      </div>
-
-      <div layout="row" flex>
-        <div layout="column" layout-fill layout-align="center start" class="horizontal-repeat">
-          <div layout="row" class="title-info" flex>
-            <h2>Authors</h2>
+            <a href="/authors"><h1>Authors</h1></a>
             <div flex></div>
             <div class="seemore">
               <h4>{{authors.length}} Authors</h4>
@@ -59,7 +45,21 @@
       <div layout="row" flex>
         <div layout="column" layout-fill layout-align="center start" class="horizontal-repeat">
           <div layout="row" class="title-info" flex>
-            <h2>Topics</h2>
+            <a href="/tools"><h1>Tools</h1></a>
+            <div flex></div>
+            <div class="seemore">
+              <h4>{{tools.length}} Tools</h4>
+              <h5><a href="/tools">See All</a></h5>
+            </div>
+          </div>
+          <card-directive ng-repeat="tool in tools" data="tool"></card-directive>
+        </div>
+      </div>
+
+      <div layout="row" flex>
+        <div layout="column" layout-fill layout-align="center start" class="horizontal-repeat">
+          <div layout="row" class="title-info" flex>
+            <a href="/topics"><h1>Topics</h1></a>
             <div flex></div>
             <div class="seemore">
               <h4>{{topics.length}} Topics</h4>

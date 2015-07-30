@@ -4,7 +4,8 @@ angular.module('civicMakersClientApp')
   .factory('ToolApi', function () {
 
     var service = {
-      getAllTools: getAllTools
+      getAllTools: getAllTools,
+      queryTool: queryTool
     }
 
     return service
@@ -42,7 +43,7 @@ angular.module('civicMakersClientApp')
                   },
                 },
                 "project_components": {
-                  data: [
+                  "data": [
                     {
                       "id": "abc123",
                       "type": "project_components"
@@ -77,7 +78,7 @@ angular.module('civicMakersClientApp')
                   }
                 },
                 "project_components": {
-                  data: [
+                  "data": [
                     {
                       "id": "abc123",
                       "type": "project_components"
@@ -112,7 +113,7 @@ angular.module('civicMakersClientApp')
                   }
                 },
                 "project_components": {
-                  data: [
+                  "data": [
                     {
                       "id": "abc123",
                       "type": "project_components"
@@ -126,6 +127,48 @@ angular.module('civicMakersClientApp')
       ]
 
       return dummyData
+    };
+
+    function queryTool(id){
+      console.log('ToolID: ', id)
+      // TODO: when API is ready inplement query
+      var dummyTool = {
+          "data": [
+            {
+              "type": "tools",
+              "id": "abc123",
+              "attributes": {
+                "name": "Tools, tools, tools!",
+                "description": "We dem tools!",
+                "created_at": "1997-07-16T19:20+01:00",
+                "url": "https://www.google.com",
+                "social_links": {
+                  "facebook": "https://www.google.com",
+                  "twitter": "https://www.google.com",
+                  "linkedin": "https://www.google.com"
+                },
+              },
+              "relationships": {
+                "system_creator": {
+                  "data": {
+                    "type": "profiles",
+                    "id": "abc123"
+                  },
+                },
+                "project_components": {
+                  "data": [
+                    {
+                      "id": "abc123",
+                      "type": "project_components"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        };
+        
+        return dummyTool
     }
 
   });

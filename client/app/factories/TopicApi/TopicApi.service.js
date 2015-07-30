@@ -1,16 +1,16 @@
 'use strict';
 
 angular.module('civicMakersClientApp')
-  .factory('AuthorApi', function () {
+  .factory('TopicApi', function () {
 
     var service = {
-      getAllAuthors: getAllAuthors,
-      queryAuthor: queryAuthor
+      getAllTopics: getAllTopics,
+      queryTopic: queryTopic
     }
 
     return service
 
-    function getAllAuthors(){
+    function getAllTopics(){
       // return ApiConfig
       //           .apiRequest({
       //               url: '.....',
@@ -18,42 +18,36 @@ angular.module('civicMakersClientApp')
       //           });
 
       //THIS  IS DUMMY DATA THAT WILL BE REPLACED WHEN THE ACTUAL API IS WORKING:
+      //Fix Topic dummy data
       var dummyData = [
         {
           "data": [
             {
-              "type": "profiles",
+              "type": "topics",
               "id": "abc123",
               "attributes": {
-                "name": "Joe!",
-                "description": "My name is Joe!",
+                "name": "Tools, tools, tools!",
+                "description": "We dem tools!",
                 "created_at": "1997-07-16T19:20+01:00",
-                "avatars": [
-                  {
-                    "url": "https://www.google.com/image.jpg"
-                  }
-                ],
                 "url": "https://www.google.com",
                 "social_links": {
                   "facebook": "https://www.google.com",
                   "twitter": "https://www.google.com",
                   "linkedin": "https://www.google.com"
-                }
+                },
               },
               "relationships": {
-                "system_owned_tools": {
-                  "data": [
-                    {
-                      "type": "tools",
-                      "id": "abc123"
-                    }
-                  ]
+                "system_creator": {
+                  "data": {
+                    "type": "profiles",
+                    "id": "abc123"
+                  },
                 },
-                "projects": {
+                "project_components": {
                   "data": [
                     {
-                      "type": "projects",
-                      "id": "abc123"
+                      "id": "abc123",
+                      "type": "project_components"
                     }
                   ]
                 }
@@ -64,38 +58,31 @@ angular.module('civicMakersClientApp')
         {
           "data": [
             {
-              "type": "profiles",
+              "type": "topics",
               "id": "abc123",
               "attributes": {
-                "name": "Bob!",
-                "description": "My name is Bob!",
+                "name": "That tool doe!",
+                "description": "Ya tool",
                 "created_at": "1997-07-16T19:20+01:00",
-                "avatars": [
-                  {
-                    "url": "https://www.google.com/image.jpg"
-                  }
-                ],
                 "url": "https://www.google.com",
                 "social_links": {
                   "facebook": "https://www.google.com",
                   "twitter": "https://www.google.com",
                   "linkedin": "https://www.google.com"
-                }
+                },
               },
               "relationships": {
-                "system_owned_tools": {
-                  "data": [
-                    {
-                      "type": "tools",
-                      "id": "abc123"
-                    }
-                  ]
+                "system_creator": {
+                  "data": {
+                    "type": "profiles",
+                    "id": "abc123"
+                  }
                 },
-                "projects": {
+                "project_components": {
                   "data": [
                     {
-                      "type": "projects",
-                      "id": "abc123"
+                      "id": "abc123",
+                      "type": "project_components"
                     }
                   ]
                 }
@@ -106,38 +93,31 @@ angular.module('civicMakersClientApp')
         {
           "data": [
             {
-              "type": "profiles",
+              "type": "topics",
               "id": "abc123",
               "attributes": {
-                "name": "Nother name!",
-                "description": "Dat nother name desription!",
+                "name": "Yep yep tool!",
+                "description": "last tool",
                 "created_at": "1997-07-16T19:20+01:00",
-                "avatars": [
-                  {
-                    "url": "https://www.google.com/image.jpg"
-                  }
-                ],
                 "url": "https://www.google.com",
                 "social_links": {
                   "facebook": "https://www.google.com",
                   "twitter": "https://www.google.com",
                   "linkedin": "https://www.google.com"
-                }
+                },
               },
               "relationships": {
-                "system_owned_tools": {
-                  "data": [
-                    {
-                      "type": "tools",
-                      "id": "abc123"
-                    }
-                  ]
+                "system_creator": {
+                  "data": {
+                    "type": "profiles",
+                    "id": "abc123"
+                  }
                 },
-                "projects": {
+                "project_components": {
                   "data": [
                     {
-                      "type": "projects",
-                      "id": "abc123"
+                      "id": "abc123",
+                      "type": "project_components"
                     }
                   ]
                 }
@@ -150,44 +130,37 @@ angular.module('civicMakersClientApp')
       return dummyData
     };
 
-    function queryAuthor(id){
-      console.log('authorID: ', id)
+    function queryTopic(id){
+      console.log('TopicID: ', id)
       // TODO: when API is ready inplement query
-      var dummyAuthor = {
+      var dummyTopic = {
           "data": [
             {
-              "type": "profiles",
+              "type": "topics",
               "id": "abc123",
               "attributes": {
-                "name": "Bob!",
-                "description": "My name is Bob!",
+                "name": "Tools, tools, tools!",
+                "description": "We dem tools!",
                 "created_at": "1997-07-16T19:20+01:00",
-                "avatars": [
-                  {
-                    "url": "https://www.google.com/image.jpg"
-                  }
-                ],
                 "url": "https://www.google.com",
                 "social_links": {
                   "facebook": "https://www.google.com",
                   "twitter": "https://www.google.com",
                   "linkedin": "https://www.google.com"
-                }
+                },
               },
               "relationships": {
-                "system_owned_tools": {
-                  "data": [
-                    {
-                      "type": "tools",
-                      "id": "abc123"
-                    }
-                  ]
+                "system_creator": {
+                  "data": {
+                    "type": "profiles",
+                    "id": "abc123"
+                  },
                 },
-                "projects": {
+                "project_components": {
                   "data": [
                     {
-                      "type": "projects",
-                      "id": "abc123"
+                      "id": "abc123",
+                      "type": "project_components"
                     }
                   ]
                 }
@@ -196,7 +169,7 @@ angular.module('civicMakersClientApp')
           ]
         };
         
-        return dummyAuthor
+        return dummyTopic
     }
 
   });

@@ -42,7 +42,8 @@
 }
 
 .horizontal-repeat {
-    display:block;
+    display: block;
+    text-align: center;
 }
 
 .card {
@@ -50,6 +51,14 @@
     background-color: gainsboro !important;
     width:400px;
     height:450px;
+    padding:10px;
+}
+
+.topic-card {
+    display:inline-block;
+    background-color: gainsboro !important;
+    width:400px;
+    height:125px;
     padding:10px;
 }
 
@@ -65,6 +74,11 @@
 
 .title-info {
     margin: 10px;
+}
+
+.title-row {
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
 input[type="text"] {
