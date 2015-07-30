@@ -42,7 +42,8 @@
 }
 
 .horizontal-repeat {
-    display:block;
+    display: block;
+    text-align: center;
 }
 
 .card {
@@ -53,10 +54,31 @@
     padding:10px;
 }
 
+.topic-card {
+    display:inline-block;
+    background-color: gainsboro !important;
+    width:400px;
+    height:125px;
+    padding:10px;
+}
+
 .card:hover {
     -webkit-box-shadow:inset 0px 0px 0px 2px gray;
     -moz-box-shadow:inset 0px 0px 0px 2px gray;
     box-shadow:inset 0px 0px 0px 2px gray
+}
+
+.card-repeat {
+    text-align: center;
+}
+
+.title-info {
+    margin: 10px;
+}
+
+.title-row {
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
 input[type="text"] {
@@ -67,6 +89,20 @@ input[type="text"] {
     background-color: purple;
     color: white;
     text-align: center;
+}
+
+.intro-row .seemore {
+    display:block;
+}
+
+.intro-row .seemore h5 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.intro-row .seemore h4 {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 /* Responsive: Portrait tablets and up */

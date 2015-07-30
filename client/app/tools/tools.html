@@ -1,14 +1,17 @@
 <div layout-fill>
 
-      <div layout="row" flex>
-        <div layout="column" layout-fill layout-align="center start" class="horizontal-repeat">
-          <div layout="row" flex>
-            <a href="/tools"><h2>Tools</h2></a>
-            <h5>{{tools.length}} Tools</h5>
-            <div flex></div>
-          </div>
-          <card-directive ng-repeat="tool in tools" data="tool"></card-directive>
+  <div layout="row" flex>
+    <div layout="column" layout-fill layout-align="center start" class="horizontal-repeat">
+      <div layout="row" class="title-info" flex>
+        <a href="/tools"><h1>Tools</h1></a>
+        <div flex></div>
+        <div class="seemore">
+          <h4>{{tools.length}} Tools</h4>
+          <h5><a href="/tools">See All</a></h5>
         </div>
       </div>
+      <card-directive ng-repeat="tool in tools" data="tool"></card-directive>
+    </div>
+  </div>
 
 </div>

@@ -1,14 +1,19 @@
 <div layout-fill>
 
-      <div layout="row" flex>
-        <div layout="column" layout-fill layout-align="center start" class="horizontal-repeat">
-          <div layout="row" flex>
-            <a href="/projects"><h2>Projects</h2></a>
-            <h5>{{projects.length}} Projects</h5>
-            <div flex></div>
-          </div>
-          <card-directive ng-repeat="project in projects" data="project"></card-directive>
+  <div layout="row" flex>
+    <div layout="column" layout-fill layout-align="center start" class="horizontal-repeat">
+      <div layout="row" class="title-row" flex>
+        <a href="/projects"><h1>Projects</h1></a>
+        <div flex></div>
+        <div class="seemore">
+          <h4>{{projects.length}} Projects</h4>
+          <h5><a href="/projects">See All</a></h5>
         </div>
       </div>
+      <div class="card-repeat">
+        <card-directive ng-repeat="project in projects | filter:mainSearch" data="project"></card-directive>
+      </div>
+    </div>
+  </div>
 
 </div>

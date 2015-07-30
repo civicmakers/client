@@ -7,42 +7,36 @@
           <p>Value proposition!</p>
         </div>
         <div layout="column" flex>
-          <h4>SearchSearchSearchSearchSearchSearchSearchSearchSearchSearchSearchSearchSearch</h4>
-          <input type="text" placeholder="Search..."/>
+          <p>SearchSearchSearchSearchSearch</p>
+          <input type="text" placeholder="Search..." ng-model="mainSearch"/>
         </div>
       </div>
 
       <div layout="row" flex>
         <div layout="column" layout-fill layout-align="center start" class="horizontal-repeat">
-          <div layout="row" flex>
-            <a href="/projects"><h2>Projects</h2></a>
-            <h5>{{projects.length}} Projects</h5>
+          <div layout="row" class="title-row" flex>
+            <a href="/projects"><h1>Projects</h1></a>
             <div flex></div>
-            <a href="/projects">See All</a>
+            <div class="seemore">
+              <h4>{{projects.length}} Projects</h4>
+              <h5><a href="/projects">See All</a></h5>
+            </div>
           </div>
-          <card-directive ng-repeat="project in projects" data="project"></card-directive>
-        </div>
-      </div>
-
-      <div layout="row" flex>
-        <div layout="column" layout-fill layout-align="center start" class="horizontal-repeat">
-          <div layout="row" flex>
-            <a href="/tools"><h2>Tools</h2></a>
-            <h5>{{tools.length}} Tools</h5>
-            <div flex></div>
-            <a href="/tools">See All</a>
+          <div class="card-repeat">
+            <card-directive ng-repeat="project in projects | filter:mainSearch" data="project"></card-directive>
           </div>
-          <card-directive ng-repeat="tool in tools" data="tool"></card-directive>
         </div>
       </div>
 
       <div layout="row" flex>
         <div layout="column" layout-fill layout-align="center start" class="horizontal-repeat">
-          <div layout="row" flex>
-            <a href="/authors"><h2>Authors</h2></a>
-            <h5>{{authors.length}} Authors</h5>
+          <div layout="row" class="title-info" flex>
+            <a href="/authors"><h1>Authors</h1></a>
             <div flex></div>
-            <a href="/authors">See All</a>
+            <div class="seemore">
+              <h4>{{authors.length}} Authors</h4>
+              <h5><a href="/authors">See All</a></h5>
+            </div>
           </div>
           <card-directive ng-repeat="author in authors" data="author"></card-directive>
         </div>
@@ -50,11 +44,27 @@
 
       <div layout="row" flex>
         <div layout="column" layout-fill layout-align="center start" class="horizontal-repeat">
-          <div layout="row" flex>
-            <a href="/topics"><h2>Topics</h2></a>
-            <h5>{{topics.length}} Topics</h5>
+          <div layout="row" class="title-info" flex>
+            <a href="/tools"><h1>Tools</h1></a>
             <div flex></div>
-            <a href="/topics">See All</a>
+            <div class="seemore">
+              <h4>{{tools.length}} Tools</h4>
+              <h5><a href="/tools">See All</a></h5>
+            </div>
+          </div>
+          <card-directive ng-repeat="tool in tools" data="tool"></card-directive>
+        </div>
+      </div>
+
+      <div layout="row" flex>
+        <div layout="column" layout-fill layout-align="center start" class="horizontal-repeat">
+          <div layout="row" class="title-info" flex>
+            <a href="/topics"><h1>Topics</h1></a>
+            <div flex></div>
+            <div class="seemore">
+              <h4>{{topics.length}} Topics</h4>
+              <h5><a href="/topics">See All</a></h5>
+            </div>
           </div>
           <card-directive ng-repeat="topic in topics" data="topic"></card-directive>
         </div>
