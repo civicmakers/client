@@ -59,6 +59,14 @@
     box-shadow:inset 0px 0px 0px 2px gray
 }
 
+.card-repeat {
+    text-align: center;
+}
+
+.title-info {
+    margin: 10px;
+}
+
 input[type="text"] {
     margin:10px;
 }
@@ -67,6 +75,20 @@ input[type="text"] {
     background-color: purple;
     color: white;
     text-align: center;
+}
+
+.intro-row .seemore {
+    display:block;
+}
+
+.intro-row .seemore h5 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.intro-row .seemore h4 {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 /* Responsive: Portrait tablets and up */

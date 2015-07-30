@@ -28,7 +28,7 @@ angular.module('civicMakersClientApp')
                 "description": "JSON API paints my bikeshed!",
                 "images": [
                   {
-                    "url": "https://www.google.com/image.jpg"
+                    "url": "http://thedigitalpm.com/wp-content/uploads/2014/09/top10skillsforwebprojectmanagement.jpg"
                   }
                 ],
                 "created_at": "1997-07-16T19:20+01:00"
@@ -62,7 +62,7 @@ angular.module('civicMakersClientApp')
                 "description": "Designin'!",
                 "images": [
                   {
-                    "url": "https://www.google.com/image.jpg"
+                    "url": "http://www.twenty19.com/blog/wp-content/uploads/2015/02/project.jpg"
                   }
                 ],
                 "created_at": "1997-07-16T19:20+01:00",
@@ -96,7 +96,7 @@ angular.module('civicMakersClientApp')
                 "description": "The PJ",
                 "images": [
                   {
-                    "url": "https://www.google.com/image.jpg"
+                    "url": "https://mvideos.stanford.edu/Images/DestinyImages/Professional%20Certificate%20Images/Advanced%20Project%20Management/460X259/ProjectManagementCertificate_MAIN.jpg"
                   }
                 ],
                 "created_at": "1997-07-16T19:20+01:00",
