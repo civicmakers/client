@@ -3,11 +3,6 @@
 angular.module('civicMakersClientApp')
   .controller('MainCtrl', function ($scope, $http, ProjectApi, ToolApi, AuthorApi, TopicApi) {
 
-    console.log("Projectapi", ProjectApi.getAllProjects());
-    console.log("Toolapi", ToolApi.getAllTools());
-    console.log("Authorapi", AuthorApi.getAllAuthors());
-    console.log("Topicsapi", TopicApi.getAllTopics());
-
     // ToDo: configure this to use a promise once we have real API and ApiConfig factory is set up.
 
     // ProjectApi

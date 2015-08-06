@@ -93,7 +93,7 @@ angular.module('civicMakersClientApp')
               }
             }
           ]
-        },
+        }
 
         return dummyProjectComponent;
     }

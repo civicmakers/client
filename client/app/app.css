@@ -36,7 +36,7 @@ body, html {
 
 
 .main-toolbar {
-    background-color: #9B9B9B !important;
+    background-color: #3875DF !important;
 }
 
 .main-img {
@@ -66,11 +66,7 @@ body, html {
 }
 
 .tool-topic-card:hover {
-    display:inline-block;
-    background-color: white !important;
-    width:300px;
-    height:125px;
-    padding:10px;
+    box-shadow: 0px 0px 0px 2px gray
 }
 
 .card:hover {
@@ -87,14 +83,12 @@ body, html {
 }
 
 .title-row {
-    background-color: #3875DF;
-    color: white;
     margin: 10px 0px 10px 0px;
     padding: 0px 10px 0px 10px;
 }
 
 .first-row {
-    margin-top: 0px;
+    margin-top: 10px;
 }
 
 .title-row h1 {

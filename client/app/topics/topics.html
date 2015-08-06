@@ -6,8 +6,7 @@
         <a href="/topics"><h1>Topics</h1></a>
         <div flex></div>
         <div class="seemore">
-          <h4>{{topics.length}} Topics</h4>
-          <h5><a href="/topics">See All</a></h5>
+          <h4><a href="/topics">{{topics.length}} Topics</a></h4>
         </div>
       </div>
       <card-directive ng-repeat="topic in topics" data="topic"></card-directive>

@@ -154,6 +154,312 @@ angular.module('civicMakersClientApp')
               }
             }
           ]
+        },
+        {
+          "data": [
+            {
+              "type": "projects",
+              "id": "abc456",
+              "attributes": {
+                "name": "PROJECTOR!",
+                "description": "projectprojectprojectprojectprojectproject",
+                "images": [
+                  {
+                    "url": "http://smashingtops.com/wp-content/uploads/2012/04/Home-Theater-Projectors.jpg"
+                  }
+                ],
+                "created_at": "1997-07-16T19:20+01:00"
+              },
+              "relationships": {
+                "project_components": {
+                  "data": [
+                    {
+                      "type": "project_components",
+                      "id": "abc123"
+                    }
+                  ]
+                },
+                "creator": {
+                  "data": {
+                    "type": "profiles",
+                    "id": "abc123"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "type": "projects",
+              "id": "abc456",
+              "attributes": {
+                "name": "PROJECTOR!",
+                "description": "projectprojectprojectprojectprojectproject",
+                "images": [
+                  {
+                    "url": "http://smashingtops.com/wp-content/uploads/2012/04/Home-Theater-Projectors.jpg"
+                  }
+                ],
+                "created_at": "1997-07-16T19:20+01:00"
+              },
+              "relationships": {
+                "project_components": {
+                  "data": [
+                    {
+                      "type": "project_components",
+                      "id": "abc123"
+                    }
+                  ]
+                },
+                "creator": {
+                  "data": {
+                    "type": "profiles",
+                    "id": "abc123"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "type": "projects",
+              "id": "abc456",
+              "attributes": {
+                "name": "PROJECTOR!",
+                "description": "projectprojectprojectprojectprojectproject",
+                "images": [
+                  {
+                    "url": "http://smashingtops.com/wp-content/uploads/2012/04/Home-Theater-Projectors.jpg"
+                  }
+                ],
+                "created_at": "1997-07-16T19:20+01:00"
+              },
+              "relationships": {
+                "project_components": {
+                  "data": [
+                    {
+                      "type": "project_components",
+                      "id": "abc123"
+                    }
+                  ]
+                },
+                "creator": {
+                  "data": {
+                    "type": "profiles",
+                    "id": "abc123"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "type": "projects",
+              "id": "abc456",
+              "attributes": {
+                "name": "PROJECTOR!",
+                "description": "projectprojectprojectprojectprojectproject",
+                "images": [
+                  {
+                    "url": "http://smashingtops.com/wp-content/uploads/2012/04/Home-Theater-Projectors.jpg"
+                  }
+                ],
+                "created_at": "1997-07-16T19:20+01:00"
+              },
+              "relationships": {
+                "project_components": {
+                  "data": [
+                    {
+                      "type": "project_components",
+                      "id": "abc123"
+                    }
+                  ]
+                },
+                "creator": {
+                  "data": {
+                    "type": "profiles",
+                    "id": "abc123"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "type": "projects",
+              "id": "abc456",
+              "attributes": {
+                "name": "PROJECTOR!",
+                "description": "projectprojectprojectprojectprojectproject",
+                "images": [
+                  {
+                    "url": "http://smashingtops.com/wp-content/uploads/2012/04/Home-Theater-Projectors.jpg"
+                  }
+                ],
+                "created_at": "1997-07-16T19:20+01:00"
+              },
+              "relationships": {
+                "project_components": {
+                  "data": [
+                    {
+                      "type": "project_components",
+                      "id": "abc123"
+                    }
+                  ]
+                },
+                "creator": {
+                  "data": {
+                    "type": "profiles",
+                    "id": "abc123"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "type": "projects",
+              "id": "abc456",
+              "attributes": {
+                "name": "PROJECTOR!",
+                "description": "projectprojectprojectprojectprojectproject",
+                "images": [
+                  {
+                    "url": "http://smashingtops.com/wp-content/uploads/2012/04/Home-Theater-Projectors.jpg"
+                  }
+                ],
+                "created_at": "1997-07-16T19:20+01:00"
+              },
+              "relationships": {
+                "project_components": {
+                  "data": [
+                    {
+                      "type": "project_components",
+                      "id": "abc123"
+                    }
+                  ]
+                },
+                "creator": {
+                  "data": {
+                    "type": "profiles",
+                    "id": "abc123"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "type": "projects",
+              "id": "abc456",
+              "attributes": {
+                "name": "PROJECTOR!",
+                "description": "projectprojectprojectprojectprojectproject",
+                "images": [
+                  {
+                    "url": "http://smashingtops.com/wp-content/uploads/2012/04/Home-Theater-Projectors.jpg"
+                  }
+                ],
+                "created_at": "1997-07-16T19:20+01:00"
+              },
+              "relationships": {
+                "project_components": {
+                  "data": [
+                    {
+                      "type": "project_components",
+                      "id": "abc123"
+                    }
+                  ]
+                },
+                "creator": {
+                  "data": {
+                    "type": "profiles",
+                    "id": "abc123"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "type": "projects",
+              "id": "abc456",
+              "attributes": {
+                "name": "PROJECTOR!",
+                "description": "projectprojectprojectprojectprojectproject",
+                "images": [
+                  {
+                    "url": "http://smashingtops.com/wp-content/uploads/2012/04/Home-Theater-Projectors.jpg"
+                  }
+                ],
+                "created_at": "1997-07-16T19:20+01:00"
+              },
+              "relationships": {
+                "project_components": {
+                  "data": [
+                    {
+                      "type": "project_components",
+                      "id": "abc123"
+                    }
+                  ]
+                },
+                "creator": {
+                  "data": {
+                    "type": "profiles",
+                    "id": "abc123"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "type": "projects",
+              "id": "abc456",
+              "attributes": {
+                "name": "PROJECTOR!",
+                "description": "projectprojectprojectprojectprojectproject",
+                "images": [
+                  {
+                    "url": "http://smashingtops.com/wp-content/uploads/2012/04/Home-Theater-Projectors.jpg"
+                  }
+                ],
+                "created_at": "1997-07-16T19:20+01:00"
+              },
+              "relationships": {
+                "project_components": {
+                  "data": [
+                    {
+                      "type": "project_components",
+                      "id": "abc123"
+                    }
+                  ]
+                },
+                "creator": {
+                  "data": {
+                    "type": "profiles",
+                    "id": "abc123"
+                  }
+                }
+              }
+            }
+          ]
         }
       ];
 
