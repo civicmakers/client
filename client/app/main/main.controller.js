@@ -12,9 +12,16 @@ angular.module('civicMakersClientApp')
 
 
     // For now using these functions, but will use api call with .then() once configured
-    $scope.projects = ProjectApi.getAllProjects();
-    $scope.tools = ToolApi.getAllTools();
-    $scope.authors = AuthorApi.getAllAuthors();
-    $scope.topics = TopicApi.getAllTopics();
+    $scope.projects = ProjectApi.getFirstNProjects(4);
+    $scope.projectsNum = ProjectApi.getProjectsNum();
+
+    $scope.tools = ToolApi.getFirstNTools(4);
+    $scope.toolsNum = ToolApi.getToolsNum();
+
+    $scope.authors = AuthorApi.getFirstNAuthors(4);
+    $scope.authorsNum = AuthorApi.getAuthorsNum();
+
+    $scope.topics = TopicApi.getFirstNTopics(4);
+    $scope.topicsNum = TopicApi.getTopicsNum();
 
   });

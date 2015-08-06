@@ -52,7 +52,8 @@ body, html {
 .card {
     display: inline-block;
     background-color: white !important;
-    width: 300px;
+    min-width: 200px;
+    max-width: 23%;
     height: 400px;
     margin: 5px;
 }
