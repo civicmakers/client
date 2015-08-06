@@ -73,7 +73,7 @@
     "time-grunt": "~0.3.1"
   },
   "engines": {
-    "node": ">=0.10.0",
+    "node": ">=0.10.35",
     "npm": ">=1.4.28"
   },
   "scripts": {
@@ -81,5 +81,5 @@
     "test": "grunt test",
     "update-webdriver": "node node_modules/grunt-protractor-runner/node_modules/protractor/bin/webdriver-manager update"
   },
-  "private": true
+  "private": "true"
 }
