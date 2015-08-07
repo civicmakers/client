@@ -83,7 +83,7 @@ angular.module('civicMakersClientApp')
         'data': [
           {
             'type': 'projects',
-            'id': 'abc123',
+            'id': 'abc133',
             'attributes': {
               'name': 'PRoject 2',
               'description': 'The PJ',
