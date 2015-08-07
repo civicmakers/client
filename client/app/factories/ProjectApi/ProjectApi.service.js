@@ -52,7 +52,7 @@ angular.module('civicMakersClientApp')
             'id': 'abc123',
             'attributes': {
               'name': 'Design & Development',
-              'description': 'Designin'!',
+              'description': 'Designin!',
               'images': [
                 {
                   'url': 'http://www.twenty19.com/blog/wp-content/uploads/2015/02/project.jpg'
@@ -120,7 +120,7 @@ angular.module('civicMakersClientApp')
             'id': 'abc456',
             'attributes': {
               'name': 'PROJECTOR!',
-              'description': 'projectprojectprojectprojectprojectproject',
+              'description': 'projectproject',
               'images': [
                 {
                   'url': 'http://smashingtops.com/wp-content/uploads/2012/04/Home-Theater-Projectors.jpg'
