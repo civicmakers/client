@@ -420,7 +420,7 @@ angular.module('civicMakersClientApp')
           'data': [
             {
               'type': 'tools',
-              'id': 'abc123',
+              'id': 'abc1234567',
               'attributes': {
                 'name': 'Tools, tools, tools!',
                 'description': 'We dem tools!',
