@@ -8,7 +8,7 @@ angular.module('civicMakersClientApp')
       scope: {
         data: '='
       },
-      link: function (scope, element, attrs) {
+      link: function (scope) {
 
         // console.log("Data: ", scope.data);
 
@@ -23,9 +23,8 @@ angular.module('civicMakersClientApp')
             case 'topics':
               return 'topic';
             }
-          }
+          };
         }
 
-      }
-    // };
+      };
   });
