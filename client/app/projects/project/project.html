@@ -1,7 +1,8 @@
 <div class="wrapper">
-	<h1>{{project.data[0].attributes.name}}</h1>
+	<h1><a ng-href="">{{project.data[0].attributes.name}}</a></h1>
   <img class="page-img" src="{{project.data[0].attributes.images[0].url}}">
 	<p>{{project.data[0].attributes.description}}</p>
-  <p>TODO: add project components to data</p>
-	{{project}}
+  <p>Created: {{ project.data[0].attributes.created_at | date:'MMMM dd, yyyy' }}</p>
+  <!-- <p>TODO: add project components to data</p> -->
+	<!-- {{project}} -->
 </div>

@@ -1,10 +1,11 @@
-<div>
-	<h1>{{topic.data[0].attributes.name}}</h1>
+<div class="wrapper">
+	<h1><a ng-href="topic.data[0].attributes.url">{{topic.data[0].attributes.name}}</a></h1>
 	<p>{{topic.data[0].attributes.description}}</p>
-	{{topic}}
+	<!-- {{topic}} -->
+  <p>Created: {{ topic.data[0].attributes.created_at | date:'MMMM dd, yyyy' }}</p>
   <ul>
-    <li><a href="">Facebook</a></li>
-    <li><a href="">Twitter</a></li>
-    <li><a href="">LinkedIn</a></li>
+    <li><a ng-href="{{topic.data[0].attributes.social_links.facebook}}">Facebook</a></li>
+    <li><a ng-href="{{topic.data[0].attributes.social_links.twitter}}">Twitter</a></li>
+    <li><a ng-href="{{topic.data[0].attributes.social_links.linkedin}}">LinkedIn</a></li>
   </ul>
 </div>

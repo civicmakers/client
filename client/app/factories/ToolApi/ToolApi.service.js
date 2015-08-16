@@ -21,8 +21,8 @@ angular.module('civicMakersClientApp')
                     'type': 'tools',
                     'id': 'abc123',
                     'attributes': {
-                        'name': 'JSON API paints my bikeshed!',
-                        'description': 'JSON API paints my bikeshed!',
+                        'name': 'I am a Tool!',
+                        'description': 'I am a Tool!',
                         'created_at': '1997-07-16T19:20+01:00',
                         'url': 'https://www.google.com',
                         'social_links': {
@@ -55,8 +55,8 @@ angular.module('civicMakersClientApp')
                     'type': 'tools',
                     'id': 'abc123',
                     'attributes': {
-                        'name': 'JSON API paints my bikeshed!',
-                        'description': 'JSON API paints my bikeshed!',
+                        'name': 'I am a Tool!',
+                        'description': 'I am a Tool!',
                         'created_at': '1997-07-16T19:20+01:00',
                         'url': 'https://www.google.com',
                         'social_links': {
@@ -89,8 +89,8 @@ angular.module('civicMakersClientApp')
                     'type': 'tools',
                     'id': 'abc123',
                     'attributes': {
-                        'name': 'JSON API paints my bikeshed!',
-                        'description': 'JSON API paints my bikeshed!',
+                        'name': 'I am a Tool!',
+                        'description': 'I am a Tool!',
                         'created_at': '1997-07-16T19:20+01:00',
                         'url': 'https://www.google.com',
                         'social_links': {
@@ -123,8 +123,8 @@ angular.module('civicMakersClientApp')
                     'type': 'tools',
                     'id': 'abc123',
                     'attributes': {
-                        'name': 'JSON API paints my bikeshed!',
-                        'description': 'JSON API paints my bikeshed!',
+                        'name': 'I am a Tool!',
+                        'description': 'I am a Tool!',
                         'created_at': '1997-07-16T19:20+01:00',
                         'url': 'https://www.google.com',
                         'social_links': {
@@ -166,8 +166,8 @@ angular.module('civicMakersClientApp')
                     'type': 'tools',
                     'id': 'abc123',
                     'attributes': {
-                        'name': 'JSON API paints my bikeshed!',
-                        'description': 'JSON API paints my bikeshed!',
+                        'name': 'I am a Tool!',
+                        'description': 'I am a Tool!',
                         'created_at': '1997-07-16T19:20+01:00',
                         'url': 'https://www.google.com',
                         'social_links': {
@@ -200,8 +200,8 @@ angular.module('civicMakersClientApp')
                     'type': 'tools',
                     'id': 'abc123',
                     'attributes': {
-                        'name': 'JSON API paints my bikeshed!',
-                        'description': 'JSON API paints my bikeshed!',
+                        'name': 'I am a Tool!',
+                        'description': 'I am a Tool!',
                         'created_at': '1997-07-16T19:20+01:00',
                         'url': 'https://www.google.com',
                         'social_links': {
@@ -234,8 +234,8 @@ angular.module('civicMakersClientApp')
                     'type': 'tools',
                     'id': 'abc123',
                     'attributes': {
-                        'name': 'JSON API paints my bikeshed!',
-                        'description': 'JSON API paints my bikeshed!',
+                        'name': 'I am a Tool!',
+                        'description': 'I am a Tool!',
                         'created_at': '1997-07-16T19:20+01:00',
                         'url': 'https://www.google.com',
                         'social_links': {
@@ -268,8 +268,8 @@ angular.module('civicMakersClientApp')
                     'type': 'tools',
                     'id': 'abc123',
                     'attributes': {
-                        'name': 'JSON API paints my bikeshed!',
-                        'description': 'JSON API paints my bikeshed!',
+                        'name': 'I am a Tool!',
+                        'description': 'I am a Tool!',
                         'created_at': '1997-07-16T19:20+01:00',
                         'url': 'https://www.google.com',
                         'social_links': {
@@ -311,8 +311,8 @@ angular.module('civicMakersClientApp')
                     'type': 'tools',
                     'id': 'abc123',
                     'attributes': {
-                        'name': 'JSON API paints my bikeshed!',
-                        'description': 'JSON API paints my bikeshed!',
+                        'name': 'I am a Tool!',
+                        'description': 'I am a Tool!',
                         'created_at': '1997-07-16T19:20+01:00',
                         'url': 'https://www.google.com',
                         'social_links': {
@@ -345,8 +345,8 @@ angular.module('civicMakersClientApp')
                     'type': 'tools',
                     'id': 'abc123',
                     'attributes': {
-                        'name': 'JSON API paints my bikeshed!',
-                        'description': 'JSON API paints my bikeshed!',
+                        'name': 'I am a Tool!',
+                        'description': 'I am a Tool!',
                         'created_at': '1997-07-16T19:20+01:00',
                         'url': 'https://www.google.com',
                         'social_links': {
@@ -379,8 +379,8 @@ angular.module('civicMakersClientApp')
                     'type': 'tools',
                     'id': 'abc123',
                     'attributes': {
-                        'name': 'JSON API paints my bikeshed!',
-                        'description': 'JSON API paints my bikeshed!',
+                        'name': 'I am a Tool!',
+                        'description': 'I am a Tool!',
                         'created_at': '1997-07-16T19:20+01:00',
                         'url': 'https://www.google.com',
                         'social_links': {
@@ -413,8 +413,8 @@ angular.module('civicMakersClientApp')
                     'type': 'tools',
                     'id': 'abc123',
                     'attributes': {
-                        'name': 'JSON API paints my bikeshed!',
-                        'description': 'JSON API paints my bikeshed!',
+                        'name': 'I am a Tool!',
+                        'description': 'I am a Tool!',
                         'created_at': '1997-07-16T19:20+01:00',
                         'url': 'https://www.google.com',
                         'social_links': {
@@ -456,8 +456,8 @@ angular.module('civicMakersClientApp')
                   'type': 'tools',
                   'id': 'abc123',
                   'attributes': {
-                      'name': 'JSON API paints my bikeshed!',
-                      'description': 'JSON API paints my bikeshed!',
+                      'name': 'I am a Tool!',
+                      'description': 'I am a Tool!',
                       'created_at': '1997-07-16T19:20+01:00',
                       'url': 'https://www.google.com',
                       'social_links': {

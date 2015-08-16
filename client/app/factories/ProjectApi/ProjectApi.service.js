@@ -20,8 +20,8 @@ angular.module('civicMakersClientApp')
                       'type': 'projects',
                       'id': 'abc123',
                       'attributes': {
-                        'name': 'JSON API!',
-                        'description': 'JSON API paints my bikeshed!',
+                        'name': 'Project!',
+                        'description': 'This is a projector!',
                         'images': [
                           {
                             'url': 'http://smashingtops.com/wp-content/uploads/2012/04/Home-Theater-Projectors.jpg'
@@ -53,8 +53,8 @@ angular.module('civicMakersClientApp')
                 'type': 'projects',
                 'id': 'abc123',
                 'attributes': {
-                  'name': 'JSON API!',
-                  'description': 'JSON API paints my bikeshed!',
+                  'name': 'Project!',
+                  'description': 'This is a projector!',
                   'images': [
                     {
                       'url': 'http://smashingtops.com/wp-content/uploads/2012/04/Home-Theater-Projectors.jpg'
@@ -86,8 +86,8 @@ angular.module('civicMakersClientApp')
                 'type': 'projects',
                 'id': 'abc123',
                 'attributes': {
-                  'name': 'JSON API!',
-                  'description': 'JSON API paints my bikeshed!',
+                  'name': 'Project!',
+                  'description': 'This is a projector!',
                   'images': [
                     {
                       'url': 'http://smashingtops.com/wp-content/uploads/2012/04/Home-Theater-Projectors.jpg'
@@ -119,8 +119,8 @@ angular.module('civicMakersClientApp')
                 'type': 'projects',
                 'id': 'abc123',
                 'attributes': {
-                  'name': 'JSON API!',
-                  'description': 'JSON API paints my bikeshed!',
+                  'name': 'Project!',
+                  'description': 'This is a projector!',
                   'images': [
                     {
                       'url': 'http://smashingtops.com/wp-content/uploads/2012/04/Home-Theater-Projectors.jpg'
@@ -152,8 +152,8 @@ angular.module('civicMakersClientApp')
                 'type': 'projects',
                 'id': 'abc123',
                 'attributes': {
-                  'name': 'JSON API!',
-                  'description': 'JSON API paints my bikeshed!',
+                  'name': 'Project!',
+                  'description': 'This is a projector!',
                   'images': [
                     {
                       'url': 'http://smashingtops.com/wp-content/uploads/2012/04/Home-Theater-Projectors.jpg'
@@ -185,8 +185,8 @@ angular.module('civicMakersClientApp')
                 'type': 'projects',
                 'id': 'abc123',
                 'attributes': {
-                  'name': 'JSON API!',
-                  'description': 'JSON API paints my bikeshed!',
+                  'name': 'Project!',
+                  'description': 'This is a projector!',
                   'images': [
                     {
                       'url': 'http://smashingtops.com/wp-content/uploads/2012/04/Home-Theater-Projectors.jpg'
@@ -225,8 +225,8 @@ angular.module('civicMakersClientApp')
                       'type': 'projects',
                       'id': 'abc123',
                       'attributes': {
-                        'name': 'JSON API!',
-                        'description': 'JSON API paints my bikeshed!',
+                        'name': 'Project!',
+                        'description': 'This is a projector!',
                         'images': [
                           {
                             'url': 'http://smashingtops.com/wp-content/uploads/2012/04/Home-Theater-Projectors.jpg'
@@ -258,8 +258,8 @@ angular.module('civicMakersClientApp')
                 'type': 'projects',
                 'id': 'abc123',
                 'attributes': {
-                  'name': 'JSON API!',
-                  'description': 'JSON API paints my bikeshed!',
+                  'name': 'Project!',
+                  'description': 'This is a projector!',
                   'images': [
                     {
                       'url': 'http://smashingtops.com/wp-content/uploads/2012/04/Home-Theater-Projectors.jpg'
@@ -291,8 +291,8 @@ angular.module('civicMakersClientApp')
                 'type': 'projects',
                 'id': 'abc123',
                 'attributes': {
-                  'name': 'JSON API!',
-                  'description': 'JSON API paints my bikeshed!',
+                  'name': 'Project!',
+                  'description': 'This is a projector!',
                   'images': [
                     {
                       'url': 'http://smashingtops.com/wp-content/uploads/2012/04/Home-Theater-Projectors.jpg'
@@ -324,8 +324,8 @@ angular.module('civicMakersClientApp')
                 'type': 'projects',
                 'id': 'abc123',
                 'attributes': {
-                  'name': 'JSON API!',
-                  'description': 'JSON API paints my bikeshed!',
+                  'name': 'Project!',
+                  'description': 'This is a projector!',
                   'images': [
                     {
                       'url': 'http://smashingtops.com/wp-content/uploads/2012/04/Home-Theater-Projectors.jpg'
@@ -357,8 +357,8 @@ angular.module('civicMakersClientApp')
                 'type': 'projects',
                 'id': 'abc123',
                 'attributes': {
-                  'name': 'JSON API!',
-                  'description': 'JSON API paints my bikeshed!',
+                  'name': 'Project!',
+                  'description': 'This is a projector!',
                   'images': [
                     {
                       'url': 'http://smashingtops.com/wp-content/uploads/2012/04/Home-Theater-Projectors.jpg'
@@ -390,8 +390,8 @@ angular.module('civicMakersClientApp')
                 'type': 'projects',
                 'id': 'abc123',
                 'attributes': {
-                  'name': 'JSON API!',
-                  'description': 'JSON API paints my bikeshed!',
+                  'name': 'Project!',
+                  'description': 'This is a projector!',
                   'images': [
                     {
                       'url': 'http://smashingtops.com/wp-content/uploads/2012/04/Home-Theater-Projectors.jpg'
@@ -430,8 +430,8 @@ angular.module('civicMakersClientApp')
                       'type': 'projects',
                       'id': 'abc123',
                       'attributes': {
-                        'name': 'JSON API!',
-                        'description': 'JSON API paints my bikeshed!',
+                        'name': 'Project!',
+                        'description': 'This is a projector!',
                         'images': [
                           {
                             'url': 'http://smashingtops.com/wp-content/uploads/2012/04/Home-Theater-Projectors.jpg'
@@ -463,8 +463,8 @@ angular.module('civicMakersClientApp')
                 'type': 'projects',
                 'id': 'abc123',
                 'attributes': {
-                  'name': 'JSON API!',
-                  'description': 'JSON API paints my bikeshed!',
+                  'name': 'Project!',
+                  'description': 'This is a projector!',
                   'images': [
                     {
                       'url': 'http://smashingtops.com/wp-content/uploads/2012/04/Home-Theater-Projectors.jpg'
@@ -496,8 +496,8 @@ angular.module('civicMakersClientApp')
                 'type': 'projects',
                 'id': 'abc123',
                 'attributes': {
-                  'name': 'JSON API!',
-                  'description': 'JSON API paints my bikeshed!',
+                  'name': 'Project!',
+                  'description': 'This is a projector!',
                   'images': [
                     {
                       'url': 'http://smashingtops.com/wp-content/uploads/2012/04/Home-Theater-Projectors.jpg'
@@ -529,8 +529,8 @@ angular.module('civicMakersClientApp')
                 'type': 'projects',
                 'id': 'abc123',
                 'attributes': {
-                  'name': 'JSON API!',
-                  'description': 'JSON API paints my bikeshed!',
+                  'name': 'Project!',
+                  'description': 'This is a projector!',
                   'images': [
                     {
                       'url': 'http://smashingtops.com/wp-content/uploads/2012/04/Home-Theater-Projectors.jpg'
@@ -562,8 +562,8 @@ angular.module('civicMakersClientApp')
                 'type': 'projects',
                 'id': 'abc123',
                 'attributes': {
-                  'name': 'JSON API!',
-                  'description': 'JSON API paints my bikeshed!',
+                  'name': 'Project!',
+                  'description': 'This is a projector!',
                   'images': [
                     {
                       'url': 'http://smashingtops.com/wp-content/uploads/2012/04/Home-Theater-Projectors.jpg'
@@ -595,8 +595,8 @@ angular.module('civicMakersClientApp')
                 'type': 'projects',
                 'id': 'abc123',
                 'attributes': {
-                  'name': 'JSON API!',
-                  'description': 'JSON API paints my bikeshed!',
+                  'name': 'Project!',
+                  'description': 'This is a projector!',
                   'images': [
                     {
                       'url': 'http://smashingtops.com/wp-content/uploads/2012/04/Home-Theater-Projectors.jpg'
@@ -637,8 +637,8 @@ angular.module('civicMakersClientApp')
               'type': 'projects',
               'id': 'abc123',
               'attributes': {
-                'name': 'JSON API!',
-                'description': 'JSON API paints my bikeshed!',
+                'name': 'Project!',
+                'description': 'This is a projector!',
                 'images': [
                   {
                     'url': 'http://smashingtops.com/wp-content/uploads/2012/04/Home-Theater-Projectors.jpg'
