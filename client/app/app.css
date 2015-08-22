@@ -34,6 +34,10 @@ body, html {
     padding: 0.2em 0;
 }
 
+.main-wrapper {
+    width: 960px;
+    margin:0 auto;
+}
 
 .main-toolbar {
     background-color: #3875DF !important;
@@ -52,16 +56,15 @@ body, html {
 .card {
     display: inline-block;
     background-color: white !important;
-    min-width: 200px;
-    max-width: 23%;
-    height: 400px;
+    width: 220px;
+    height: 300px;
     margin: 5px;
 }
 
 .tool-topic-card {
     display:inline-block;
     background-color: white !important;
-    width:300px;
+    width:220px;
     height:125px;
     padding:10px;
 }
@@ -86,6 +89,7 @@ body, html {
 .title-row {
     margin: 10px 0px 10px 0px;
     padding: 0px 10px 0px 10px;
+    font-family: Verdana;
 }
 
 .first-row {
@@ -105,6 +109,10 @@ input[type="text"] {
     background-color: #F19800;
     color: white;
     text-align: center;
+}
+
+.intro-row p {
+    margin: 10px;
 }
 
 .intro-row .seemore {

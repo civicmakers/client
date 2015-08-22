@@ -29,7 +29,10 @@ angular.module('civicMakersClientApp')
       console.log('ProjectComponentID: ', id)
       // TODO: when API is ready inplement query
 
-      var dummyProjectComponent = {}
+      //Todo: put in dummy project component data
+      var dummyProjectComponent = {
+        'hey': 'Heyheyhey. This is the Project component data!'
+      }
 
         return dummyProjectComponent;
     }
