@@ -5,10 +5,12 @@ angular.module('civicMakersClientApp')
 
     console.log("routeParams",$routeParams);
 
-    $scope.project = ProjectApi.queryProject($routeParams.projectID);
-    //Todo: Project components will go in promise return here
+    $scope.project = {};
+    ProjectApi.queryProject($routeParams.projectID)
+      .then(function(project){
+        $scope.project = project;
+      });
 
     //Todo: replace dummyId with what comes in project api response. Create promise chain
     $scope.projectComponent = ProjectComponentApi.queryProjectComponent(123);
-
   });
