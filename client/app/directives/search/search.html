@@ -1,0 +1,54 @@
+<style>
+.autocompletedemoCustomTemplate .autocomplete-custom-template li {
+  border-bottom: 1px solid #ccc;
+  height: auto;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  white-space: normal; }
+.autocompletedemoCustomTemplate .autocomplete-custom-template li:last-child {
+  border-bottom-width: 0; }
+.autocompletedemoCustomTemplate .autocomplete-custom-template .item-title, .autocompletedemoCustomTemplate .autocomplete-custom-template .item-metadata {
+  display: block;
+  line-height: 2; }
+.autocompletedemoCustomTemplate .autocomplete-custom-template .item-title md-icon {
+  height: 18px;
+  width: 18px; }  
+[layout-padding]{
+  padding: 0px;
+  margin: 10px;
+}
+</style>
+
+<div ng-controller="SearchController as ctrl" layout="column" ng-cloak>
+  <md-content layout-padding layout="column">
+    <form ng-submit="$event.preventDefault()">
+      <md-autocomplete
+          ng-disabled="ctrl.isDisabled"
+          md-no-cache="ctrl.noCache"
+          md-selected-item="ctrl.selectedItem"
+          md-search-text-change="ctrl.searchTextChange(ctrl.searchText)"
+          md-search-text="ctrl.searchText"
+          md-selected-item-change="ctrl.selectedItemChange(item)"
+          md-items="item in ctrl.querySearch(ctrl.searchText)"
+          md-item-text="item.name"
+          md-min-length="0"
+          placeholder="Search"
+          md-menu-class="autocomplete-custom-template">
+        <md-item-template>
+          <span class="item-title">
+            <!-- <md-icon md-svg-icon="img/icons/octicon-repo.svg"></md-icon> -->
+            <span> {{item.name}} </span>
+          </span>
+          <span class="item-metadata">
+            <span class="item-metastat">
+              <strong>{{item.watchers}}</strong> watchers
+            </span>
+            <span class="item-metastat">
+              <strong>{{item.forks}}</strong> forks
+            </span>
+          </span>
+        </md-item-template>
+      </md-autocomplete>
+    </form>
+  </md-content>
+</div>
