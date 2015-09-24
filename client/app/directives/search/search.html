@@ -13,12 +13,15 @@
 .autocompletedemoCustomTemplate .autocomplete-custom-template .item-title md-icon {
   height: 18px;
   width: 18px; }  
+[layout-padding]{
+  padding: 0px;
+  margin: 10px;
+}
 </style>
 
 <div ng-controller="SearchController as ctrl" layout="column" ng-cloak>
   <md-content layout-padding layout="column">
     <form ng-submit="$event.preventDefault()">
-      <p>Use <code>&lt;md-autocomplete&gt;</code> with custom templates to show styled autocomplete results.</p>
       <md-autocomplete
           ng-disabled="ctrl.isDisabled"
           md-no-cache="ctrl.noCache"
@@ -29,7 +32,7 @@
           md-items="item in ctrl.querySearch(ctrl.searchText)"
           md-item-text="item.name"
           md-min-length="0"
-          placeholder="Pick an Angular repository"
+          placeholder="Search"
           md-menu-class="autocomplete-custom-template">
         <md-item-template>
           <span class="item-title">

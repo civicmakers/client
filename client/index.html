@@ -39,10 +39,22 @@
 
     <!-- Add your site or application content here -->
 
+<!--     TODO Redo hardcoded style here with 
+    offset  Sets element offset.
+    offset-sm Sets element offset on devices less than 600px wide.
+    offset-gt-sm  Sets element offset on devices greater than 600px wide.
+    offset-md Sets element offset on devices between 600px and 960px wide.
+    offset-gt-md  Sets element offset on devices greater than 960px wide.
+    offset-lg Sets element offset on devices between 960px and 1200px wide.
+    offset-gt-lg  Sets element offset on devices greater than 1200px wide.
+ --> 
     <md-content>
       <md-toolbar class="main-toolbar">
+        <div style="width: 960px; margin: 0 auto;" layout="row">
+          <h3 flex="66" class="md-display-1" style="margin: 15px;">Civic Makers</h3>
+          <search flex="33" style="padding-top: 5px;"></search>
+        </div> 
         <!-- <a href="/"><img src="assets/images/CivicMakers_logo_bgd.png" class="main-img" /></a> -->
-        <search></search>
       </md-toolbar>
     </md-content>
 
