@@ -1,115 +1,121 @@
 <div class="main-wrapper">
-  <form>
+  <form name="toolForm">
     <md-input-container>
       <label>Tool Name</label>
-      <input type="text" ng-model="toolForm.name" required md-maxlength="100">
+      <input type="text" ng-model="toolFormData.name" required md-maxlength="100">
     </md-input-container>
 
     <md-input-container>
       <label>Description</label>
-      <textarea ng-model="toolFrom.description" required md-maxlength="300"></textarea>
+      <textarea ng-model="toolFormData.description" required md-maxlength="300"></textarea>
     </md-input-container>
 
     <md-input-container>
       <label>Primary Audiences</label>
-      <input type="text" ng-model="toolForm.audience" md-maxlength="100">
+      <input type="text" ng-model="toolFormData.audience" md-maxlength="100">
     </md-input-container>
 
     <md-input-container>
       <label>Use Case</label>
-      <textarea ng-model="toolForm.usecase" required md-maxlength="200"></textarea>
+      <textarea ng-model="toolFormData.usecase" required md-maxlength="200"></textarea>
     </md-input-container>
 
     <md-input-container>
       <label>Cost</label>
-      <md-select ng-model="toolFrom.cost" placeholder="Select a state">
-        <md-option ng-value="opt">Free</md-option>
-        <md-option ng-value="opt">Paid</md-option>
+      <md-select ng-model="toolFormData.cost">
+        <md-option value="Free">Free</md-option>
+        <md-option value="Paid">Paid</md-option>
       </md-select>
     </md-input-container>
 
     <md-input-container>
       <label>License</label>
-      <md-select ng-model="toolFrom.license" required placeholder="Select a state">
-        <md-option ng-value="opt">Open</md-option>
-        <md-option ng-value="opt">Closed</md-option>
+      <md-select ng-model="toolFormData.license" required placeholder="">
+        <md-option value="Open">Open</md-option>
+        <md-option value="Closed">Closed</md-option>
       </md-select>
     </md-input-container>
 
     <md-input-container>
       <label>Technology Platform</label>
-      <input type="text" ng-model="toolForm.platform" md-maxlength="100">
+      <input type="text" ng-model="toolFormData.platform" md-maxlength="100">
     </md-input-container>
 
     <md-input-container>
       <label>Avatar URL</label>
-      <input type="text" ng-model="toolForm.avatar" maxlength="100">
+      <input type="text" ng-model="toolFormData.avatar" md-maxlength="100">
     </md-input-container>
 
     <md-input-container>
       <label>Website URL</label>
-      <input type="text" ng-model="toolForm.website" maxlength="100" required>
+      <input type="text" ng-model="toolFormData.website" md-maxlength="100" required>
     </md-input-container>
 
     <md-input-container>
       <label>Facebook URL</label>
-      <input type="text" ng-model="toolForm.facebook" maxlength="100">
+      <input type="text" ng-model="toolFormData.facebook" md-maxlength="100">
     </md-input-container>
 
     <md-input-container>
       <label>Twitter URL</label>
-      <input type="text" ng-model="toolForm.twitter" maxlength="100">
+      <input type="text" ng-model="toolFormData.twitter" md-maxlength="100">
     </md-input-container>
 
     <md-input-container>
       <label>Explainer video URL</label>
-      <input type="text" ng-model="toolForm.explainer" maxlength="100">
+      <input type="text" ng-model="toolFormData.explainer" md-maxlength="100">
     </md-input-container>
 
     <md-input-container>
       <label>Your Full Name</label>
-      <input type="text" ng-model="toolForm.your" maxlength="100" required>
+      <input type="text" ng-model="toolFormData.your" md-maxlength="100" required>
     </md-input-container>
 
     <md-input-container>
       <label>Your Title</label>
-      <input type="text" ng-model="toolForm.your" maxlength="100">
+      <input type="text" ng-model="toolFormData.title" md-maxlength="100">
     </md-input-container>
 
     <md-input-container>
       <label>Your organization</label>
-      <input type="text" ng-model="toolForm.your" maxlength="100">
+      <input type="text" ng-model="toolFormData.organization" md-maxlength="100">
     </md-input-container>
 
     <md-input-container>
       <label>Email</label>
-      <input type="text" ng-model="toolForm.email" maxlength="100" required>
+      <input type="text" ng-model="toolFormData.email" md-maxlength="100" required>
     </md-input-container>
 
     <md-input-container>
       <label>Bio</label>
-      <input type="text" ng-model="toolForm.bio" maxlength="100">
+      <input type="text" ng-model="toolFormData.bio" md-maxlength="100">
     </md-input-container>
 
     <md-input-container>
       <label>Personal website URL</label>
-      <input type="text" ng-model="toolForm.personal" maxlength="100">
+      <input type="text" ng-model="toolFormData.personalwebsite" md-maxlength="100">
     </md-input-container>
 
     <md-input-container>
       <label>Personal Twitter URL</label>
-      <input type="text" ng-model="toolForm.personal" maxlength="100">
+      <input type="text" ng-model="toolFormData.personaltwitter" md-maxlength="100">
     </md-input-container>
 
     <md-input-container>
       <label>Personal LinkedIn URL</label>
-      <input type="text" ng-model="toolForm.personal" maxlength="100">
+      <input type="text" ng-model="toolFormData.personallinkedin" md-maxlength="100">
     </md-input-container>
 
     <md-input-container>
       <label>Tags</label>
-      <textarea ng-model="toolFrom.tag" required md-maxlength="300"></textarea>
+      <textarea ng-model="toolFormData.tag" required md-maxlength="300"></textarea>
     </md-input-container>
   </form>  
-  
+
+  {{toolForm.$valid}}
+  {{toolForm.$error}}
+  <md-button class="md-raised md-primary" ng-click="submitToolForm(toolForm)" style="float: right;">
+    Submit
+  </md-button>
+
 </div>
