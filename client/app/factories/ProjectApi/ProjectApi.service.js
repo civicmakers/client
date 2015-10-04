@@ -1,27 +1,13 @@
 'use strict';
 
 angular.module('civicMakersClientApp')
-  .factory('ProjectApi', function($q) {
-    var ref = new Firebase('civicmakers.firebaseIO.com');
-
-    function getRef(){
-      return ref;
-    } 
-
-    var service = {
-      getAllProjects: getAllProjects,
-      queryProject: queryProject,
-      getFirstNProjects: getFirstNProjects,
-      getProjectsNum: getProjectsNum,
-    };
-
-    return service;
+  .factory('ProjectApi', function($q, firebase) {
 
     function getAllProjects() {
       var deferred = $q.defer();
-      getRef()
+      firebase.getRef()
         .child('projects')
-        .on('value', function(snapshot){
+        .on('value', function(snapshot) {
           deferred.resolve(snapshot.val());
         });
       return deferred.promise;
@@ -29,7 +15,7 @@ angular.module('civicMakersClientApp')
 
     function getFirstNProjects(n) {
       var deferred = $q.defer();
-      getAllProjects().then(function(projects){
+      getAllProjects().then(function(projects) {
         deferred.resolve(projects.slice(0, n));
       })
       return deferred.promise;
@@ -37,7 +23,7 @@ angular.module('civicMakersClientApp')
 
     function getProjectsNum() {
       var deferred = $q.defer();
-      getAllProjects().then(function(projects){
+      getAllProjects().then(function(projects) {
         deferred.resolve(projects.length);
       })
       return deferred.promise;
@@ -45,14 +31,21 @@ angular.module('civicMakersClientApp')
 
     function queryProject(id) {
       var deferred = $q.defer();
-      getAllProjects().then(function(projects){
-        projects.forEach(function(project){
-          if (project.id === id){
+      getAllProjects().then(function(projects) {
+        projects.forEach(function(project) {
+          if (project.id === id) {
             deferred.resolve(project);
           }
         })
       })
       return deferred.promise;
     }
+
+    return {
+      getAllProjects: getAllProjects,
+      queryProject: queryProject,
+      getFirstNProjects: getFirstNProjects,
+      getProjectsNum: getProjectsNum,
+    };
 
   });
