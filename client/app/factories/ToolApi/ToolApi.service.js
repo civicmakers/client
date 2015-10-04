@@ -1,16 +1,31 @@
 'use strict';
 
 angular.module('civicMakersClientApp')
-  .factory('ToolApi', function () {
+  .factory('ToolApi', function ($q, firebase, $firebaseArray) {
 
     var service = {
       getAllTools: getAllTools,
       queryTool: queryTool,
       getFirstNTools: getFirstNTools,
-      getToolsNum: getToolsNum
+      getToolsNum: getToolsNum,
+      save: save
     }
 
     return service;
+
+    function save(tool){
+        var deferred = $q.defer();
+
+        $firebaseArray(
+            firebase.getRef()
+            .child('tools')
+            .child('data')
+        ).$add(tool).then(function(){
+            deferred.resolve('success');
+        })
+
+        return deferred.promise;
+    }
 
     function getAllTools(){
       //THIS  IS DUMMY DATA THAT WILL BE REPLACED WHEN THE ACTUAL API IS WORKING:
