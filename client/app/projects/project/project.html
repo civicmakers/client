@@ -1,8 +1,16 @@
-<div class="main-wrapper">
-	<h1><a ng-href="">{{project.attributes.name}}</a></h1>
-  <img class="page-img" src="{{project.attributes.images[0].url}}">
-	<p>{{project.attributes.description}}</p>
-  <p>Created: {{ project.attributes.created_at | date:'MMMM dd, yyyy' }}</p>
-  <!-- <p>TODO: add project components to data</p> -->
-	{{projectComponent.hey}}
+<div class="project">
+  <div class="project-image-bar">
+    image here
+  </div>
+  <div class="main-wrapper">
+    <img class="page-img" src="{{project.attributes.images[0].url}}">
+    <div class="inner-wrapper">
+      <h1><a ng-href="">{{project.attributes.name}}</a></h1>
+      <p>{{project.attributes.description}}</p>
+      <p>Created: {{ project.attributes.created_at | date:'MMMM dd, yyyy' }}</p>
+      <!-- <p>TODO: add project components to data</p> -->
+      {{projectComponent.hey}}
+    </div>
+  </div>
+
 </div>
