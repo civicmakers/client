@@ -37,7 +37,7 @@
     ```
 - Install the project's tools and dependencies. (This may take a while):
     ```
-    npm install
+    npm install && bower install
     ```
 - Now start the local server!
     ```
