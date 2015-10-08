@@ -6,6 +6,7 @@ angular.module('civicMakersClientApp')
     console.log("routeParams",$routeParams);
 
     $scope.project = {};
+
     ProjectApi.queryProject($routeParams.projectID)
       .then(function(project){
         $scope.project = project;
