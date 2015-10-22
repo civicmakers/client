@@ -10,7 +10,7 @@ angular.module('civicMakersClientApp')
       },
       link: function (scope) {
 
-        // console.log("Data: ", scope.data);
+        scope.data = scope.data.data[0]
 
         scope.type = function (type) {
           switch (type) {

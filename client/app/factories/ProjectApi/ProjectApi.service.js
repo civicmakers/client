@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('civicMakersClientApp')
-  .factory('ProjectApi', function($q, firebase) {
+  .factory('ProjectApi', function ($q, firebase) {
 
     function getAllProjects() {
       var deferred = $q.defer();
@@ -33,7 +33,7 @@ angular.module('civicMakersClientApp')
       var deferred = $q.defer();
       getAllProjects().then(function(projects) {
         projects.forEach(function(project) {
-          if (project.id === id) {
+          if (project.data[0].id === id) {
             deferred.resolve(project);
           }
         })
@@ -48,4 +48,4 @@ angular.module('civicMakersClientApp')
       getProjectsNum: getProjectsNum,
     };
 
-  });
+});
