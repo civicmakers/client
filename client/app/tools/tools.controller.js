@@ -2,5 +2,7 @@
 
 angular.module('civicMakersClientApp')
   .controller('ToolsCtrl', function ($scope, ToolApi) {
-    $scope.tools = ToolApi.getAllTools();
+    ToolApi.getAllTools().then(function (tools){
+      $scope.tools = tools
+    });
   });

@@ -2,5 +2,10 @@
 
 angular.module('civicMakersClientApp')
   .controller('AuthorsCtrl', function ($scope, AuthorApi) {
-    $scope.authors = AuthorApi.getAllAuthors();
+
+    AuthorApi.getAllAuthors().then(function (authors){
+      console.log('authors', authors)
+      $scope.authors = authors;
+    });
+
   });

@@ -1,11 +1,11 @@
 <div class="main-wrapper">
-	<h1><a ng-href="tool.data[0].attributes.url">{{tool.data[0].attributes.name}}</a></h1>
-	<p>{{tool.data[0].attributes.description}}</p>
+	<h1><a ng-href="tool.attributes.url">{{tool.attributes.name}}</a></h1>
+	<p>{{tool.attributes.description}}</p>
 	<!-- {{tool}} -->
-  <p>Created: {{ project.data[0].attributes.created_at | date:'MMMM dd, yyyy' }}</p>
+  <p>Created: {{ project.attributes.created_at | date:'MMMM dd, yyyy' }}</p>
   <ul>
-    <li><a ng-href="{{tool.data[0].attributes.social_links.facebook}}">Facebook</a></li>
-    <li><a ng-href="{{tool.data[0].attributes.social_links.twitter}}">Twitter</a></li>
-    <li><a ng-href="{{tool.data[0].attributes.social_links.linkedin}}">LinkedIn</a></li>
+    <li><a ng-href="{{tool.attributes.social_links.facebook}}">Facebook</a></li>
+    <li><a ng-href="{{tool.attributes.social_links.twitter}}">Twitter</a></li>
+    <li><a ng-href="{{tool.attributes.social_links.linkedin}}">LinkedIn</a></li>
   </ul>
 </div>

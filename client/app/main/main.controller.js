@@ -1,10 +1,8 @@
 'use strict';
 
 angular.module('civicMakersClientApp')
-  .controller('MainCtrl', function ($scope, $http, ProjectApi, ToolApi, AuthorApi, TopicApi) {
+  .controller('MainCtrl', function ($scope, $http, ProjectApi, AuthorApi, ToolApi, TopicApi) {
 
-    $scope.projects = [];
-    $scope.projectsNum = '';
     ProjectApi.getFirstNProjects(4).then(function(projects){
         $scope.projects = projects;
     });
@@ -12,20 +10,25 @@ angular.module('civicMakersClientApp')
         $scope.projectsNum = numOfProjects;
     });
 
-    // ToDo: configure this to use a promise once we have real API and ApiConfig factory is set up.
+    AuthorApi.getFirstNAuthors(4).then(function(authors){
+        $scope.authors = authors
+    });
+    AuthorApi.getAuthorsNum().then(function(numOfAuthors){
+        $scope.authorsNum = numOfAuthors;
+    });
 
-    // ProjectApi
-    //   .getAllProjects().then(function (response) {
-    //     console.log("response", response)
-    //   })
-    // For now using these functions, but will use api call with .then() once configured
-    $scope.tools = ToolApi.getFirstNTools(4);
-    $scope.toolsNum = ToolApi.getToolsNum();
+    ToolApi.getFirstNTools(4).then(function(tools){
+        $scope.tools = tools
+    });
+    ToolApi.getToolsNum().then(function(numOfTools){
+        $scope.toolsNum = numOfTools;
+    });
 
-    $scope.authors = AuthorApi.getFirstNAuthors(4);
-    $scope.authorsNum = AuthorApi.getAuthorsNum();
-
-    $scope.topics = TopicApi.getFirstNTopics(4);
-    $scope.topicsNum = TopicApi.getTopicsNum();
+    TopicApi.getFirstNTopics(4).then(function(topics){
+        $scope.topics = topics
+    });
+    TopicApi.getTopicsNum().then(function(numOfTopics){
+        $scope.topicsNum = numOfTopics;
+    });
 
   });
