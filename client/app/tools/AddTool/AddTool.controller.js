@@ -1,16 +1,26 @@
 'use strict';
 
 angular.module('civicMakersClientApp')
-  .controller('AddToolCtrl', function ($scope, $routeParams, ToolApi) {
-    $scope.toolFormData = {};
+  .controller('AddToolCtrl', function ($scope, $routeParams, ToolApi, $location) {
+
+    $scope.toolFormData = {
+        created_at: Date.now(),
+        type: 'tool'
+    };
+
     $scope.submitToolForm = function(newTool){
+
       if ($scope.toolForm.$valid){
-        console.log(newTool);    
+        console.log(newTool);
         ToolApi.save(newTool).then(function(result){
           console.log('Did it work?:', result);
+          $location.path('/')
         })
       } else{
-        alert('the form is not valid');
+        alert('The form is not valid');
       }
-    }
+
+    };
+
+
   });

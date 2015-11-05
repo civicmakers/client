@@ -8,22 +8,10 @@ angular.module('civicMakersClientApp')
       scope: {
         data: '='
       },
-      link: function (scope) {
+        link: function (scope) {
 
-        scope.data = scope.data.data[0]
+          scope.data = scope.data
 
-        scope.type = function (type) {
-          switch (type) {
-            case 'tools':
-              return 'tool';
-            case 'projects':
-              return 'project';
-            case 'profiles':
-              return 'author';
-            case 'topics':
-              return 'topic';
-            }
-          };
         }
 
       };
