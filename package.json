@@ -20,6 +20,7 @@
   "devDependencies": {
     "angular-material": "^0.9.6",
     "connect-livereload": "^0.5.3",
+    "firebase-tools": "^2.0.2",
     "grunt": "~0.4.4",
     "grunt-angular-templates": "^0.5.4",
     "grunt-asset-injector": "^0.1.0",
@@ -79,7 +80,9 @@
   "scripts": {
     "start": "node server/app.js",
     "test": "grunt test",
-    "update-webdriver": "node node_modules/grunt-protractor-runner/node_modules/protractor/bin/webdriver-manager update"
+    "update-webdriver": "node node_modules/grunt-protractor-runner/node_modules/protractor/bin/webdriver-manager update",
+    "pre-deploy": "npm install ; node node_modules/firebase-tools/bin/firebase login ; grunt --force",
+    "deploy": "node node_modules/firebase-tools/bin/firebase deploy"
   },
   "private": "true"
 }
