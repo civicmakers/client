@@ -12,15 +12,15 @@ angular.module('civicMakersClientApp')
 
       if ($scope.toolForm.$valid){
         console.log(newTool);
-        ToolApi.save(newTool).then(function(result){
+        ToolApi.saveTool(newTool).then(function(result){
           console.log('Did it work?:', result);
           $location.path('/')
         })
-      } else{
-        alert('The form is not valid');
       }
+      else {
+        alert('The form is not valid');
+      };
 
     };
 
-
-  });
+});

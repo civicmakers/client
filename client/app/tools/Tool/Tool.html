@@ -1,9 +1,10 @@
 <div class="main-wrapper">
-	<h1><a ng-href="tool.attributes.url">{{tool.name}}</a></h1>
-	<p>{{tool.description}}</p>
+  <img class="indiv-img" ng-src="{{::tool.avatar}}">
+	<h1 class="indiv-title"><a ng-href="::tool.attributes.url">{{::tool.dataname}}</a></h1>
+	<p>{{::tool.description}}</p>
   <p>Created: {{ project.attributes.created_at | date:'MMMM dd, yyyy' }}</p>
   <ul>
-    <li><a ng-href="{{tool.facebook}}">Facebook</a></li>
-    <li><a ng-href="{{tool.twitter}}">Twitter</a></li>
+    <li><a ng-href="{{::tool.facebook}}">Facebook</a></li>
+    <li><a ng-href="{{::tool.twitter}}">Twitter</a></li>
   </ul>
 </div>

@@ -14,6 +14,7 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(client) app/vendor.css -->
       <!-- bower:css -->
+      <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
       <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css({.tmp,client}) app/app.css -->
@@ -23,6 +24,7 @@
       <link rel="stylesheet" href="app/authors/authors.css">
       <link rel="stylesheet" href="app/directives/cardDirective/cardDirective.css">
       <link rel="stylesheet" href="app/main/main.css">
+      <link rel="stylesheet" href="app/projects/AddProject/AddProject.css">
       <link rel="stylesheet" href="app/projects/project/project.css">
       <link rel="stylesheet" href="app/projects/projects.css">
       <link rel="stylesheet" href="app/tools/Tool/Tool.css">
@@ -105,13 +107,15 @@
           <script src="app/directives/search/search.directive.js"></script>
           <script src="app/factories/ApiConfig/ApiConfig.service.js"></script>
           <script src="app/factories/AuthorApi/AuthorApi.service.js"></script>
+          <script src="app/factories/Globals/Globals.service.js"></script>
           <script src="app/factories/ProjectApi/ProjectApi.service.js"></script>
-          <script src="app/factories/ProjectComponentsApi/ProjectComponentsApi.service.js"></script>
           <script src="app/factories/ToolApi/ToolApi.service.js"></script>
           <script src="app/factories/TopicApi/TopicApi.service.js"></script>
           <script src="app/firebase/firebase.js"></script>
           <script src="app/main/main.controller.js"></script>
           <script src="app/main/main.js"></script>
+          <script src="app/projects/AddProject/AddProject.controller.js"></script>
+          <script src="app/projects/AddProject/AddProject.js"></script>
           <script src="app/projects/project/project.controller.js"></script>
           <script src="app/projects/project/project.js"></script>
           <script src="app/projects/projects.controller.js"></script>

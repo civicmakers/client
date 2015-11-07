@@ -9,9 +9,7 @@ angular.module('civicMakersClientApp')
         data: '='
       },
         link: function (scope) {
-
           scope.data = scope.data
-
         }
 
       };

@@ -1,13 +1,11 @@
 'use strict';
 
 angular.module('civicMakersClientApp')
-  .factory('ToolApi', function ($q, firebase, $firebaseArray) {
-
-    var baseUrl = 'civicmakers.firebaseIO.com'
+  .factory('ToolApi', function ($q, firebase, $firebaseArray, Globals) {
 
     function getAllTools() {
       var deferred = $q.defer();
-      var ref = new Firebase(baseUrl + '/tools')
+      var ref = new Firebase(Globals.firebaseBaseUrl + '/tools')
       var tools = $firebaseArray(ref)
       tools.$loaded().then(function (results) {
         console.log('tools',results)
@@ -34,30 +32,23 @@ angular.module('civicMakersClientApp')
 
     function queryTool(id) {
       var deferred = $q.defer();
-      console.log(baseUrl + '/tools/' + id)
-      var ref = new Firebase(baseUrl + '/tools/' + id);
+      var ref = new Firebase(Globals.firebaseBaseUrl + '/tools/' + id);
       ref.once('value', function(snapshot) {
           console.log(snapshot.val())
           deferred.resolve(snapshot.val());
         });
       return deferred.promise;
-      // var deferred = $q.defer();
-      // getAllTools().then(function(tools) {
-      //   tool
-      //   deferred.resolve(tools.id);
-      // })
-      // return deferred.promise;
     };
 
-    function save (toolData) {
+    function saveTool (toolData) {
       var deferred = $q.defer();
       firebase.getRef()
         .child('tools')
         .push(toolData, function (error){
         if (error) {
-          deferred.resolve('Saved')
-        } else {
           deferred.resolve(error)
+        } else {
+          deferred.resolve('Saved')
         }
       })
       return deferred.promise;
@@ -68,7 +59,7 @@ angular.module('civicMakersClientApp')
       queryTool: queryTool,
       getFirstNTools: getFirstNTools,
       getToolsNum: getToolsNum,
-      save: save
+      saveTool: saveTool
     };
 
 });
