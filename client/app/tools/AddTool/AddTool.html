@@ -27,7 +27,7 @@
 
     <md-input-container>
       <label>License</label>
-      <md-select ng-model="toolFormData.license" required placeholder="">
+      <md-select ng-model="toolFormData.license" required placeholder="Open">
         <md-option value="Open">Open</md-option>
         <md-option value="Closed">Closed</md-option>
       </md-select>
@@ -55,7 +55,7 @@
 
     <md-input-container>
       <label>Tags</label>
-      <input type="text" ng-model="toolFormData.tags" md-maxlength="300">
+      <input type="text" ng-model="tagsEntry" ng-change="tagsEntryChanged()" md-maxlength="300">
     </md-input-container>
 
   </form>
