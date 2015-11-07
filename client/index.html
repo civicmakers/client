@@ -14,7 +14,6 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(client) app/vendor.css -->
       <!-- bower:css -->
-      <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
       <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css({.tmp,client}) app/app.css -->
@@ -33,7 +32,7 @@
       <!-- endinjector -->
     <!-- endbuild -->
   </head>
-  <body ng-app="civicMakersClientApp">
+  <body ng-app="civicMakersClientApp" ng-controller="MainCtrl as mainCtrl">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -53,8 +52,14 @@
       <md-toolbar class="main-toolbar">
         <div style="width: 960px; margin: 0 auto;" layout="row">
           <!-- todo add ui-router -->
-          <h3 flex="66" class="md-display-1" style="margin: 15px; cursor: pointer;" onclick="location.href = '#'">Civic Makers</h3>
-          <search flex="33" style="padding-top: 5px;"></search>
+          <h3 flex="50" class="md-display-1" style="margin: 15px; cursor: pointer;" onclick="location.href = '#'">Civic Makers</h3>
+          <search flex="30" style="padding-top: 5px;"></search>
+          <md-button ng-if="!mainCtrl.isLoggedIn" flex="20" ng-click="mainCtrl.loginToTwitter()">
+            <span>Login With Twitter</span>
+          </md-button>
+          <md-button ng-if="mainCtrl.isLoggedIn" flex="20" ng-click="mainCtrl.logoutFromTwitter()">
+            <span>Logout</span>
+          </md-button>
         </div> 
         <!-- <a href="/"><img src="assets/images/CivicMakers_logo_bgd.png" class="main-img" /></a> -->
       </md-toolbar>
@@ -117,6 +122,7 @@
           <script src="app/projects/project/project.js"></script>
           <script src="app/projects/projects.controller.js"></script>
           <script src="app/projects/projects.js"></script>
+          <script src="app/services/AuthenticationService/AuthenticaionService.js"></script>
           <script src="app/tools/AddTool/AddTool.controller.js"></script>
           <script src="app/tools/AddTool/AddTool.js"></script>
           <script src="app/tools/Tool/Tool.controller.js"></script>
