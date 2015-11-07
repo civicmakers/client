@@ -4,8 +4,13 @@ angular.module('civicMakersClientApp')
   .controller('AddProjectCtrl', function ($scope, ProjectApi, $location) {
 
     $scope.projectFormData = {
+        // Data hidden from user (in addition to user entered)
         created_at: Date.now(),
-        type: 'project'
+        type: 'project',
+        display: true
+        // authorId:
+        // cfApiProjId:
+        // cfApiOrgId
     };
 
     $scope.submitProjectForm = function(newProject){

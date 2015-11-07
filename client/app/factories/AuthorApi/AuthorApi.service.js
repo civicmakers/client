@@ -1,15 +1,23 @@
 'use strict';
 
 angular.module('civicMakersClientApp')
-  .factory('AuthorApi', function ($q, firebase) {
+  .factory('AuthorApi', function ($q, firebase, $firebaseArray) {
 
     function getAllAuthors() {
+      // var deferred = $q.defer();
+      // firebase.getRef()
+      //   .child('profiles')
+      //   .on('value', function(snapshot) {
+      //     deferred.resolve(snapshot.val());
+      //   });
+      // return deferred.promise;
       var deferred = $q.defer();
-      firebase.getRef()
-        .child('profiles')
-        .on('value', function(snapshot) {
-          deferred.resolve(snapshot.val());
-        });
+      var ref = new Firebase(firebase.baseUrl + '/profiles')
+      var tools = $firebaseArray(ref)
+      tools.$loaded().then(function (results) {
+        console.log('profiles',results)
+        deferred.resolve(results)
+      })
       return deferred.promise;
     };
 

@@ -10,6 +10,4 @@ angular.module('civicMakersClientApp')
       $scope.project = project.data[0];
     });
 
-    //Todo: replace dummyId with what comes in project api response. Create promise chain
-    $scope.projectComponent = ProjectComponentApi.queryProjectComponent(123);
   });
