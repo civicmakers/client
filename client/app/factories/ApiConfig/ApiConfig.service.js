@@ -23,6 +23,4 @@ angular.module('civicMakersClientApp')
     //     .success(deferred.resolve)
     //     .error(deferred.reject);
 
-
-
   });

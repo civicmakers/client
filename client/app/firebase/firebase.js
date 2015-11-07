@@ -11,6 +11,7 @@ angular.module('civicMakersClientApp')
     }
 
     return {
-      getRef: getRef
+      getRef: getRef,
+      baseUrl: baseUrl
     }
   })

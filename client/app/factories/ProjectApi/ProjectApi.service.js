@@ -1,11 +1,11 @@
 'use strict';
 
 angular.module('civicMakersClientApp')
-  .factory('ProjectApi', function ($q, firebase, $firebaseArray, Globals) {
+  .factory('ProjectApi', function ($q, firebase, $firebaseArray) {
 
     function getAllProjects() {
       var deferred = $q.defer();
-      var ref = new Firebase(Globals.firebaseBaseUrl + '/projects')
+      var ref = new Firebase(firebase.baseUrl + '/projects')
       var projects = $firebaseArray(ref)
       projects.$loaded().then(function (results) {
         console.log('projects',results)
@@ -32,21 +32,12 @@ angular.module('civicMakersClientApp')
 
     function queryProject(id) {
       var deferred = $q.defer();
-      var ref = new Firebase(Globals.firebaseBaseUrl + '/projects/' + id);
+      var ref = new Firebase(firebase.baseUrl + '/projects/' + id);
       ref.once('value', function(snapshot) {
           console.log(snapshot.val())
           deferred.resolve(snapshot.val());
         });
       return deferred.promise;
-      // var deferred = $q.defer();
-      // getAllProjects().then(function(projects) {
-      //   projects.forEach(function(project) {
-      //     if (project.data[0].id === id) {
-      //       deferred.resolve(project);
-      //     }
-      //   })
-      // })
-      // return deferred.promise;
     }
 
     function saveProject (projectData) {

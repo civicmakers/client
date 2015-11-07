@@ -1,11 +1,11 @@
 'use strict';
 
 angular.module('civicMakersClientApp')
-  .factory('ToolApi', function ($q, firebase, $firebaseArray, Globals) {
+  .factory('ToolApi', function ($q, firebase, $firebaseArray) {
 
     function getAllTools() {
       var deferred = $q.defer();
-      var ref = new Firebase(Globals.firebaseBaseUrl + '/tools')
+      var ref = new Firebase(firebase.baseUrl + '/tools')
       var tools = $firebaseArray(ref)
       tools.$loaded().then(function (results) {
         console.log('tools',results)
@@ -32,7 +32,7 @@ angular.module('civicMakersClientApp')
 
     function queryTool(id) {
       var deferred = $q.defer();
-      var ref = new Firebase(Globals.firebaseBaseUrl + '/tools/' + id);
+      var ref = new Firebase(firebase.baseUrl + '/tools/' + id);
       ref.once('value', function(snapshot) {
           console.log(snapshot.val())
           deferred.resolve(snapshot.val());
