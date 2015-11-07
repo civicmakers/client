@@ -1,10 +1,12 @@
 'use strict';
 
 angular.module('civicMakersClientApp')
-  .factory('firebase', function($q) {
-    var ref = new Firebase('civicmakers.firebaseIO.com');
+  .factory('firebase', function ($q) {
 
-    function getRef(){
+    var baseUrl = 'civicmakers.firebaseIO.com'
+
+    function getRef (){
+    	var ref = new Firebase(baseUrl);
       return ref;
     }
 

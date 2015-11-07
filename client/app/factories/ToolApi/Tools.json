@@ -1,0 +1,95 @@
+{
+  "1" : {
+    "data" : [ {
+      "attributes" : {
+        "created_at" : "1997-07-16T19:20+01:00",
+        "description" : "I am a Tool!",
+        "name" : "I am a Tool!",
+        "social_links" : {
+          "facebook" : "https://www.google.com",
+          "linkedin" : "https://www.google.com",
+          "twitter" : "https://www.google.com"
+        },
+        "url" : "https://www.google.com"
+      },
+      "id" : "abc123",
+      "relationships" : {
+        "projects" : {
+          "data" : [ {
+            "id" : "abc123",
+            "type" : "projects"
+          } ]
+        },
+        "system_creator" : {
+          "data" : {
+            "id" : "abc123",
+            "type" : "profiles"
+          }
+        }
+      },
+      "type" : "tools"
+    } ]
+  },
+  "2" : {
+    "data" : [ {
+      "attributes" : {
+        "created_at" : "1997-07-16T19:20+01:00",
+        "description" : "I am a Tool!",
+        "name" : "I am a Tool!",
+        "social_links" : {
+          "facebook" : "https://www.google.com",
+          "linkedin" : "https://www.google.com",
+          "twitter" : "https://www.google.com"
+        },
+        "url" : "https://www.google.com"
+      },
+      "id" : "abc123",
+      "relationships" : {
+        "projects" : {
+          "data" : [ {
+            "id" : "abc123",
+            "type" : "projects"
+          } ]
+        },
+        "system_creator" : {
+          "data" : {
+            "id" : "abc123",
+            "type" : "profiles"
+          }
+        }
+      },
+      "type" : "tools"
+    } ]
+  },
+  "3" : {
+    "data" : [ {
+      "attributes" : {
+        "created_at" : "1997-07-16T19:20+01:00",
+        "description" : "I am a Tool!",
+        "name" : "I am a Tool!",
+        "social_links" : {
+          "facebook" : "https://www.google.com",
+          "linkedin" : "https://www.google.com",
+          "twitter" : "https://www.google.com"
+        },
+        "url" : "https://www.google.com"
+      },
+      "id" : "abc123",
+      "relationships" : {
+        "projects" : {
+          "data" : [ {
+            "id" : "abc123",
+            "type" : "projects"
+          } ]
+        },
+        "system_creator" : {
+          "data" : {
+            "id" : "abc123",
+            "type" : "profiles"
+          }
+        }
+      },
+      "type" : "tools"
+    } ]
+  },
+}

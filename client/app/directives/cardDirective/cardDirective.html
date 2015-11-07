@@ -1,8 +1,7 @@
-<a ng-href="/{{type(data.type)}}/{{::data.id}}">
-  <md-card ng-class="(data.type === 'topics' || data.type === 'tools') ? 'tool-topic-card' : 'card'">
-    <img class="card-img" ng-if="data.type === 'projects'" ng-src="{{::data.attributes.images[0].url}}">
-    <img class="card-img" ng-if="data.type === 'profiles'" ng-src="{{::data.attributes.avatars[0].url}}">
-    <h3>{{::data.attributes.name}}</h3>
-    <p>{{::data.attributes.description}}</p>
+<a ng-href="{{::data.type}}/{{::data.$id}}">
+  <md-card class="card">
+    <img class="card-img" ng-src="{{::data.avatar}}">
+    <h3>{{::data.dataname}}</h3>
+    <p>{{::data.description}}</p>
   </md-card>
 </a>

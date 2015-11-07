@@ -3,10 +3,9 @@
 angular.module('civicMakersClientApp')
   .controller('ToolCtrl', function ($scope, $routeParams, ToolApi) {
 
-  	console.log("routeParams",$routeParams)
-
     ToolApi.queryTool($routeParams.toolID).then(function (tool){
-      $scope.tool = tool.data[0]
+    	console.log(tool)
+      $scope.tool = tool
     })
 
   });
