@@ -8,7 +8,6 @@ angular.module('civicMakersClientApp')
       var ref = new Firebase(firebase.baseUrl + '/tools')
       var tools = $firebaseArray(ref)
       tools.$loaded().then(function (results) {
-        console.log('tools',results)
         deferred.resolve(results)
       })
       return deferred.promise;
@@ -34,7 +33,6 @@ angular.module('civicMakersClientApp')
       var deferred = $q.defer();
       var ref = new Firebase(firebase.baseUrl + '/tools/' + id);
       ref.once('value', function(snapshot) {
-          console.log(snapshot.val())
           deferred.resolve(snapshot.val());
         });
       return deferred.promise;

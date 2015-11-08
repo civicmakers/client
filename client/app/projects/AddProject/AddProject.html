@@ -29,6 +29,26 @@
       <input type="text" ng-model="tagsEntry" ng-change="tagsEntryChanged()" md-maxlength="300">
     </md-input-container>
 
+    <md-input-container>
+         <label>Search Tools To Include</label>
+         <textarea ng-model="searchInput" md-maxlength="300"></textarea>
+     </md-input-container>
+
+     <div class="lil-card" ng-if="searchInput !== undefined " ng-repeat="tool in tools | filter:searchInput | limitTo: 12" ng-click="addToTools(tool)">
+       <img ng-src="{{tool.image}}" alt="">
+       <p>{{tool.name}}</p>
+     </div>
+
+     <div class="selected-tools" ng-if="selectedTools.length !== 0">
+      <h3>Your Selected Tools:</h3>
+      <div class="card-container">
+        <div class="lil-card" ng-repeat="selectedTool in selectedTools track by $index">
+         <img ng-src="{{selectedTool.image}}" alt="">
+         <p>{{selectedTool.name}}</p>
+        </div>
+      </div>
+     </div>
+
   </form>
 
   <md-button class="md-raised md-primary" ng-click="submitProjectForm(projectFormData)" style="float: right;">
