@@ -1,6 +1,7 @@
 <div class="main-wrapper">
-	<h1><a ng-href="author.attributes.url">{{author.attributes.name}}</a></h1>
-	<img src="{{author.attributes.avatars[0].url}}">
+
+  <title-directive data="author"></title-directive>
+
 	<p>{{author.attributes.description}}</p>
   <p>Created: {{ author.attributes.created_at | date:'MMMM dd, yyyy' }}</p>
   <ul>
