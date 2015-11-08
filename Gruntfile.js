@@ -345,7 +345,7 @@ module.exports = function (grunt) {
             '*.{ico,png,txt}',
             '.htaccess',
             'bower_components/**/*',
-            'assets/images/{,*/}*.{webp}',
+            'assets/images/{,*/}*.{webp,jpg,png}',
             'assets/fonts/**/*',
             'index.html'
           ]
@@ -501,7 +501,7 @@ module.exports = function (grunt) {
           style: 'expanded'
         },
         files: {
-          '.tmp/concat/app/styles/app.css': '<%= yeoman.client %>/styles/index.scss'          
+          '.tmp/concat/app/styles/app.css': '<%= yeoman.client %>/styles/index.scss'
         }
       },
       dist: {
@@ -509,7 +509,7 @@ module.exports = function (grunt) {
           style: 'expanded'
         },
         files: {
-          'dist/public/app/styles/app.css': '<%= yeoman.client %>/styles/index.scss'          
+          'dist/public/app/styles/app.css': '<%= yeoman.client %>/styles/index.scss'
         }
       }
     }
@@ -635,4 +635,3 @@ module.exports = function (grunt) {
   ]);
 
 };
-
