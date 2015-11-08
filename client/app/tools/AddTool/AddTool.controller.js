@@ -6,11 +6,15 @@ angular.module('civicMakersClientApp')
     $scope.toolFormData = {
         created_at: Date.now(),
         type: 'tool',
+        display: true
+        // authorIp:
+        // cfApiProjId:
+        // cfApiOrgId
     };
 
     $scope.tagsEntryChanged = function () {
         $scope.toolFormData.tags = $scope.tagsEntry.split(', ')
-    }
+    };
 
     $scope.submitToolForm = function(newTool){
 
