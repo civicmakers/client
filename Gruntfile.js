@@ -246,7 +246,7 @@ module.exports = function (grunt) {
     // Performs rewrites based on rev and the useminPrepare configuration
     usemin: {
       html: ['<%= yeoman.dist %>/public/{,*/}*.html'],
-      css: ['<%= yeoman.dist %>/public/{,*/}*.css'],
+      css: ['<%= yeoman.dist %>/public/{,*/,*/*/}*.css'],
       js: ['<%= yeoman.dist %>/public/{,*/}*.js'],
       options: {
         assetsDirs: [
@@ -512,8 +512,15 @@ module.exports = function (grunt) {
           'dist/public/app/styles/app.css': '<%= yeoman.client %>/styles/index.scss'          
         }
       }
+    },
+    cssmin: {
+      dist: {
+        src: '<%= yeoman.dist %>/public/app/styles/app.css',
+        dest: '<%= yeoman.dist %>/public/app/styles/app.min.css'
+      }
     }
   });
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-sass');
 
   // Used for delaying livereload until after server has restarted
@@ -622,7 +629,7 @@ module.exports = function (grunt) {
     'copy:dist',
     'cdnify',
     'sass:dist',
-    'cssmin',
+    'cssmin:dist',
     'uglify',
     'rev',
     'usemin'
