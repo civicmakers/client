@@ -22,6 +22,10 @@ body, html {
  * App-wide Styles
  */
 
+ md-card {
+    vertical-align: top;
+ }
+
  a {
     text-decoration: none;
     color:inherit;
