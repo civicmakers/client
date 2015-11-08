@@ -58,14 +58,24 @@
           <!-- todo add ui-router -->
           <h3 flex="50" class="md-display-1" style="margin: 15px; cursor: pointer;" onclick="location.href = '#'">Civic Makers</h3>
           <search flex="30" style="padding-top: 5px;"></search>
+
           <md-button ng-if="!mainCtrl.isLoggedIn" flex="20" ng-click="mainCtrl.loginToTwitter()">
             <span>Login With Twitter</span>
           </md-button>
-          <md-button ng-if="mainCtrl.isLoggedIn" flex="20" ng-click="mainCtrl.logoutFromTwitter()">
-            <span>Logout</span>
-          </md-button>
+          <md-menu ng-if="mainCtrl.isLoggedIn" md-offset="0 60" flex="20">
+            <md-button aria-label="Open profile menu" ng-click="mainCtrl.openUserProfileMenu($mdOpenMenu, $event)">
+              <img src="{{mainCtrl.userData.avatar}}" alt="User Avatar" class="header-avatar">
+              <span class="header-username">{{mainCtrl.userData.displayName}}</span>
+            </md-button>
+            <md-menu-content width="4">
+              <md-menu-item>
+                <md-button ng-click="mainCtrl.logoutFromTwitter()">
+                  Logout
+                </md-button>
+              </md-menu-item>
+            </md-menu-content>
+          </md-menu>
         </div>
-        <!-- <a href="/"><img src="assets/images/CivicMakers_logo_bgd.png" class="main-img" /></a> -->
       </md-toolbar>
     </md-content>
 

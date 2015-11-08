@@ -180,3 +180,8 @@ input[type="text"] {
 [layout-fill] {
     height:100%;
 }
+
+/************* HEADER ************************/
+.header-avatar, .header-username {
+    vertical-align: middle;
+}
