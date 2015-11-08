@@ -22,14 +22,15 @@ csv.each do | row, n |
   guid = SecureRandom.uuid
   docs[guid] = {}
   row.each do | attribute |
-     if (attribute[0].to_s == 'Tags')
-       docs[guid][attribute[0].to_s] = attribute[1].to_s.split(',').map{ | s | s.strip}
-     elsif(attribute[0].to_s == 'created_at')
-       docs[guid][attribute[0].to_s] = Time.now.getutc.to_i
-     elsif(attribute[0].to_s == 'display')
-       docs[guid][attribute[0].to_s] = true
+     key = attribute[0].to_s
+     if (key == 'Tags')
+       docs[guid][key] = attribute[1].to_s.split(',').map{ | s | s.strip}
+     elsif(key == 'created_at')
+       docs[guid][key] = Time.now.getutc.to_i
+     elsif(key == 'display')
+       docs[guid][key] = true
      else
-       docs[guid][attribute[0].to_s] = attribute[1].to_s
+       docs[guid][key] = attribute[1].to_s
      end
   end
 end
