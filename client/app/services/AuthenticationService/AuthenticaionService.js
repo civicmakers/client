@@ -6,6 +6,9 @@
 		var authObj = $firebaseAuth(ref);
 	    var isLoggedIn = authObj.$getAuth();
 	    var authData = null;
+	    if (isLoggedIn) {
+	    	authData = getRelevantData(isLoggedIn);
+	    }
 
 	    this.loginWithTwitter = function () {
 	    	if (!isLoggedIn) {
@@ -29,6 +32,7 @@
 	    	if (isLoggedIn) {
 	            authObj.$unauth();
 	            isLoggedIn = false;
+	            authData = null;
         	}
 	    };
 
