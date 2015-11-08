@@ -65,14 +65,19 @@ body, html {
     margin: 5px;
 }
 
+.indiv-title-row {
+    margin: 10px 0px 10px 0px
+}
+
 .indiv-img {
     display: inline-block;
     width: 80px;
     height: 80px;
+    margin-right:15px;
 }
 
 .indiv-title {
-    display: block;
+    display: inline-block;
 }
 
 /*.tool-topic-card {
