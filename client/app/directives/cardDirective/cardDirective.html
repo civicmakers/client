@@ -1,7 +1,8 @@
 <a ng-href="{{::data.type}}/{{::data.$id}}">
   <md-card class="card">
-    <img class="card-img" ng-src="{{::data.avatar}}">
-    <h3>{{::data.dataname}}</h3>
+    <img class="card-img" ng-if="data.avatar" ng-src="{{::data.avatar}}">
+    <img class="card-img" ng-if="data.image" ng-src="{{::data.image}}">
+    <h3>{{::data.name}}</h3>
     <p>{{::data.description}}</p>
   </md-card>
 </a>

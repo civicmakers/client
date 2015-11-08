@@ -8,10 +8,14 @@ angular.module('civicMakersClientApp')
         created_at: Date.now(),
         type: 'project',
         display: true
-        // authorId:
+        // authorIp:
         // cfApiProjId:
         // cfApiOrgId
     };
+
+    $scope.tagsEntryChanged = function () {
+        $scope.projectFormData.tags = $scope.tagsEntry.split(', ')
+    }
 
     $scope.submitProjectForm = function(newProject){
 
