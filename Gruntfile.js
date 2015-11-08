@@ -66,7 +66,8 @@ module.exports = function (grunt) {
       },
       injectCss: {
         files: [
-          '<%= yeoman.client %>/{app,components}/**/*.css'
+          '<%= yeoman.client %>/{app,components}/**/*.css',
+          '<%= yeoman.client %>/{app,components}/**/*.scss'
         ],
         tasks: ['injector:css']
       },
@@ -494,7 +495,26 @@ module.exports = function (grunt) {
         }
       }
     },
+    sass: {
+      dev: {
+        options: {
+          style: 'expanded'
+        },
+        files: {
+          '.tmp/concat/app/styles/app.css': '<%= yeoman.client %>/styles/index.scss'          
+        }
+      },
+      dist: {
+        options: {
+          style: 'expanded'
+        },
+        files: {
+          'dist/public/app/styles/app.css': '<%= yeoman.client %>/styles/index.scss'          
+        }
+      }
+    }
   });
+  grunt.loadNpmTasks('grunt-contrib-sass');
 
   // Used for delaying livereload until after server has restarted
   grunt.registerTask('wait', function () {
@@ -537,6 +557,7 @@ module.exports = function (grunt) {
       'wiredep',
       'autoprefixer',
       'express:dev',
+      'sass:dev',
       'wait',
       'open',
       'watch'
@@ -600,6 +621,7 @@ module.exports = function (grunt) {
     'ngAnnotate',
     'copy:dist',
     'cdnify',
+    'sass:dist',
     'cssmin',
     'uglify',
     'rev',

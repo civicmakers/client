@@ -182,6 +182,8 @@ input[type="text"] {
 }
 
 /************* HEADER ************************/
-.header-avatar, .header-username {
-    vertical-align: middle;
+.header-menu {
+    .header-avatar, .header-username, {
+        vertical-align: middle;
+    }   
 }

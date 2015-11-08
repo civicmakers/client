@@ -17,22 +17,9 @@
       <!-- bower:css -->
       <!-- endbower -->
     <!-- endbuild -->
-    <!-- build:css({.tmp,client}) app/app.css -->
+    <!-- build:css({.tmp,client}) app/styles/app.css -->
       <!-- injector:css -->
-      <link rel="stylesheet" href="app/app.css">
-      <link rel="stylesheet" href="app/authors/author/author.css">
-      <link rel="stylesheet" href="app/authors/authors.css">
-      <link rel="stylesheet" href="app/directives/cardDirective/cardDirective.css">
-      <link rel="stylesheet" href="app/directives/profileCard/profileCard.css">
-      <link rel="stylesheet" href="app/directives/titleDirective/titleDirective.css">
-      <link rel="stylesheet" href="app/main/main.css">
-      <link rel="stylesheet" href="app/projects/AddProject/AddProject.css">
-      <link rel="stylesheet" href="app/projects/project/project.css">
-      <link rel="stylesheet" href="app/projects/projects.css">
-      <link rel="stylesheet" href="app/tools/Tool/Tool.css">
-      <link rel="stylesheet" href="app/tools/tools.css">
-      <link rel="stylesheet" href="app/topics/Topic/Topic.css">
-      <link rel="stylesheet" href="app/topics/topics.css">
+      <link rel="stylesheet" href="concat/app/styles/app.css">
       <!-- endinjector -->
     <!-- endbuild -->
   </head>
@@ -62,7 +49,7 @@
           <md-button ng-if="!mainCtrl.isLoggedIn" flex="20" ng-click="mainCtrl.loginToTwitter()">
             <span>Login With Twitter</span>
           </md-button>
-          <md-menu ng-if="mainCtrl.isLoggedIn" md-offset="0 60" flex="20">
+          <md-menu ng-if="mainCtrl.isLoggedIn" md-offset="0 60" flex="20" class="header-menu">
             <md-button aria-label="Open profile menu" ng-click="mainCtrl.openUserProfileMenu($mdOpenMenu, $event)">
               <img src="{{mainCtrl.userData.avatar}}" alt="User Avatar" class="header-avatar">
               <span class="header-username">{{mainCtrl.userData.displayName}}</span>
