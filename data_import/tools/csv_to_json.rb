@@ -1,10 +1,14 @@
+#!/usr/bin/env ruby
 
+# ruby script to add tools from Spreadsheet (converted to CSV) at
+# https://docs.google.com/spreadsheets/d/1gxxMTOFByIkkDDQS4ea3ETW2z8XEPVA2tO15dY77nbs/edit
 
 require 'CSV'
 require 'json'
 require 'pp'
 require 'securerandom'
 
+# change to location/name of csv file
 locationOfCsvFile = "toollist2.csv"
 
 csv_data = open(locationOfCsvFile).read()
@@ -31,4 +35,3 @@ csv.each do | row, n |
 end
 output.puts(docs.to_json)
 output.close
-
