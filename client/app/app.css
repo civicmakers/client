@@ -65,6 +65,31 @@ body, html {
     margin: 5px;
 }
 
+.lil-card {
+    width: 220px;
+    height: 100px;
+    display: inline-block;
+    background-color: white !important;
+    margin: 5px;
+}
+
+.lil-card:hover {
+    box-shadow: 0px 0px 0px 2px gray
+}
+
+.lil-card img {
+    height: 50px;
+    width: 50px;
+}
+
+.selected-tools.card-container.lil-card:hover {
+    box-shadow: none !important;
+}
+
+.card-container {
+    border:2px solid gray;
+}
+
 .indiv-title-row {
     margin: 10px 0px 10px 0px
 }
