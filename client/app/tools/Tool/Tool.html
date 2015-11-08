@@ -1,6 +1,7 @@
 <div class="main-wrapper">
-  <img class="indiv-img" ng-src="{{::tool.avatar}}">
-	<h1 class="indiv-title"><a ng-href="::tool.attributes.url">{{::tool.dataname}}</a></h1>
+
+  <title-directive data="tool"></title-directive>
+
 	<p>{{::tool.description}}</p>
   <p>Created: {{ project.attributes.created_at | date:'MMMM dd, yyyy' }}</p>
   <ul>

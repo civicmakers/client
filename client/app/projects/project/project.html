@@ -2,10 +2,7 @@
 
   <div class="main-wrapper">
 
-    <div layout="row" class="indiv-title-row" flex>
-      <img class="indiv-img" src="{{ ::project.image }}">
-      <h1 class="indiv-title"><a ng-href="{{ ::project.link }}">{{ ::project.name }}</a></h1>
-    </div>
+      <title-directive data="project"></title-directive>
 
       <p>{{ ::project.description }}</p>
       <p>Created: {{ ::project.created_at | date:'MMMM dd, yyyy' }}</p>
