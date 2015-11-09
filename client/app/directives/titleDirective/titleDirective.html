@@ -5,9 +5,8 @@
 
   <a ng-href="{{::data.link}}">
     <div class="text">
-        <p>{{ upcase(data.type) }}</p>
+        <p>{{ data.type | uppercase }}</p>
         <h1>{{ ::data.name }}</h1>
     </div>
   </a>
-
 </div>
