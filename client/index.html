@@ -7,11 +7,12 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <base href="/">
-    <title>Civic Makers</title>
+    <title>CivicMakers - Talent, tools & knowledge for civic projects</title>
     <meta name="description" content="">
      <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
       <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
       <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+      <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic,400italic' rel='stylesheet' type='text/css'>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(client) app/vendor.css -->
       <!-- bower:css -->
@@ -43,8 +44,7 @@
       <md-toolbar class="main-toolbar">
         <div style="width: 960px; margin: 0 auto;" layout="row">
           <!-- todo add ui-router -->
-          <h3 flex="50" class="md-display-1" style="margin: 15px; cursor: pointer;" onclick="location.href = '#'">Civic Makers</h3>
-          <search flex="30" style="padding-top: 5px;"></search>
+          <h1 flex="80" class="md-display-1" style="margin: 15px; cursor: pointer;" onclick="location.href = '#'">CivicMakers</h1>
 
           <md-button ng-if="!mainCtrl.isLoggedIn" flex="20" ng-click="mainCtrl.loginToTwitter()">
             <span>Login With Twitter</span>

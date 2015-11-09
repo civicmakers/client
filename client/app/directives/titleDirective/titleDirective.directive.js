@@ -7,12 +7,6 @@ angular.module('civicMakersClientApp')
       restrict: 'EA',
       scope: {
         data: '='
-      },
-      link: function (scope, element, attrs) {
-        scope.data = scope.data
-        scope.upcase = function (input) {
-          return input.toUpperCase()
-        }
       }
     };
   });
