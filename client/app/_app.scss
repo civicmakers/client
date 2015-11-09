@@ -63,6 +63,10 @@ body, html {
     width: 220px;
     height: 300px;
     margin: 5px;
+
+    h2 {
+        text-align: left; 
+    }
 }
 
 .lil-card {
@@ -179,4 +183,11 @@ input[type="text"] {
 
 [layout-fill] {
     height:100%;
+}
+
+/************* HEADER ************************/
+.header-menu {
+    .header-avatar, .header-username, {
+        vertical-align: middle;
+    }   
 }

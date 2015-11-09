@@ -66,7 +66,8 @@ module.exports = function (grunt) {
       },
       injectCss: {
         files: [
-          '<%= yeoman.client %>/{app,components}/**/*.css'
+          '<%= yeoman.client %>/{app,components}/**/*.css',
+          '<%= yeoman.client %>/{app,components}/**/*.scss'
         ],
         tasks: ['injector:css']
       },
@@ -87,12 +88,14 @@ module.exports = function (grunt) {
       livereload: {
         files: [
           '{.tmp,<%= yeoman.client %>}/{app,components}/**/*.css',
+          '{.tmp,<%= yeoman.client %>}/{app,components}/**/*.scss',
           '{.tmp,<%= yeoman.client %>}/{app,components}/**/*.html',
           '{.tmp,<%= yeoman.client %>}/{app,components}/**/*.js',
           '!{.tmp,<%= yeoman.client %>}{app,components}/**/*.spec.js',
           '!{.tmp,<%= yeoman.client %>}/{app,components}/**/*.mock.js',
           '<%= yeoman.client %>/assets/images/{,*//*}*.{png,jpg,jpeg,gif,webp,svg}'
         ],
+        tasks: ['sass:dev'],
         options: {
           livereload: true
         }
@@ -245,7 +248,7 @@ module.exports = function (grunt) {
     // Performs rewrites based on rev and the useminPrepare configuration
     usemin: {
       html: ['<%= yeoman.dist %>/public/{,*/}*.html'],
-      css: ['<%= yeoman.dist %>/public/{,*/}*.css'],
+      css: ['<%= yeoman.dist %>/public/{,*/,*/*/}*.css'],
       js: ['<%= yeoman.dist %>/public/{,*/}*.js'],
       options: {
         assetsDirs: [
@@ -344,7 +347,7 @@ module.exports = function (grunt) {
             '*.{ico,png,txt}',
             '.htaccess',
             'bower_components/**/*',
-            'assets/images/{,*/}*.{webp}',
+            'assets/images/{,*/}*.{webp,jpg,png}',
             'assets/fonts/**/*',
             'index.html'
           ]
@@ -494,7 +497,33 @@ module.exports = function (grunt) {
         }
       }
     },
+    sass: {
+      dev: {
+        options: {
+          style: 'expanded'
+        },
+        files: {
+          '.tmp/concat/app/styles/app.css': '<%= yeoman.client %>/styles/index.scss'
+        }
+      },
+      dist: {
+        options: {
+          style: 'expanded'
+        },
+        files: {
+          'dist/public/app/styles/app.css': '<%= yeoman.client %>/styles/index.scss'
+        }
+      }
+    },
+    cssmin: {
+      dist: {
+        src: '<%= yeoman.dist %>/public/app/styles/app.css',
+        dest: '<%= yeoman.dist %>/public/app/styles/app.min.css'
+      }
+    }
   });
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-contrib-sass');
 
   // Used for delaying livereload until after server has restarted
   grunt.registerTask('wait', function () {
@@ -537,6 +566,7 @@ module.exports = function (grunt) {
       'wiredep',
       'autoprefixer',
       'express:dev',
+      'sass:dev',
       'wait',
       'open',
       'watch'
@@ -600,7 +630,8 @@ module.exports = function (grunt) {
     'ngAnnotate',
     'copy:dist',
     'cdnify',
-    'cssmin',
+    'sass:dist',
+    'cssmin:dist',
     'uglify',
     'rev',
     'usemin'
@@ -613,4 +644,3 @@ module.exports = function (grunt) {
   ]);
 
 };
-

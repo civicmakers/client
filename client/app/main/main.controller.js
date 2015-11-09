@@ -4,6 +4,7 @@ angular.module('civicMakersClientApp')
   .controller('MainCtrl', function ($scope, $http, ProjectApi, AuthorApi, ToolApi, TopicApi, AuthenticationService) {
     var vm = this;
     this.isLoggedIn = AuthenticationService.isLoggedIn();
+    this.userData = AuthenticationService.getAuthData();
 
     ProjectApi.getFirstNProjects(4).then(function(projects){
         $scope.projects = projects;
@@ -36,10 +37,7 @@ angular.module('civicMakersClientApp')
     this.loginToTwitter = function () {
         if (!AuthenticationService.isLoggedIn()) {
             AuthenticationService.loginWithTwitter().then(function () {
-                vm.isLoggedIn = AuthenticationService.isLoggedIn();
-                AuthorApi.getFirstNAuthors(4).then(function(authors) {
-                    $scope.authors = authors;
-                });
+                syncLoginData();
             });
         }
     };
@@ -47,7 +45,16 @@ angular.module('civicMakersClientApp')
     this.logoutFromTwitter = function () {
         if (AuthenticationService.isLoggedIn()) {
             AuthenticationService.logoutFromTwitter();
-            vm.isLoggedIn = AuthenticationService.isLoggedIn();
+            syncLoginData();
         }
+    };
+
+    this.openUserProfileMenu = function($mdOpenMenu, event) {
+      $mdOpenMenu(event);
+    };
+
+    var syncLoginData = function() {
+        vm.isLoggedIn = AuthenticationService.isLoggedIn();
+        vm.userData = AuthenticationService.getAuthData();
     };
   });
