@@ -1,10 +1,11 @@
+/* global alert */
 'use strict';
 
 angular.module('civicMakersClientApp')
   .controller('AddToolCtrl', function ($scope, $routeParams, ToolApi, $location) {
 
     $scope.toolFormData = {
-        created_at: Date.now(),
+        createdAt: Date.now(),
         type: 'tool',
         display: true
         // authorIp:
@@ -13,7 +14,7 @@ angular.module('civicMakersClientApp')
     };
 
     $scope.tagsEntryChanged = function () {
-        $scope.toolFormData.tags = $scope.tagsEntry.split(', ')
+        $scope.toolFormData.tags = $scope.tagsEntry.split(', ');
     };
 
     $scope.submitToolForm = function(newTool){
@@ -22,12 +23,12 @@ angular.module('civicMakersClientApp')
         console.log(newTool);
         ToolApi.saveTool(newTool).then(function(result){
           console.log('Did it work?:', result);
-          $location.path('/')
-        })
+          $location.path('/');
+        });
       }
       else {
         alert('The form is not valid');
-      };
+      }
 
     };
 

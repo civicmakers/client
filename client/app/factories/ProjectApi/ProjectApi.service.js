@@ -5,36 +5,36 @@ angular.module('civicMakersClientApp')
 
     function getAllProjects() {
       var deferred = $q.defer();
-      var ref = new Firebase(firebase.baseUrl + '/projects')
-      var projects = $firebaseArray(ref)
+      var ref = firebase.getRefTo('projects');
+      var projects = $firebaseArray(ref);
       projects.$loaded().then(function (results) {
-        console.log('projects',results)
-        deferred.resolve(results)
-      })
+        console.log('projects',results);
+        deferred.resolve(results);
+      });
       return deferred.promise;
-    };
+    }
 
     function getFirstNProjects(n) {
       var deferred = $q.defer();
       getAllProjects().then(function(projects) {
         deferred.resolve(projects.slice(0, n));
-      })
+      });
       return deferred.promise;
-    };
+    }
 
     function getProjectsNum() {
       var deferred = $q.defer();
       getAllProjects().then(function(projects) {
         deferred.resolve(projects.length);
-      })
+      });
       return deferred.promise;
-    };
+    }
 
     function queryProject(id) {
       var deferred = $q.defer();
-      var ref = new Firebase(firebase.baseUrl + '/projects/' + id);
+      var ref = firebase.getRefTo('projects/' + id);
       ref.once('value', function(snapshot) {
-          console.log(snapshot.val())
+          console.log(snapshot.val());
           deferred.resolve(snapshot.val());
         });
       return deferred.promise;
@@ -46,11 +46,11 @@ angular.module('civicMakersClientApp')
         .child('projects')
         .push(projectData, function (error){
         if (error) {
-          deferred.resolve(error)
+          deferred.resolve(error);
         } else {
-          deferred.resolve('Saved')
+          deferred.resolve('Saved');
         }
-      })
+      });
       return deferred.promise;
     }
 
@@ -61,5 +61,4 @@ angular.module('civicMakersClientApp')
       getProjectsNum: getProjectsNum,
       saveProject: saveProject
     };
-
 });

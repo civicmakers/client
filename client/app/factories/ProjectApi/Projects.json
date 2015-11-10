@@ -12,7 +12,7 @@
                             "url": "http://smashingtops.com/wp-content/uploads/2012/04/Home-Theater-Projectors.jpg"
                           }
                         ],
-                        "created_at": "1997-07-16T19:20+01:00"
+                        "createdAt": "1997-07-16T19:20+01:00"
                       },
                       "relationships": {
                         "project_components": {
@@ -45,7 +45,7 @@
                       "url": "http://smashingtops.com/wp-content/uploads/2012/04/Home-Theater-Projectors.jpg"
                     }
                   ],
-                  "created_at": "1997-07-16T19:20+01:00"
+                  "createdAt": "1997-07-16T19:20+01:00"
                 },
                 "relationships": {
                   "project_components": {
@@ -78,7 +78,7 @@
                       "url": "http://smashingtops.com/wp-content/uploads/2012/04/Home-Theater-Projectors.jpg"
                     }
                   ],
-                  "created_at": "1997-07-16T19:20+01:00"
+                  "createdAt": "1997-07-16T19:20+01:00"
                 },
                 "relationships": {
                   "project_components": {
@@ -111,7 +111,7 @@
                       "url": "http://smashingtops.com/wp-content/uploads/2012/04/Home-Theater-Projectors.jpg"
                     }
                   ],
-                  "created_at": "1997-07-16T19:20+01:00"
+                  "createdAt": "1997-07-16T19:20+01:00"
                 },
                 "relationships": {
                   "project_components": {
@@ -144,7 +144,7 @@
                       "url": "http://smashingtops.com/wp-content/uploads/2012/04/Home-Theater-Projectors.jpg"
                     }
                   ],
-                  "created_at": "1997-07-16T19:20+01:00"
+                  "createdAt": "1997-07-16T19:20+01:00"
                 },
                 "relationships": {
                   "project_components": {
@@ -177,7 +177,7 @@
                       "url": "http://smashingtops.com/wp-content/uploads/2012/04/Home-Theater-Projectors.jpg"
                     }
                   ],
-                  "created_at": "1997-07-16T19:20+01:00"
+                  "createdAt": "1997-07-16T19:20+01:00"
                 },
                 "relationships": {
                   "project_components": {

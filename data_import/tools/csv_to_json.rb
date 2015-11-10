@@ -32,7 +32,7 @@ CSV.foreach(locationOfCsvFile, :headers => :headers) do | row |
        docs[guid][key] = attribute[1].to_s
      end
   end
-  docs[guid]['created_at'] = Time.now.getutc.to_i
+  docs[guid]['createdAt'] = (Time.now.getutc * 1000).to_i
   docs[guid]['type'] = 'tool'
 end
 output.puts(docs.to_json)

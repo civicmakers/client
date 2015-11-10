@@ -1,3 +1,4 @@
+/* global Firebase */
 'use strict';
 
 (function () {
@@ -6,6 +7,11 @@
 
     function getRef (){
       var ref = new Firebase(baseUrl);
+      return ref;
+    }
+
+    function getRefTo (url) {
+      var ref = new Firebase(baseUrl + '/' + url);
       return ref;
     }
 
@@ -30,6 +36,7 @@
 
     return {
       getRef: getRef,
+      getRefTo: getRefTo,
       baseUrl: baseUrl,
       createIfDoesntExist: createIfDoesntExist
     };

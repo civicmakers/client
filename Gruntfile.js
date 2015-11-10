@@ -95,7 +95,7 @@ module.exports = function (grunt) {
           '!{.tmp,<%= yeoman.client %>}/{app,components}/**/*.mock.js',
           '<%= yeoman.client %>/assets/images/{,*//*}*.{png,jpg,jpeg,gif,webp,svg}'
         ],
-        tasks: ['sass:dev'],
+        tasks: ['sass:dev', 'newer:jshint:all'],
         options: {
           livereload: true
         }
@@ -160,7 +160,8 @@ module.exports = function (grunt) {
           ]
         }]
       },
-      server: '.tmp'
+      server: '.tmp',
+      dev: '.tmp'
     },
 
     // Add vendor prefixed styles
@@ -548,7 +549,7 @@ module.exports = function (grunt) {
 
     if (target === 'debug') {
       return grunt.task.run([
-        'clean:server',
+        'clean:dev',
         'env:all',
         'concurrent:server',
         'injector',
@@ -559,7 +560,8 @@ module.exports = function (grunt) {
     }
 
     grunt.task.run([
-      'clean:server',
+      'clean:dev',
+      'newer:jshint:all',
       'env:all',
       'concurrent:server',
       'injector',
@@ -589,7 +591,7 @@ module.exports = function (grunt) {
 
     else if (target === 'client') {
       return grunt.task.run([
-        'clean:server',
+        'clean:dev',
         'env:all',
         'concurrent:test',
         'injector',
@@ -620,6 +622,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
+    'newer:jshint:all',
     'concurrent:dist',
     'injector',
     'wiredep',
@@ -638,7 +641,7 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('default', [
-    'newer:jshint',
+    'newer:jshint:all',
     'test',
     'build'
   ]);

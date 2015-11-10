@@ -7,7 +7,7 @@ angular.module('civicMakersClientApp')
     //     'firebaseBaseUrl': 'civicmakers.firebaseIO.com'
     // }
 
-    var firebaseBaseUrl = 'civicmakers.firebaseIO.com'
+    var firebaseBaseUrl = 'civicmakers.firebaseIO.com';
 
     return {
       firebaseBaseUrl: firebaseBaseUrl

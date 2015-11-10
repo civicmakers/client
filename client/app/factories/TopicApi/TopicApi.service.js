@@ -11,23 +11,23 @@ angular.module('civicMakersClientApp')
           deferred.resolve(snapshot.val());
         });
       return deferred.promise;
-    };
+    }
 
     function getFirstNTopics(n) {
       var deferred = $q.defer();
       getAllTopics().then(function(topics) {
         deferred.resolve(topics.slice(0, n));
-      })
+      });
       return deferred.promise;
-    };
+    }
 
     function getTopicsNum() {
       var deferred = $q.defer();
       getAllTopics().then(function(topics) {
         deferred.resolve(topics.length);
-      })
+      });
       return deferred.promise;
-    };
+    }
 
     function queryTopic(id) {
       var deferred = $q.defer();
@@ -36,8 +36,8 @@ angular.module('civicMakersClientApp')
           if (topic.data[0].id === id) {
             deferred.resolve(topic);
           }
-        })
-      })
+        });
+      });
       return deferred.promise;
     }
 

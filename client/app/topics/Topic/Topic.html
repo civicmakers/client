@@ -2,7 +2,7 @@
 	<h1><a ng-href="topic.attributes.url">{{topic.attributes.name}}</a></h1>
 	<p>{{topic.attributes.description}}</p>
 	<!-- {{topic}} -->
-  <p>Created: {{ topic.attributes.created_at | date:'MMMM dd, yyyy' }}</p>
+  <p>Created: {{ topic.attributes.createdAt | date:'MMMM dd, yyyy' }}</p>
   <ul>
     <li><a ng-href="{{topic.attributes.social_links.facebook}}">Facebook</a></li>
     <li><a ng-href="{{topic.attributes.social_links.twitter}}">Twitter</a></li>
