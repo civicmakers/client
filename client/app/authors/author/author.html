@@ -3,7 +3,7 @@
   <title-directive data="author"></title-directive>
 
 	<p>{{author.attributes.description}}</p>
-  <p>Created: {{ author.attributes.created_at | date:'MMMM dd, yyyy' }}</p>
+  <p>Created: {{ author.attributes.createdAt | date:'MMMM dd, yyyy' }}</p>
   <ul>
     <li><a ng-href="{{author.attributes.social_links.facebook}}">Facebook</a></li>
     <li><a ng-href="{{author.attributes.social_links.twitter}}">Twitter</a></li>

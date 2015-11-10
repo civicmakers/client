@@ -10,5 +10,5 @@ angular.module('civicMakersClientApp')
       },
       // link: function (scope) {};
       controller: 'SearchController'
-    }
+    };
   });

@@ -7,7 +7,7 @@
                       "attributes": {
                         "name": "Bob!",
                         "description": "My name is Bob!",
-                        "created_at": "1997-07-16T19:20+01:00",
+                        "createdAt": "1997-07-16T19:20+01:00",
                         "avatars": [
                           {
                             "url": "http://robohash.org/sitsequiquia.png?size=300x300"
@@ -48,7 +48,7 @@
                 "attributes": {
                   "name": "Bob!",
                   "description": "My name is Bob!",
-                  "created_at": "1997-07-16T19:20+01:00",
+                  "createdAt": "1997-07-16T19:20+01:00",
                   "avatars": [
                     {
                       "url": "http://robohash.org/sitsequiquia.png?size=300x300"
@@ -89,7 +89,7 @@
                 "attributes": {
                   "name": "Bob!",
                   "description": "My name is Bob!",
-                  "created_at": "1997-07-16T19:20+01:00",
+                  "createdAt": "1997-07-16T19:20+01:00",
                   "avatars": [
                     {
                       "url": "http://robohash.org/sitsequiquia.png?size=300x300"
@@ -130,7 +130,7 @@
                 "attributes": {
                   "name": "Bob!",
                   "description": "My name is Bob!",
-                  "created_at": "1997-07-16T19:20+01:00",
+                  "createdAt": "1997-07-16T19:20+01:00",
                   "avatars": [
                     {
                       "url": "http://robohash.org/sitsequiquia.png?size=300x300"
@@ -171,7 +171,7 @@
                 "attributes": {
                   "name": "Bob!",
                   "description": "My name is Bob!",
-                  "created_at": "1997-07-16T19:20+01:00",
+                  "createdAt": "1997-07-16T19:20+01:00",
                   "avatars": [
                     {
                       "url": "http://robohash.org/sitsequiquia.png?size=300x300"

@@ -8,8 +8,8 @@ angular.module('civicMakersClientApp')
       scope: {
         data: '='
       },
-      link: function (scope, element, attrs) {
-        scope.data = scope.data
+      link: function (scope) {
+        scope.data = scope.data;
       }
 
       };

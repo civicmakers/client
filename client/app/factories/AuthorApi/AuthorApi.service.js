@@ -5,30 +5,30 @@ angular.module('civicMakersClientApp')
 
     function getAllAuthors() {
       var deferred = $q.defer();
-      var ref = new Firebase(firebase.baseUrl + '/profiles')
-      var tools = $firebaseArray(ref)
+      var ref = firebase.getRefTo('profiles');
+      var tools = $firebaseArray(ref);
       tools.$loaded().then(function (results) {
-        console.log('profiles',results)
-        deferred.resolve(results)
-      })
+        console.log('profiles',results);
+        deferred.resolve(results);
+      });
       return deferred.promise;
-    };
+    }
 
     function getFirstNAuthors(n) {
       var deferred = $q.defer();
       getAllAuthors().then(function(authors) {
         deferred.resolve(authors.slice(0, n));
-      })
+      });
       return deferred.promise;
-    };
+    }
 
     function getAuthorsNum() {
       var deferred = $q.defer();
       getAllAuthors().then(function(authors) {
         deferred.resolve(authors.length);
-      })
+      });
       return deferred.promise;
-    };
+    }
 
     function queryAuthor(id) {
       var deferred = $q.defer();
@@ -37,8 +37,8 @@ angular.module('civicMakersClientApp')
           if (author.data[0].id === id) {
             deferred.resolve(author);
           }
-        })
-      })
+        });
+      });
       return deferred.promise;
     }
 
