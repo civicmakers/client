@@ -48,20 +48,30 @@ body, html {
 .main-wrapper {
     width: 960px;
     margin:0 auto;
+    padding: 48px 24px 24px 24px;
 }
-
+/*
 .main-toolbar {
     background-color: #3875DF !important;
-}
+} 
 
 .main-img {
     width: 25%;
     margin: 10px;
-}
+} */
 
 .horizontal-repeat {
     display: block;
     text-align: center;
+} 
+
+.sidebar-col {}
+
+.main-content-col {
+    display: inline-block;
+    background-color: white !important;
+    margin: 0 0 0 24px;
+    width: 625px;
 }
 
 .card {
@@ -69,13 +79,28 @@ body, html {
     background-color: white !important;
     width: 220px;
     height: 300px;
-    margin: 5px;
 
     h2 {
         text-align: left; 
     }
 }
 
+.list-card-row {}
+
+.list-card {
+
+    :hover {
+        box-shadow: 0px 0px 0px 2px gray;
+    }
+}
+
+.sidebar-card {}
+
+.content-card {
+    padding: 24px;
+}
+
+/*
 .lil-card {
     width: 220px;
     height: 100px;
@@ -96,10 +121,12 @@ body, html {
 .selected-tools.card-container.lil-card:hover {
     box-shadow: none !important;
 }
+*/
 
 .card-container {
     border:2px solid gray;
 }
+
 
 .indiv-title-row {
     margin: 10px 0px 10px 0px
@@ -128,9 +155,6 @@ body, html {
     box-shadow: 0px 0px 0px 2px gray
 }*/
 
-.card:hover {
-    box-shadow: 0px 0px 0px 2px gray
-}
 
 .card-repeat {
     text-align: center;

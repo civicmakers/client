@@ -22,7 +22,7 @@
   font-weight: 300;
   opacity: .5;
 }
-/*end in gerneal styles*/
+/*end in general styles*/
 
 
 .profile-card{
@@ -30,11 +30,16 @@
   overflow: none;
   min-height: 430px;
   padding-left: 10px;
+
+  :hover {
+    box-shadow: 0px 0px 0px 0px;
+  }
 }
+
 .profile-card .heading{
   padding: 10px;
   padding-bottom: 0px;
-  text-align: center;
+  text-align: left;
   position: relative;
   height: 60px;
 }
@@ -109,3 +114,4 @@
   font-weight: 700;
   padding-bottom: 20px;
 }
+
