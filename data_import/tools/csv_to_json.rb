@@ -9,9 +9,9 @@ require 'pp'
 require 'securerandom'
 
 # change to location/name of csv file
-locationOfCsvFile = "toollist6.csv"
+locationOfCsvFile = "toollist7.csv"
 
-output = File.open( "toollist6.json", "w")
+output = File.open( "toollist7.json", "w")
 
 docs = {}
 row_num = 1;
@@ -32,7 +32,7 @@ CSV.foreach(locationOfCsvFile, :headers => :headers) do | row |
        docs[guid][key] = attribute[1].to_s
      end
   end
-  docs[guid]['createdAt'] = (Time.now.getutc * 1000).to_i
+  docs[guid]['createdAt'] = (Time.now.getutc.to_i * 1000).to_i
   docs[guid]['type'] = 'tool'
 end
 output.puts(docs.to_json)
