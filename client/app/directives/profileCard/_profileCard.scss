@@ -16,7 +16,7 @@
 }
 
 .title{
-  font-weight: 700;  
+  font-weight: 700;
 }
 .subtitle{
   font-weight: 300;
@@ -26,9 +26,9 @@
 
 
 .profile-card{
-  width: 280px; 
+  width: 280px;
   overflow: none;
-  min-height: 430px;
+  height: auto;
   padding-left: 10px;
 
   :hover {
@@ -92,7 +92,9 @@
 }
 
 .tag{
+  display: inline-block;
   padding: 10px;
+  margin: 4px;
   color: white;
   font-weight: 200;
 }
