@@ -1,11 +1,10 @@
 <div class="title-directive" layout="row">
 
   <img ng-if="data.avatar" ng-src="{{::data.avatar}}">
-  <img ng-if="data.image" ng-src="{{::data.image}}">
-
+ 
   <a ng-href="{{::data.link}}">
     <div class="text">
-        <p>{{ data.type | uppercase }}</p>
+        <span>{{ data.type | uppercase }}</span>
         <h1>{{ ::data.name }}</h1>
     </div>
   </a>

@@ -1,10 +1,16 @@
 <div class="main-wrapper">
-  <title-directive data="tool"></title-directive>
-	<p>{{::tool.description}}</p>
-	<p>Created: {{::tool.createdAt | date:'MMMM dd, yyyy' }}</p>
-	<ul>
-		<li><a ng-href="{{::tool.facebook}}">Facebook</a></li>
-		<li><a ng-href="{{::tool.twitter}}">Twitter</a></li>
-	</ul>
-	<profile-card style="position: absolute; right: 200px; top: 100px;"></profile-card>
+  	<title-directive data="tool"></title-directive>
+	
+	<div style="clear:both;"></div>
+
+	<div class="sidebar-col" style="float:left;">
+		<profile-card></profile-card>
+	</div>
+	<div class="main-content-col">
+		<div class="content-card">
+			<p>{{::tool.description}}</p>
+			<img ng-if="data.image" ng-src="{{::data.image}}">
+		</div>
+	</div>
+
 </div>
