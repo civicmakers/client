@@ -29,7 +29,7 @@
   width: 280px;
   overflow: none;
   height: auto;
-  padding-left: 10px;
+  padding: 15px;
 
   :hover {
     box-shadow: 0px 0px 0px 0px;
@@ -37,8 +37,6 @@
 }
 
 .profile-card .heading{
-  padding: 10px;
-  padding-bottom: 0px;
   text-align: left;
   position: relative;
   height: 60px;
@@ -51,14 +49,10 @@
 
 .profile-card .title-section{
   padding-top: 7px;
-  padding-left: 10px;
   float: left;
   text-align: left;
 }
 
-.profile-card .social-links tr:first-child{
-  padding-left: 5px;
-}
 .profile-card .social-links a{
   display: block;
   width: 230px;
@@ -72,7 +66,6 @@
 .profile-card .social-links{
   float: left;
   width: 90%;
-  padding-left: 10px;
 }
 
 .synopsis-table{
@@ -84,7 +77,7 @@
   height: 30px;
 }
 
-.synopsis-table td:first-child{
+.synopsis-table .synopsis-table-title{
   text-transform: uppercase;
   color: #505050; /*Be Nice to have this in a varible*/
   font-weight: 700;
@@ -116,4 +109,3 @@
   font-weight: 700;
   padding-bottom: 20px;
 }
-
