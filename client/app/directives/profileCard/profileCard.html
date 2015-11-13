@@ -1,12 +1,12 @@
-<div ng-controller="ToolCtrl as tool">
+
   <div class="card profile-card">
     <div class="heading">
       <span class="profile-image">
-        <img ng-src="{{ tool.image }}" alt="">
+        <img ng-src="{{ profileCardCtrl.data.image }}" alt="">
       </span>
       <span class="title-section">
         <div class="subtitle">Created By</div>
-        <div class="title">{{ tool.name }}</div>
+        <div class="title">{{ profileCardCtrl.data.name }}</div>
       </span>
     </div>
 
@@ -19,18 +19,7 @@
           </span>
         </td>
         <td>
-          <a href="{{ tool.link }}" target="_blank">{{ tool.link }}</a>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <span class="fa-stack">
-            <i class="fa fa-circle fa-stack-2x" style="color: #3b5998;"></i>
-            <i class="fa fa-facebook fa-stack-1x" style="color: white;"></i>
-          </span>
-        </td>
-        <td>
-          <a href="https://www.facebook.com/daniel.rasmuson" target="_blank">https://www.facebook.com/daniel.rasmuson</a>
+          <a href="{{ profileCardCtrl.data.link }}" target="_blank">{{ profileCardCtrl.data.link }}</a>
         </td>
       </tr>
       <tr>
@@ -41,23 +30,23 @@
           </span>
         </td>
         <td>
-          <a href="{{ tool.twitter }}" target="_blank">{{ tool.twitter }}</a>
+          <a href="{{ profileCardCtrl.data.twitter }}" target="_blank">{{ profileCardCtrl.data.twitter }}</a>
         </td>
       </tr>
     </table>
 
     <table class="synopsis-table">
       <tr>
-        <td>pricing</td>
-        <td>{{ tool.pricing }}</td>
+        <td class="synopsis-table-title title">pricing</td>
+        <td>{{ profileCardCtrl.data.pricing }}</td>
       </tr>
       <tr>
-        <td>origin</td>
+        <td class="synopsis-table-title title">origin</td>
         <td>United States</td>
       </tr>
       <tr>
-        <td>created</td>
-        <td >{{ tool.createdAt | date }}</td>
+        <td class="synopsis-table-title title">created</td>
+        <td >{{ profileCardCtrl.data.createdAt | date }}</td>
       </tr>
     </table>
 
@@ -66,7 +55,9 @@
         TAGGED
       </div>
         <div>
-          <span ng-repeat="tag in tool.Tags" ng-class="tool.Tags.indexOf(tag) % 2 === 0 ? 'tag bg-orange' : 'tag bg-blue'">{{ tag }}</span>
+          <span ng-repeat="tag in profileCardCtrl.data.Tags" class="tag" 
+                ng-class="profileCardCtrl.tagBGColor[$index % 3]">{{ tag }}
+          </span>
         </div>
     </div>
-  </div>
+  
