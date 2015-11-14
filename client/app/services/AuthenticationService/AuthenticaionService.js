@@ -4,8 +4,8 @@
 	function AuthenticationService(firebase, $firebaseAuth, $q, UserApi) {
 		var ref = firebase.getRef();
 		var authObj = $firebaseAuth(ref);
-	    var isLoggedIn = authObj.$getAuth();
 	    var authData = null;
+	    var isLoggedIn = authObj.$getAuth();
 	    if (isLoggedIn) {
 	    	authData = getRelevantData(isLoggedIn);
 	    }
@@ -16,8 +16,7 @@
 	            	.then(function(data) {
 		                isLoggedIn = true;
 		                authData = getRelevantData(data);
-		                UserApi.saveUserPublicData(authData.userId, authData.authProvider, authData);
-		                console.log('Authenticated successfully with payload:', authData);
+		                UserApi.saveUserPublicData(authData.uid, authData);
 		            })
 		            .catch(function(error) {
 		            	console.error('Authentication failed:', error);
@@ -26,6 +25,17 @@
 	        	var differed = $q.defer().resolve();
 	        	return differed.promise;
 	        }
+	    };
+
+	    this.checkIfAlreadyRegistered = function () {
+	    	return UserApi.checkIfEmailExists(authData.uid);
+	    };
+
+	    this.saveUserAdditionalData = function(data) {
+	    	var publicData = data.public;
+	    	UserApi.updateUserPublicData(authData.uid, publicData);
+	    	var privateData = data.private;
+	    	UserApi.updateUserPrivateData(authData.uid, privateData);
 	    };
 
 	    this.logoutFromTwitter = function () {
@@ -46,6 +56,7 @@
 
 	    function getRelevantData (authData) {
 	    	return {
+	    		uid: authData.uid,
 	    		authProvider: authData.provider,
 	    		userId: authData.twitter.id,
 	    		displayName: authData.twitter.displayName,
