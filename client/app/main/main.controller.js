@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('civicMakersClientApp')
-  .controller('MainCtrl', function ($scope, $http, ProjectApi, AuthorApi, ToolApi, TopicApi, AuthenticationService) {
+  .controller('MainCtrl', function ($scope, $http, ProjectApi, AuthorApi, ToolApi, TopicApi, AuthenticationService, DialogService) {
     var vm = this;
     this.isLoggedIn = AuthenticationService.isLoggedIn();
     this.userData = AuthenticationService.getAuthData();
@@ -38,6 +38,16 @@ angular.module('civicMakersClientApp')
         if (!AuthenticationService.isLoggedIn()) {
             AuthenticationService.loginWithTwitter().then(function () {
                 syncLoginData();
+                AuthenticationService.checkIfAlreadyRegistered()
+                    .then(function(isEmailExist) {
+                        // no email in the db, we need to request the additional info
+                        if (!isEmailExist) {
+                            DialogService.showDialog('loginModalCtrl', 'app/loginModal/loginModal.html')
+                                .then(function(loginInfo) {
+                                    AuthenticationService.saveUserAdditionalData(loginInfo);
+                                });
+                        }
+                    });
             });
         }
     };
