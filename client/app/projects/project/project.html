@@ -16,7 +16,7 @@
         </div>
 
         <!-- <div class="content-card"> -->
-            <div>
+            <div ng-if="projectTools.length > 0">
                 <h3>{{projectTools.length}} Tool{{projectTools.length > 1 ? 's' : ''}} Used</h3>
             </div>
             <div class="big-card" ng-repeat="tool in projectTools">
