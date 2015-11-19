@@ -67,6 +67,33 @@ body, html {
 
 .sidebar-col {}
 
+.main-header {
+    padding: 0;
+    margin:0;
+    height: 472px;
+    width: 100%;
+    background-size: 100% auto;
+    background-image: url('/assets/images/CityCampSF2015_unconference.jpg');
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    display:inline-block;
+    position: relative;
+
+    .header-text {
+        color: white;
+        font-weight: bold;
+        margin: 0px auto;
+        width: 960px;
+        float: 0;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        text-align: right;
+        margin: 15px;
+        font-size: 3em;
+    }
+}
+
 .main-content-col {
     display: inline-block;
     background-color: white !important;
@@ -100,28 +127,37 @@ body, html {
     padding: 24px;
 }
 
-/*
 .lil-card {
     width: 220px;
-    height: 100px;
+    height: 50px;
     display: inline-block;
     background-color: white !important;
     margin: 5px;
-}
+    overflow: hidden;
 
-.lil-card:hover {
-    box-shadow: 0px 0px 0px 2px gray
-}
+    p {
+        display: inline-block;
+        margin: 0;
+        vertical-align: top;
+        line-height: 50px;
+        width: 165px;
+        height: 50px;
+        text-overflow: ellipsis;
+    }
 
-.lil-card img {
-    height: 50px;
-    width: 50px;
+    img {
+        height: 50px;
+        width: 50px;
+    }
+
+    &:hover {
+        box-shadow: 0px 0px 0px 2px gray
+    }
 }
 
 .selected-tools.card-container.lil-card:hover {
     box-shadow: none !important;
 }
-*/
 
 .card-container {
     border:2px solid gray;
