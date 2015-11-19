@@ -1,61 +1,64 @@
-<div class="main-wrapper">
-  <h1>Create New Tool</h1>
+<div class="main-wrapper add-tool">
+  <p>
+    Share a tool with the civic tech community! It could be a product, a Github repo, or a best practive. If there's a tool you've build or you use for civic projects, your ppers want to know about it.
+  </p>
+
   <form name="toolForm">
+    <label>Tool Name</label>
     <md-input-container>
-      <label>Tool Name</label>
       <input type="text" ng-model="toolFormData.name" required md-maxlength="100">
     </md-input-container>
 
+    <label style="padding-bottom: 20px;">Description</label>
     <md-input-container>
-      <label>Description</label>
-      <textarea ng-model="toolFormData.description" required md-maxlength="300"></textarea>
+      <textarea ng-model="toolFormData.description" required md-maxlength="300" placeholder="Enter a brief description of your tool"></textarea>
     </md-input-container>
 
+    <label>Primary Audiences</label>
     <md-input-container>
-      <label>Primary Audiences</label>
       <input type="text" ng-model="toolFormData.audience" md-maxlength="100">
     </md-input-container>
 
+    <label>Cost</label>
     <md-input-container>
-      <label>Cost</label>
-      <md-select ng-model="toolFormData.pricing">
+      <md-select ng-model="toolFormData.pricing" placeholder="Free">
         <md-option value="Free">Free</md-option>
         <md-option value="Paid">Paid</md-option>
         <md-option value="Fremium">Fremium</md-option>
       </md-select>
     </md-input-container>
 
+    <label>License</label>
     <md-input-container>
-      <label>License</label>
       <md-select ng-model="toolFormData.license" required placeholder="Open">
         <md-option value="Open">Open</md-option>
         <md-option value="Closed">Closed</md-option>
       </md-select>
     </md-input-container>
 
+    <label style="padding-bottom: 20px;">Avatar URL</label>
     <md-input-container>
-      <label>Avatar URL</label>
-      <input type="text" ng-model="toolFormData.avatar">
+      <input type="text" ng-model="toolFormData.avatar" placeholder="If you have a logo, add a URL where we can download it.">
     </md-input-container>
 
+    <label>Image URL</label>
     <md-input-container>
-      <label>Image URL</label>
       <input type="text" ng-model="toolFormData.video" md-maxlength="100">
     </md-input-container>
 
+    <label>Website URL</label>
     <md-input-container>
-      <label>Website URL</label>
       <input type="text" ng-model="toolFormData.link" md-maxlength="100" required>
     </md-input-container>
 
+    <label>Twitter URL</label>
     <md-input-container>
-      <label>Twitter URL</label>
       <input type="text" ng-model="toolFormData.twitter" md-maxlength="100">
     </md-input-container>
 
+    <label style="padding-bottom: 25px;">Tags</label>
     <md-input-container>
-      <label>Tags</label>
-      <input type="text" ng-model="tagsEntry" ng-change="tagsEntryChanged()" md-maxlength="300">
+      <input type="text" ng-model="tagsEntry" ng-change="tagsEntryChanged()" md-maxlength="300" placeholder="Separate your tags with commas (participatory budgeting, collective dedcision-making, CRM, etc)">
     </md-input-container>
 
   </form>
