@@ -1,0 +1,31 @@
+.add-tool{
+
+  md-input-container{
+    background-color: white;
+    color: black;
+    padding: 10px;
+    margin-bottom: 15px;
+
+    label{
+      color: #96989a;
+      font-size: 12px;
+    }
+  }
+
+  md-select{
+    width: 100%;
+    padding: 5px;
+  }
+
+  p{
+    color: #3d464d;
+  }
+
+  label{
+    font-weight: bold;
+    display: block;
+    padding-bottom: 5px;
+    color: #3d464d;
+  }
+
+}
