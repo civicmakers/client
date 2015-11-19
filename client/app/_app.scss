@@ -96,7 +96,7 @@ body, html {
 
 .main-content-col {
     display: inline-block;
-    background-color: white !important;
+    // background-color: white !important;
     margin: 0 0 0 24px;
     width: 625px;
 }
@@ -108,7 +108,7 @@ body, html {
     height: 300px;
 
     h2 {
-        text-align: left; 
+        text-align: left;
     }
 }
 
@@ -125,6 +125,31 @@ body, html {
 
 .content-card {
     padding: 24px;
+
+    &.white {
+        background-color: white;
+    }
+
+}
+
+.big-card {
+    width: 200px;
+    height: 250px;
+    background-color: white;
+    display: inline-block;
+    vertical-align: top;
+    margin: 5px;
+
+    img {
+        width: 200px;
+        height: 200px;
+    }
+
+    p {
+        margin: 9px;
+        text-align: center;
+        vertical-align: top;
+    }
 }
 
 .lil-card {
