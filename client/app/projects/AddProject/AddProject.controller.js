@@ -1,49 +1,63 @@
 /* global alert */
 'use strict';
 
-angular.module('civicMakersClientApp')
-  .controller('AddProjectCtrl', function ($scope, ProjectApi, $location, ToolApi) {
-
-    $scope.projectFormData = {
-        createdAt: Date.now(),
-// TODO: prevent duplicates
-        tools: [],
-        type: 'project',
-        display: true,
+(function() {
+  function AddProjectCtrl($scope, ProjectApi, $location, ToolApi, AuthenticationService) {
+    var self = this;
+    this.projectFormData = {
+        // TODO: prevent duplicates
+        tools: []
         // authorIp:
         // cfApiProjId:
         // cfApiOrgId
     };
+    // TODO: prevent duplicates
+    this.selectedTools = [];
 
     ToolApi.getAllTools().then(function (tools){
       console.log('add project tools',tools);
-      $scope.tools = tools;
+      self.tools = tools;
     });
 
-    $scope.addToTools = function (input) {
-      $scope.selectedTools.push(input);
-      $scope.projectFormData.tools.push(input.$id);
+    this.addToTools = function (input) {
+      this.selectedTools.push(input);
+      this.projectFormData.tools.push(input.$id);
     };
-// TODO: prevent duplicates
-    $scope.selectedTools = [];
+    
 
-    $scope.tagsEntryChanged = function () {
-        $scope.projectFormData.tags = $scope.tagsEntry.split(', ');
+    this.tagsEntryChanged = function () {
+        this.projectFormData.tags = this.tagsEntry.split(', ');
     };
 
-    $scope.submitProjectForm = function(newProject){
+    this.loginAndSubmit = function() {
+      if (!AuthenticationService.isLoggedIn()) {
+          AuthenticationService.loginWithTwitter().then(function () {
+            submitProjectForm();
+          });
+      } else {
+          submitProjectForm();
+      }
+    };
 
+    var submitProjectForm = function(){
       if ($scope.projectForm.$valid){
-        console.log(newProject);
-        ProjectApi.saveProject(newProject).then(function(result){
-          console.log('Did it work?:', result);
+        angular.extend(self.projectFormData, getAdditionalFormData());
+        ProjectApi.saveProject(self.projectFormData).then(function() {
           $location.path('/');
         });
-      }
-      else {
+      } else {
         alert('The form is not valid');
       }
-
     };
 
-  });
+    var getAdditionalFormData = function() {
+      return {
+        createdAt: Date.now(),
+        type: 'project',
+        display: true
+      };
+    };
+  }
+
+  angular.module('civicMakersClientApp').controller('AddProjectCtrl', AddProjectCtrl);
+})();
