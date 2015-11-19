@@ -5,6 +5,7 @@ angular.module('civicMakersClientApp')
     $routeProvider
       .when('/add/tool', {
         templateUrl: 'app/tools/AddTool/AddTool.html',
-        controller: 'AddToolCtrl'
+        controller: 'AddToolCtrl',
+        controllerAs: 'addToolCtrl'
       });
   });

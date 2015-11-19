@@ -6,43 +6,43 @@
 
     <md-input-container>
       <label>Story Name</label>
-      <input type="text" ng-model="projectFormData.name" required md-maxlength="100">
+      <input type="text" ng-model="addProjectCtrl.projectFormData.name" required md-maxlength="100">
     </md-input-container>
 
     <md-input-container>
       <label>Story</label>
-      <textarea ng-model="projectFormData.description" required md-maxlength="300"></textarea>
+      <textarea ng-model="addProjectCtrl.projectFormData.description" required md-maxlength="300"></textarea>
     </md-input-container>
 
     <md-input-container>
       <label>Header Image URL</label>
-      <textarea ng-model="projectFormData.image" required></textarea>
+      <textarea ng-model="addProjectCtrl.projectFormData.image" required></textarea>
     </md-input-container>
 
     <md-input-container>
       <label>Web URL</label>
-      <textarea ng-model="projectFormData.link" required md-maxlength="300"></textarea>
+      <textarea ng-model="addProjectCtrl.projectFormData.link" required md-maxlength="300"></textarea>
     </md-input-container>
 
     <md-input-container>
       <label>Tags</label>
-      <input type="text" ng-model="tagsEntry" ng-change="tagsEntryChanged()" md-maxlength="300">
+      <input type="text" ng-model="addProjectCtrl.tagsEntry" ng-change="addProjectCtrl.tagsEntryChanged()" md-maxlength="300">
     </md-input-container>
 
     <md-input-container>
          <label>Search Tools To Include</label>
-         <textarea ng-model="searchInput" md-maxlength="300"></textarea>
+         <textarea ng-model="addProjectCtrl.searchInput" md-maxlength="300"></textarea>
      </md-input-container>
 
-     <div class="lil-card" ng-if="searchInput !== undefined " ng-repeat="tool in tools | filter:searchInput | limitTo: 12" ng-click="addToTools(tool)">
+     <div class="lil-card" ng-if="addProjectCtrl.searchInput !== undefined " ng-repeat="tool in addProjectCtrl.tools | filter:searchInput | limitTo: 12" ng-click="addProjectCtrl.addToTools(tool)">
        <img ng-src="{{tool.image}}" alt="">
        <p>{{tool.name}}</p>
      </div>
 
-     <div class="selected-tools" ng-if="selectedTools.length !== 0">
+     <div class="selected-tools" ng-if="addProjectCtrl.selectedTools.length !== 0">
       <h3>Your Selected Tools:</h3>
       <div class="card-container">
-        <div class="lil-card" ng-repeat="selectedTool in selectedTools track by $index">
+        <div class="lil-card" ng-repeat="selectedTool in addProjectCtrl.selectedTools track by $index">
          <img ng-src="{{selectedTool.image}}" alt="">
          <p>{{selectedTool.name}}</p>
         </div>
@@ -51,7 +51,7 @@
 
   </form>
 
-  <md-button class="md-raised md-primary" ng-click="submitProjectForm(projectFormData)" style="float: right;">
+  <md-button class="md-raised md-primary" ng-click="addProjectCtrl.loginAndSubmit()" style="float: right;">
     Submit
   </md-button>
 

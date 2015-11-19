@@ -1,70 +1,77 @@
 'use strict';
 
-angular.module('civicMakersClientApp')
-  .controller('MainCtrl', function ($scope, $http, ProjectApi, AuthorApi, ToolApi, TopicApi, AuthenticationService, DialogService) {
-    var vm = this;
-    this.isLoggedIn = AuthenticationService.isLoggedIn();
-    this.userData = AuthenticationService.getAuthData();
-
-    ProjectApi.getFirstNProjects(4).then(function(projects){
-        $scope.projects = projects;
-    });
-    ProjectApi.getProjectsNum().then(function(numOfProjects){
-        $scope.projectsNum = numOfProjects;
-    });
-
-    AuthorApi.getFirstNAuthors(4).then(function(authors){
-        $scope.authors = authors;
-    });
-    AuthorApi.getAuthorsNum().then(function(numOfAuthors){
-        $scope.authorsNum = numOfAuthors;
-    });
-
-    ToolApi.getFirstNTools(4).then(function(tools){
-        $scope.tools = tools;
-    });
-    ToolApi.getToolsNum().then(function(numOfTools){
-        $scope.toolsNum = numOfTools;
-    });
-
-    TopicApi.getFirstNTopics(4).then(function(topics){
-        $scope.topics = topics;
-    });
-    TopicApi.getTopicsNum().then(function(numOfTopics){
-        $scope.topicsNum = numOfTopics;
-    });
-
-    this.loginToTwitter = function () {
-        if (!AuthenticationService.isLoggedIn()) {
-            AuthenticationService.loginWithTwitter().then(function () {
-                syncLoginData();
-                AuthenticationService.checkIfAlreadyRegistered()
-                    .then(function(isEmailExist) {
-                        // no email in the db, we need to request the additional info
-                        if (!isEmailExist) {
-                            DialogService.showDialog('loginModalCtrl', 'app/loginModal/loginModal.html')
-                                .then(function(loginInfo) {
-                                    AuthenticationService.saveUserAdditionalData(loginInfo);
-                                });
-                        }
-                    });
-            });
-        }
-    };
-
-    this.logoutFromTwitter = function () {
-        if (AuthenticationService.isLoggedIn()) {
-            AuthenticationService.logoutFromTwitter();
+(function() {
+    function MainCtrl($scope, $http, $location, ProjectApi, AuthorApi, ToolApi, TopicApi, AuthenticationService) {
+        var self = this;
+        this.isLoggedIn = AuthenticationService.isLoggedIn();
+        this.userData = AuthenticationService.getAuthData();
+        $scope.$on('loginDataChanged', function(){
             syncLoginData();
-        }
-    };
+        });
 
-    this.openUserProfileMenu = function($mdOpenMenu, event) {
-      $mdOpenMenu(event);
-    };
+        ProjectApi.getFirstNProjects(4).then(function(projects){
+            $scope.projects = projects;
+        });
+        ProjectApi.getProjectsNum().then(function(numOfProjects){
+            $scope.projectsNum = numOfProjects;
+        });
 
-    var syncLoginData = function() {
-        vm.isLoggedIn = AuthenticationService.isLoggedIn();
-        vm.userData = AuthenticationService.getAuthData();
-    };
-  });
+        AuthorApi.getFirstNAuthors(4).then(function(authors){
+            $scope.authors = authors;
+        });
+        AuthorApi.getAuthorsNum().then(function(numOfAuthors){
+            $scope.authorsNum = numOfAuthors;
+        });
+
+        ToolApi.getFirstNTools(4).then(function(tools){
+            $scope.tools = tools;
+        });
+        ToolApi.getToolsNum().then(function(numOfTools){
+            $scope.toolsNum = numOfTools;
+        });
+
+        TopicApi.getFirstNTopics(4).then(function(topics){
+            $scope.topics = topics;
+        });
+        TopicApi.getTopicsNum().then(function(numOfTopics){
+            $scope.topicsNum = numOfTopics;
+        });
+
+        this.loginToTwitter = function () {
+            if (!AuthenticationService.isLoggedIn()) {
+                AuthenticationService.loginWithTwitter().then(function () {
+                    syncLoginData();
+                });
+            }
+        };
+
+        this.logoutFromTwitter = function () {
+            if (AuthenticationService.isLoggedIn()) {
+                AuthenticationService.logoutFromTwitter();
+                syncLoginData();
+            }
+        };
+
+        this.loginAndRedirect = function(path) {
+            if (!AuthenticationService.isLoggedIn()) {
+                AuthenticationService.loginWithTwitter().then(function () {
+                    syncLoginData();
+                    $location.path(path);
+                });
+            } else {
+                $location.path(path);
+            }
+        };
+
+        this.openUserProfileMenu = function($mdOpenMenu, event) {
+          $mdOpenMenu(event);
+        };
+
+        var syncLoginData = function() {
+            self.isLoggedIn = AuthenticationService.isLoggedIn();
+            self.userData = AuthenticationService.getAuthData();
+        };
+    }
+
+    angular.module('civicMakersClientApp').controller('MainCtrl', MainCtrl);
+})();

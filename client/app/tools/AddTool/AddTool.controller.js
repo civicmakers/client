@@ -1,35 +1,48 @@
 /* global alert */
 'use strict';
 
-angular.module('civicMakersClientApp')
-  .controller('AddToolCtrl', function ($scope, $routeParams, ToolApi, $location) {
-
-    $scope.toolFormData = {
-        createdAt: Date.now(),
-        type: 'tool',
-        display: true
+(function() {
+  function AddToolCtrl($scope, $routeParams, ToolApi, $location, AuthenticationService) {
+    var self = this;
+    this.toolFormData = {
         // authorIp:
         // cfApiProjId:
         // cfApiOrgId
     };
 
-    $scope.tagsEntryChanged = function () {
-        $scope.toolFormData.tags = $scope.tagsEntry.split(', ');
+    this.tagsEntryChanged = function () {
+        this.toolFormData.tags = this.tagsEntry.split(', ');
     };
 
-    $scope.submitToolForm = function(newTool){
+    this.loginAndSubmit = function() {
+      if (!AuthenticationService.isLoggedIn()) {
+          AuthenticationService.loginWithTwitter().then(function () {
+            submitToolForm();
+          });
+      } else {
+          submitToolForm();
+      }
+    };
 
+    var submitToolForm = function(){
       if ($scope.toolForm.$valid){
-        console.log(newTool);
-        ToolApi.saveTool(newTool).then(function(result){
-          console.log('Did it work?:', result);
+        angular.extend(self.toolFormData, getAdditionalFormData());
+        ToolApi.saveTool(self.toolFormData).then(function() {
           $location.path('/');
         });
-      }
-      else {
+      } else {
         alert('The form is not valid');
       }
-
     };
 
-});
+    var getAdditionalFormData = function() {
+      return {
+        createdAt: Date.now(),
+        type: 'tool',
+        display: true
+      };
+    };
+  }
+
+  angular.module('civicMakersClientApp').controller('AddToolCtrl', AddToolCtrl);
+})();

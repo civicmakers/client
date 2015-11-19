@@ -1,7 +1,8 @@
 'use strict';
 
 (function () {
-	function AuthenticationService(firebase, $firebaseAuth, $q, UserApi) {
+	function AuthenticationService(firebase, $firebaseAuth, $q, $rootScope, UserApi, DialogService) {
+		var self = this;
 		var ref = firebase.getRef();
 		var authObj = $firebaseAuth(ref);
 	    var authData = null;
@@ -16,7 +17,18 @@
 	            	.then(function(data) {
 		                isLoggedIn = true;
 		                authData = getRelevantData(data);
+		                $rootScope.$broadcast('loginDataChanged');
 		                UserApi.saveUserPublicData(authData.uid, authData);
+		                return self.checkIfAlreadyRegistered()
+							.then(function(isEmailExist) {
+								// no email in the db, we need to request the additional info
+								if (!isEmailExist) {
+								    return DialogService.showDialog('loginModalCtrl', 'app/loginModal/loginModal.html')
+								        .then(function(loginInfo) {
+								            self.saveUserAdditionalData(loginInfo);
+								        });
+								}
+							});
 		            })
 		            .catch(function(error) {
 		            	console.error('Authentication failed:', error);
