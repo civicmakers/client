@@ -14,7 +14,7 @@
              <h1>
               Stories
               <a href="/projects" class="md-title" style="padding: 0px 0px 0px 20px;">
-                  View All {{projectsNum}} Stories
+                  View All {{mainCtrl.projectsNum}} Stories
               </a>
              </h1>
               <div flex>
@@ -29,7 +29,7 @@
               </div>
             </div>
             <div class="card-repeat">
-              <card-directive ng-repeat="project in projects | filter:mainSearch" data="project"></card-directive>
+              <card-directive ng-repeat="project in mainCtrl.projects | filter:mainSearch" data="project"></card-directive>
             </div>
           </div>
         </div>
@@ -40,7 +40,7 @@
               <h1>
               Tools
               <a href="/tools" class="md-title" style="padding: 0px 0px 0px 20px;">
-                  View all {{toolsNum}} tools
+                  View all {{mainCtrl.toolsNum}} tools
               </a>
              </h1>
               <div flex>
@@ -54,7 +54,7 @@
                 </md-button>
               </div>
             </div>
-            <card-directive ng-repeat="tool in tools" data="tool"></card-directive>
+            <card-directive ng-repeat="tool in mainCtrl.tools" data="tool"></card-directive>
           </div>
         </div>
 

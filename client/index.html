@@ -44,7 +44,7 @@
       <md-toolbar class="main-toolbar">
         <div style="width: 960px; margin: 0 auto;" layout="row">
           <!-- todo add ui-router -->
-          <h1 flex="80" class="md-display-1" style="margin: 15px; cursor: pointer;" onclick="location.href = '#'">CivicMakers</h1>
+          <h1 flex="80" class="main-title md-display-1" ng-click="mainCtrl.navigateHome()">CivicMakers</h1>
           <md-button ng-if="!mainCtrl.isLoggedIn" flex="20" ng-click="mainCtrl.loginToTwitter()">
             <span>Login</span>
           </md-button>
@@ -109,6 +109,8 @@
           <script src="app/authors/authors.js"></script>
           <script src="app/directives/cardDirective/cardDirective.directive.js"></script>
           <script src="app/directives/profileCard/profileCard.directive.js"></script>
+          <script src="app/directives/questionsAndAnswers/question.directive.js"></script>
+          <script src="app/directives/questionsAndAnswers/questionsAndAnswers.directive.js"></script>
           <script src="app/directives/search/search.controller.js"></script>
           <script src="app/directives/search/search.directive.js"></script>
           <script src="app/directives/titleDirective/titleDirective.directive.js"></script>
@@ -131,6 +133,7 @@
           <script src="app/projects/projects.js"></script>
           <script src="app/services/AuthenticationService/AuthenticaionService.js"></script>
           <script src="app/services/DialogService/Dialog.service.js"></script>
+          <script src="app/services/QuestionsApi/QuestionsApi.service.js"></script>
           <script src="app/services/UserApi/UserApi.service.js"></script>
           <script src="app/tools/AddTool/AddTool.controller.js"></script>
           <script src="app/tools/AddTool/AddTool.js"></script>

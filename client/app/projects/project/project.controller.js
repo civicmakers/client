@@ -2,15 +2,14 @@
 
 angular.module('civicMakersClientApp')
   .controller('ProjectCtrl', function ($scope, $routeParams, ProjectApi, ToolApi) {
-
-    console.log('routeParams', $routeParams);
-
     $scope.projectTools = [];
+    $scope.projectId = $routeParams.projectID;
 
     ProjectApi.queryProject($routeParams.projectID).then(function(project){
-      console.log('project',project);
       $scope.project = project;
-      $scope.getTools(project.tools);
+      if (project.tools) {
+        $scope.getTools(project.tools);
+      }
     });
 
     $scope.getTools = function (toolIds) {
@@ -23,7 +22,5 @@ angular.module('civicMakersClientApp')
                     }
                 });
         });
-        console.log('tools',$scope.projectTools);
     };
-
   });

@@ -35,12 +35,17 @@
     }
 
     function updateData(url, entryId, dataToUpdate) {
-      var usersRef = new Firebase(url);
-      usersRef.child(entryId).update(dataToUpdate, function(error) {
+      var ref = new Firebase(url);
+      ref.child(entryId).update(dataToUpdate, function(error) {
         if (error) {
           console.log('An error occured while trying to update data for entry: ' + entryId + ', in url: ' + url, error);
         }
       });
+    }
+
+    function pushData(url, dataToPush) {
+      var ref = new Firebase(url);
+      return ref.push(dataToPush); // returns the ref to the just created object
     }
 
     function checkIfExist(url, entryId, valueToCheck) {
@@ -52,12 +57,37 @@
       return deffered.promise;
     }
 
+    // This function is NOT connected to anything!!
+    // It's meant for renaming keys in the firebase db - do not use it unless you know what you're doing :)
+    // 
+    // function renameKeys(relativeUrlToParent, currentKeyName, newKeyName) {
+    //   var ref = new Firebase(baseUrl + relativeUrlToParent);
+    //   ref.once('value', function (snapshot) {
+    //     if (snapshot) {
+    //       snapshot.forEach(function (childSnapshot) {
+    //         var keySnapshot = childSnapshot.child(currentKeyName);
+    //         var value = keySnapshot.val();
+    //         var objectToInsert = {};
+    //         objectToInsert[newKeyName] = value;
+    //         childSnapshot.ref().update(objectToInsert, function (error) {
+    //           if (error) {
+    //             console.log('Failed to rename: ' + currentKeyName + ' to: ' + newKeyName);
+    //           } else {
+    //             keySnapshot.ref().remove();
+    //           }
+    //         });
+    //       });
+    //     }
+    //   });
+    // }
+
     return {
       getRef: getRef,
       getRefTo: getRefTo,
       baseUrl: baseUrl,
       createIfDoesntExist: createIfDoesntExist,
       updateData: updateData,
+      pushData: pushData,
       checkIfExist: checkIfExist
     };
   }
