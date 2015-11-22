@@ -10,31 +10,19 @@
         });
 
         ProjectApi.getFirstNProjects(4).then(function(projects){
-            $scope.projects = projects;
-        });
-        ProjectApi.getProjectsNum().then(function(numOfProjects){
-            $scope.projectsNum = numOfProjects;
+            self.projects = projects;
         });
 
-        AuthorApi.getFirstNAuthors(4).then(function(authors){
-            $scope.authors = authors;
-        });
-        AuthorApi.getAuthorsNum().then(function(numOfAuthors){
-            $scope.authorsNum = numOfAuthors;
+        ProjectApi.getProjectsNum().then(function(numOfProjects){
+            self.projectsNum = numOfProjects;
         });
 
         ToolApi.getFirstNTools(4).then(function(tools){
-            $scope.tools = tools;
-        });
-        ToolApi.getToolsNum().then(function(numOfTools){
-            $scope.toolsNum = numOfTools;
+            self.tools = tools;
         });
 
-        TopicApi.getFirstNTopics(4).then(function(topics){
-            $scope.topics = topics;
-        });
-        TopicApi.getTopicsNum().then(function(numOfTopics){
-            $scope.topicsNum = numOfTopics;
+        ToolApi.getToolsNum().then(function(numOfTools){
+            self.toolsNum = numOfTools;
         });
 
         this.loginToTwitter = function () {
@@ -65,6 +53,10 @@
 
         this.openUserProfileMenu = function($mdOpenMenu, event) {
           $mdOpenMenu(event);
+        };
+
+        this.navigateHome = function() {
+            $location.path('/');
         };
 
         var syncLoginData = function() {
