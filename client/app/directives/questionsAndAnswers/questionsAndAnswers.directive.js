@@ -24,23 +24,28 @@
 			});
 
 			this.submitQuestion = function() {
-				var userData = AuthenticationService.getAuthData();
-				var data = {
-					title: this.newQuestionTitle,
-					content: this.newQuestionContent,
-					authorId: userData.uid,
-					authorAvatarUrl: userData.avatar,
-					authorDisplayName: userData.displayName,
-					objectId: this.objectId,
-					createdAt: Date.now(),
-					answers: []
-				};
-				QuestionsApi.addQuestion(this.objectId, this.type, data);
-				this.clearContent();
+				AuthenticationService.loginWithTwitter().then(function() {
+					var userData = AuthenticationService.getAuthData();
+					var data = {
+						title: self.newQuestionTitle,
+						content: self.newQuestionContent,
+						authorId: userData.uid,
+						authorAvatarUrl: userData.avatar,
+						authorDisplayName: userData.displayName,
+						objectId: self.objectId,
+						createdAt: Date.now(),
+						answers: []
+					};
+					QuestionsApi.addQuestion(self.objectId, self.type, data);
+					self.clearContent();	
+				});
+				
 			};
 
 			this.startEditingNewQuestion = function() {
-				this.isEditing = true;
+				AuthenticationService.loginWithTwitter().then(function() {
+					self.isEditing = true;
+				});
 			};
 
 			this.clearContent = function() {

@@ -34,7 +34,8 @@
 		            	console.error('Authentication failed:', error);
 		            });
 	        } else {
-	        	var differed = $q.defer().resolve();
+	        	var differed = $q.defer();
+	        	differed.resolve();
 	        	return differed.promise;
 	        }
 	    };
