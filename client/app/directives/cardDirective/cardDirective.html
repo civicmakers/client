@@ -1,7 +1,16 @@
 <a ng-href="{{::data.type}}/{{::data.$id}}">
   <md-card class="card">
-        <img ng-if="data.type == 'project'" class="card-img" ng-src="{{::data.image}}">
-		<img ng-if="data.type == 'tool'" class="card-img" ng-src="{{::data.avatar}}">
-    <h2>{{::data.name}}</h2>
+    <img ng-if="data.type == 'project'" class="card-img" ng-src="{{::data.image}}">
+    <img ng-if="data.type == 'tool'" class="card-img" ng-src="{{::data.avatar}}">
+    <div class="homepage-container">
+      <div class="row">
+      <span><b>{{::data.name}}</b></span>
+      <span class="pull-right blue-text"><b>{{::data.pricing}}</b></span>
+      </div>
+      <p class="grey-text">{{::data.description}}</p>
+      <span class="bg-purple tag">Topic 1</span>
+      <span class="bg-orange tag">Topic 2</span>
+      <span class="bg-blue tag">Topic 3</span>
+    </div>
   </md-card>
 </a>

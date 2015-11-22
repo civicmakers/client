@@ -40,31 +40,6 @@
     offset-lg Sets element offset on devices between 960px and 1200px wide.
     offset-gt-lg  Sets element offset on devices greater than 1200px wide.
  -->
-    <md-content>
-      <md-toolbar class="main-toolbar">
-        <div style="width: 960px; margin: 0 auto;" layout="row">
-          <!-- todo add ui-router -->
-          <h1 flex="80" class="main-title md-display-1" ng-click="mainCtrl.navigateHome()">CivicMakers</h1>
-          <md-button ng-if="!mainCtrl.isLoggedIn" flex="20" ng-click="mainCtrl.loginToTwitter()">
-            <span>Login</span>
-          </md-button>
-          <md-menu ng-if="mainCtrl.isLoggedIn" md-offset="0 60" flex="20" class="header-menu">
-            <md-button aria-label="Open profile menu" ng-click="mainCtrl.openUserProfileMenu($mdOpenMenu, $event)">
-              <img src="{{mainCtrl.userData.avatar}}" alt="User Avatar" class="header-avatar">
-              <span class="header-username">{{mainCtrl.userData.displayName}}</span>
-            </md-button>
-            <md-menu-content width="4">
-              <md-menu-item>
-                <md-button ng-click="mainCtrl.logoutFromTwitter()">
-                  Logout
-                </md-button>
-              </md-menu-item>
-            </md-menu-content>
-          </md-menu>
-        </div>
-      </md-toolbar>
-    </md-content>
-
     <ng-view></ng-view>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->

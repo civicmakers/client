@@ -10,7 +10,10 @@ angular.module('civicMakersClientApp')
       },
       link: function (scope) {
         scope.data = scope.data;
+        if (scope.data.description.length > 40) {
+          scope.data.description = scope.data.description
+            .slice(0, 50) + '...';
+        }
       }
-
-      };
+    };
   });
