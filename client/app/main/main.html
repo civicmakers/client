@@ -1,9 +1,35 @@
-<div layout-fill>
+<div>
 
       <!-- TODO get legal photo -->
       <!-- http://devpost.com/ -->
       <div class="main-header">
-        <span class="header-text">Talent, tools & knowledge<br />for civic projects</span>
+        <div id="first-line" class="header-text">TALENT, TOOLS & KNOWLEDGE</div></br>
+        <div id="second-line" class="header-text">FOR CIVIC PROJECTS</div>
+      <div class="main-toolbar">
+          <!-- todo add ui-router -->
+          <h1 flex="80" class="md-display-1 inline-display" style="margin: 15px; cursor: pointer;" onclick="location.href = '#'"><b>CivicMakers</b></h1>
+          <span class="pull-right" id="header-rightside">
+        <search class="inline-display"></search>
+          <button class="add-button inline-display" ng-if="!mainCtrl.isLoggedIn" flex="20" ng-click="mainCtrl.loginToTwitter()">
+            <span>Login</span>
+          </button>
+          <md-menu ng-if="mainCtrl.isLoggedIn" md-offset="0 60" flex="20" class="header-menu">
+            <button class="add-button" aria-label="Open profile menu" ng-click="mainCtrl.openUserProfileMenu($mdOpenMenu, $event)">
+              <img src="{{mainCtrl.userData.avatar}}" alt="User Avatar" class="header-avatar">
+              <span class="header-username">{{mainCtrl.userData.displayName}}</span>
+            </button>
+            <md-menu-content width="4">
+              <md-menu-item>
+                <md-button ng-click="mainCtrl.logoutFromTwitter()">
+                  Logout
+                </md-button>
+              </md-menu-item>
+            </md-menu-content>
+          </md-menu>
+          </span>
+      </div>
+    </div>
+
       </div>
 
       <div class="main-wrapper">
@@ -18,12 +44,12 @@
               </a>
              </h1>
               <div flex>
-                
+
               </div>
               <div class="seemore">
                 <!-- todo put this into a directive -->
-                
-                <md-button ng-click="mainCtrl.loginAndRedirect('/add/project')" class="md-raised md-primary">
+
+                <md-button ng-click="mainCtrl.loginAndRedirect('/add/project')" class="md-raised md-primary add-button">
                     Add a story
                 </md-button>
               </div>
@@ -44,12 +70,12 @@
               </a>
              </h1>
               <div flex>
-                
+
               </div>
               <div class="seemore">
                 <!-- todo put this into a directive -->
-                
-                <md-button ng-click="mainCtrl.loginAndRedirect('/add/tool')" class="md-raised md-primary">
+
+                <md-button ng-click="mainCtrl.loginAndRedirect('/add/tool')" class="md-raised md-primary add-button">
                     Add a tool
                 </md-button>
               </div>
@@ -57,6 +83,21 @@
             <card-directive ng-repeat="tool in mainCtrl.tools" data="tool"></card-directive>
           </div>
         </div>
+        <div>
+        </div>
+        <div class="footer">
+
+            <div class="row">
+              <div class="col-md-8">
+                <ul>
+                  <li class="footer-padding"><a href="">About</a></li>
+                  <lr class="footer-padding"><a href="">Our Mission</a></li>
+                  <li><a href="">Contact</a></li>
+                  <li class="pull-right">All rights reserved, CivicMakers, 2015</li>
+                </ul>
+              </div>
+            </div>
+        </div><!--footer -->
 
   <!--
         <div layout="row" flex>

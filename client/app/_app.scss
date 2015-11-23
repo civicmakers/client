@@ -1,17 +1,11 @@
-
-
 /**
  *Font Awesome Fonts
  */
 body, html {
-    vertical-align: center;
-    background-color: #f2f2f6;
     * {
         font-family: 'Open Sans', sans-serif;
     }
 }
-
-
 
 /*@font-face {
     font-family: 'FontAwesome';
@@ -48,12 +42,13 @@ body, html {
     width: 960px;
     margin:0 auto;
     padding: 48px 24px 24px 24px;
+    background-color: #f2f2f6;
 }
-/*
 .main-toolbar {
-    background-color: #3875DF !important;
+  opacity: 0.8;
 } 
 
+/*
 .main-img {
     width: 25%;
     margin: 10px;
@@ -61,7 +56,6 @@ body, html {
 
 .horizontal-repeat {
     display: block;
-    text-align: center;
 } 
 
 .sidebar-col {}
@@ -69,7 +63,7 @@ body, html {
 .main-header {
     padding: 0;
     margin:0;
-    height: 472px;
+    height: 360px;
     width: 100%;
     background-size: 100% auto;
     background-image: url('/assets/images/CityCampSF2015_unconference.jpg');
@@ -81,16 +75,28 @@ body, html {
     .header-text {
         color: white;
         font-weight: bold;
-        margin: 0px auto;
-        width: 960px;
-        float: 0;
+        margin-left: 17px;
         position: absolute;
-        bottom: 0;
-        right: 0;
-        text-align: right;
-        margin: 15px;
-        font-size: 3em;
+        text-align: left;
+        font-size: 36px;
+        background-color: #52b1b9;
+        opacity: 0.8;
+
     }
+}
+
+#first-line {
+  bottom: 134px;
+  width: 559px;
+  padding: 12px;
+  margin-bottom: 25px;
+}
+
+#second-line {
+  bottom: 82px;
+  width: 365px;
+  padding: 12px;
+  margin-top: 20px;
 }
 
 .main-content-col {
@@ -215,9 +221,32 @@ body, html {
     box-shadow: 0px 0px 0px 2px gray
 }*/
 
+.add-button {
+  border-radius: 20px;
+  background-color: #eb6151;
+  rgba: 255,255,255,0.8;
+}
 
-.card-repeat {
-    text-align: center;
+.homepage-container {
+  margin: 10px;
+}
+
+.footer {
+  background-color: #3d464d;
+  color: white;
+  padding: 20px;
+  .footer-padding{
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    li {
+      display: inline;
+    }
+  }
 }
 
 .title-row {
@@ -271,9 +300,9 @@ input[type="text"] {
     }
 }
 
-[layout-fill] {
-    height:100%;
-}
+// [layout-fill] {
+//     height:100%;
+// }
 
 /************* HEADER ************************/
 .header-menu {
