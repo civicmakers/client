@@ -1,4 +1,12 @@
 .question {
 	background-color: white;
 	margin: 10px;
+	padding: 10px;	
+
+	.answer-container {
+		background-color: rgba(0, 190, 255, 0.6);
+		margin: 10px;
+		padding: 10px;
+		border-radius: 5px;
+	}
 }
