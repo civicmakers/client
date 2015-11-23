@@ -6,7 +6,7 @@
 			restrict: 'E',
 			templateUrl: 'app/directives/questionsAndAnswers/question.html',
 			scope: {},
-			controller: QuestionController,
+			controller: 'QuestionController',
 			controllerAs: 'questionCtrl',
 			bindToController: {
 				objectId: '=',
@@ -14,10 +14,11 @@
 				data: '='
 			}
 		};
-
-		function QuestionController() {
-		}
 	}
 
+	function QuestionController() {
+	}
+
+	angular.module('civicMakersClientApp').controller('QuestionController', QuestionController);
 	angular.module('civicMakersClientApp').directive('question', QuestionDirective);
 })();
