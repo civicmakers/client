@@ -1,8 +1,19 @@
 <div class="question">
-	<img ng-src="{{questionCtrl.data.authorAvatarUrl}}">
-	<span>{{questionCtrl.data.authorDisplayName}}</span>
+	<img ng-src="{{questionCtrl.questionData.authorAvatarUrl}}">
+	<span>{{questionCtrl.questionData.authorDisplayName}}</span>
 	<div class="question-content">
-		<span>{{questionCtrl.data.title}}</span>
-		<span style="display: block;">{{questionCtrl.data.content}}</span>
+		<span>{{questionCtrl.questionData.title}}</span>
+		<span style="display: block;">{{questionCtrl.questionData.content}}</span>
+		<div ng-repeat="answer in questionCtrl.answersList" class="answer-container">
+			<img ng-src="{{answer.authorAvatarUrl}}">
+			<span>{{answer.authorDisplayName}}</span>
+			<span style="display: block;">{{answer.content}}</span>
+		</div>
 	</div>
+	<form name="answerForm" ng-submit="questionCtrl.submitAnswer()">
+		<md-input-container>
+			<input ng-model="questionCtrl.newAnswerContent" type="text" aria-label="reply" required></input>
+		</md-input-container>
+		<md-button type="submit" class="md-raised md-primary">Reply</md-button>
+	</form>
 </div>
