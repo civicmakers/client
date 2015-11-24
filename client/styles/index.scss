@@ -3,11 +3,12 @@
 
 // Base
 @import 'typography';
-@import 'components'; // Buttons, forms, etc.
+@import './components/buttons';
+@import './components/inputs';
 
 // Layout
 @import '../app/app';
-@import 'layout'; // columns, etc.
+@import 'layout'; // columns, etc. (grid)
 @import 'header'; 
 @import 'footer'; 
 @import 'card';
