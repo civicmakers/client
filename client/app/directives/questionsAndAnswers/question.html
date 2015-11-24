@@ -2,7 +2,6 @@
 	<img ng-src="{{questionCtrl.questionData.authorAvatarUrl}}">
 	<span>{{questionCtrl.questionData.authorDisplayName}}</span>
 	<div class="question-content">
-		<span>{{questionCtrl.questionData.title}}</span>
 		<span style="display: block;">{{questionCtrl.questionData.content}}</span>
 		<div ng-repeat="answer in questionCtrl.answersList" class="answer-container">
 			<img ng-src="{{answer.authorAvatarUrl}}">

@@ -28,7 +28,6 @@
 			AuthenticationService.loginWithTwitter().then(function() {
 				var userData = AuthenticationService.getAuthData();
 				var data = {
-					title: self.newQuestionTitle,
 					content: self.newQuestionContent,
 					authorId: userData.uid,
 					authorAvatarUrl: userData.avatar,
@@ -51,7 +50,6 @@
 
 		this.clearContent = function() {
 			this.isEditing = false;
-			this.newQuestionTitle = null;
 			this.newQuestionContent = null;
 			// clear all validations from the form
 			$scope.submitQuestionForm.$setPristine();
