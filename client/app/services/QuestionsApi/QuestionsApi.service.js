@@ -4,10 +4,13 @@
 	function QuestionsApi(firebase, UserApi, $rootScope) {
 		var questionsListRef = firebase.getRefTo('questions');
 		var allQuestionsList = [];
-		// whenever a question is added, notify whoever wants to know
+		// loads the questions on initialization (just the existing ones)
 		questionsListRef.on('child_added', function(childSnapshot) {
-			allQuestionsList.push(childSnapshot.val());
-			$rootScope.$broadcast('newQuestionAdded', allQuestionsList);
+			updateQuestionListOnChange(childSnapshot);
+		});
+		// adds a new question to the list only after it has a question id so answers can be posted immediatly
+		questionsListRef.on('child_changed', function(childSnapshot) {
+			updateQuestionListOnChange(childSnapshot);
 		});
 
 		this.addQuestion = function(objectId, objectType, data) {
@@ -46,6 +49,21 @@
 		this.getRefToAnswers = function (questionId) {
 			return firebase.getRefTo('questions/' + questionId + '/answers');
 		};
+
+		function updateQuestionListOnChange (childSnapshot) {
+			var childData = childSnapshot.val();
+			// make sure that the question already has an id in the db and that it doesn't exist in the local list yet
+			if (childData && childData.questionId && !isQuestionAlreadyInList(childData.questionId)) {
+				allQuestionsList.push(childData);
+				$rootScope.$broadcast('newQuestionAdded', allQuestionsList);
+			}
+		}
+
+		function isQuestionAlreadyInList (questionId) {
+			return allQuestionsList.some(function(question) {
+				return question.questionId === questionId;
+			});
+		}
 	}
 
 	angular.module('civicMakersClientApp').service('QuestionsApi', QuestionsApi);
