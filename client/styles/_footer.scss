@@ -1,0 +1,28 @@
+// Footer
+
+.footer {
+
+  background-color: #3d464d;
+  color: white;
+  padding: 20px;
+
+  .footer-padding {
+
+    padding-left: 25px;
+    padding-right: 25px;
+
+  }
+
+  ul {
+
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      display: inline;
+    }
+
+  }
+
+}

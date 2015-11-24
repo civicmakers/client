@@ -1,10 +1,19 @@
+// Helpers
 @import 'variables';
+
+// Base
+@import 'typography';
+@import 'components'; // Buttons, forms, etc.
+
+// Layout
 @import '../app/app';
-@import '../app/directives/cardDirective/cardDirective';
-@import '../app/directives/profileCard/profileCard';
-@import '../app/directives/titleDirective/titleDirective';
-@import '../app/directives/questionsAndAnswers/questionsAndAnswers';
-@import '../app/directives/questionsAndAnswers/question';
+@import 'layout'; // columns, etc.
+@import 'header'; 
+@import 'footer'; 
+@import 'card';
+
+
+// Pages - SASS file name should be same as class name containing all styles in partial
 @import '../app/main/main';
 @import '../app/authors/authors';
 @import '../app/authors/author/author';
@@ -16,3 +25,12 @@
 @import '../app/tools/AddTool/addtool';
 @import '../app/topics/Topic/Topic';
 @import '../app/topics/topics';
+
+// Directives  SASS file name should be same as class name containing all styles in partial
+@import '../app/directives/cardDirective/cardDirective';
+@import '../app/directives/profileCard/profileCard';
+@import '../app/directives/titleDirective/titleDirective';
+@import '../app/directives/questionsAndAnswers/questionsAndAnswers';
+@import '../app/directives/questionsAndAnswers/question';
+
+// Third-party
