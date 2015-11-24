@@ -1,17 +1,65 @@
-.main-toolbar {
-	.main-title {
-		margin: 15px;
-		cursor: pointer;
-		
-		&:focus {
-			outline-width: 0;
-		}
-	}
+// Main
+
+.homepage-container {
+  margin: 10px;
 }
-.inline-display {
-  display: inline-block;
-}
+
 
 #header-rightside{
   padding: 15px;
+}
+
+.main-wrapper {
+    width: 960px;
+    margin:0 auto;
+    padding: 48px 24px 24px 24px;
+    background-color: #f2f2f6;
+}
+.main-toolbar {
+  opacity: 0.8;
+} 
+
+/*
+.main-img {
+    width: 25%;
+    margin: 10px;
+} */
+
+.main-header { // LSG: This should be renamed to "home-hero-image" or something similar
+    padding: 0;
+    margin:0;
+    height: 360px;
+    width: 100%;
+    background-size: 100% auto;
+    background-image: url('/assets/images/CityCampSF2015_unconference.jpg');
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    display:inline-block;
+    position: relative;
+
+    .header-text {
+        color: white;
+        font-weight: bold;
+        margin-left: 17px;
+        position: absolute;
+        text-align: left;
+        font-size: 36px;
+        background-color: #52b1b9;
+        opacity: 0.8;
+
+    }
+
+    #first-line {
+  		bottom: 134px;
+  		width: 559px;
+  		padding: 12px;
+  		margin-bottom: 25px;
+	}
+
+	#second-line {
+  		bottom: 82px;
+  		width: 365px;
+  		padding: 12px;
+  		margin-top: 20px;
+	}
 }

@@ -1,0 +1,17 @@
+
+.header-menu {
+    .header-avatar, .header-username, {
+        vertical-align: middle;
+    }   
+}
+
+.main-toolbar {
+	.main-title {
+		margin: 15px;
+		cursor: pointer;
+		
+		&:focus {
+			outline-width: 0;
+		}
+	}
+}

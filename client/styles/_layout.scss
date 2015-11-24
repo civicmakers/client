@@ -1,0 +1,30 @@
+// Layout
+
+.sidebar-col {}
+
+
+.main-content-col {
+    display: inline-block;
+    // background-color: white !important;
+    margin: 0 0 0 24px;
+    width: 625px;
+}
+
+.horizontal-repeat {
+    display: block;
+} 
+
+
+.title-row {
+    margin: 10px 0px 10px 0px;
+    padding: 0px 10px 0px 10px;
+}
+
+.first-row {
+    margin-top: 10px;
+}
+
+.title-row h1 {
+    margin-top: auto;
+    margin-bottom: auto;
+}

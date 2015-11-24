@@ -1,0 +1,108 @@
+// Card
+
+.card {
+    display: inline-block;
+    background-color: white !important;
+    width: 220px;
+    height: 300px;
+
+    h2 {
+        text-align: left;
+    }
+}
+
+.md-card {
+    vertical-align: top;
+ }
+
+.list-card-row {}
+
+.list-card {
+
+    :hover {
+        box-shadow: 0px 0px 0px 2px gray;
+    }
+}
+
+.sidebar-card {}
+
+.content-card {
+    padding: 24px;
+
+    &.white {
+        background-color: white;
+    }
+
+}
+
+.big-card {
+    width: 200px;
+    height: 250px;
+    background-color: white;
+    display: inline-block;
+    vertical-align: top;
+    margin: 5px;
+
+    img {
+        width: 200px;
+        height: 200px;
+    }
+
+    p {
+        margin: 9px;
+        text-align: center;
+        vertical-align: top;
+    }
+}
+
+.lil-card {
+    width: 220px;
+    height: 50px;
+    display: inline-block;
+    background-color: white !important;
+    margin: 5px;
+    overflow: hidden;
+
+    p {
+        display: inline-block;
+        margin: 0;
+        vertical-align: top;
+        line-height: 50px;
+        width: 165px;
+        height: 50px;
+        text-overflow: ellipsis;
+    }
+
+    img {
+        height: 50px;
+        width: 50px;
+    }
+
+    &:hover {
+        box-shadow: 0px 0px 0px 2px gray
+    }
+}
+
+.selected-tools.card-container.lil-card:hover {
+    box-shadow: none !important;
+}
+
+.card-container {
+    border:2px solid gray;
+}
+
+
+.indiv-title-row {
+    margin: 10px 0px 10px 0px
+}
+
+.indiv-img {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    margin-right:15px;
+}
+
+.indiv-title {
+    display: inline-block;
+}
