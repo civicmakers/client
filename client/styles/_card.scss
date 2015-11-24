@@ -18,8 +18,7 @@
 .list-card-row {}
 
 .list-card {
-
-    :hover {
+    &:hover {
         box-shadow: 0px 0px 0px 2px gray;
     }
 }
@@ -90,7 +89,6 @@
 .card-container {
     border:2px solid gray;
 }
-
 
 .indiv-title-row {
     margin: 10px 0px 10px 0px
