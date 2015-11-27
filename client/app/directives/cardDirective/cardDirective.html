@@ -1,5 +1,5 @@
 <a ng-href="{{::data.type}}/{{::data.$id}}">
-  <md-card class="card">
+  <div class="card">
     <img ng-if="data.type == 'project'" class="card-img" ng-src="{{::data.image}}">
     <img ng-if="data.type == 'tool'" class="card-img" ng-src="{{::data.avatar}}">
     <div class="homepage-container">
@@ -12,5 +12,5 @@
       <span class="bg-orange tag">Topic 2</span>
       <span class="bg-blue tag">Topic 3</span>
     </div>
-  </md-card>
+  </div>
 </a>

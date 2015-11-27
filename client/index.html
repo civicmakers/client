@@ -39,20 +39,19 @@
       offset-gt-md  Sets element offset on devices greater than 960px wide.
       offset-lg Sets element offset on devices between 960px and 1200px wide.
       offset-gt-lg  Sets element offset on devices greater than 1200px wide.
-    -->
-  <md-content>
-    <md-toolbar class="main-toolbar">
-      <div style="width: 960px; margin: 0 auto;" layout="row">
+    -->               
+  <div id="header">          
+    <nav class="header-nav-bar" layout="row">
         <!-- todo add ui-router -->
-        <h1 flex="80" class="main-title md-display-1" ng-click="mainCtrl.navigateHome()">CivicMakers</h1>
-        <md-button ng-if="!mainCtrl.isLoggedIn" flex="20" ng-click="mainCtrl.loginToTwitter()">
-          <span>Login</span>
-        </md-button>
-        <md-menu ng-if="mainCtrl.isLoggedIn" md-offset="0 60" flex="20" class="header-menu">
-          <md-button aria-label="Open profile menu" ng-click="mainCtrl.openUserProfileMenu($mdOpenMenu, $event)">
+        <h1 flex="80" class="site-title" ng-click="mainCtrl.navigateHome()"><span class="color-teal">Civic</span><span class="color-orange">Makers</span></h1>
+        <button class="button" ng-if="!mainCtrl.isLoggedIn" ng-click="mainCtrl.loginToTwitter()">
+          Login with Twitter
+        </button>
+        <md-menu ng-if="mainCtrl.isLoggedIn" md-offset="0 60" class="header-menu">
+          <button class="button" aria-label="Open profile menu" ng-click="mainCtrl.openUserProfileMenu($mdOpenMenu, $event)">
             <img src="{{mainCtrl.userData.avatar}}" alt="User Avatar" class="header-avatar">
             <span class="header-username">{{mainCtrl.userData.displayName}}</span>
-          </md-button>
+          </button>
           <md-menu-content width="4">
             <md-menu-item>
               <md-button ng-click="mainCtrl.logoutFromTwitter()">
@@ -61,11 +60,24 @@
             </md-menu-item>
           </md-menu-content>
         </md-menu>
-      </div>
-    </md-toolbar>
-  </md-content>
+    </nav>
+  </div>
+
 
   <ng-view></ng-view>
+  <div style="clear:both;"></div>
+  <div class="footer">
+    <div class="row">
+      <div class="col-md-8">
+        <ul>
+          <li class="footer-padding"><a href="">About</a></li>
+          <li class="footer-padding"><a href="">Our Mission</a></li>
+          <li class="footer-padding"><a href="">Contact</a></li>
+          <li class="pull-right">All rights reserved, CivicMakers, 2015</li>
+        </ul>
+      </div>
+    </div>
+  </div><!--footer -->
 
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
   <script>

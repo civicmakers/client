@@ -1,5 +1,12 @@
 // Layout
 
+.main-wrapper {
+    width: 960px;
+    margin:0 auto;
+    padding: 24px 15px 24px 15px;
+    background-color: #f2f2f6;
+}
+
 .sidebar-col {}
 
 
@@ -17,7 +24,7 @@
 
 .title-row {
     margin: 10px 0px 10px 0px;
-    padding: 0px 10px 0px 10px;
+    padding: 0px;
 }
 
 .first-row {

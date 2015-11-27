@@ -20,9 +20,9 @@
         </div>
         <div class="seemore">
           <!-- todo put this into a directive -->
-          <md-button ng-click="mainCtrl.loginAndRedirect('/add/project')" class="md-raised md-primary add-button">
+          <button ng-click="mainCtrl.loginAndRedirect('/add/project')" class="md-raised md-primary button">
             Add a story
-          </md-button>
+          </button>
         </div>
       </div>
       <div class="card-repeat">
@@ -43,27 +43,14 @@
         </div>
         <div class="seemore">
           <!-- todo put this into a directive -->
-          <md-button ng-click="mainCtrl.loginAndRedirect('/add/tool')" class="md-raised md-primary add-button">
+          <button ng-click="mainCtrl.loginAndRedirect('/add/tool')" class="md-raised md-primary button">
             Add a tool
-          </md-button>
+          </button>
         </div>
       </div>
       <card-directive ng-repeat="tool in mainCtrl.tools" data="tool"></card-directive>
     </div>
   </div>
-
-  <div class="footer">
-    <div class="row">
-      <div class="col-md-8">
-        <ul>
-          <li class="footer-padding"><a href="">About</a></li>
-          <li class="footer-padding"><a href="">Our Mission</a></li>
-          <li class="footer-padding"><a href="">Contact</a></li>
-          <li class="pull-right">All rights reserved, CivicMakers, 2015</li>
-        </ul>
-      </div>
-    </div>
-  </div><!--footer -->
 </div>
 <!--
   <div layout="row" flex>

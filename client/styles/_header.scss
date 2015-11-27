@@ -1,17 +1,52 @@
 
-.header-menu {
-    .header-avatar, .header-username, {
-        vertical-align: middle;
-    }   
-}
+#header {
+	position: fixed;
+  	top: 0;
+  	left: 0;
+  	z-index: 9999;
+  	width: 100%;
+	background: white;
+	height: 50px;
+	margin: 0 auto;
+	padding: 10px 0 10px 0; 
+	
 
-.main-toolbar {
-	.main-title {
-		margin: 15px;
-		cursor: pointer;
-		
-		&:focus {
-			outline-width: 0;
+	.header-nav-bar { 
+		width: 960px;
+		margin: 0 auto;
+		padding: 0;
+
+		h1 { 
+			margin: 0;
+			padding: 0;
+		}
+
+		.button { 
+			height: 40px; 
+			margin-top: 3px;
+		}
+
+		.site-title { 
+			font-size: 36px;
 		}
 	}
+
+	.header-menu {
+    	.header-avatar, .header-username, {
+   	   		vertical-align: middle;
+   	 }   
+	}
+/*
+	.main-toolbar {
+		.main-title {
+			margin: 15px;
+			color: #000;
+			cursor: pointer;
+		
+			&:focus {
+				outline-width: 0;
+			}
+		}
+	}
+	*/
 }
