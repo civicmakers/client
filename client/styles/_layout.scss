@@ -1,11 +1,15 @@
 // Layout
 
+
+
 .main-wrapper {
     width: 960px;
-    margin:0 auto;
-    padding: 24px 15px 24px 15px;
+    margin: auto;
+    margin-top: 65px; // account for header
+    padding: 24px 15px 75px 15px;
     background-color: #f2f2f6;
 }
+
 
 .sidebar-col {}
 
@@ -15,6 +19,7 @@
     // background-color: white !important;
     margin: 0 0 0 24px;
     width: 625px;
+    margin-bottom: 50px; // account for footer
 }
 
 .horizontal-repeat {
