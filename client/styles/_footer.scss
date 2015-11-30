@@ -2,13 +2,21 @@
 
 .footer {
 
-  background-color: #3d464d;
+  position: fixed; 
+  bottom: 0px; 
+  background-color: $footer-color;
   color: white;
-  padding: 20px;
+  padding: 15px 0;
+  width: 100%;
+
+  .row {
+    width: 960px;
+    margin: 0 auto;
+    padding: 0;
+  }
 
   .footer-padding {
 
-    padding-left: 25px;
     padding-right: 25px;
 
   }
