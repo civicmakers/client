@@ -11,7 +11,7 @@
     </div>
 
     <table class="social-links">
-      <tr>
+      <tr ng-if="profileCardCtrl.data.link">
         <td>
           <span class="fa-stack">
             <i class="fa fa-circle fa-stack-2x"></i>
@@ -22,7 +22,7 @@
           <a href="{{ profileCardCtrl.data.link }}" target="_blank">{{ profileCardCtrl.data.link }}</a>
         </td>
       </tr>
-      <tr>
+      <tr ng-if="profileCardCtrl.data.twitter">
         <td>
           <span class="fa-stack">
             <i class="fa fa-circle fa-stack-2x" style="color: #4099FF;"></i>
@@ -36,7 +36,7 @@
     </table>
 
     <table class="synopsis-table">
-      <tr>
+      <tr ng-if="profileCardCtrl.data.pricing">
         <td class="synopsis-table-title title">pricing</td>
         <td>{{ profileCardCtrl.data.pricing }}</td>
       </tr>
@@ -44,13 +44,13 @@
         <td class="synopsis-table-title title">origin</td>
         <td>United States</td>
       </tr>
-      <tr>
+      <tr ng-if="profileCardCtrl.data.createdAt">
         <td class="synopsis-table-title title">created</td>
-        <td >{{ profileCardCtrl.data.createdAt | date }}</td>
+        <td >{{ profileCardCtrl.data.createdAt | date:"MM/dd/yyyy" }}</td>
       </tr>
     </table>
 
-    <div class="tag-section">
+    <div ng-if="profileCardCtrl.data.Tags.length > 0" class="tag-section">
       <div class="title" >
         TAGGED
       </div>
