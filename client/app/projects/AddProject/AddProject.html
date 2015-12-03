@@ -34,7 +34,7 @@
          <textarea ng-model="addProjectCtrl.searchInput" md-maxlength="300"></textarea>
      </md-input-container>
 
-     <div class="lil-card" ng-if="addProjectCtrl.searchInput !== undefined " ng-repeat="tool in addProjectCtrl.tools | filter:searchInput | limitTo: 12" ng-click="addProjectCtrl.addToTools(tool)">
+     <div class="lil-card" ng-if="addProjectCtrl.searchInput !== undefined && addProjectCtrl.searchInput !== '' " ng-repeat="tool in addProjectCtrl.tools | filter:{name:addProjectCtrl.searchInput}" ng-click="addProjectCtrl.addToTools(tool)">
        <img ng-src="{{tool.image}}" alt="">
        <p>{{tool.name}}</p>
      </div>
