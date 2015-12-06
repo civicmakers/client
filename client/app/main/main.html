@@ -4,7 +4,7 @@
     <div id="second-line" class="hero-text">FOR CIVIC PROJECTS</div>
   </div>
 </div>
-<div class="main-wrapper">      
+<div class="main-wrapper">
   <div layout="row" flex>
     <div layout="column" layout-fill layout-align="center start" class="horizontal-repeat">
       <div layout="row" class="title-row first-row" layout-align="center center" flex>
@@ -23,7 +23,7 @@
           </button>
         </div>
       </div>
-      <div class="card-repeat">
+      <div class="card-repeat" layout="row" layout-align="space-between center" flex>
         <card-directive ng-repeat="project in mainCtrl.projects | filter:mainSearch" data="project"></card-directive>
       </div>
     </div>
@@ -46,7 +46,9 @@
           </button>
         </div>
       </div>
-      <card-directive ng-repeat="tool in mainCtrl.tools" data="tool"></card-directive>
+      <div class="card-repeat" layout="row" layout-align="space-between center" flex>
+        <card-directive ng-repeat="tool in mainCtrl.tools" data="tool"></card-directive>
+      </div>
     </div>
   </div>
 </div>
