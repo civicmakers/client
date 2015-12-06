@@ -1,110 +1,96 @@
 /*put in general styles*/
-.profile-image{
-  width: 50px;
-  height: 50px;
-  position: relative;
-  overflow: hidden;
-  border-radius: 50%;
-  display: inline-block;
-}
 
-.profile-image img {
-  display: inline;
-  margin: 0 auto;
-  height: 100%;
-  width: auto;
-}
-
-.title{
-  font-weight: 700;
-}
-.subtitle{
-  font-weight: 300;
-  opacity: .5;
-}
-/*end in general styles*/
-
-.profile-card{
+.profile-card {
   width: 280px;
   overflow: none;
   height: auto;
   padding: 15px;
+  margin: 0px;
 
-  :hover {
+  &:hover {
     box-shadow: 0px 0px 0px 0px;
   }
-}
 
-.profile-card .heading{
-  text-align: left;
-  position: relative;
-  height: 60px;
-}
+  .profile-image{
+    width: 50px;
+    height: 50px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    display: inline-block;
+  }
 
-.profile-card .profile-image{
-  float: left;
-  margin-left: 40px;
-}
+  .profile-image img {
+    display: inline;
+    margin: 0 auto;
+    height: 100%;
+    width: auto;
+  }
 
-.profile-card .title-section{
-  padding-top: 7px;
-  float: left;
-  text-align: left;
-}
+  .title{
+    font-weight: 700;
+  }
+  .subtitle{
+    font-weight: 300;
+    opacity: .5;
+  }
+  /*end in general styles*/
 
-.profile-card .social-links a{
-  display: block;
-  width: 230px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  color: blue;
-  text-decoration: underline;
-}
+  .heading{
+    text-align: left;
+    position: relative;
+    height: 60px;
+  }
 
-.profile-card .social-links{
-  float: left;
-  width: 90%;
-}
+  .profile-image{
+    float: left;
+    margin-left: 40px;
+  }
 
-.synopsis-table{
-  padding-top: 10px;
-  padding-bottom: 20px;
-}
+  .title-section{
+    padding-top: 7px;
+    float: left;
+    text-align: left;
+  }
 
-.synopsis-table tr{
-  height: 30px;
-}
+  .social-links a{
+    display: block;
+    width: 230px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: blue;
+    text-decoration: underline;
+  }
 
-.synopsis-table .synopsis-table-title{
-  text-transform: uppercase;
-  color: #505050; /*Be Nice to have this in a varible*/
-  font-weight: 700;
-  padding-right: 15px;
-}
+  .social-links{
+    float: left;
+    width: 90%;
+  }
 
-.tag{
-  display: inline-block;
-  padding: 10px;
-  margin: 4px;
-  color: white;
-  font-weight: 200;
-}
-.bg-purple{
-  background-color: #8e6cbf;
-}
-.bg-orange{
-  background-color: #f76554;
-}
-.bg-blue{
-  background-color: #79c8ff;
-}
+  .synopsis-table{
+    padding-top: 10px;
+    padding-bottom: 20px;
+  }
 
-.tag-section{
-  padding-left: 5px;
-}
-.tag-section .title{
-  color: #505050; /*Be Nice to have this in a varible*/
-  font-weight: 700;
-  padding-bottom: 20px;
+  .synopsis-table tr{
+    height: 30px;
+  }
+
+  .synopsis-table .synopsis-table-title{
+    text-transform: uppercase;
+    color: #505050; /*Be Nice to have this in a varible*/
+    font-weight: 700;
+    padding-right: 15px;
+  }
+
+  .tag-section{
+    padding-left: 5px;
+  }
+  .tag-section .title{
+    color: #505050; /*Be Nice to have this in a varible*/
+    font-weight: 700;
+    padding-bottom: 20px;
+  }
+
 }
