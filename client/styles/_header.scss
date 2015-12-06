@@ -22,7 +22,7 @@ md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolb
 	padding: 0; 
 	box-shadow: 0px 0px 3px #d8d8d8;
 
-	div[md-toolbar], .header-nav-bar { 
+	.header-nav-bar { 
 		width: 960px;
 		margin: 0 auto;
 		padding: 0;
@@ -31,26 +31,33 @@ md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolb
 		h1 { 
 			margin: 0;
 			padding: 5px 0 0 0;
-		}
+		
+			.site-title { 
+				font-size: 36px;
+				cursor: pointer;
 
-		.button { 
-			height: 40px; 
-			margin-top: 3px;
-		}
-
-		.site-title { 
-			font-size: 36px;
-			cursor: pointer;
-
-			&:focus {
-				outline-width: 0;
+				&:focus {
+					outline-width: 0;
+				}
 			}
 		}
 
-		.profile-menu {
-    		.header-avatar, .header-username, {
-   	   		vertical-align: middle;
-   	 }
+		.login-menu { 
+
+			text-align: right;
+			margin-top: 5px;
+
+			.button { 
+				height: 40px; 
+				margin-top: 5px;
+				font-size: 16px;
+			}
+
+			.profile-menu {
+	    		.header-avatar, .header-username, {
+	   	   		vertical-align: middle;
+	   	 	}
+	   	 }
 	}
 
 	   

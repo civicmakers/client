@@ -27,7 +27,7 @@
 <body ng-app="civicMakersClientApp" ng-controller="MainCtrl as mainCtrl">
   <!--[if lt IE 7]>
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
+    <![endif]-->    
 
     <!-- Add your site or application content here -->
 
@@ -45,23 +45,25 @@
       <md-toolbar class="header">
         <div class="header-nav-bar" layout="row">
           <!-- todo add ui-router -->
-          <h1 flex="80" class="site-title" ng-click="mainCtrl.navigateHome()"><span class="color-teal">Civic</span><span class="color-orange">Makers</span></h1>
-          <button class="button" ng-if="!mainCtrl.isLoggedIn" flex="20" ng-click="mainCtrl.loginToTwitter()">
-            <span>Login with Twitter</span>
-          </button>  
-          <md-menu ng-if="mainCtrl.isLoggedIn" md-offset="0 60" flex="20" class="profile-menu">
-            <md-button aria-label="Open profile menu" ng-click="mainCtrl.openUserProfileMenu($mdOpenMenu, $event)">
-              <img src="{{mainCtrl.userData.avatar}}" alt="User Avatar" class="header-avatar">
-              <span class="header-username">{{mainCtrl.userData.displayName}}</span>
-            </md-button>
-            <md-menu-content width="3"> 
-              <md-menu-item>
-                <md-button ng-click="mainCtrl.logoutFromTwitter()">
-                  Logout
-                </md-button>
-              </md-menu-item>
-            </md-menu-content> 
-          </md-menu>
+          <h1 flex="65" class="site-title" ng-click="mainCtrl.navigateHome()"><span class="color-teal">Civic</span><span class="color-orange">Makers</span></h1>
+          <div flex="35" class="login-menu">
+            <button class="button" ng-if="!mainCtrl.isLoggedIn" ng-click="mainCtrl.loginToTwitter()">
+              <span>Login with Twitter</span>
+            </button>  
+            <md-menu ng-if="mainCtrl.isLoggedIn" md-offset="0 60" flex="20" class="profile-menu">
+              <md-button aria-label="Open profile menu" ng-click="mainCtrl.openUserProfileMenu($mdOpenMenu, $event)">
+                <img src="{{mainCtrl.userData.avatar}}" alt="User Avatar" class="header-avatar">
+                <span class="header-username">{{mainCtrl.userData.displayName}}</span>
+              </md-button>
+              <md-menu-content width="3"> 
+                <md-menu-item>
+                  <md-button ng-click="mainCtrl.logoutFromTwitter()">
+                    Logout
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content> 
+            </md-menu>
+          </div>
         </div>
       </md-toolbar>
   </md-content>

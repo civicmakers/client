@@ -1,5 +1,13 @@
 // Layout
 
+.clearboth {
+ clear: both;
+}
+
+.clearfix {
+  overflow: auto;
+}
+
 .material-form-group{
   md-input-container{
     background-color: white;
