@@ -1,0 +1,15 @@
+.button {
+  font-weight: bold;
+  border-radius: 20px;
+  border: 0px;
+  padding: 5px 15px 5px 15px;
+  color: white;
+  background-color: $color-orange;
+  text-transform: uppercase; 
+}
+
+.form-submit-button {
+  margin-top: 10px;
+  text-transform: uppercase;
+  text-align: center;
+}

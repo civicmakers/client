@@ -3,505 +3,61 @@
 angular.module('civicMakersClientApp')
   .factory('ToolApi', function ($q, firebase, $firebaseArray) {
 
-    var service = {
+    function getAllTools() {
+      var deferred = $q.defer();
+      var ref = firebase.getRefTo('tools');
+      var tools = $firebaseArray(ref);
+      tools.$loaded().then(function (results) {
+        deferred.resolve(results);
+      });
+      return deferred.promise;
+    }
+
+    function getFirstNTools(n) {
+      var deferred = $q.defer();
+      getAllTools().then(function(tools) {
+        deferred.resolve(tools.slice(0,n));
+      });
+      return deferred.promise;
+    }
+
+    function getToolsNum() {
+      var deferred = $q.defer();
+      getAllTools().then(function(tools) {
+        deferred.resolve(tools.length);
+      });
+      return deferred.promise;
+    }
+
+    function queryTool(id) {
+      var deferred = $q.defer();
+      var ref = firebase.getRefTo('tools/' + id);
+      ref.once('value', function(snapshot) {
+          deferred.resolve(snapshot.val());
+        });
+      return deferred.promise;
+    }
+
+    function saveTool (toolData) {
+      var deferred = $q.defer();
+      firebase.getRef()
+        .child('tools')
+        .push(toolData, function (error){
+        if (error) {
+          deferred.resolve(error);
+        } else {
+          deferred.resolve('Saved');
+        }
+      });
+      return deferred.promise;
+    }
+
+    return {
       getAllTools: getAllTools,
       queryTool: queryTool,
       getFirstNTools: getFirstNTools,
       getToolsNum: getToolsNum,
-      save: save
-    }
-
-    return service;
-
-    function save(tool){
-        var deferred = $q.defer();
-
-        $firebaseArray(
-            firebase.getRef()
-            .child('tools')
-            .child('data')
-        ).$add(tool).then(function(){
-            deferred.resolve('success');
-        })
-
-        return deferred.promise;
-    }
-
-    function getAllTools(){
-      //THIS  IS DUMMY DATA THAT WILL BE REPLACED WHEN THE ACTUAL API IS WORKING:
-      var dummyData = [
-        {
-            'data': [
-                {
-                    'type': 'tools',
-                    'id': 'abc123',
-                    'attributes': {
-                        'name': 'I am a Tool!',
-                        'description': 'I am a Tool!',
-                        'created_at': '1997-07-16T19:20+01:00',
-                        'url': 'https://www.google.com',
-                        'social_links': {
-                            'facebook': 'https://www.google.com',
-                            'twitter': 'https://www.google.com',
-                            'linkedin': 'https://www.google.com'
-                        }
-                    },
-                    'relationships': {
-                        'system_creator': {
-                            'data': {
-                                'type': 'profiles',
-                                'id': 'abc123'
-                            }
-                        },
-                        'projects': {
-                            'data': [
-                                {
-                                    'id': 'abc123',
-                                    'type': 'projects'
-                                }
-                            ]
-                        }
-                    }
-                }
-            ]
-        },{
-            'data': [
-                {
-                    'type': 'tools',
-                    'id': 'abc123',
-                    'attributes': {
-                        'name': 'I am a Tool!',
-                        'description': 'I am a Tool!',
-                        'created_at': '1997-07-16T19:20+01:00',
-                        'url': 'https://www.google.com',
-                        'social_links': {
-                            'facebook': 'https://www.google.com',
-                            'twitter': 'https://www.google.com',
-                            'linkedin': 'https://www.google.com'
-                        }
-                    },
-                    'relationships': {
-                        'system_creator': {
-                            'data': {
-                                'type': 'profiles',
-                                'id': 'abc123'
-                            }
-                        },
-                        'projects': {
-                            'data': [
-                                {
-                                    'id': 'abc123',
-                                    'type': 'projects'
-                                }
-                            ]
-                        }
-                    }
-                }
-            ]
-        },{
-            'data': [
-                {
-                    'type': 'tools',
-                    'id': 'abc123',
-                    'attributes': {
-                        'name': 'I am a Tool!',
-                        'description': 'I am a Tool!',
-                        'created_at': '1997-07-16T19:20+01:00',
-                        'url': 'https://www.google.com',
-                        'social_links': {
-                            'facebook': 'https://www.google.com',
-                            'twitter': 'https://www.google.com',
-                            'linkedin': 'https://www.google.com'
-                        }
-                    },
-                    'relationships': {
-                        'system_creator': {
-                            'data': {
-                                'type': 'profiles',
-                                'id': 'abc123'
-                            }
-                        },
-                        'projects': {
-                            'data': [
-                                {
-                                    'id': 'abc123',
-                                    'type': 'projects'
-                                }
-                            ]
-                        }
-                    }
-                }
-            ]
-        },{
-            'data': [
-                {
-                    'type': 'tools',
-                    'id': 'abc123',
-                    'attributes': {
-                        'name': 'I am a Tool!',
-                        'description': 'I am a Tool!',
-                        'created_at': '1997-07-16T19:20+01:00',
-                        'url': 'https://www.google.com',
-                        'social_links': {
-                            'facebook': 'https://www.google.com',
-                            'twitter': 'https://www.google.com',
-                            'linkedin': 'https://www.google.com'
-                        }
-                    },
-                    'relationships': {
-                        'system_creator': {
-                            'data': {
-                                'type': 'profiles',
-                                'id': 'abc123'
-                            }
-                        },
-                        'projects': {
-                            'data': [
-                                {
-                                    'id': 'abc123',
-                                    'type': 'projects'
-                                }
-                            ]
-                        }
-                    }
-                }
-            ]
-        }
-      ];
-
-      return dummyData
+      saveTool: saveTool
     };
 
-    function getFirstNTools(n){
-      //THIS  IS DUMMY DATA THAT WILL BE REPLACED WHEN THE ACTUAL API IS WORKING:
-      var dummyData = [
-        {
-            'data': [
-                {
-                    'type': 'tools',
-                    'id': 'abc123',
-                    'attributes': {
-                        'name': 'I am a Tool!',
-                        'description': 'I am a Tool!',
-                        'created_at': '1997-07-16T19:20+01:00',
-                        'url': 'https://www.google.com',
-                        'social_links': {
-                            'facebook': 'https://www.google.com',
-                            'twitter': 'https://www.google.com',
-                            'linkedin': 'https://www.google.com'
-                        }
-                    },
-                    'relationships': {
-                        'system_creator': {
-                            'data': {
-                                'type': 'profiles',
-                                'id': 'abc123'
-                            }
-                        },
-                        'projects': {
-                            'data': [
-                                {
-                                    'id': 'abc123',
-                                    'type': 'projects'
-                                }
-                            ]
-                        }
-                    }
-                }
-            ]
-        },{
-            'data': [
-                {
-                    'type': 'tools',
-                    'id': 'abc123',
-                    'attributes': {
-                        'name': 'I am a Tool!',
-                        'description': 'I am a Tool!',
-                        'created_at': '1997-07-16T19:20+01:00',
-                        'url': 'https://www.google.com',
-                        'social_links': {
-                            'facebook': 'https://www.google.com',
-                            'twitter': 'https://www.google.com',
-                            'linkedin': 'https://www.google.com'
-                        }
-                    },
-                    'relationships': {
-                        'system_creator': {
-                            'data': {
-                                'type': 'profiles',
-                                'id': 'abc123'
-                            }
-                        },
-                        'projects': {
-                            'data': [
-                                {
-                                    'id': 'abc123',
-                                    'type': 'projects'
-                                }
-                            ]
-                        }
-                    }
-                }
-            ]
-        },{
-            'data': [
-                {
-                    'type': 'tools',
-                    'id': 'abc123',
-                    'attributes': {
-                        'name': 'I am a Tool!',
-                        'description': 'I am a Tool!',
-                        'created_at': '1997-07-16T19:20+01:00',
-                        'url': 'https://www.google.com',
-                        'social_links': {
-                            'facebook': 'https://www.google.com',
-                            'twitter': 'https://www.google.com',
-                            'linkedin': 'https://www.google.com'
-                        }
-                    },
-                    'relationships': {
-                        'system_creator': {
-                            'data': {
-                                'type': 'profiles',
-                                'id': 'abc123'
-                            }
-                        },
-                        'projects': {
-                            'data': [
-                                {
-                                    'id': 'abc123',
-                                    'type': 'projects'
-                                }
-                            ]
-                        }
-                    }
-                }
-            ]
-        },{
-            'data': [
-                {
-                    'type': 'tools',
-                    'id': 'abc123',
-                    'attributes': {
-                        'name': 'I am a Tool!',
-                        'description': 'I am a Tool!',
-                        'created_at': '1997-07-16T19:20+01:00',
-                        'url': 'https://www.google.com',
-                        'social_links': {
-                            'facebook': 'https://www.google.com',
-                            'twitter': 'https://www.google.com',
-                            'linkedin': 'https://www.google.com'
-                        }
-                    },
-                    'relationships': {
-                        'system_creator': {
-                            'data': {
-                                'type': 'profiles',
-                                'id': 'abc123'
-                            }
-                        },
-                        'projects': {
-                            'data': [
-                                {
-                                    'id': 'abc123',
-                                    'type': 'projects'
-                                }
-                            ]
-                        }
-                    }
-                }
-            ]
-        }
-      ];
-
-      return dummyData.slice(0,n)
-    };
-
-    function getToolsNum(){
-      //THIS  IS DUMMY DATA THAT WILL BE REPLACED WHEN THE ACTUAL API IS WORKING:
-      var dummyData = [
-        {
-            'data': [
-                {
-                    'type': 'tools',
-                    'id': 'abc123',
-                    'attributes': {
-                        'name': 'I am a Tool!',
-                        'description': 'I am a Tool!',
-                        'created_at': '1997-07-16T19:20+01:00',
-                        'url': 'https://www.google.com',
-                        'social_links': {
-                            'facebook': 'https://www.google.com',
-                            'twitter': 'https://www.google.com',
-                            'linkedin': 'https://www.google.com'
-                        }
-                    },
-                    'relationships': {
-                        'system_creator': {
-                            'data': {
-                                'type': 'profiles',
-                                'id': 'abc123'
-                            }
-                        },
-                        'projects': {
-                            'data': [
-                                {
-                                    'id': 'abc123',
-                                    'type': 'projects'
-                                }
-                            ]
-                        }
-                    }
-                }
-            ]
-        },{
-            'data': [
-                {
-                    'type': 'tools',
-                    'id': 'abc123',
-                    'attributes': {
-                        'name': 'I am a Tool!',
-                        'description': 'I am a Tool!',
-                        'created_at': '1997-07-16T19:20+01:00',
-                        'url': 'https://www.google.com',
-                        'social_links': {
-                            'facebook': 'https://www.google.com',
-                            'twitter': 'https://www.google.com',
-                            'linkedin': 'https://www.google.com'
-                        }
-                    },
-                    'relationships': {
-                        'system_creator': {
-                            'data': {
-                                'type': 'profiles',
-                                'id': 'abc123'
-                            }
-                        },
-                        'projects': {
-                            'data': [
-                                {
-                                    'id': 'abc123',
-                                    'type': 'projects'
-                                }
-                            ]
-                        }
-                    }
-                }
-            ]
-        },{
-            'data': [
-                {
-                    'type': 'tools',
-                    'id': 'abc123',
-                    'attributes': {
-                        'name': 'I am a Tool!',
-                        'description': 'I am a Tool!',
-                        'created_at': '1997-07-16T19:20+01:00',
-                        'url': 'https://www.google.com',
-                        'social_links': {
-                            'facebook': 'https://www.google.com',
-                            'twitter': 'https://www.google.com',
-                            'linkedin': 'https://www.google.com'
-                        }
-                    },
-                    'relationships': {
-                        'system_creator': {
-                            'data': {
-                                'type': 'profiles',
-                                'id': 'abc123'
-                            }
-                        },
-                        'projects': {
-                            'data': [
-                                {
-                                    'id': 'abc123',
-                                    'type': 'projects'
-                                }
-                            ]
-                        }
-                    }
-                }
-            ]
-        },{
-            'data': [
-                {
-                    'type': 'tools',
-                    'id': 'abc123',
-                    'attributes': {
-                        'name': 'I am a Tool!',
-                        'description': 'I am a Tool!',
-                        'created_at': '1997-07-16T19:20+01:00',
-                        'url': 'https://www.google.com',
-                        'social_links': {
-                            'facebook': 'https://www.google.com',
-                            'twitter': 'https://www.google.com',
-                            'linkedin': 'https://www.google.com'
-                        }
-                    },
-                    'relationships': {
-                        'system_creator': {
-                            'data': {
-                                'type': 'profiles',
-                                'id': 'abc123'
-                            }
-                        },
-                        'projects': {
-                            'data': [
-                                {
-                                    'id': 'abc123',
-                                    'type': 'projects'
-                                }
-                            ]
-                        }
-                    }
-                }
-            ]
-        }
-      ];
-
-      return dummyData.length
-    };
-
-    function queryTool(id){
-      console.log('ToolID: ', id)
-      // TODO: when API is ready inplement query
-      var dummyTool = {
-          'data': [
-              {
-                  'type': 'tools',
-                  'id': 'abc123',
-                  'attributes': {
-                      'name': 'I am a Tool!',
-                      'description': 'I am a Tool!',
-                      'created_at': '1997-07-16T19:20+01:00',
-                      'url': 'https://www.google.com',
-                      'social_links': {
-                          'facebook': 'https://www.google.com',
-                          'twitter': 'https://www.google.com',
-                          'linkedin': 'https://www.google.com'
-                      }
-                  },
-                  'relationships': {
-                      'system_creator': {
-                          'data': {
-                              'type': 'profiles',
-                              'id': 'abc123'
-                          }
-                      },
-                      'projects': {
-                          'data': [
-                              {
-                                  'id': 'abc123',
-                                  'type': 'projects'
-                              }
-                          ]
-                      }
-                  }
-              }
-          ]
-      };
-
-        return dummyTool
-    }
-
-  });
+});

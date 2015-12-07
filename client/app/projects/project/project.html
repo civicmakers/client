@@ -1,8 +1,32 @@
-<div class="main-wrapper">
-	<h1><a ng-href="">{{project.attributes.name}}</a></h1>
-  <img class="page-img" src="{{project.attributes.images[0].url}}">
-	<p>{{project.attributes.description}}</p>
-  <p>Created: {{ project.attributes.created_at | date:'MMMM dd, yyyy' }}</p>
-  <!-- <p>TODO: add project components to data</p> -->
-	{{projectComponent.hey}}
+<div class="project">
+  <div class="main-wrapper">
+    <title-directive data="project"></title-directive>
+
+    <div style="clear:both;"></div>
+
+    <div class="sidebar-col" style="float:left;">
+        <profile-card data="project"></profile-card>
+    </div>
+
+    <div class="main-content-col">
+
+        <div class="content-card white">
+            <p>{{::project.description}}</p>
+            <img class="tool-image" ng-if="project.image" ng-src="{{::project.image}}">
+        </div>
+
+        <!-- <div class="content-card"> -->
+            <div ng-if="projectTools.length > 0">
+                <h3>{{projectTools.length}} Tool{{projectTools.length > 1 ? 's' : ''}} Used</h3>
+            </div>
+            <div class="big-card" ng-repeat="tool in projectTools">
+                <a ng-href="/tool/{{tool.id}}">
+                    <img ng-src="{{tool.avatar}}" alt="">
+                    <p>{{tool.name}}</p>
+                </a>
+            </div>
+        <!-- </div> -->
+        <questions-and-answers type="projects" id="projectId"></questions-and-answers>
+    </div>
+  </div>
 </div>

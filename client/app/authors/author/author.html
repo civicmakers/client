@@ -1,12 +1,13 @@
 <div class="main-wrapper">
-	<h1><a ng-href="author.data[0].attributes.url">{{author.data[0].attributes.name}}</a></h1>
-	<img src="{{author.data[0].attributes.avatars[0].url}}">
-	<p>{{author.data[0].attributes.description}}</p>
-  <p>Created: {{ author.data[0].attributes.created_at | date:'MMMM dd, yyyy' }}</p>
+
+  <title-directive data="author"></title-directive>
+
+	<p>{{author.attributes.description}}</p>
+  <p>Created: {{ author.attributes.createdAt | date:'MMMM dd, yyyy' }}</p>
   <ul>
-    <li><a ng-href="{{author.data[0].attributes.social_links.facebook}}">Facebook</a></li>
-    <li><a ng-href="{{author.data[0].attributes.social_links.twitter}}">Twitter</a></li>
-    <li><a ng-href="{{author.data[0].attributes.social_links.linkedin}}">LinkedIn</a></li>
+    <li><a ng-href="{{author.attributes.social_links.facebook}}">Facebook</a></li>
+    <li><a ng-href="{{author.attributes.social_links.twitter}}">Twitter</a></li>
+    <li><a ng-href="{{author.attributes.social_links.linkedin}}">LinkedIn</a></li>
   </ul>
 	<!-- {{author}} -->
 </div>

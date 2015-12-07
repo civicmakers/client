@@ -1,0 +1,36 @@
+// Footer
+
+.footer {
+
+  position: fixed; 
+  bottom: 0px; 
+  background-color: $footer-color;
+  color: white;
+  padding: 15px 0;
+  width: 100%;
+
+  .row {
+    width: 960px;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .footer-padding {
+
+    padding-right: 25px;
+
+  }
+
+  ul {
+
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      display: inline;
+    }
+
+  }
+
+}

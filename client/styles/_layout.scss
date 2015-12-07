@@ -1,0 +1,80 @@
+// Layout
+ 
+.clearboth {
+ clear: both;
+}
+
+.clearfix {
+  overflow: auto;
+}
+
+.material-form-group{
+  md-input-container{
+    background-color: white;
+    color: black;
+    padding: 10px;
+    margin-bottom: 15px;
+
+    label{
+      color: #96989a;
+      font-size: 12px;
+    }
+  }
+
+  md-select{
+    width: 100%;
+    padding: 5px;
+  }
+
+  p{
+    color: #3d464d;
+  }
+
+  label{
+    font-weight: bold;
+    display: block;
+    padding-bottom: 5px;
+    color: #3d464d;
+  }
+}
+
+
+
+.main-wrapper {
+    width: 960px;
+    margin: auto;
+    margin-top: 65px; // account for header
+    padding: 24px 15px 75px 15px;
+    background-color: #f2f2f6;
+}
+
+
+.sidebar-col {}
+
+
+.main-content-col {
+    display: inline-block;
+    // background-color: white !important;
+    margin: 0 0 0 24px;
+    width: 625px;
+    margin-bottom: 50px; // account for footer
+}
+
+.horizontal-repeat {
+    display: block;
+} 
+
+
+.title-row {
+    margin: 10px 0px 10px 0px;
+    padding: 0px;
+}
+
+.first-row {
+    margin-top: 10px;
+}
+
+.title-row h1 {
+    margin-top: auto;
+    margin-bottom: auto;
+}

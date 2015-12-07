@@ -1,0 +1,44 @@
+<md-dialog aria-label="Login Modal" class="cm-login-modal">
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>Finish Creating Your Profile</h2>
+      <span class="flex"></span>
+      <button class="md-icon-button md-button md-ink-ripple" ng-click="dialogVm.cancel()">
+        <md-icon md-svg-src="assets/icons/cancel.svg" aria-label="Close dialog"></md-icon>
+      </button>
+    </div>
+  </md-toolbar>
+  <form name="additionalLoginInfoForm" ng-submit="dialogVm.submitLoginData()" novalidate>
+    <md-dialog-content>
+        <p>You're almost done! To share and learn from other CivicMakers, we'd like to send you email notifications about questions and answers related to you tools' stories. We take privacy seriously, and agree not to share your email directly with anyone, nor to spam you with unwanted messages.
+        </p>
+        <md-input-container>
+          <label>Email Address</label>
+          <input type="email" ng-model="dialogVm.email" pattern="^[^@]+@[^@]+\.[^@]+$" required>
+        </md-input-container>
+        <span ng-show="dialogVm.isEmailError">Your email is required!</span>
+        <md-checkbox ng-model="dialogVm.isSubscribe" aria-label="Subscribe Checkbox" class="md-primary">
+          Like we said, we're serious about privacy. You won't receive any other emails from us unless you check this box for updates about CivicMakers program and events.
+        </md-checkbox>
+        <div>
+          <md-input-container>
+            <label>Zip Code</label>
+            <input type="text" ng-model="dialogVm.zipCode">
+          </md-input-container>
+          <md-input-container>
+            <label>Country</label>
+            <input type="text" ng-model="dialogVm.country">
+          </md-input-container>
+        </div>
+
+    </md-dialog-content>
+    <div class="md-actions">
+      <md-button ng-click="dialogVm.cancel()" class="md-primary" type="button">
+        Cancel
+      </md-button>
+      <md-button class="md-primary" type="submit">
+        Submit
+      </md-button>
+    </div>
+  </form>
+</md-dialog>

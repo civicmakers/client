@@ -9,22 +9,11 @@ angular.module('civicMakersClientApp')
         data: '='
       },
       link: function (scope) {
-
-        // console.log("Data: ", scope.data);
-
-        scope.type = function (type) {
-          switch (type) {
-            case 'tools':
-              return 'tool';
-            case 'projects':
-              return 'project';
-            case 'profiles':
-              return 'author';
-            case 'topics':
-              return 'topic';
-            }
-          };
+        scope.data = scope.data;
+        if (scope.data.description.length > 40) {
+          scope.data.description = scope.data.description
+            .slice(0, 50) + '...';
         }
-
-      };
+      }
+    };
   });

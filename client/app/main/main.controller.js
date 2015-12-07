@@ -1,31 +1,69 @@
 'use strict';
 
-angular.module('civicMakersClientApp')
-  .controller('MainCtrl', function ($scope, $http, ProjectApi, ToolApi, AuthorApi, TopicApi) {
+(function() {
+    function MainCtrl($scope, $http, $location, ProjectApi, AuthorApi, ToolApi, TopicApi, AuthenticationService) {
+        var self = this;
+        this.isLoggedIn = AuthenticationService.isLoggedIn();
+        this.userData = AuthenticationService.getAuthData();
+        $scope.$on('loginDataChanged', function(){
+            syncLoginData();
+        });
 
-    $scope.projects = [];
-    $scope.projectsNum = '';
-    ProjectApi.getFirstNProjects(4).then(function(projects){
-        $scope.projects = projects;
-    });
-    ProjectApi.getProjectsNum().then(function(numOfProjects){
-        $scope.projectsNum = numOfProjects;
-    });
+        ProjectApi.getFirstNProjects(4).then(function(projects){
+            self.projects = projects;
+        });
 
-    // ToDo: configure this to use a promise once we have real API and ApiConfig factory is set up.
+        ProjectApi.getProjectsNum().then(function(numOfProjects){
+            self.projectsNum = numOfProjects;
+        });
 
-    // ProjectApi
-    //   .getAllProjects().then(function (response) {
-    //     console.log("response", response)
-    //   })
-    // For now using these functions, but will use api call with .then() once configured
-    $scope.tools = ToolApi.getFirstNTools(4);
-    $scope.toolsNum = ToolApi.getToolsNum();
+        ToolApi.getFirstNTools(4).then(function(tools){
+            self.tools = tools;
+        });
 
-    $scope.authors = AuthorApi.getFirstNAuthors(4);
-    $scope.authorsNum = AuthorApi.getAuthorsNum();
+        ToolApi.getToolsNum().then(function(numOfTools){
+            self.toolsNum = numOfTools;
+        });
 
-    $scope.topics = TopicApi.getFirstNTopics(4);
-    $scope.topicsNum = TopicApi.getTopicsNum();
+        this.loginToTwitter = function () {
+            if (!AuthenticationService.isLoggedIn()) {
+                AuthenticationService.loginWithTwitter().then(function () {
+                    syncLoginData();
+                });
+            }
+        };
 
-  });
+        this.logoutFromTwitter = function () {
+            if (AuthenticationService.isLoggedIn()) {
+                AuthenticationService.logoutFromTwitter();
+                syncLoginData();
+            }
+        };
+
+        this.loginAndRedirect = function(path) {
+            if (!AuthenticationService.isLoggedIn()) {
+                AuthenticationService.loginWithTwitter().then(function () {
+                    syncLoginData();
+                    $location.path(path);
+                });
+            } else {
+                $location.path(path);
+            }
+        };
+
+        this.openUserProfileMenu = function($mdOpenMenu, event) {
+          $mdOpenMenu(event);
+        };
+
+        this.navigateHome = function() {
+            $location.path('/');
+        };
+
+        var syncLoginData = function() {
+            self.isLoggedIn = AuthenticationService.isLoggedIn();
+            self.userData = AuthenticationService.getAuthData();
+        };
+    }
+
+    angular.module('civicMakersClientApp').controller('MainCtrl', MainCtrl);
+})();

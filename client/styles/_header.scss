@@ -1,0 +1,78 @@
+
+md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolbar) {
+
+	background-color: #ffffff; 
+		
+	.md-button {
+		color: #000;
+		margin: 0;
+		padding: 0;
+	}
+}
+
+.header {
+	position: fixed;
+  	top: 0;
+  	left: 0;
+  	z-index: 9999;
+  	width: 100%;
+	background-color: #ffffff;
+	height: 55px;
+	margin: 0 auto;
+	padding: 0; 
+	box-shadow: 0px 0px 3px #d8d8d8;
+
+	.header-nav-bar { 
+		width: 960px;
+		margin: 0 auto;
+		padding: 0;
+
+
+		h1 { 
+			margin: 0;
+			padding: 5px 0 0 0;
+		
+			.site-title { 
+				font-size: 36px;
+				cursor: pointer;
+
+				&:focus {
+					outline-width: 0;
+				}
+			}
+		}
+
+		.login-menu { 
+
+			text-align: right;
+			margin-top: 5px;
+
+			.button { 
+				height: 40px; 
+				margin-top: 5px;
+				font-size: 16px;
+			}
+
+			.profile-menu {
+	    		.header-avatar, .header-username, {
+	   	   		vertical-align: middle;
+	   	 	}
+	   	 }
+	}
+
+	   
+	}
+/*
+	.main-toolbar {
+		.main-title {
+			margin: 15px;
+			color: #000;
+			cursor: pointer;
+		
+			&:focus {
+				outline-width: 0;
+			}
+		}
+	}
+	*/
+}

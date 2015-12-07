@@ -1,4 +1,5 @@
 // Generated on 2015-05-21 using generator-angular-fullstack 2.0.13
+/*jslint node: true */
 'use strict';
 
 module.exports = function (grunt) {
@@ -65,7 +66,8 @@ module.exports = function (grunt) {
       },
       injectCss: {
         files: [
-          '<%= yeoman.client %>/{app,components}/**/*.css'
+          '<%= yeoman.client %>/{app,components}/**/*.css',
+          '<%= yeoman.client %>/{app,components}/**/*.scss'
         ],
         tasks: ['injector:css']
       },
@@ -86,12 +88,15 @@ module.exports = function (grunt) {
       livereload: {
         files: [
           '{.tmp,<%= yeoman.client %>}/{app,components}/**/*.css',
+          '{.tmp,<%= yeoman.client %>}/{app,components}/**/*.scss',
           '{.tmp,<%= yeoman.client %>}/{app,components}/**/*.html',
+          '{.tmp,<%= yeoman.client %>}/index.html',
           '{.tmp,<%= yeoman.client %>}/{app,components}/**/*.js',
           '!{.tmp,<%= yeoman.client %>}{app,components}/**/*.spec.js',
           '!{.tmp,<%= yeoman.client %>}/{app,components}/**/*.mock.js',
           '<%= yeoman.client %>/assets/images/{,*//*}*.{png,jpg,jpeg,gif,webp,svg}'
         ],
+        tasks: ['sass:dev', 'newer:jshint:all'],
         options: {
           livereload: true
         }
@@ -156,7 +161,8 @@ module.exports = function (grunt) {
           ]
         }]
       },
-      server: '.tmp'
+      server: '.tmp',
+      dev: '.tmp'
     },
 
     // Add vendor prefixed styles
@@ -244,7 +250,7 @@ module.exports = function (grunt) {
     // Performs rewrites based on rev and the useminPrepare configuration
     usemin: {
       html: ['<%= yeoman.dist %>/public/{,*/}*.html'],
-      css: ['<%= yeoman.dist %>/public/{,*/}*.css'],
+      css: ['<%= yeoman.dist %>/public/{,*/,*/*/}*.css'],
       js: ['<%= yeoman.dist %>/public/{,*/}*.js'],
       options: {
         assetsDirs: [
@@ -343,7 +349,8 @@ module.exports = function (grunt) {
             '*.{ico,png,txt}',
             '.htaccess',
             'bower_components/**/*',
-            'assets/images/{,*/}*.{webp}',
+            'assets/images/{,*/}*.{webp,jpg,png}',
+            'assets/icons/{,*/}*.{svg,png}',
             'assets/fonts/**/*',
             'index.html'
           ]
@@ -493,6 +500,30 @@ module.exports = function (grunt) {
         }
       }
     },
+    sass: {
+      dev: {
+        options: {
+          style: 'expanded'
+        },
+        files: {
+          '.tmp/concat/app/styles/app.css': '<%= yeoman.client %>/styles/index.scss'
+        }
+      },
+      dist: {
+        options: {
+          style: 'expanded'
+        },
+        files: {
+          'dist/public/app/styles/app.css': '<%= yeoman.client %>/styles/index.scss'
+        }
+      }
+    },
+    cssmin: {
+      dist: {
+        src: '<%= yeoman.dist %>/public/app/styles/app.css',
+        dest: '<%= yeoman.dist %>/public/app/styles/app.min.css'
+      }
+    }
   });
 
   // Used for delaying livereload until after server has restarted
@@ -518,7 +549,7 @@ module.exports = function (grunt) {
 
     if (target === 'debug') {
       return grunt.task.run([
-        'clean:server',
+        'clean:dev',
         'env:all',
         'concurrent:server',
         'injector',
@@ -529,13 +560,15 @@ module.exports = function (grunt) {
     }
 
     grunt.task.run([
-      'clean:server',
+      'clean:dev',
+      'newer:jshint:all',
       'env:all',
       'concurrent:server',
       'injector',
       'wiredep',
       'autoprefixer',
       'express:dev',
+      'sass:dev',
       'wait',
       'open',
       'watch'
@@ -558,7 +591,7 @@ module.exports = function (grunt) {
 
     else if (target === 'client') {
       return grunt.task.run([
-        'clean:server',
+        'clean:dev',
         'env:all',
         'concurrent:test',
         'injector',
@@ -589,6 +622,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
+    'newer:jshint:all',
     'concurrent:dist',
     'injector',
     'wiredep',
@@ -599,17 +633,17 @@ module.exports = function (grunt) {
     'ngAnnotate',
     'copy:dist',
     'cdnify',
-    'cssmin',
+    'sass:dist',
+    'cssmin:dist',
     'uglify',
     'rev',
     'usemin'
   ]);
 
   grunt.registerTask('default', [
-    'newer:jshint',
+    'newer:jshint:all',
     'test',
     'build'
   ]);
 
 };
-

@@ -1,0 +1,30 @@
+.title-directive {
+  width: 100%;
+  display: block;
+  height:80px;
+  margin:0 0 24px 0;
+}
+
+.title-directive img {
+  width: 80px;
+  height: 80px;
+}
+
+.title-directive span {
+  display: block;
+  margin: 0px;
+  color:gray;
+  font-size: 0.75em;
+}
+
+.title-directive h1 {
+  display: block;
+  margin: 0px;
+  font-size: 2.5em;
+}
+
+.title-directive .text {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 10px;
+}
