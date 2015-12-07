@@ -50,12 +50,12 @@
       </tr>
     </table>
 
-    <div ng-if="profileCardCtrl.data.Tags.length > 0" class="tag-section">
+    <div ng-if="profileCardCtrl.data.tags.length > 0" class="tag-section">
       <div class="title" >
         TAGGED
       </div>
         <div>
-          <span ng-repeat="tag in profileCardCtrl.data.tags" class="tag"
+          <span ng-repeat="tag in profileCardCtrl.data.tags track by $index" class="tag"
                 ng-class="profileCardCtrl.tagBGColor[$index % 3]">{{ tag }}
           </span>
         </div>

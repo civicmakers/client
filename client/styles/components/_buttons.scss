@@ -5,7 +5,11 @@
   padding: 5px 15px 5px 15px;
   color: white;
   background-color: $color-orange;
-  text-transform: uppercase; 
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: darken($color-orange, 5%);
+  }
 }
 
 .form-submit-button {
