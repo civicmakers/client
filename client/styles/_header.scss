@@ -27,9 +27,9 @@ md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolb
 		margin: 0 auto;
 		padding: 0;
 
-		h1 {
-			margin: 0;
-		}
+		// h1 {
+		// 	margin: 0;
+		// }
 
 		.button {
 			height: 40px;
@@ -38,6 +38,7 @@ md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolb
 		.site-title {
 			font-size: 36px;
 			cursor: pointer;
+			margin: 0;
 
 			&:focus {
 				outline-width: 0;

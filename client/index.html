@@ -16,6 +16,7 @@
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   <!-- build:css(client) app/vendor.css -->
   <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css({.tmp,client}) app/styles/app.min.css -->
@@ -23,7 +24,7 @@
   <link rel="stylesheet" href="concat/app/styles/app.css">
   <!-- endinjector -->
   <!-- endbuild -->
-</head> 
+</head>
 <body ng-app="civicMakersClientApp" ng-controller="MainCtrl as mainCtrl">
   <!--[if lt IE 7]>
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -46,7 +47,7 @@
         <div class="header-nav-bar" layout="row" layout-align="space-between center" flex>
           <!-- todo add ui-router -->
           <h1 class="site-title" ng-click="mainCtrl.navigateHome()"><span class="color-teal">Civic</span><span class="color-orange">Makers</span></h1>
-          <button class="button" ng-if="!mainCtrl.isLoggedIn" flex="25" ng-click="mainCtrl.loginToTwitter()">
+          <button class="button" ng-if="!mainCtrl.isLoggedIn" flex="30" ng-click="mainCtrl.loginToTwitter()">
             <span>Login with Twitter</span>
           </button>
           <md-menu ng-if="mainCtrl.isLoggedIn" md-offset="0 60" flex="20" class="profile-menu">
@@ -54,32 +55,32 @@
               <img src="{{mainCtrl.userData.avatar}}" alt="User Avatar" class="header-avatar">
               <span class="header-username">{{mainCtrl.userData.displayName}}</span>
             </md-button>
-            <md-menu-content width="3"> 
+            <md-menu-content width="3">
               <md-menu-item>
                 <md-button ng-click="mainCtrl.logoutFromTwitter()">
                   Logout
                 </md-button>
               </md-menu-item>
-            </md-menu-content> 
+            </md-menu-content>
           </md-menu>
         </div>
       </md-toolbar>
   </md-content>
 
   <ng-view></ng-view>
- 
+
   <div style="clear:both"></div>
   <div class="footer">
     <div class="row">
       <div class="col-md-8">
-        <ul> 
+        <ul>
           <li class="footer-padding"><a href="">About</a></li>
           <li class="footer-padding"><a href="">Our Mission</a></li>
           <li class="footer-padding"><a href="">Contact</a></li>
           <li class="pull-right">All rights reserved, CivicMakers, 2015</li>
         </ul>
       </div>
-    </div> 
+    </div>
   </div><!--footer -->
 
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
