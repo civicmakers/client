@@ -3,7 +3,7 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-<head> 
+<head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <base href="/">
@@ -16,6 +16,7 @@
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   <!-- build:css(client) app/vendor.css -->
   <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css({.tmp,client}) app/styles/app.min.css -->
@@ -23,11 +24,11 @@
   <link rel="stylesheet" href="concat/app/styles/app.css">
   <!-- endinjector -->
   <!-- endbuild -->
-</head> 
+</head>
 <body ng-app="civicMakersClientApp" ng-controller="MainCtrl as mainCtrl">
   <!--[if lt IE 7]>
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->    
+    <![endif]-->
 
     <!-- Add your site or application content here -->
 
@@ -39,49 +40,47 @@
       offset-gt-md  Sets element offset on devices greater than 960px wide.
       offset-lg Sets element offset on devices between 960px and 1200px wide.
       offset-gt-lg  Sets element offset on devices greater than 1200px wide.
-    -->               
-           
-  <md-content>        
+    -->
+
+  <md-content>
       <md-toolbar class="header">
-        <div class="header-nav-bar" layout="row">
+        <div class="header-nav-bar" layout="row" layout-align="space-between center" flex>
           <!-- todo add ui-router -->
-          <h1 flex="65" class="site-title" ng-click="mainCtrl.navigateHome()"><span class="color-teal">Civic</span><span class="color-orange">Makers</span></h1>
-          <div flex="35" class="login-menu">
-            <button class="button" ng-if="!mainCtrl.isLoggedIn" ng-click="mainCtrl.loginToTwitter()">
-              <span>Login with Twitter</span>
-            </button>  
-            <md-menu ng-if="mainCtrl.isLoggedIn" md-offset="0 60" flex="20" class="profile-menu">
-              <md-button aria-label="Open profile menu" ng-click="mainCtrl.openUserProfileMenu($mdOpenMenu, $event)">
-                <img src="{{mainCtrl.userData.avatar}}" alt="User Avatar" class="header-avatar">
-                <span class="header-username">{{mainCtrl.userData.displayName}}</span>
-              </md-button>
-              <md-menu-content width="3"> 
-                <md-menu-item>
-                  <md-button ng-click="mainCtrl.logoutFromTwitter()">
-                    Logout
-                  </md-button>
-                </md-menu-item>
-              </md-menu-content> 
-            </md-menu>
-          </div>
+          <h1 class="site-title" ng-click="mainCtrl.navigateHome()"><span class="color-teal">Civic</span><span class="color-orange">Makers</span></h1>
+          <button class="button" ng-if="!mainCtrl.isLoggedIn" flex="30" ng-click="mainCtrl.loginToTwitter()">
+            <span>Login with Twitter</span>
+          </button>
+          <md-menu ng-if="mainCtrl.isLoggedIn" md-offset="0 60" flex="20" class="profile-menu">
+            <md-button aria-label="Open profile menu" ng-click="mainCtrl.openUserProfileMenu($mdOpenMenu, $event)">
+              <img src="{{mainCtrl.userData.avatar}}" alt="User Avatar" class="header-avatar">
+              <span class="header-username">{{mainCtrl.userData.displayName}}</span>
+            </md-button>
+            <md-menu-content width="3">
+              <md-menu-item>
+                <md-button ng-click="mainCtrl.logoutFromTwitter()">
+                  Logout
+                </md-button>
+              </md-menu-item>
+            </md-menu-content>
+          </md-menu>
         </div>
       </md-toolbar>
   </md-content>
 
   <ng-view></ng-view>
- 
+
   <div style="clear:both"></div>
   <div class="footer">
     <div class="row">
       <div class="col-md-8">
-        <ul> 
+        <ul>
           <li class="footer-padding"><a href="">About</a></li>
           <li class="footer-padding"><a href="">Our Mission</a></li>
           <li class="footer-padding"><a href="">Contact</a></li>
           <li class="pull-right">All rights reserved, CivicMakers, 2015</li>
         </ul>
       </div>
-    </div> 
+    </div>
   </div><!--footer -->
 
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
