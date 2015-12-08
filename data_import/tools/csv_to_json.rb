@@ -21,7 +21,7 @@ CSV.foreach(locationOfCsvFile, :headers => :headers) do | row |
   docs[guid] = {}
   row.each do | attribute |
      key = attribute[0].to_s
-     if (key == 'Tags')
+     if (key == 'tags')
        docs[guid][key] = attribute[1].to_s.split(',').map{ | s | s.strip}
      elsif(key == 'toolID')
        puts "Skipping ID attr"

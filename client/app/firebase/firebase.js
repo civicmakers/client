@@ -66,16 +66,19 @@
     //     if (snapshot) {
     //       snapshot.forEach(function (childSnapshot) {
     //         var keySnapshot = childSnapshot.child(currentKeyName);
-    //         var value = keySnapshot.val();
-    //         var objectToInsert = {};
-    //         objectToInsert[newKeyName] = value;
-    //         childSnapshot.ref().update(objectToInsert, function (error) {
-    //           if (error) {
-    //             console.log('Failed to rename: ' + currentKeyName + ' to: ' + newKeyName);
-    //           } else {
-    //             keySnapshot.ref().remove();
-    //           }
-    //         });
+    //         if (keySnapshot.exists()) {
+    //           var value = keySnapshot.val();
+    //           var objectToInsert = {};
+    //           objectToInsert[newKeyName] = value;
+    //           childSnapshot.ref().update(objectToInsert, function (error) {
+    //             if (error) {
+    //               console.log('Failed to rename: ' + currentKeyName + ' to: ' + newKeyName);
+    //             } else {
+    //               keySnapshot.ref().remove();
+    //             }
+    //           });  
+    //         }
+            
     //       });
     //     }
     //   });

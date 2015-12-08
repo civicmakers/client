@@ -1,11 +1,17 @@
+$button-bg-color: $color-secondary;
+
 .button {
   font-weight: bold;
   border-radius: 20px;
   border: 0px;
   padding: 5px 15px 5px 15px;
   color: white;
-  background-color: $color-orange;
-  text-transform: uppercase; 
+  background-color: $button-bg-color;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: darken($button-bg-color, 5%);
+  }
 }
 
 .form-submit-button {
