@@ -8,7 +8,9 @@
       <span class="pull-right blue-text"><b>{{::data.pricing}}</b></span>
       </div>
       <p class="grey-text">{{::data.description}}</p>
-      <span ng-repeat="tag in data.tags track by $index" ng-class-odd="'bg-purple'" ng-class-even="'bg-orange'" ng-if="tag !== ''" class="tag">{{tag}}</span>
+      <span ng-repeat="tag in data.tags track by $index" ng-if="tag !== ''" class="tag">
+        {{tag}}
+      </span>
     </div>
   </div>
 </a>

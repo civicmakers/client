@@ -10,14 +10,7 @@ angular.module('civicMakersClientApp')
       	data: '='
       },
       controller: function ProfileCardCtrl(){
-        this.tagBGColor = [
-          'bg-orange',
-          'bg-blue',
-          'bg-purple'
-        ];
       },
       controllerAs: 'profileCardCtrl',
     };
-
 });
-

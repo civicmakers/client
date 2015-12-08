@@ -14,20 +14,9 @@ h2 {
     text-align: left;
 }
 
-.bg-purple{
-  background-color: #8e6cbf;
-}
-
-.bg-orange{
-  background-color: #f76554;
-}
-
-.bg-blue{
-  background-color: #79c8ff;
-}
-
 .tag{
     display: inline-block;
+    background-color: $color-primary;
     padding: 10px;
     margin: 4px;
     color: white;

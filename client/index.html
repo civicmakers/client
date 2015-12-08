@@ -45,7 +45,10 @@
       <md-toolbar class="header">
         <div class="header-nav-bar" layout="row" layout-align="space-between center" flex>
           <!-- todo add ui-router -->
-          <h1 class="site-title" ng-click="mainCtrl.navigateHome()"><span class="color-teal">Civic</span><span class="color-orange">Makers</span></h1>
+          <h1 class="site-title" ng-click="mainCtrl.navigateHome()">
+            <span class="site-title-left">Civic</span>
+            <span class="site-title-right">Makers</span>
+          </h1>
           <button class="button" ng-if="!mainCtrl.isLoggedIn" flex="30" ng-click="mainCtrl.loginToTwitter()">
             <span>Login with Twitter</span>
           </button>

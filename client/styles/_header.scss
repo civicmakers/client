@@ -43,6 +43,14 @@ md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolb
 			&:focus {
 				outline-width: 0;
 			}
+
+			.site-title-left {
+				color: $color-primary;
+			}
+
+			.site-title-right {
+				color: $color-secondary;
+			}
 		}
 
 		.profile-menu {
