@@ -17,10 +17,12 @@ h2 {
 .tag{
     display: inline-block;
     background-color: $color-primary;
-    padding: 10px;
-    margin: 4px;
+    padding: 5px;
+    margin: 0 5px 5px 0;
     color: white;
-    font-weight: 200;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 2px;
 }
 
 .layout-row {
@@ -41,9 +43,10 @@ h2 {
 
 .content-card {
     padding: 24px;
+    background-color: white;
 
-    &.white {
-        background-color: white;
+    p {
+        margin: 0 0 20px 0;
     }
 
 }

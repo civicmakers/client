@@ -8,7 +8,7 @@
   overflow: auto;
 }
 
-.material-form-group{
+.material-form-group, .cm-login-modal{
   md-input-container{
     background-color: white;
     color: black;
@@ -38,7 +38,27 @@
   }
 }
 
+.cm-login-modal { // LSG: this should probably be moved somewhere else
+  width: 60%;
+  padding: 25px;
 
+  p {
+    font-size: 14px;
+  }
+
+  .md-label span {
+    font-size: 12px;
+  }
+  md-input-container, input[type="text"] {
+    margin: 0;
+    padding: 0;
+  }
+
+  md-checkbox {
+    line-height: 10px;
+  }
+
+}
 
 .main-wrapper {
     width: 960px;

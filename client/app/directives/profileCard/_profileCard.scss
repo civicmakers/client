@@ -42,9 +42,9 @@
     height: 60px;
   }
 
-  .profile-image{
+  .profile-image {
     float: left;
-    margin-left: 40px;
+    margin: 0 10px 0 40px;
   }
 
   .title-section{
@@ -88,9 +88,9 @@
     padding-left: 5px;
   }
   .tag-section .title{
-    color: #505050; /*Be Nice to have this in a varible*/
+    color: #505050; /*Be Nice to have this in a variable*/
     font-weight: 700;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
   }
 
 }
