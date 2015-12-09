@@ -41,13 +41,13 @@
       offset-gt-lg  Sets element offset on devices greater than 1200px wide.
     -->
 
-  <md-content>
+  <md-content class="header-container">
       <md-toolbar class="header">
         <div class="header-nav-bar" layout="row" layout-align="space-between center" flex>
           <!-- todo add ui-router -->
           <h1 class="site-title" ng-click="mainCtrl.navigateHome()" flex="30">
-            <span class="site-title-left">Civic</span>
-            <span class="site-title-right">Makers</span>
+            <span class="site-title-left pull-left">Civic</span>
+            <span class="site-title-right pull-left">Makers</span>
           </h1>
           <div flex="grow"></div>
           <button class="button" ng-if="!mainCtrl.isLoggedIn" flex="30" ng-click="mainCtrl.loginToTwitter()">
