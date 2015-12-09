@@ -1,13 +1,13 @@
 // Footer
 
 .footer {
-
-  position: fixed; 
+  position: fixed;
+  width: 100%;
   bottom: 0px; 
+  padding: 15px 0;
   background-color: $footer-color;
   color: white;
-  padding: 15px 0;
-  width: 100%;
+  z-index: 5; // make up for angular-material input placeholders having higher z-index and showing over footer.
 
   .row {
     width: 960px;
@@ -16,13 +16,10 @@
   }
 
   .footer-padding {
-
     padding-right: 25px;
-
   }
 
   ul {
-
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -30,7 +27,5 @@
     li {
       display: inline;
     }
-
   }
-
 }
