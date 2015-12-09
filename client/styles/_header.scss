@@ -10,6 +10,10 @@ md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolb
 	}
 }
 
+.header-container {
+  	margin-bottom: 65px;
+}
+
 .header {
 	position: fixed;
   	top: 0;
@@ -44,6 +48,10 @@ md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolb
 				outline-width: 0;
 			}
 
+			span {
+			//	float: left;
+			}
+
 			.site-title-left {
 				color: $color-primary;
 			}
@@ -55,10 +63,12 @@ md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolb
 
 		.profile-menu {
     		.header-avatar, .header-username, {
-   	   		vertical-align: middle;
-   	 }
-	}
-
+   	   			vertical-align: middle;
+   	 		}
+   	 		.header-username {
+   	 			margin-left: 5px;
+   	 		}
+		}
 
 	}
 /*
