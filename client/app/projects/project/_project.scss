@@ -1,6 +1,9 @@
 .project {
-  height: 100%;
   width: 100%;
+
+   .tool-image { // TODO - should change to project-image or something generic for both tool & project
+     max-width: 100%;
+   }
 }
 
 .wrapper {
