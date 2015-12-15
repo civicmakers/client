@@ -30,13 +30,9 @@
     };
 
     this.loginAndSubmit = function() {
-      if (!AuthenticationService.isLoggedIn()) {
-          AuthenticationService.loginWithTwitter().then(function () {
-            submitProjectForm();
-          });
-      } else {
-          submitProjectForm();
-      }
+      AuthenticationService.loginWithTwitter().then(function () {
+        submitProjectForm();
+      });
     };
 
     var submitProjectForm = function(){

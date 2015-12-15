@@ -15,13 +15,9 @@
     };
 
     this.loginAndSubmit = function() {
-      if (!AuthenticationService.isLoggedIn()) {
-          AuthenticationService.loginWithTwitter().then(function () {
-            submitToolForm();
-          });
-      } else {
-          submitToolForm();
-      }
+      AuthenticationService.loginWithTwitter().then(function () {
+        submitToolForm();
+      });
     };
 
     var submitToolForm = function(){
