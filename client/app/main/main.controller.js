@@ -41,14 +41,10 @@
         };
 
         this.loginAndRedirect = function(path) {
-            if (!AuthenticationService.isLoggedIn()) {
-                AuthenticationService.loginWithTwitter().then(function () {
-                    syncLoginData();
-                    $location.path(path);
-                });
-            } else {
-                $location.path(path);
-            }
+            AuthenticationService.loginWithTwitter().then(function () {
+                syncLoginData();
+                navigateTo(path);
+            });
         };
 
         this.openUserProfileMenu = function($mdOpenMenu, event) {
@@ -56,7 +52,11 @@
         };
 
         this.navigateHome = function() {
-            $location.path('/');
+            navigateTo('/');
+        };
+
+        var navigateTo = function(path) {
+            $location.path(path);
         };
 
         var syncLoginData = function() {

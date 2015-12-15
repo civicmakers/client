@@ -12,6 +12,7 @@
 	    }
 
 	    this.loginWithTwitter = function () {
+	    	// not logged in - redirect to login
 	    	if (!isLoggedIn) {
 	            return authObj.$authWithOAuthPopup('twitter')
 	            	.then(function(data) {
@@ -19,28 +20,35 @@
 		                authData = getRelevantData(data);
 		                $rootScope.$broadcast('loginDataChanged');
 		                UserApi.saveUserPublicData(authData.uid, authData);
-		                return self.checkIfAlreadyRegistered()
-							.then(function(isEmailExist) {
-								// no email in the db, we need to request the additional info
-								if (!isEmailExist) {
-								    return DialogService.showDialog('loginModalCtrl', 'app/loginModal/loginModal.html')
-								        .then(function(loginInfo) {
-								            self.saveUserAdditionalData(loginInfo);
-								        });
-								}
-							});
+		                return registerIfEmailMissing();
 		            })
 		            .catch(function(error) {
 		            	console.error('Authentication failed:', error);
 		            });
+		    // logged in - check if we user already registered his email with us
 	        } else {
-	        	var differed = $q.defer();
-	        	differed.resolve();
-	        	return differed.promise;
+	        	return registerIfEmailMissing();
 	        }
 	    };
 
-	    this.checkIfAlreadyRegistered = function () {
+	    var registerIfEmailMissing = function() {
+	    	return checkIfAlreadyRegistered().then(function(isEmailExist) {
+				// no email in the db, we need to request the additional info
+				if (!isEmailExist) {
+				    return DialogService.showDialog('loginModalCtrl', 'app/loginModal/loginModal.html')
+				        .then(function(loginInfo) {
+				            self.saveUserAdditionalData(loginInfo);
+				        });
+				// email is in the db, resolve the promise to let the user continue
+				} else {
+					var differed = $q.defer();
+		        	differed.resolve();
+		        	return differed.promise;
+				}
+			});
+	    };
+
+	    var checkIfAlreadyRegistered = function () {
 	    	return UserApi.checkIfEmailExists(authData.uid);
 	    };
 
