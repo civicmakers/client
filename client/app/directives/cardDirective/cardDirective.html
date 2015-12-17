@@ -4,8 +4,8 @@
     <img ng-if="data.type == 'tool'" class="card-img" ng-src="{{::data.avatar}}">
     <div class="homepage-container">
       <div class="row">
-      <span><b>{{::data.name}}</b></span>
-      <span class="pull-right blue-text"><b>{{::data.pricing}}</b></span>
+        <span class="card-title">{{::data.name}}</span>
+        <span class="card-pricing blue-text">{{::data.pricing}}</span>
       </div>
       <p class="grey-text">{{::data.description}}</p>
       <span ng-repeat="tag in data.tags track by $index" ng-if="tag !== ''" class="tag">
