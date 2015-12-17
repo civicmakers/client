@@ -44,8 +44,12 @@
         <td class="synopsis-table-title title">origin</td>
         <td>United States</td>
       </tr>
+      <tr ng-if="profileCardCtrl.creatorDisplayName">
+        <td class="synopsis-table-title title">created by</td>
+        <td >{{ profileCardCtrl.creatorDisplayName }}</td>
+      </tr>
       <tr ng-if="profileCardCtrl.data.createdAt">
-        <td class="synopsis-table-title title">created</td>
+        <td class="synopsis-table-title title">created at</td>
         <td >{{ profileCardCtrl.data.createdAt | date:"MM/dd/yyyy" }}</td>
       </tr>
     </table>
