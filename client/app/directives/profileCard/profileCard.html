@@ -1,12 +1,12 @@
 
   <div class="card profile-card">
-    <div class="heading">
+    <div ng-if="profileCardCtrl.creatorInfo" class="heading">
       <span class="profile-image">
-        <img ng-src="{{ profileCardCtrl.data.image }}" alt="">
+        <img ng-src="{{ profileCardCtrl.creatorInfo.avatar }}" alt="Creator Avatar">
       </span>
       <span class="title-section">
         <div class="subtitle">Created By</div>
-        <div class="title">{{ profileCardCtrl.data.name }}</div>
+        <div class="title">{{ profileCardCtrl.creatorInfo.displayName }}</div>
       </span>
     </div>
 
@@ -44,12 +44,8 @@
         <td class="synopsis-table-title title">origin</td>
         <td>United States</td>
       </tr>
-      <tr ng-if="profileCardCtrl.creatorDisplayName">
-        <td class="synopsis-table-title title">created by</td>
-        <td >{{ profileCardCtrl.creatorDisplayName }}</td>
-      </tr>
       <tr ng-if="profileCardCtrl.data.createdAt">
-        <td class="synopsis-table-title title">created at</td>
+        <td class="synopsis-table-title title">created</td>
         <td >{{ profileCardCtrl.data.createdAt | date:"MM/dd/yyyy" }}</td>
       </tr>
     </table>
