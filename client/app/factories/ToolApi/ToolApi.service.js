@@ -40,13 +40,13 @@ angular.module('civicMakersClientApp')
 
     function saveTool (toolData) {
       var deferred = $q.defer();
-      firebase.getRef()
+      var toolRef = firebase.getRef()
         .child('tools')
         .push(toolData, function (error){
         if (error) {
           deferred.resolve(error);
         } else {
-          deferred.resolve('Saved');
+          deferred.resolve(toolRef.name());
         }
       });
       return deferred.promise;

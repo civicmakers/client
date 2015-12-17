@@ -16,7 +16,7 @@
 		};
 
 		this.updateNestedUserPublicData = function(userId, data, childRelativeUrl) {
-			firebase.updateData(usersPublicBaseUrl + '/' + childRelativeUrl, userId, data);
+			firebase.updateData(usersPublicBaseUrl + '/' + userId, childRelativeUrl, data);
 		};
 
 		this.saveUserPrivateData = function(userId, data) {
