@@ -1,6 +1,19 @@
 .card {
   height: auto;
-  margin:9px
+  margin:9px;
+
+  .card-title {
+  	display: block;
+  	width: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-weight: $font-weight-bold;
+  }
+
+  .card-pricing {
+  	font-weight: $font-weight-bold;
+  }
 }
 
 .card-img {
