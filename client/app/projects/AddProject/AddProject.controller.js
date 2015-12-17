@@ -2,7 +2,7 @@
 'use strict';
 
 (function() {
-  function AddProjectCtrl($scope, ProjectApi, $location, ToolApi, AuthenticationService) {
+  function AddProjectCtrl($scope, ProjectApi, $location, ToolApi, AuthenticationService, UserApi) {
     var self = this;
     this.projectFormData = {
         // TODO: prevent duplicates
@@ -38,7 +38,10 @@
     var submitProjectForm = function(){
       if ($scope.projectForm.$valid){
         angular.extend(self.projectFormData, getAdditionalFormData());
-        ProjectApi.saveProject(self.projectFormData).then(function() {
+        ProjectApi.saveProject(self.projectFormData).then(function(newProjectId) {
+          var data = {};
+          data[newProjectId] = true;
+          UserApi.updateNestedUserPublicData(AuthenticationService.getAuthData().uid, data, 'projectList');
           $location.path('/');
         });
       } else {
@@ -48,6 +51,7 @@
 
     var getAdditionalFormData = function() {
       return {
+        creatorId: AuthenticationService.getAuthData().uid,
         createdAt: Date.now(),
         type: 'project',
         display: true

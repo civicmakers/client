@@ -2,7 +2,7 @@
 'use strict';
 
 (function() {
-  function AddToolCtrl($scope, $routeParams, ToolApi, $location, AuthenticationService) {
+  function AddToolCtrl($scope, $routeParams, ToolApi, $location, AuthenticationService, UserApi) {
     var self = this;
     this.toolFormData = {
         // authorIp:
@@ -23,7 +23,10 @@
     var submitToolForm = function(){
       if ($scope.toolForm.$valid){
         angular.extend(self.toolFormData, getAdditionalFormData());
-        ToolApi.saveTool(self.toolFormData).then(function() {
+        ToolApi.saveTool(self.toolFormData).then(function(newToolId) {
+          var data = {};
+          data[newToolId] = true;
+          UserApi.updateNestedUserPublicData(AuthenticationService.getAuthData().uid, data, 'toolList');
           $location.path('/');
         });
       } else {
@@ -33,6 +36,7 @@
 
     var getAdditionalFormData = function() {
       return {
+        creatorId: AuthenticationService.getAuthData().uid,
         createdAt: Date.now(),
         type: 'tool',
         display: true

@@ -1,16 +1,36 @@
 'use strict';
 
-angular.module('civicMakersClientApp')
-  .directive('profileCard', function () {
+(function () {
+  function ProfileCardDirective() {
     return {
       templateUrl: 'app/directives/profileCard/profileCard.html',
       restrict: 'E',
       scope: {},
       bindToController: {
-      	data: '='
+        data: '='
       },
-      controller: function ProfileCardCtrl(){
-      },
+      controller: 'ProfileCardCtrl',
       controllerAs: 'profileCardCtrl',
     };
-});
+  }
+
+  function ProfileCardCtrl(UserApi, $scope) {
+    var self = this;
+
+    // watch the data until it's set and then do api call to get creator name
+    var dataSetListener = $scope.$watch(function() {
+      return self.data;
+    }, function(newValue) {
+      if (newValue) {
+        UserApi.getUserDisplayNameById(self.data.creatorId).then(function (creatorDisplayName) {
+          self.creatorDisplayName = creatorDisplayName;
+        });
+        // removes the $watch since we don't need it after the first time we enter
+        dataSetListener();
+      }
+    });
+  }
+
+  angular.module('civicMakersClientApp').directive('profileCard', ProfileCardDirective);
+  angular.module('civicMakersClientApp').controller('ProfileCardCtrl', ProfileCardCtrl);
+})();
