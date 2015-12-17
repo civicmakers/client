@@ -31,10 +31,13 @@
 			return checkIfExists(usersPrivateBaseUrl, userId, 'email');
 		};
 
-		this.getUserDisplayNameById = function(userId) {
+		this.getUserDisplayDetailsById = function(userId) {
 			return getUserPubicInfoById(userId).then(function(userInfo) {
 				if (userInfo !== null) {
-					return userInfo.displayName;
+					return {
+						displayName: userInfo.displayName,
+						avatar: userInfo.avatar
+					};
 				} else {
 					return null;
 				}

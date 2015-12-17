@@ -22,8 +22,13 @@
       return self.data;
     }, function(newValue) {
       if (newValue) {
-        UserApi.getUserDisplayNameById(self.data.creatorId).then(function (creatorDisplayName) {
-          self.creatorDisplayName = creatorDisplayName;
+        UserApi.getUserDisplayDetailsById(self.data.creatorId).then(function (creatorDetails) {
+          if (creatorDetails) {
+            self.creatorInfo = {
+              displayName: creatorDetails.displayName,
+              avatar: creatorDetails.avatar
+            };
+          }
         });
         // removes the $watch since we don't need it after the first time we enter
         dataSetListener();
