@@ -23,10 +23,12 @@
     }, function(newValue) {
       if (newValue) {
         UserApi.getUserDisplayDetailsById(self.data.creatorId).then(function (creatorDetails) {
-          self.creatorInfo = {
-            displayName: creatorDetails.displayName,
-            avatar: creatorDetails.avatar
-          };
+          if (creatorDetails) {
+            self.creatorInfo = {
+              displayName: creatorDetails.displayName,
+              avatar: creatorDetails.avatar
+            };
+          }
         });
         // removes the $watch since we don't need it after the first time we enter
         dataSetListener();
