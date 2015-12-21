@@ -53,8 +53,6 @@ h2 {
 
 .homepage-container { // LSG: should rename and globalize this class
     margin: 10px;
-    height: 180px;
-    overflow: hidden;
 }
 
 .selected-tools.card-container.lil-card:hover {
@@ -125,5 +123,25 @@ h2 {
 
     &:hover {
         box-shadow: 0px 0px 0px 2px gray
+    }
+}
+
+$card-columns: 4;
+.cards-board {
+    -webkit-column-count: $card-columns;
+    -webkit-column-gap: 10px;
+    -webkit-column-fill: auto;
+    -moz-column-count: $card-columns;
+    -moz-column-gap: 10px;
+    -moz-column-fill: auto;
+    column-count: $card-columns;
+    column-gap: 15px;
+    column-fill: auto;
+
+    .card-on-board {
+        display: inline-block;
+        -webkit-column-break-inside: avoid;
+        -moz-column-break-inside: avoid;
+        column-break-inside: avoid;
     }
 }
