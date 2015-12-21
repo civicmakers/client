@@ -1,14 +1,12 @@
 <div layout-fill class="main-wrapper">
-  <div layout="row" flex>
-    <div layout="column" layout-fill layout-align="center start" class="horizontal-repeat">
-      <div layout="row" class="title-row first-row" layout-align="center center" flex>
-        <a href="/tools"><h1>Tools</h1></a>
-        <div flex></div>
-        <div class="seemore">
-          <h4><a href="/tools">{{tools.length}} Tools</a></h4>
-        </div>
-      </div>
-      <card-directive ng-repeat="tool in tools" data="tool"></card-directive>
+  <div layout="row" class="title-row first-row" layout-align="center center" flex>
+    <a href="/tools"><h1>Tools</h1></a>
+    <div flex></div>
+    <div class="seemore">
+      <h4><a href="/tools">{{tools.length}} Tools</a></h4>
     </div>
+  </div>
+  <div class="cards-board">
+    <card-directive ng-repeat="tool in tools" data="tool" class="card-on-board"></card-directive>
   </div>
 </div>

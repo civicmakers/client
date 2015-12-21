@@ -23,9 +23,7 @@
           </button>
         </div>
       </div>
-      <div class="card-repeat" layout="row" layout-align="space-between center" flex>
-        <card-directive ng-repeat="project in mainCtrl.projects | filter:mainSearch" data="project"></card-directive>
-      </div>
+      <card-directive ng-repeat="project in mainCtrl.projects | filter:mainSearch" data="project"></card-directive>
     </div>
   </div>
   <div layout="row" flex>
@@ -46,45 +44,7 @@
           </button>
         </div>
       </div>
-      <div class="card-repeat" layout="row" layout-align="space-between center" flex>
-        <card-directive ng-repeat="tool in mainCtrl.tools" data="tool"></card-directive>
-      </div>
+      <card-directive ng-repeat="tool in mainCtrl.tools" data="tool"></card-directive>
     </div>
   </div>
 </div>
-<!--
-  <div layout="row" flex>
-  <div layout="column" layout-fill layout-align="center start" class="horizontal-repeat">
-  <div layout="row" class="title-row" layout-align="center center" flex>
-  <h1><a href="/authors">Authors</a></h1>
-  <div flex></div>
-  <div class="seemore">
-  <md-button href="/add/author" class="md-raised md-primary">
-  Add
-  </md-button>
-  <md-button href="/authors" class="md-raised md-primary" style="padding: 0px 40px 0px 40px;">
-  View All {{authorsNum}} Authors
-  </md-button>
-  </div>
-  </div>
-  <card-directive ng-repeat="author in authors" data="author"></card-directive>
-  </div>
-  </div>-->
-
-  <!--      <div layout="row" flex>
-    <div layout="column" layout-fill layout-align="center start" class="horizontal-repeat">
-    <div layout="row" class="title-row" layout-align="center center" flex>
-    <h3 class="md-headline"><a href="/topics">Topics</a></h1>
-    <div flex></div>
-    <div class="seemore">
-    <md-button href="/add/topic" class="md-raised md-primary">
-    Add
-    </md-button>
-    <md-button href="/topics" class="md-raised md-primary" style="padding: 0px 40px 0px 40px;">
-    View All {{topicsNum}} Topics
-    </md-button>
-    </div>
-    </div>
-    <card-directive ng-repeat="topic in topics" data="topic"></card-directive>
-    </div> -->
-
