@@ -21,8 +21,10 @@
             </div>
             <div class="big-card" ng-repeat="tool in projectTools">
                 <a ng-href="/tool/{{tool.id}}">
-                    <img ng-src="{{tool.avatar}}" alt="">
-                    <p>{{tool.name}}</p>
+                    <div class="big-card-image-wrapper">
+                        <img class="big-card-image" ng-src="{{tool.avatar}}" alt="">
+                    </div>
+                    <p class="big-card-title">{{tool.name}}</p>
                 </a>
             </div>
         <!-- </div> -->
