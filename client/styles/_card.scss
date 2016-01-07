@@ -127,21 +127,19 @@ h2 {
 }
 
 $card-columns: 4;
+$card-column-gap: 10px;
 .cards-board {
     -webkit-column-count: $card-columns;
-    -webkit-column-gap: 10px;
-    -webkit-column-fill: auto;
+    -webkit-column-gap: $card-column-gap;
     -moz-column-count: $card-columns;
-    -moz-column-gap: 10px;
-    -moz-column-fill: auto;
+    -moz-column-gap: $card-column-gap;
     column-count: $card-columns;
-    column-gap: 15px;
-    column-fill: auto;
+    column-gap: $card-column-gap;
+    padding-bottom: 60px;    // main-wrapper height is not calculated correctly so this is to make sure the footer doesn't overlap the bottom cards
 
     .card-on-board {
-        display: inline-block;
         -webkit-column-break-inside: avoid;
-        -moz-column-break-inside: avoid;
-        column-break-inside: avoid;
+        page-break-inside: avoid;
+        break-inside: avoid;
     }
 }
