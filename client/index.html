@@ -40,7 +40,6 @@
       offset-lg Sets element offset on devices between 960px and 1200px wide.
       offset-gt-lg  Sets element offset on devices greater than 1200px wide.
     -->
-
   <md-content class="header-container">
       <md-toolbar class="header">
         <div class="header-nav-bar" layout="row" layout-align="space-between center" flex>
@@ -50,7 +49,8 @@
             <span class="site-title-right pull-left">Makers</span>
           </h1>
           <div flex="grow"></div>
-          <button class="button" ng-if="!mainCtrl.isLoggedIn" flex="30" ng-click="mainCtrl.loginToTwitter()">
+          <button class="button" ng-if="!mainCtrl.isLoggedIn" flex="30" ng-click="mainCtrl.loginToTwitter()"
+                  analytics-on analytics-event="login" analytics-category="Buttons" analytics-label="twitter">
             <span>Login with Twitter</span>
           </button>
           <md-menu ng-if="mainCtrl.isLoggedIn" md-offset="0 60" flex="30" class="profile-menu">

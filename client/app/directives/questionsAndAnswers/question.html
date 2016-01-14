@@ -27,7 +27,10 @@
 				<input ng-model="questionCtrl.newAnswerContent" type="text" aria-label="reply" required></input>
 			</md-input-container>
 			<div class="answer-button" flex="10">
-				<button class="button" type="submit" class="md-raised md-primary">Reply</button>
+				<button class="button" type="submit" class="md-raised md-primary"
+						analytics-on analytics-event="question-reply" analytics-category="Buttons">
+					Reply
+				 </button>
 			</div>
 		</div>
 	</form>
