@@ -24,7 +24,9 @@
           </button>
         </div>
       </div>
-      <card-directive ng-repeat="project in mainCtrl.projects | filter:mainSearch" data="project"></card-directive>
+      <div class="main-card-board">
+        <card-directive ng-repeat="project in mainCtrl.projects | filter:mainSearch" data="project"></card-directive>
+      </div>
     </div>
   </div>
   <div layout="row" flex>
@@ -46,7 +48,9 @@
           </button>
         </div>
       </div>
-      <card-directive ng-repeat="tool in mainCtrl.tools" data="tool"></card-directive>
+      <div class="main-card-board">
+        <card-directive ng-repeat="tool in mainCtrl.tools" data="tool"></card-directive>
+      </div>
     </div>
   </div>
 </div>
