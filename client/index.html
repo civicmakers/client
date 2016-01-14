@@ -93,7 +93,8 @@
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
     ga('create', 'UA-64973711-3', 'auto');
-    ga('send', 'pageview');
+    // send pageview was removed due to the use of angulartics that does it automatically
+    // ga('send', 'pageview');  
   </script>
 
   <!--[if lt IE 9]>
@@ -114,6 +115,9 @@
   <script src="bower_components/angular-material/angular-material.js"></script>
   <script src="bower_components/firebase/firebase.js"></script>
   <script src="bower_components/angularfire/dist/angularfire.js"></script>
+  <script src="bower_components/SHA-1/sha1.js"></script>
+  <script src="bower_components/angulartics/src/angulartics.js"></script>
+  <script src="bower_components/angulartics-google-analytics/lib/angulartics-google-analytics.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
 
