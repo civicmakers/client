@@ -40,7 +40,6 @@
       offset-lg Sets element offset on devices between 960px and 1200px wide.
       offset-gt-lg  Sets element offset on devices greater than 1200px wide.
     -->
-
   <md-content class="header-container">
       <md-toolbar class="header">
         <div class="header-nav-bar" layout="row" layout-align="space-between center" flex>
@@ -50,7 +49,8 @@
             <span class="site-title-right pull-left">Makers</span>
           </h1>
           <div flex="grow"></div>
-          <button class="button" ng-if="!mainCtrl.isLoggedIn" flex="30" ng-click="mainCtrl.loginToTwitter()">
+          <button class="button" ng-if="!mainCtrl.isLoggedIn" flex="30" ng-click="mainCtrl.loginToTwitter()"
+                  analytics-on analytics-event="login" analytics-category="Buttons" analytics-label="twitter">
             <span>Login with Twitter</span>
           </button>
           <md-menu ng-if="mainCtrl.isLoggedIn" md-offset="0 60" flex="30" class="profile-menu">
@@ -93,7 +93,8 @@
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
     ga('create', 'UA-64973711-3', 'auto');
-    ga('send', 'pageview');
+    // send pageview was removed due to the use of angulartics that does it automatically
+    // ga('send', 'pageview');  
   </script>
 
   <!--[if lt IE 9]>
@@ -114,6 +115,9 @@
   <script src="bower_components/angular-material/angular-material.js"></script>
   <script src="bower_components/firebase/firebase.js"></script>
   <script src="bower_components/angularfire/dist/angularfire.js"></script>
+  <script src="bower_components/SHA-1/sha1.js"></script>
+  <script src="bower_components/angulartics/src/angulartics.js"></script>
+  <script src="bower_components/angulartics-google-analytics/lib/angulartics-google-analytics.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
 

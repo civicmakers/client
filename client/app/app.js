@@ -6,7 +6,9 @@ angular.module('civicMakersClientApp', [
   'ngSanitize',
   'ngRoute',
   'ngMaterial',
-  'firebase'
+  'firebase',
+  'angulartics', 
+  'angulartics.google.analytics'
 ])
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider

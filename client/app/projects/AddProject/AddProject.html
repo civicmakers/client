@@ -1,4 +1,4 @@
-<div class="main-wrapper add-story">
+<div class="main-wrapper">
 
   <h1>Create New Project</h1>
 
@@ -9,12 +9,12 @@
   <form class="material-form-group" name="projectForm">
 
     <md-input-container>
-      <label>Story Name</label>
+      <label>Project Name</label>
       <input type="text" ng-model="addProjectCtrl.projectFormData.name" required md-maxlength="100">
     </md-input-container>
 
     <md-input-container>
-      <label>Story</label>
+      <label>Project</label>
       <textarea ng-model="addProjectCtrl.projectFormData.description" required md-maxlength="300"></textarea>
     </md-input-container>
 
@@ -55,7 +55,8 @@
 
     </form>
     <div class='form-submit-button'>
-      <button class="md-raised md-primary button" ng-click="addProjectCtrl.loginAndSubmit()">
+      <button class="md-raised md-primary button" ng-click="addProjectCtrl.loginAndSubmit()"
+              analytics-on analytics-event="create" analytics-category="Buttons" analytics-label="project">
         Submit
       </button>
     <div>

@@ -1,7 +1,8 @@
 <div class="qNa-header layout-row">    
 	<h2 flex="65">Questions</h2>
 	<div flex="35" class="question-button">
-		<button class="button" ng-click="questionsCtrl.startEditingNewQuestion()" ng-disabled="questionsCtrl.isEditing" aria-label="Ask a question">
+		<button class="button" ng-click="questionsCtrl.startEditingNewQuestion()" ng-disabled="questionsCtrl.isEditing"
+		aria-label="Ask a question" analytics-on analytics-event="ask-question" analytics-category="Buttons">
 		Ask a question
 		</button>
 	</div>

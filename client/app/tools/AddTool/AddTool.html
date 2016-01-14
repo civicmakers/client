@@ -1,4 +1,5 @@
-<div class="main-wrapper add-tool">
+<div class="main-wrapper">
+  <h1>Create New Tool</h1>
   <p>
     Share a tool with the civic tech community! It could be a product, a Github repo, or a best practice. If there's a tool you've built or you use for civic projects, your peers want to know about it.
   </p>
@@ -24,7 +25,7 @@
       <md-select ng-model="addToolCtrl.toolFormData.pricing" placeholder="Free">
         <md-option value="Free">Free</md-option>
         <md-option value="Paid">Paid</md-option>
-        <md-option value="Fremium">Fremium</md-option>
+        <md-option value="Freemium">Freemium</md-option>
       </md-select>
     </md-input-container>
 
@@ -63,9 +64,9 @@
 
   </form>
   <div class='form-submit-button'>
-    <button class="md-raised md-primary button" ng-click="addToolCtrl.loginAndSubmit()">
+    <button class="md-raised md-primary button" ng-click="addToolCtrl.loginAndSubmit()"
+            analytics-on analytics-event="create" analytics-category="Buttons" analytics-label="tool">
       Submit
     </md-button>
   </div>
-
 </div>
