@@ -1,5 +1,9 @@
-# Civic Makers Client
-#### Front-end for Civic Makers project.
+# CivicMakers - http://civicmakers.com
+
+## CivicMakers aims to accelerate the capacity for communities, organizations and institutions to rapidly deploy collaborative solutions by growing a network of people, resources and recipes for public good projects. This is a prototype of a knowledge-sharing platform to the civic innovation community. 
+
+
+#### Front-end client
 
 ##### How to run client locally:
 - Open your command line and navigate to the folder where you want to save the project.
