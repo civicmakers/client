@@ -1,12 +1,61 @@
 {
-    "tags": [
-        "knowledge sharing", 
+    "conformsTo": "http://codefordc.org/resources/specification.html",
+    "status": "alpha",
+    "thumbnailUrl": "http://civicmakers.com/wp-content/images/CivicMakers_screenshot.png",
+    "contact": {
+        "name": "CivicMakers",
+        "email": "lawrence@civicmakers.com",
+        "twitter": "civicmakers"
+    },
+    "bornAt": "Code for San Francisco",
+    "geography": "Global",
+    "politicalEntity": {},
+    "governmentPartner": {},
+    "communityPartner": {
+        "Code for San Francisco": "http://codeforsanfrancisco.org/"
+    },
+    "type": "Web app",
+    "data": {},
+    "needs": [
+        {
+            "need": "fullstack developers"
+        },
+        {
+            "need": "UX designers"
+        },
+        {
+            "need": "content"
+        }
+    ],
+     "tags": [
+        "knowledge sharing",
+        "civic tech",
+        "directory", 
         "projects", 
         "tools", 
         "discussion", 
-        "civic tech", 
         "community", 
         "node"
     ], 
-    "status": "Alpha"
+    "categories": [
+        {
+            "category": "knowledge sharing"
+        },
+        {
+            "category": "civic tech"
+        },
+        {
+            "category": "directory"
+        },
+        {
+            "category": "discussion"
+        }
+        {
+            "category": "projects"
+        },
+          {
+            "category": "tools"
+        }
+    ],
+    "moreInfo": "http://civicmakers.com"
 }
