@@ -26,6 +26,8 @@ module.exports = function(config) {
       'client/bower_components/angular-sanitize/angular-sanitize.js',
       'client/bower_components/firebase/firebase.js',
       'client/bower_components/lodash/dist/lodash.compat.js',
+      'client/bower_components/angulartics/src/angulartics.js',
+      'client/bower_components/angulartics-google-analytics/lib/angulartics-google-analytics.js',
       'client/app/app.js',
       'client/app/**/*.js',
       'client/components/**/*.js',

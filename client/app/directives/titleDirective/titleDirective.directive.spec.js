@@ -21,7 +21,7 @@ describe('Directive: titleDirective', function () {
       }
     };
     element = $compile(element)(scope);
-    scope.$apply();
+    // scope.$apply();
     // expect(element.find('h1').toBe('civicmakers'));
     // expect(element.find('p').toBe('PROJECT'));
     expect(true).toBe(true);
