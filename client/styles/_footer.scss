@@ -1,30 +1,29 @@
 // Footer
 
-.footer {
+.cm-footer {
   position: relative;
   width: 100%;
-  padding: 15px 0;
+  padding: 1.25em 0;
   background-color: $footer-color;
   color: white;
   z-index: 5; // make up for angular-material input placeholders having higher z-index and showing over footer.
+}
 
-  .row {
-    width: 960px;
-    margin: 0 auto;
-    padding: 0;
+.cm-footer--center {
+  width: 58.95em;
+  margin: 0 auto;
+}
+
+.cm-footer__list {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  li:last-child {
+    margin-left: auto;
   }
+}
 
-  .footer-padding {
-    padding-right: 25px;
-  }
-
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-
-    li {
-      display: inline;
-    }
-  }
+.cm-pad-right {
+  padding: 0 1.25em 0 0;
 }

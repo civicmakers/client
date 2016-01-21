@@ -73,15 +73,13 @@
   <ng-view autoscroll></ng-view>
 
   <div style="clear:both"></div>
-  <div class="footer">
-    <div class="row">
-      <div class="col-md-8">
-        <ul>
-          <li class="footer-padding"><a href="http://civicmakers.com" target="_blank">About</a></li>
-          <li class="footer-padding"><a href="http://civicmakers.com/contact" target="_blank">Contact</a></li>
-          <li class="pull-right">All rights reserved, CivicMakers, 2015</li>
+  <div class="cm-footer">
+      <div class="col-md-8 cm-footer--center">
+        <ul class="cm-footer__list">
+          <li class="cm-pad-right"><a href="http://civicmakers.com" target="_blank">About</a></li>
+          <li class="cm-pad-right"><a href="http://civicmakers.com/contact" target="_blank">Contact</a></li>
+          <li>All rights reserved, CivicMakers, 2015</li>
         </ul>
-      </div>
     </div>
   </div><!--footer -->
 
@@ -94,7 +92,7 @@
 
     ga('create', 'UA-64973711-3', 'auto');
     // send pageview was removed due to the use of angulartics that does it automatically
-    // ga('send', 'pageview');  
+    // ga('send', 'pageview');
   </script>
 
   <!--[if lt IE 9]>

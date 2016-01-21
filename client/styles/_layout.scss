@@ -1,5 +1,5 @@
 // Layout
- 
+
 .clearboth {
  clear: both;
 }
@@ -61,10 +61,10 @@
 }
 
 .main-wrapper {
-    width: 960px;
+    min-height: 100%;
+    width: 60em;
     margin: auto;
-    margin-bottom: 50px;
-    padding: 15px 0;
+    padding: 0.9375em 0;
     background-color: #f2f2f6;
 
     .layout-column {
@@ -82,7 +82,7 @@
 
 .horizontal-repeat {
     display: block;
-} 
+}
 
 .title-row {
     margin: 10px 0px 10px 0px;
