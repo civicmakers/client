@@ -1,31 +1,46 @@
 // Footer
 
-.footer {
-  position: fixed;
+.cm-footer {
+  position: relative;
   width: 100%;
-  bottom: 0px; 
-  padding: 15px 0;
+  padding: 1.25em 0;
   background-color: $footer-color;
   color: white;
   z-index: 5; // make up for angular-material input placeholders having higher z-index and showing over footer.
+}
 
-  .row {
-    width: 960px;
-    margin: 0 auto;
+.cm-footerlist__wrapper {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.cm-footerlist {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  .pull-right {
+    margin-left: auto;
+  }
+}
+
+.cm-pad-right {
+  padding: 0 1.25em 0 0;
+}
+
+@media (max-width: 959px) {
+  .cm-pad-right {
     padding: 0;
   }
-
-  .footer-padding {
-    padding-right: 25px;
-  }
-
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-
+  .cm-footerlist {
+    flex-direction: column;
+    align-items: center;
+    .pull-right {
+      margin-left: 0;
+    }
     li {
-      display: inline;
+      margin: 0.125em 0;
     }
   }
 }
