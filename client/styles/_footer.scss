@@ -9,21 +9,38 @@
   z-index: 5; // make up for angular-material input placeholders having higher z-index and showing over footer.
 }
 
-.cm-footer--center {
-  width: 58.95em;
+.cm-footerlist__wrapper {
+  width: 100%;
+  max-width: 960px;
   margin: 0 auto;
 }
 
-.cm-footer__list {
+.cm-footerlist {
   display: flex;
   list-style-type: none;
   margin: 0;
   padding: 0;
-  li:last-child {
+  .pull-right {
     margin-left: auto;
   }
 }
 
 .cm-pad-right {
   padding: 0 1.25em 0 0;
+}
+
+@media (max-width: 959px) {
+  .cm-pad-right {
+    padding: 0;
+  }
+  .cm-footerlist {
+    flex-direction: column;
+    align-items: center;
+    .pull-right {
+      margin-left: 0;
+    }
+    li {
+      margin: 0.125em 0;
+    }
+  }
 }

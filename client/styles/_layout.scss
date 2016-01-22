@@ -62,9 +62,10 @@
 
 .main-wrapper {
     min-height: 100%;
-    width: 60em;
+    width: 100%;
+    max-width: 960px;
     margin: auto;
-    padding: 0.9375em 0;
+    padding: 15px 0;
     background-color: #f2f2f6;
 
     .layout-column {
