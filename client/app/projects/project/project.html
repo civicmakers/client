@@ -1,25 +1,26 @@
 <div class="project">
-  <div class="main-wrapper">
-    <title-directive data="project"></title-directive>
+  <div class="main-wrapper clearfix">
+    <title-directive data="projectCtrl.project"></title-directive>
 
-    <div style="clear:both;"></div>
-
-    <div class="sidebar-col" style="float:left;">
-        <profile-card data="project"></profile-card>
+    <div class="sidebar-col pull-left">
+        <profile-card data="projectCtrl.project"></profile-card>
+        <div class="contribute-buttons-wrapper">
+            <button ng-click="projectCtrl.contributeToProject()" class="button">Contribute To Project</button>
+            <button ng-if="false" ng-click="projectCtrl.replicateProject()" class="button">Bring To My City</button>
+        </div>
     </div>
 
     <div class="main-content-col">
-
         <div class="content-card white">
-            <p>{{::project.description}}</p>
-            <img class="tool-image" ng-if="project.image" ng-src="{{::project.image}}">
+            <p>{{::projectCtrl.project.description}}</p>
+            <img class="tool-image" ng-if="projectCtrl.project.image" ng-src="{{::projectCtrl.project.image}}">
         </div>
 
         <!-- <div class="content-card"> -->
-            <div ng-if="projectTools.length > 0">
-                <h3>{{projectTools.length}} Tool{{projectTools.length > 1 ? 's' : ''}} Used</h3>
+            <div ng-if="projectCtrl.projectTools.length > 0">
+                <h3>{{projectCtrl.projectTools.length}} Tool{{projectCtrl.projectTools.length > 1 ? 's' : ''}} Used</h3>
             </div>
-            <div class="big-card" ng-repeat="tool in projectTools">
+            <div class="big-card" ng-repeat="tool in projectCtrl.projectTools">
                 <a ng-href="/tool/{{tool.id}}">
                     <div class="big-card-image-wrapper">
                         <img class="big-card-image" ng-src="{{tool.avatar}}" alt="">

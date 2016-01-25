@@ -27,17 +27,31 @@
 			firebase.updateData(usersPrivateBaseUrl, userId, data);
 		};
 
+		this.updateNestedUserPrivateData = function(userId, data, childRelativeUrl) {
+			firebase.updateData(usersPrivateBaseUrl + '/' + userId, childRelativeUrl, data);
+		};
+
 		this.checkIfEmailExists = function(userId) {
 			return checkIfExists(usersPrivateBaseUrl, userId, 'email');
 		};
 
 		this.getUserDisplayDetailsById = function(userId) {
-			return getUserPubicInfoById(userId).then(function(userInfo) {
+			return getUserInfoById(userId, 'public').then(function(userInfo) {
 				if (userInfo !== null) {
 					return {
 						displayName: userInfo.displayName,
 						avatar: userInfo.avatar
 					};
+				} else {
+					return null;
+				}
+			});
+		};
+
+		this.getUserEmail = function (userId) {
+			return getUserInfoById(userId, 'private').then(function(userInfo) {
+				if (userInfo !== null) {
+					return userInfo.email;
 				} else {
 					return null;
 				}
@@ -56,10 +70,10 @@
 			return firebase.checkIfExist(url, userId, valueToCheck);
 		}
 
-		function getUserPubicInfoById (userId) {
+		function getUserInfoById (userId, infoType) {
 			var deffered = $q.defer();
 			if (userId) {
-				firebase.getRefTo('users_public').child(userId).on('value', function(snapshot) {
+				firebase.getRefTo('users_' + infoType).child(userId).on('value', function(snapshot) {
 					// user data is valid - return the user info
 					if (snapshot.exists()) {
 						deffered.resolve(snapshot.val());

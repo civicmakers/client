@@ -1,63 +1,62 @@
+<div class="card profile-card">
+  <div ng-if="profileCardCtrl.creatorInfo" class="heading">
+    <span class="profile-image">
+      <img ng-src="{{ profileCardCtrl.creatorInfo.avatar }}" alt="Creator Avatar">
+    </span>
+    <span class="title-section">
+      <div class="subtitle">Created By</div>
+      <div class="title">{{ profileCardCtrl.creatorInfo.displayName }}</div>
+    </span>
+  </div>
 
-  <div class="card profile-card">
-    <div ng-if="profileCardCtrl.creatorInfo" class="heading">
-      <span class="profile-image">
-        <img ng-src="{{ profileCardCtrl.creatorInfo.avatar }}" alt="Creator Avatar">
-      </span>
-      <span class="title-section">
-        <div class="subtitle">Created By</div>
-        <div class="title">{{ profileCardCtrl.creatorInfo.displayName }}</div>
-      </span>
+  <table class="social-links">
+    <tr ng-if="profileCardCtrl.data.link">
+      <td>
+        <span class="fa-stack">
+          <i class="fa fa-circle fa-stack-2x"></i>
+          <i class="fa fa-link fa-stack-1x" style="color: grey;"></i>
+        </span>
+      </td>
+      <td>
+        <a href="{{ profileCardCtrl.data.link }}" target="_blank">{{ profileCardCtrl.data.link }}</a>
+      </td>
+    </tr>
+    <tr ng-if="profileCardCtrl.data.twitter">
+      <td>
+        <span class="fa-stack">
+          <i class="fa fa-circle fa-stack-2x" style="color: #4099FF;"></i>
+          <i class="fa fa-twitter fa-stack-1x" style="color: white;"></i>
+        </span>
+      </td>
+      <td>
+        <a href="{{ profileCardCtrl.data.twitter }}" target="_blank">{{ profileCardCtrl.data.twitter }}</a>
+      </td>
+    </tr>
+  </table>
+
+  <table class="synopsis-table">
+    <tr ng-if="profileCardCtrl.data.pricing">
+      <td class="synopsis-table-title title">pricing</td>
+      <td>{{ profileCardCtrl.data.pricing }}</td>
+    </tr>
+    <tr>
+      <td class="synopsis-table-title title">origin</td>
+      <td>United States</td>
+    </tr>
+    <tr ng-if="profileCardCtrl.data.createdAt">
+      <td class="synopsis-table-title title">created</td>
+      <td >{{ profileCardCtrl.data.createdAt | date:"MM/dd/yyyy" }}</td>
+    </tr>
+  </table>
+
+  <div ng-if="profileCardCtrl.data.tags.length > 0" class="tag-section">
+    <div class="title" >
+      TAGGED
     </div>
-
-    <table class="social-links">
-      <tr ng-if="profileCardCtrl.data.link">
-        <td>
-          <span class="fa-stack">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-link fa-stack-1x" style="color: grey;"></i>
-          </span>
-        </td>
-        <td>
-          <a href="{{ profileCardCtrl.data.link }}" target="_blank">{{ profileCardCtrl.data.link }}</a>
-        </td>
-      </tr>
-      <tr ng-if="profileCardCtrl.data.twitter">
-        <td>
-          <span class="fa-stack">
-            <i class="fa fa-circle fa-stack-2x" style="color: #4099FF;"></i>
-            <i class="fa fa-twitter fa-stack-1x" style="color: white;"></i>
-          </span>
-        </td>
-        <td>
-          <a href="{{ profileCardCtrl.data.twitter }}" target="_blank">{{ profileCardCtrl.data.twitter }}</a>
-        </td>
-      </tr>
-    </table>
-
-    <table class="synopsis-table">
-      <tr ng-if="profileCardCtrl.data.pricing">
-        <td class="synopsis-table-title title">pricing</td>
-        <td>{{ profileCardCtrl.data.pricing }}</td>
-      </tr>
-      <tr>
-        <td class="synopsis-table-title title">origin</td>
-        <td>United States</td>
-      </tr>
-      <tr ng-if="profileCardCtrl.data.createdAt">
-        <td class="synopsis-table-title title">created</td>
-        <td >{{ profileCardCtrl.data.createdAt | date:"MM/dd/yyyy" }}</td>
-      </tr>
-    </table>
-
-    <div ng-if="profileCardCtrl.data.tags.length > 0" class="tag-section">
-      <div class="title" >
-        TAGGED
+      <div>
+        <span ng-repeat="tag in profileCardCtrl.data.tags track by $index" class="tag">
+          {{ tag }}
+        </span>
       </div>
-        <div>
-          <span ng-repeat="tag in profileCardCtrl.data.tags track by $index" class="tag">
-            {{ tag }}
-          </span>
-        </div>
-    </div>
-
+  </div>
+</div>

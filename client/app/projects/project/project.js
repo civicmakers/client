@@ -5,6 +5,7 @@ angular.module('civicMakersClientApp')
     $routeProvider
       .when('/project/:projectID', {
         templateUrl: 'app/projects/project/project.html',
-        controller: 'ProjectCtrl'
+        controller: 'ProjectCtrl',
+        controllerAs: 'projectCtrl'
       });
   });
