@@ -52,11 +52,21 @@ angular.module('civicMakersClientApp')
       return deferred.promise;
     }
 
+    function updateProjectData(projectId, data, nestedUrl) {
+      var projectsBaseUrl = firebase.baseUrl + '/projects';
+      if (nestedUrl !== undefined) {
+        firebase.updateData(projectsBaseUrl + '/' + projectId, nestedUrl, data);
+      } else {
+        firebase.updateData(projectsBaseUrl, projectId, data);
+      }
+    }
+
     return {
       getAllProjects: getAllProjects,
       queryProject: queryProject,
       getFirstNProjects: getFirstNProjects,
       getProjectsNum: getProjectsNum,
-      saveProject: saveProject
+      saveProject: saveProject,
+      updateProjectData: updateProjectData
     };
 });

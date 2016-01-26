@@ -1,0 +1,31 @@
+.cm-modal { // LSG: this should probably be moved somewhere else
+  width: 60%;
+  padding: 25px;
+  color: $modal-text-color;
+
+  p {
+    font-size: 14px;
+  }
+
+  .modal-title {
+    color: $modal-text-color;
+  }
+
+  .modal-link {
+    color: $link-color;
+    cursor: pointer;
+  }
+
+  .md-label span {
+    font-size: 12px;
+  }
+
+  md-input-container, input[type="text"] {
+    margin: 0;
+    padding: 0;
+  }
+
+  md-checkbox {
+    line-height: 10px;
+  }
+}

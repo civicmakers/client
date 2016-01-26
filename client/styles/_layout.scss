@@ -8,7 +8,7 @@
   overflow: auto;
 }
 
-.material-form-group, .cm-login-modal {
+.material-form-group, .cm-modal {
   md-input-container {
     background-color: white;
     color: black;
@@ -27,36 +27,14 @@
   }
 
   p {
-    color: #3d464d;
+    color: $modal-text-color;
   }
 
   label {
     font-weight: bold;
     display: block;
     padding-bottom: 5px;
-    color: #3d464d;
-  }
-}
-
-.cm-login-modal { // LSG: this should probably be moved somewhere else
-  width: 60%;
-  padding: 25px;
-
-  p {
-    font-size: 14px;
-  }
-
-  .md-label span {
-    font-size: 12px;
-  }
-
-  md-input-container, input[type="text"] {
-    margin: 0;
-    padding: 0;
-  }
-
-  md-checkbox {
-    line-height: 10px;
+    color: $modal-text-color;
   }
 }
 

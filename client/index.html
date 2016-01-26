@@ -27,18 +27,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> 
   <script type="text/javascript">
-  var h = document.getElementsByTagName('head')[0];
-  (function(){
-  var fc = document.createElement('link'); fc.type = 'text/css'; fc.rel = 'stylesheet';
-  fc.href = 'https://product.feedbacklite.com/feedbacklite.css'; h.appendChild(fc);
-  })();
-  var fbl = {'campaign':{'id':1163, 'type':2, 'size':1, 'body':'666666', 'position':11, 'tab':4, 'control':1, 'analytics':1}};
-  (function(){
-  var fj = document.createElement('script'); fj.type = 'text/javascript';
-  fj.async = true; fj.src = 'https://product.feedbacklite.com/feedbacklite.js'; h.appendChild(fj);
-  })();
+    var h = document.getElementsByTagName('head')[0];
+    (function(){
+      var fc = document.createElement('link'); fc.type = 'text/css'; fc.rel = 'stylesheet';
+      fc.href = 'https://product.feedbacklite.com/feedbacklite.css'; h.appendChild(fc);
+    })();
+    var fbl = {'campaign':{'id':1163, 'type':2, 'size':1, 'body':'666666', 'position':11, 'tab':4, 'control':1, 'analytics':1}};
+    (function(){
+      var fj = document.createElement('script'); fj.type = 'text/javascript';
+      fj.async = true; fj.src = 'https://product.feedbacklite.com/feedbacklite.js'; h.appendChild(fj);
+    })();
   </script>
   <!-- end feedbackLite code -->
+  <!-- emailjs code -->
+  <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script type="text/javascript">
+     (function(){
+        emailjs.init('user_y5HpszI9eq519uhHjTPHm');
+     })();
+  </script>
+  <!-- end emailjs code -->
 </head>
 <body ng-app="civicMakersClientApp" ng-controller="MainCtrl as mainCtrl">
   <!--[if lt IE 7]>
@@ -162,12 +170,14 @@
   <script src="app/main/main.js"></script>
   <script src="app/projects/AddProject/AddProject.controller.js"></script>
   <script src="app/projects/AddProject/AddProject.js"></script>
+  <script src="app/projects/project/contributeToProjectModal/contributeToProjectModal.controller.js"></script>
   <script src="app/projects/project/project.controller.js"></script>
   <script src="app/projects/project/project.js"></script>
   <script src="app/projects/projects.controller.js"></script>
   <script src="app/projects/projects.js"></script>
   <script src="app/services/AuthenticationService/AuthenticaionService.js"></script>
   <script src="app/services/DialogService/Dialog.service.js"></script>
+  <script src="app/services/EmailService.js"></script>
   <script src="app/services/QuestionsApi/QuestionsApi.service.js"></script>
   <script src="app/services/UserApi/UserApi.service.js"></script>
   <script src="app/tools/AddTool/AddTool.controller.js"></script>
