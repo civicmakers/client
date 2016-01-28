@@ -26,20 +26,32 @@
     };
 
     this.contributeToProject = function() {
+      this.showInterestInProject('contribute');
+    };
+
+    this.replicateProject = function() {
+      this.showInterestInProject('replicate');
+    };
+
+    this.showInterestInProject = function(interestType) {
       AuthenticationService.loginWithTwitter().then(function () {
-        return DialogService.showDialog('contributeToProjectModalCtrl', 'app/projects/project/contributeToProjectModal/contributeToProjectModal.html')
+        var modalTemplateUrlSuffix = interestType === 'contribute' ? 'contributeToProjectModal.html' : 'replicateProjectModal.html';
+        return DialogService.showDialog('interestInProjectModalCtrl', 'app/projects/project/interestInProjectModal/' + modalTemplateUrlSuffix)
           .then(function(modalData) {
             if (modalData.contactUs) {
-              sendContributeInterestEmail();
+              sendContributeInterestEmail(interestType);
             }
             if (modalData.shownInterest) {
-              updateDBForInterest();
+              updateDBForInterest(interestType);
+            }
+            if (modalData.downloadGuide) {
+              // TODO - ADD THE CODE TO REDIRECT TO THE GUIDE!
             }
           });
       });
     };
 
-    function sendContributeInterestEmail() {
+    function sendContributeInterestEmail(interestType) {
       var userData = AuthenticationService.getAuthData();
       UserApi.getUserEmail(userData.uid).then(function(userEmail) {
         var emailData = {
@@ -48,22 +60,25 @@
           userName: userData.displayName,
           userId: userData.uid,
           userEmail: userEmail,
-          date: new Date().toLocaleString()
+          date: new Date().toLocaleString(),
+          interestType: interestType
         };
-        EmailService.sendContributeInterest(emailData);
+        EmailService.sendInterestInProjectEmail(emailData);
       });
     }
 
-    function updateDBForInterest() {
+    function updateDBForInterest(interestType) {
       var userId = AuthenticationService.getAuthData().uid;
       // add project to user list
       var data = {};
       data[self.projectId] = true;
-      UserApi.updateNestedUserPublicData(AuthenticationService.getAuthData().uid, data, 'contributeToProjectList');
+      var projectListName = interestType === 'contribute' ? 'contributeToProjectList' : 'replicateProjectList';
+      UserApi.updateNestedUserPublicData(AuthenticationService.getAuthData().uid, data, projectListName);
       // add user to interested project list
       data = {};
       data[userId] = true;
-      ProjectApi.updateProjectData(self.projectId, data, 'contributionInterestList');
+      var interestedUsersListType = interestType === 'contribute' ? 'contributionInterestList' : 'replicationInterestList';
+      ProjectApi.updateProjectData(self.projectId, data, interestedUsersListType);
     }
   }
 

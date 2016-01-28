@@ -3,8 +3,8 @@
 
 (function() {
 	function EmailService() {
-		this.sendContributeInterest = function(emailData) {
-			emailjs.send('civicmakers_email', 'contribute_interest', emailData);
+		this.sendInterestInProjectEmail = function(emailData) {
+			emailjs.send('civicmakers_email', 'interest_in_project', emailData);
 		};
 	}
 	angular.module('civicMakersClientApp').service('EmailService', EmailService);

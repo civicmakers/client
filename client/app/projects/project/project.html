@@ -6,7 +6,7 @@
         <profile-card data="projectCtrl.project"></profile-card>
         <div class="contribute-buttons-wrapper">
             <button ng-click="projectCtrl.contributeToProject()" class="button">Contribute To Project</button>
-            <button ng-if="false" ng-click="projectCtrl.replicateProject()" class="button">Bring To My City</button>
+            <button ng-click="projectCtrl.replicateProject()" class="button">Bring To My City</button>
         </div>
     </div>
 
@@ -29,7 +29,7 @@
                 </a>
             </div>
         <!-- </div> -->
-        <questions-and-answers type="projects" id="projectId"></questions-and-answers>
+        <questions-and-answers type="projects" id="projectCtrl.projectId"></questions-and-answers>
     </div>
   </div>
 </div>

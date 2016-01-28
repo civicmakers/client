@@ -1,7 +1,7 @@
 'use strict';
 
 (function () {
-	function ContributeToProjectModalCtrl($mdDialog, $timeout) {
+	function InterestInProjectModalCtrl($mdDialog, $timeout) {
 		var self = this;
 		this.isThankYouMessageShown = false;
 
@@ -17,6 +17,14 @@
 			$timeout(function() {
 				self.emailUs();
 			}, 4000);
+		};
+
+		this.downloadGuide = function() {
+			$mdDialog.hide({
+				contactUs: false,
+				shownInterest: true,
+				downloadGuide: true
+			});
 		};
 
 		this.emailUs = function() {
@@ -35,5 +43,5 @@
 		};
 	}
 
-	angular.module('civicMakersClientApp').controller('contributeToProjectModalCtrl', ContributeToProjectModalCtrl);
+	angular.module('civicMakersClientApp').controller('interestInProjectModalCtrl', InterestInProjectModalCtrl);
 })();
