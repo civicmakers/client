@@ -38,6 +38,11 @@
   }
 }
 
+.cm-flex {
+  display: flex;
+  flex-direction: column;
+}
+
 .main-wrapper {
     min-height: 100%;
     width: 100%;
