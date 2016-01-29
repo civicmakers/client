@@ -9,7 +9,7 @@
 			controller: 'QuestionsAndAnswersController',
 			controllerAs: 'questionsCtrl',
 			bindToController: {
-				objectId: '=id',
+				objectId: '@',
 				type: '@'
 			}
 		};
@@ -22,6 +22,9 @@
 		// get live update when a question is added to the object
 		$scope.$on('newQuestionAdded', function() {
 			$scope.$evalAsync(self.questions = QuestionsApi.getQuestionsListByObject(self.objectId));
+		});
+		$scope.$on('openQ&Aedit', function() {
+			self.startEditingNewQuestion();
 		});
 
 		this.submitQuestion = function() {
