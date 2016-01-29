@@ -1,10 +1,11 @@
 /*put in general styles*/
 
 .profile-card {
-  background-color: $card-bg-color;
+  @include bg-color($card-bg-color);
   max-width: 280px;
   width: 100%;
   margin: 0 auto;
+  padding: 1em;
 
   .profile-image{
     width: 50px;
@@ -87,5 +88,4 @@
     font-weight: 700;
     padding-bottom: 10px;
   }
-
 }
