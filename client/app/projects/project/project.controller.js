@@ -1,7 +1,8 @@
 'use strict';
 
 (function() {
-  function ProjectCtrl($routeParams, ProjectApi, ToolApi, DialogService, EmailService, AuthenticationService, UserApi) {
+  function ProjectCtrl($routeParams, ProjectApi, ToolApi, DialogService, EmailService, AuthenticationService,
+                        UserApi, $location, $anchorScroll, $scope) {
     this.projectTools = [];
     this.projectId = $routeParams.projectID;
     var self = this;
@@ -43,6 +44,7 @@
             }
             if (modalData.shownInterest) {
               updateDBForInterest(interestType);
+              scrollToQnA();
             }
             if (modalData.downloadGuide) {
               // TODO - ADD THE CODE TO REDIRECT TO THE GUIDE!
@@ -79,6 +81,15 @@
       data[userId] = true;
       var interestedUsersListType = interestType === 'contribute' ? 'contributionInterestList' : 'replicationInterestList';
       ProjectApi.updateProjectData(self.projectId, data, interestedUsersListType);
+    }
+
+    function scrollToQnA() {
+      $scope.$broadcast('openQ&Aedit');
+      var old = $location.hash();
+      $location.hash('q&a');
+      $anchorScroll();
+      //reset to old to force q&a controller not to be reloaded
+      $location.hash(old);
     }
   }
 
