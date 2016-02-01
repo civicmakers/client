@@ -19,11 +19,11 @@
 			}, 4000);
 		};
 
-		this.downloadGuide = function() {
+		this.projectGuide = function() {
 			$mdDialog.hide({
 				contactUs: false,
 				shownInterest: true,
-				downloadGuide: true
+				projectGuide: true
 			});
 		};
 
