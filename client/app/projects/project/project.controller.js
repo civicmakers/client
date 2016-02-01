@@ -46,8 +46,8 @@
               updateDBForInterest(interestType);
               scrollToQnA();
             }
-            if (modalData.downloadGuide) {
-              // TODO - ADD THE CODE TO REDIRECT TO THE GUIDE!
+            if (modalData.projectGuide) {
+              $location.path('/start-a-project-guide');
             }
           });
       });
