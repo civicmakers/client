@@ -34,6 +34,8 @@ module.exports = function (grunt) {
       client: require('./bower.json').appPath || 'client',
       dist: 'dist'
     },
+
+    // server related - can probably be deleted
     express: {
       options: {
         port: process.env.PORT || 9000
@@ -50,11 +52,13 @@ module.exports = function (grunt) {
         }
       }
     },
+
     open: {
       server: {
         url: 'http://localhost:<%= express.options.port %>'
       }
     },
+
     watch: {
       injectJS: {
         files: [
@@ -165,21 +169,6 @@ module.exports = function (grunt) {
       dev: '.tmp'
     },
 
-    // Add vendor prefixed styles
-    autoprefixer: {
-      options: {
-        browsers: ['last 1 version']
-      },
-      dist: {
-        files: [{
-          expand: true,
-          cwd: '.tmp/',
-          src: '{,*/}*.css',
-          dest: '.tmp/'
-        }]
-      }
-    },
-
     // Debugging with node inspector
     'node-inspector': {
       custom: {
@@ -190,6 +179,7 @@ module.exports = function (grunt) {
     },
 
     // Use nodemon to run server in debug mode with an initial breakpoint
+    // need to check if we need it!
     nodemon: {
       debug: {
         script: 'server/app.js',
@@ -293,12 +283,18 @@ module.exports = function (grunt) {
     // minsafe compatible so Uglify does not destroy the ng references
     ngAnnotate: {
       dist: {
-        files: [{
-          expand: true,
-          cwd: '.tmp/concat',
-          src: '*/**.js',
-          dest: '.tmp/concat'
-        }]
+        src: '.tmp/concat/app/app.js',
+        dest: '.tmp/concat/app/app.js'
+      }
+    },
+
+    // Minifies all the js from .tmp and puts it in dist
+    uglify: {
+      dist: {
+        files: {
+          'dist/public/app/app.js': ['.tmp/concat/app/app.js'],
+          'dist/public/app/vendor.js': ['.tmp/concat/app/vendor.js']
+        }
       }
     },
 
@@ -376,6 +372,7 @@ module.exports = function (grunt) {
       }
     },
 
+    // check if being used, if not then can be deleted
     buildcontrol: {
       options: {
         dir: 'dist',
@@ -447,6 +444,7 @@ module.exports = function (grunt) {
       }
     },
 
+    // server related - can be deleted
     env: {
       test: {
         NODE_ENV: 'test'
@@ -457,11 +455,8 @@ module.exports = function (grunt) {
       all: localConfig
     },
 
+    // Inject application script files into index.html (doesn't include bower)
     injector: {
-      options: {
-
-      },
-      // Inject application script files into index.html (doesn't include bower)
       scripts: {
         options: {
           transform: function(filePath) {
@@ -506,7 +501,7 @@ module.exports = function (grunt) {
           style: 'expanded'
         },
         files: {
-          '.tmp/concat/app/styles/app.css': '<%= yeoman.client %>/styles/index.scss'
+          '.tmp/concat/app/styles/app.css': 'client/styles/index.scss'
         }
       },
       dist: {
@@ -514,14 +509,28 @@ module.exports = function (grunt) {
           style: 'expanded'
         },
         files: {
-          'dist/public/app/styles/app.css': '<%= yeoman.client %>/styles/index.scss'
+          '.tmp/concat/app/styles/app.css': 'client/styles/index.scss'
         }
       }
     },
+
+    // Add vendor prefixed styles
+    autoprefixer: {
+      options: {
+        // browsers: ['not ie <= 8']
+      },
+      dist: {
+        files: [{
+          src: '.tmp/concat/app/styles/app.css',
+          dest: '.tmp/concat/app/styles/app.css'
+        }]
+      }
+    },
+
     cssmin: {
       dist: {
-        src: '<%= yeoman.dist %>/public/app/styles/app.css',
-        dest: '<%= yeoman.dist %>/public/app/styles/app.min.css'
+        src: '.tmp/concat/app/styles/app.css',
+        dest: 'dist/public/app/styles/app.min.css'
       }
     }
   });
@@ -566,9 +575,9 @@ module.exports = function (grunt) {
       'concurrent:server',
       'injector',
       'wiredep',
+      'sass:dev',
       'autoprefixer',
       'express:dev',
-      'sass:dev',
       'wait',
       'open',
       'watch'
@@ -621,25 +630,25 @@ module.exports = function (grunt) {
   });
 
   grunt.registerTask('build', [
-    'clean:dist',
     'newer:jshint:all',
+    'clean:dist',
+    'sass:dist',
+    'autoprefixer',
+    'cssmin:dist',
     'concurrent:dist',
     'injector',
     'wiredep',
     'useminPrepare',
-    'autoprefixer',
     'ngtemplates',
     'concat',
     'ngAnnotate',
+    'uglify:dist',
     'copy:dist',
     'cdnify',
-    'sass:dist',
-    'cssmin:dist',
-    'uglify',
     'rev',
     'usemin'
   ]);
-
+  
   grunt.registerTask('default', [
     'newer:jshint:all',
     'test',

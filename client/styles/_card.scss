@@ -143,17 +143,11 @@ h2 {
 $card-columns: 4;
 $card-column-gap: 10px;
 .cards-board {
-    -webkit-column-count: $card-columns;
-    -webkit-column-gap: $card-column-gap;
-    -moz-column-count: $card-columns;
-    -moz-column-gap: $card-column-gap;
     column-count: $card-columns;
     column-gap: $card-column-gap;
     float: left;
 
     .card-on-board {
-        -webkit-column-break-inside: avoid;
-        page-break-inside: avoid;
         break-inside: avoid;
     }
 }
