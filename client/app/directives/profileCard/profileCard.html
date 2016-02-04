@@ -18,7 +18,7 @@
         </span>
       </td>
       <td>
-        <a href="{{ profileCardCtrl.data.link }}" target="_blank">{{ profileCardCtrl.data.link }}</a>
+        <a ng-href="{{ profileCardCtrl.data.link }}" target="_blank">{{ profileCardCtrl.data.link }}</a>
       </td>
     </tr>
     <tr ng-if="profileCardCtrl.data.twitter">
@@ -29,7 +29,7 @@
         </span>
       </td>
       <td>
-        <a href="{{ profileCardCtrl.data.twitter }}" target="_blank">{{ profileCardCtrl.data.twitter }}</a>
+        <a ng-href="https://www.twitter.com/{{ profileCardCtrl.data.twitter }}" target="_blank">{{ profileCardCtrl.data.twitter }}</a>
       </td>
     </tr>
   </table>
