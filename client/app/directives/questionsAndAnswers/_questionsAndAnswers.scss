@@ -1,4 +1,9 @@
 .cm-qNa-wrapper {
+	max-width: 625px;
+	width: 100%;
+}
+
+.cm-qNa-header-wrapper {
 	@include left-right-padding(1em);
 	margin-top: 15px;
 }
