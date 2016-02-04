@@ -1,12 +1,12 @@
-<div class="qNa-header layout-row">    
-	<h2 flex="65">Questions</h2>
-	<div flex="35" class="question-button">
+<div class="cm-qNa--padding layout-row">
+	<h2 flex="70">Questions</h2>
+	<div class="cm-vertical-center">
 		<button class="button" ng-click="questionsCtrl.startEditingNewQuestion()" ng-disabled="questionsCtrl.isEditing"
 		aria-label="Ask a question" analytics-on analytics-event="ask-question" analytics-category="Buttons">
 		Ask a question
 		</button>
 	</div>
-</div> 
+</div>
 
 <form name="submitQuestionForm" ng-submit="questionsCtrl.submitQuestion()" ng-show="questionsCtrl.isEditing">
 	<div class="submit-question-form">

@@ -1,21 +1,9 @@
-.qNa-header { 
+.cm-qNa--padding {
+	@include left-right-padding(10px);
+}
 
-	h2 { 
-		width: 50%;
-		display: inline;
-		float: left;
-	}
-	
-	.question-button {
-
-		text-align: right;
-
-		.button {
-			float: right;
-			margin: 20px 0 0 0;
-		}
-	}
-
+.cm-vertical-center {
+	align-self: center;
 }
 
 .submit-question-form {
