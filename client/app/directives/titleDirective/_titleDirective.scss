@@ -6,8 +6,8 @@
   margin: 0 0 24px 0;
 }
 
-.cm-title-directive--left-margin {
-  margin-left: 10px;
+.cm-title-data-wrapper {
+  @include left-margin(10px);
 }
 
 .cm-title-directive img {
