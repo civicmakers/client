@@ -1,26 +1,30 @@
-.project {
+.cm-project {
   width: 100%;
-
-   .tool-image { // TODO - should change to project-image or something generic for both tool & project
-     max-width: 100%;
-   }
-
-  .contribute-buttons-wrapper {
-    padding: 20px;
-    text-align: center;
-
-    .button {
-      display: block;
-      margin: 0 auto;
-      margin-bottom: 10px;
-      width: 100%;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-  }
 }
+
+.cm-content-image {
+  max-width: 100%;
+}
+
+.cm-project-buttons-wrapper {
+ padding: 1em;
+}
+
+.cm-project-button {
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.cm-projectTools-wrapper {
+  padding: 1em;
+}
+
+.cm-projectTool-header-wrapper {
+  padding: 1em;
+  margin: 0;
+}
+
+
 
 .wrapper {
   margin:10px;

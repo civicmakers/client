@@ -1,5 +1,13 @@
-.cm-qNa--padding {
-	@include left-right-padding(10px);
+.cm-qNa-wrapper {
+	@include left-right-padding(1em);
+}
+
+.cm-qNa-color {
+	background-color: white;
+}
+
+.cm-qNa-header {
+	width: 100%;
 }
 
 .cm-vertical-center {
