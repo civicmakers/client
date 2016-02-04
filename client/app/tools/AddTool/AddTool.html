@@ -52,7 +52,7 @@
       <input type="text" ng-model="addToolCtrl.toolFormData.link" md-maxlength="100" required>
     </md-input-container>
 
-    <label>Twitter URL</label>
+    <label>Twitter Handle</label>
     <md-input-container>
       <input type="text" ng-model="addToolCtrl.toolFormData.twitter" md-maxlength="100">
     </md-input-container>
@@ -63,10 +63,10 @@
     </md-input-container>
 
   </form>
-  <div class='form-submit-button'>
+  <div class="form-submit-button">
     <button class="md-raised md-primary button" ng-click="addToolCtrl.loginAndSubmit()"
             analytics-on analytics-event="create" analytics-category="Buttons" analytics-label="tool">
       Submit
-    </md-button>
+    </button>
   </div>
 </div>
