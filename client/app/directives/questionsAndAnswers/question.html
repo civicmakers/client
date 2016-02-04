@@ -1,15 +1,17 @@
 <div class="cm-qNa-container">
 	<div class="cm-question-container cm-question-bg-color layout-row">
-		<img ng-src="{{questionCtrl.questionData.authorAvatarUrl}}">
+		<img class="cm-qNa-avatar" ng-src="{{questionCtrl.questionData.authorAvatarUrl}}">
 
 		<div class="cm-qNa-content cm-question-content" flex="85">
 			<div class="cm-qNa-font cm-qNa-bold">{{questionCtrl.questionData.authorDisplayName}}</div>
-			{{questionCtrl.questionData.content}}
+			<div class="cm-qNa-font">
+				{{questionCtrl.questionData.content}}
+			</div>
 		</div>
 	</div>
 	<div class="cm-answer-container cm-answer-bg-color">
 		<div ng-repeat="answer in questionCtrl.answersList" class="cm-reply-pull-right layout-row">
-			<img ng-src="{{answer.authorAvatarUrl}}">
+			<img class="cm-qNa-avatar" ng-src="{{answer.authorAvatarUrl}}">
 			<div class="cm-qNa-content" flex="85">
 				<div class="cm-qNa-font cm-qNa-bold">{{answer.authorDisplayName}}</div>
 				<div class="cm-qNa-font">

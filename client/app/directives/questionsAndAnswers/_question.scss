@@ -2,6 +2,11 @@
 	margin-bottom: 12px;
 }
 
+.cm-qNa-avatar {
+	width: 48px;
+	height: 48px;
+}
+
 .cm-question-container {
 	@include all-padding(20px);
 }
@@ -17,6 +22,7 @@
 
 .cm-qNa-font {
 	font-size: 14px;
+	overflow-wrap: break-word;
 }
 
 .cm-qNa-bold {
