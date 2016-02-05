@@ -8,6 +8,12 @@
   }
 }
 
+.cm-desc-content {
+  @include mquery(desktop) {
+    margin: 0 0 0 30px;
+  }
+}
+
 .cm-content-image {
 		max-width: 100%;
 }
