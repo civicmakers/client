@@ -1,34 +1,35 @@
 <div class="cm-project">
   <div class="main-wrapper clearfix">
     <title-directive data="projectCtrl.project"></title-directive>
-
-    <div class="sidebar-col">
+    <div class="cm-content-cols">
+      <div>
         <profile-card data="projectCtrl.project"></profile-card>
         <div class="cm-project-buttons-wrapper">
             <button ng-click="projectCtrl.contributeToProject()" class="button cm-project-button">Contribute To Project</button>
             <button ng-click="projectCtrl.replicateProject()" class="button cm-project-button">Bring To My City</button>
         </div>
-    </div>
+      </div>
 
-    <div class="main-content-col">
-        <div class="content-card white">
-            <p>{{::projectCtrl.project.description}}</p>
-            <img class="cm-content-image" ng-if="projectCtrl.project.image" ng-src="{{::projectCtrl.project.image}}">
-        </div>
-        <div ng-if="projectCtrl.projectTools.length > 0">
-            <h3 class="cm-projectTool-header-wrapper">{{projectCtrl.projectTools.length}} Tool{{projectCtrl.projectTools.length > 1 ? 's' : ''}} Used</h3>
-        </div>
-        <div class="cm-projectTools-wrapper">
-          <div class="big-card" ng-repeat="tool in projectCtrl.projectTools">
-              <a ng-href="/tool/{{tool.id}}">
-                  <div class="big-card-image-wrapper">
-                      <img class="big-card-image" ng-src="{{tool.avatar}}" alt="">
-                  </div>
-                  <p class="big-card-title">{{tool.name}}</p>
-              </a>
+      <div class="cm-project-desc-content">
+          <div class="content-card white">
+              <p>{{::projectCtrl.project.description}}</p>
+              <img class="cm-content-image" ng-if="projectCtrl.project.image" ng-src="{{::projectCtrl.project.image}}">
           </div>
-        </div>
-        <questions-and-answers type="projects" object-id="{{projectCtrl.projectId}}" id="q&a"></questions-and-answers>
+          <div ng-if="projectCtrl.projectTools.length > 0">
+              <h3 class="cm-projectTool-header-wrapper">{{projectCtrl.projectTools.length}} Tool{{projectCtrl.projectTools.length > 1 ? 's' : ''}} Used</h3>
+          </div>
+          <div class="cm-projectTools-wrapper">
+            <div class="big-card" ng-repeat="tool in projectCtrl.projectTools">
+                <a ng-href="/tool/{{tool.id}}">
+                    <div class="big-card-image-wrapper">
+                        <img class="big-card-image" ng-src="{{tool.avatar}}" alt="">
+                    </div>
+                    <p class="big-card-title">{{tool.name}}</p>
+                </a>
+            </div>
+          </div>
+          <questions-and-answers type="projects" object-id="{{projectCtrl.projectId}}" id="q&a"></questions-and-answers>
+      </div>
     </div>
   </div>
 </div>
