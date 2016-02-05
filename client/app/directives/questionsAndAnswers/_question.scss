@@ -8,11 +8,11 @@
 }
 
 .cm-question-container {
-	@include all-padding(20px);
+	padding: 1.25em;
 }
 
 .cm-question-bg-color {
-	@include bg-color(white);
+	background-color: white;
 	border-bottom: 1px solid #e8e8e8;
 }
 
@@ -30,7 +30,7 @@
 }
 
 .cm-answer-bg-color {
-	@include bg-color(#eee);
+	background-color: #eee;
 }
 
 .cm-reply-pull-right {
@@ -46,7 +46,7 @@
 	width: 100%;
 	margin: 0 4% 0 0;
 	padding-bottom: 0;
-	@include bg-color(white);
+	background-color: white;
 	input {
 		margin: 0;
 		padding: 2px;
@@ -55,5 +55,5 @@
 }
 
 .cm-reply-form-bg-color {
-	@include bg-color(#eee);
+	background-color: #eee;
 }

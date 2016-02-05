@@ -1,7 +1,7 @@
 <div class="cm-qNa-wrapper">
 	<div class="cm-qNa-header-wrapper layout-row">
 		<h2 class="cm-qNa-header">Questions</h2>
-		<div class="cm-qNa-button cm-vertical-center">
+		<div class="cm-qNa-button-wrapper">
 			<button class="button" ng-click="questionsCtrl.startEditingNewQuestion()" ng-disabled="questionsCtrl.isEditing"
 			aria-label="Ask a question" analytics-on analytics-event="ask-question" analytics-category="Buttons">
 			Ask a question
@@ -10,11 +10,11 @@
 	</div>
 
 	<form name="submitQuestionForm" ng-submit="questionsCtrl.submitQuestion()" ng-show="questionsCtrl.isEditing">
-		<div class="submit-question-form">
+		<div class="cm-submit-qNa-form">
 			<md-input-container>
 			    <textarea ng-model="questionsCtrl.newQuestionContent" required md-maxlength="1000" placeholder="Enter a question"></textarea>
 			</md-input-container>
-			<div class="submit-cancel-row">
+			<div class="cm-qNA-cancel-row">
 				<md-button ng-click="questionsCtrl.clearContent()" aria-label="Cancel" type="button">Cancel</md-button>
 				<button class="button" aria-label="Submit question" type="submit">Submit</button>
 			</div>

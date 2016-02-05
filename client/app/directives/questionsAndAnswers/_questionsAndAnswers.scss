@@ -5,7 +5,7 @@
 }
 
 .cm-qNa-header-wrapper {
-	@include left-right-padding(1em);
+	padding: 0 1em;
 	margin-top: 15px;
 }
 
@@ -13,28 +13,23 @@
 	width: 100%;
 }
 
-.cm-qNa-button {
+.cm-qNa-button-wrapper {
+	align-self: center;
 	width: 100%;
 	max-width: 163px;
 }
 
-.cm-vertical-center {
-	align-self: center;
-}
-
-.submit-question-form {
+.cm-submit-qNa-form {
 	background-color: white;
 	margin: 0 0 12px 0;
 	padding: 15px;
-	//rgba(150, 152, 154, 0.2)
-
-	.submit-cancel-row {
-		text-align: right;
-	}
 
 	md-input-container {
 		margin: 0;
 		padding: 0;
 	}
+}
 
+.cm-qNa-cancel-row {
+	text-align: right;
 }

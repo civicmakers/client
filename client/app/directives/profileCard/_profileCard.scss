@@ -1,7 +1,7 @@
 /*put in general styles*/
 
 .profile-card {
-  @include bg-color($card-bg-color);
+  background-color: $card-bg-color;
   max-width: 280px;
   width: 100%;
   margin: 0 auto;
