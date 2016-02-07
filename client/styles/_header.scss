@@ -13,6 +13,24 @@ md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolb
   	margin-bottom: $main-header-height;
 }
 
+.cm-header-wrapper {
+	display: flex;
+	justify-content: space-around;
+}
+
+.cm-site-logo {
+	width: 100%;
+	max-width: 250px;
+	height: 63px;
+}
+
+.cm-login-button {
+	font-size: 1em;
+	width: 100%;
+	max-width: 250px;
+	margin: 0.75em;
+}
+
 .header {
 	position: fixed;
   	top: 0;
@@ -32,24 +50,6 @@ md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolb
 
 		.button {
 			height: 40px;
-		}
-
-		.site-title {
-			font-size: 36px;
-			cursor: pointer;
-			margin: 0;
-
-			&:focus {
-				outline-width: 0;
-			}
-
-			.site-title-left {
-				color: $color-primary;
-			}
-
-			.site-title-right {
-				color: $color-secondary;
-			}
 		}
 
 		.profile-menu {
