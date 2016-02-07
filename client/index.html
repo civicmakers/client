@@ -71,12 +71,12 @@
           <img ng-click="mainCtrl.navigateHome()" src="/assets/images/civicmakers_logo.png" alt="logo" class="cm-site-logo">
           <button class="button cm-login-button" ng-if="!mainCtrl.isLoggedIn" flex="30" ng-click="mainCtrl.loginToTwitter()"
                   analytics-on analytics-event="login" analytics-category="Buttons" analytics-label="twitter">
-            <span>Login with Twitter</span>
+            <span>Login<span class="cm-hide"> with Twitter</span></span>
           </button>
-          <md-menu ng-if="mainCtrl.isLoggedIn" md-offset="0 60" flex="30" class="profile-menu">
+          <md-menu ng-if="mainCtrl.isLoggedIn" md-offset="0 60" class="cm-profile-menu">
             <md-button aria-label="Open profile menu" ng-click="mainCtrl.openUserProfileMenu($mdOpenMenu, $event)">
               <img src="{{mainCtrl.userData.avatar}}" alt="User Avatar" class="header-avatar">
-              <span class="header-username">{{mainCtrl.userData.displayName}}</span>
+              <span class="cm-hide header-username">{{mainCtrl.userData.displayName}}</span>
             </md-button>
             <md-menu-content width="3">
               <md-menu-item>

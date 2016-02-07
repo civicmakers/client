@@ -24,6 +24,13 @@ md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolb
 	height: 63px;
 }
 
+.cm-hide {
+	display: none;
+	@include mquery(desktop) {
+		display: inline;
+	}
+}
+
 .cm-login-button {
 	font-size: 1em;
 	width: 100%;
@@ -51,27 +58,18 @@ md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolb
 		.button {
 			height: 40px;
 		}
-
-		.profile-menu {
-    		.header-avatar, .header-username, {
-   	   			vertical-align: middle;
-   	 		}
-   	 		.header-username {
-   	 			margin-left: 5px;
-   	 		}
-		}
-
 	}
-/*
-	.main-toolbar {
-		.main-title {
-			margin: 15px;
-			color: #000;
-			cursor: pointer;
-			&:focus {
-				outline-width: 0;
-			}
-		}
+
+	.md-menu {
+		margin: 0;
 	}
-	*/
+}
+
+.cm-profile-menu {
+	.header-avatar, .header-username, {
+			vertical-align: middle;
+	}
+	.header-username {
+		margin-left: 5px;
+	}
 }
