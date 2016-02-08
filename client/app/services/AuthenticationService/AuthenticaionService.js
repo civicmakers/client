@@ -1,7 +1,7 @@
 'use strict';
 
 (function () {
-	function AuthenticationService(firebase, $firebaseAuth, $q, $rootScope, UserApi, DialogService) {
+	function AuthenticationService(firebase, $firebaseAuth, $q, $rootScope, UserApi, DialogService, BIEventService) {
 		var self = this;
 		var ref = firebase.getRef();
 		var authObj = $firebaseAuth(ref);
@@ -14,8 +14,10 @@
 	    this.loginWithTwitter = function () {
 	    	// not logged in - redirect to login
 	    	if (!isLoggedIn) {
+                BIEventService.sendBIEvent('twitter-modal-view', 'registration');
 	            return authObj.$authWithOAuthPopup('twitter')
 	            	.then(function(data) {
+                        BIEventService.sendBIEvent('twitter-modal-authenticated', 'registration');
 		                isLoggedIn = true;
 		                authData = getRelevantData(data);
 		                $rootScope.$broadcast('loginDataChanged');
