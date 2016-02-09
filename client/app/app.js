@@ -12,9 +12,11 @@ angular.module('civicMakersClientApp', [
 ])
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider
-      .otherwise({
+    .when('/privacy-policy', {
+        templateUrl: 'views/privacy-policy.html'
+    })
+    .otherwise({
         redirectTo: '/'
-      });
-
+    });
     $locationProvider.html5Mode(true);
   });
