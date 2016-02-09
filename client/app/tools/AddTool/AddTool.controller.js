@@ -2,7 +2,7 @@
 'use strict';
 
 (function() {
-  function AddToolCtrl($scope, $routeParams, ToolApi, $location, AuthenticationService, UserApi) {
+  function AddToolCtrl($scope, $routeParams, ToolApi, $location, AuthenticationService, UserApi, BIEventService) {
     var self = this;
     this.toolFormData = {
         // authorIp:
@@ -22,6 +22,7 @@
 
     var submitToolForm = function(){
       if ($scope.toolForm.$valid){
+        BIEventService.sendBIEvent('add-tool-submit', 'tools');
         angular.extend(self.toolFormData, getAdditionalFormData());
         ToolApi.saveTool(self.toolFormData).then(function(newToolId) {
           var data = {};

@@ -1,7 +1,7 @@
 <div class="question">   
 	<div class="question-container layout-row clearfix">
 		<div class="question-author-avatar" flex="10">
-			<img ng-src="{{questionCtrl.questionData.authorAvatarUrl}}">
+			<img ng-src="{{questionCtrl.questionData.authorAvatarUrl}}" alt="Question author avatar">
 		</div>
 		
 		<div class="question-content" flex="grow">  
@@ -12,7 +12,7 @@
 	<div class="answers clearfix">
 		<div ng-repeat="answer in questionCtrl.answersList" class="answer-container layout-row clearfix">
 			<div class="answer-author-avatar" flex="10">
-				<img ng-src="{{answer.authorAvatarUrl}}">
+				<img ng-src="{{answer.authorAvatarUrl}}" alt="Answer author avatar">
 			</div>
 			<div class="answer-content" flex="grow">  
 				<div class="answer-author">{{answer.authorDisplayName}}</div>
@@ -24,13 +24,13 @@
 	<form name="answerForm" ng-submit="questionCtrl.submitAnswer()">
 		<div class="answer-form layout-row">
 			<md-input-container flex="grow">
-				<input ng-model="questionCtrl.newAnswerContent" type="text" aria-label="reply" required></input>
+				<input ng-model="questionCtrl.newAnswerContent" type="text" aria-label="reply" required/>
 			</md-input-container>
 			<div class="answer-button" flex="10">
-				<button class="button" type="submit" class="md-raised md-primary"
-						analytics-on analytics-event="question-reply" analytics-category="Buttons">
+				<button class="button md-raised md-primary" type="submit"
+						analytics-on analytics-event="answer-submit" analytics-category="{{questionCtrl.type}} Q&A">
 					Reply
-				 </button>
+                </button>
 			</div>
 		</div>
 	</form>

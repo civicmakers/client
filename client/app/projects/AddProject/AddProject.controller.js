@@ -2,7 +2,7 @@
 'use strict';
 
 (function() {
-  function AddProjectCtrl($scope, ProjectApi, $location, ToolApi, AuthenticationService, UserApi) {
+  function AddProjectCtrl($scope, ProjectApi, $location, ToolApi, AuthenticationService, UserApi, BIEventService) {
     var self = this;
     this.projectFormData = {
         // TODO: prevent duplicates
@@ -37,6 +37,7 @@
 
     var submitProjectForm = function(){
       if ($scope.projectForm.$valid){
+        BIEventService.sendBIEvent('add-project-submit', 'projects');
         angular.extend(self.projectFormData, getAdditionalFormData());
         ProjectApi.saveProject(self.projectFormData).then(function(newProjectId) {
           var data = {};

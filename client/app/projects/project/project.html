@@ -5,15 +5,21 @@
     <div class="sidebar-col pull-left">
         <profile-card data="projectCtrl.project"></profile-card>
         <div class="contribute-buttons-wrapper">
-            <button ng-click="projectCtrl.contributeToProject()" class="button">Contribute To Project</button>
-            <button ng-click="projectCtrl.replicateProject()" class="button">Bring To My City</button>
+            <button ng-click="projectCtrl.contributeToProject()" class="button"
+                analytics-on  analytics-category="project" analytics-event="contribute-click">
+                Contribute To Project
+             </button>
+            <button ng-click="projectCtrl.replicateProject()" class="button"
+                analytics-on  analytics-category="project" analytics-event="replicate-button-click">
+                Bring To My City
+            </button>
         </div>
     </div>
 
     <div class="main-content-col">
         <div class="content-card white">
             <p>{{::projectCtrl.project.description}}</p>
-            <img class="tool-image" ng-if="projectCtrl.project.image" ng-src="{{::projectCtrl.project.image}}">
+            <img class="tool-image" ng-if="projectCtrl.project.image" ng-src="{{::projectCtrl.project.image}}" alt="Tool image">
         </div>
 
         <!-- <div class="content-card"> -->

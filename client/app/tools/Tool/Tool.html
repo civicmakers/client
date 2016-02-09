@@ -1,5 +1,5 @@
 <div class="main-wrapper cm-tool clearfix">
-  	<title-directive data="tool"></title-directive>
+    <title-directive data="tool"></title-directive>
 
 	<div class="sidebar-col pull-left">
 		<profile-card data="tool"></profile-card>
@@ -7,7 +7,7 @@
 	<div class="main-content-col">
 		<div class="content-card">
 			<p>{{::tool.description}}</p>
-			<img class="tool-image" ng-if="tool.image" ng-src="{{::tool.image}}">
+			<img class="tool-image" ng-if="tool.image" ng-src="{{::tool.image}}" alt="Tool image">
 		</div>
 		<questions-and-answers type="tools" id="toolId"></questions-and-answers>
 	</div>
