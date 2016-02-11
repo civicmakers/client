@@ -1,13 +1,15 @@
 'use strict';
 
 (function () {
-	function LoginModalCtrl($mdDialog) {
+	function LoginModalCtrl($mdDialog, BIEventService) {
 		var self = this;
 		this.isEmailError = false;
-
+        // send GA event for modal opened
+        BIEventService.sendBIEvent('email-modal-view', 'registration');
 		this.submitLoginData = function() {
 			if (self.email) {
 				this.isError = false;
+                BIEventService.sendBIEvent('email-submit', 'registration');
 				$mdDialog.hide({
 					private: {
 						email: self.email

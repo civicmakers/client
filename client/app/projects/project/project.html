@@ -4,15 +4,21 @@
     <div>
       <profile-card data="projectCtrl.project"></profile-card>
       <div class="cm-project-buttons-wrapper">
-          <button ng-click="projectCtrl.contributeToProject()" class="button cm-project-button">Contribute To Project</button>
-          <button ng-click="projectCtrl.replicateProject()" class="button cm-project-button">Bring To My City</button>
+          <button ng-click="projectCtrl.contributeToProject()" class="button cm-project-button"
+                analytics-on  analytics-category="project" analytics-event="contribute-click">
+            Contribute To Project
+          </button>
+          <button ng-click="projectCtrl.replicateProject()" class="button cm-project-button"
+                analytics-on  analytics-category="project" analytics-event="replicate-button-click">
+            Bring To My City
+          </button>
       </div>
     </div>
 
     <div class="cm-desc-content">
         <div class="content-card white">
             <p>{{::projectCtrl.project.description}}</p>
-            <img class="cm-content-image" ng-if="projectCtrl.project.image" ng-src="{{::projectCtrl.project.image}}">
+            <img class="cm-content-image" ng-if="projectCtrl.project.image" ng-src="{{::projectCtrl.project.image}}" alt="Project image">
         </div>
         <div ng-if="projectCtrl.projectTools.length > 0">
             <h3 class="cm-projectTool-header-wrapper">{{projectCtrl.projectTools.length}} Tool{{projectCtrl.projectTools.length > 1 ? 's' : ''}} Used</h3>

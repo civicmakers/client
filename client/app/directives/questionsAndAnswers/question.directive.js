@@ -9,7 +9,8 @@
 			controller: QuestionController,
 			controllerAs: 'questionCtrl',
 			bindToController: {
-				questionData: '=data'
+				questionData: '=data',
+                type: '@'
 			}
 		};
 	}

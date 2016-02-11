@@ -12,7 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
   <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic,400italic' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic,400italic" rel="stylesheet" type="text/css">
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   <!-- build:css(client) app/vendor.css -->
   <!-- bower:css -->
@@ -68,9 +68,10 @@
       <md-toolbar class="header">
         <div class="cm-header-wrapper">
           <!-- todo add ui-router -->
-          <img ng-click="mainCtrl.navigateHome()" src="/assets/images/civicmakers_logo.png" alt="logo" class="cm-site-logo">
+          <img ng-click="mainCtrl.navigateHome()" src="/assets/images/civicmakers_logo.png" alt="logo" class="cm-site-logo"
+                analytics-on  analytics-category="navbar" analytics-event="home-click" analytics-label="header">
           <button class="button cm-login-button" ng-if="!mainCtrl.isLoggedIn" flex="30" ng-click="mainCtrl.loginToTwitter()"
-                  analytics-on analytics-event="login" analytics-category="Buttons" analytics-label="twitter">
+                  analytics-on  analytics-category="registration" analytics-event="login-button-click" analytics-label="header">
             <span>Login<span class="cm-hide"> with Twitter</span></span>
           </button>
           <md-menu ng-if="mainCtrl.isLoggedIn" md-offset="0 60" class="cm-profile-menu">
@@ -96,8 +97,18 @@
   <div class="cm-footer">
       <div class="col-md-8 cm-footerlist__wrapper">
         <ul class="cm-footerlist">
-          <li class="cm-pad-right"><a href="http://civicmakers.com" target="_blank">About</a></li>
-          <li class="cm-pad-right"><a href="http://civicmakers.com/contact" target="_blank">Contact</a></li>
+          <li class="cm-pad-right">
+              <a href="http://civicmakers.com" target="_blank"
+                 analytics-on  analytics-category="footer" analytics-event="about-link-click" analytics-label="header">
+                About
+              </a>
+          </li>
+          <li class="cm-pad-right">
+              <a href="http://civicmakers.com/contact" target="_blank"
+                 analytics-on  analytics-category="footer" analytics-event="contact-link-click" analytics-label="header">
+                Contact
+              </a>
+          </li>
           <li class="cm-pad-right">
               <a ng-href="/privacy-policy" analytics-on analytics-event="privacy-link-click" analytics-category="footer">
                 Privacy Policy
@@ -124,7 +135,7 @@
     <script src="bower_components/es5-shim/es5-shim.js"></script>
     <script src="bower_components/json3/lib/json3.min.js"></script>
   <![endif]-->
-  <!-- build:js({client,node_modules}) app/vendor.js -->
+  <!-- build:js({client}) app/vendor.js -->
   <!-- bower:js -->
   <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="bower_components/angular/angular.js"></script>
@@ -178,6 +189,7 @@
   <script src="app/projects/projects.js"></script>
   <script src="app/projects/startProjectGuide/startProjectGuide.js"></script>
   <script src="app/services/AuthenticationService/AuthenticaionService.js"></script>
+  <script src="app/services/BIEventService.js"></script>
   <script src="app/services/DialogService/Dialog.service.js"></script>
   <script src="app/services/EmailService.js"></script>
   <script src="app/services/QuestionsApi/QuestionsApi.service.js"></script>

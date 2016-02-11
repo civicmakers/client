@@ -1,7 +1,6 @@
 <div class="cm-qNa-container">
 	<div class="cm-question-container cm-question-bg-color layout-row">
-		<img class="cm-qNa-avatar" ng-src="{{questionCtrl.questionData.authorAvatarUrl}}">
-
+		<img class="cm-qNa-avatar" ng-src="{{questionCtrl.questionData.authorAvatarUrl}}" alt="Question author avatar">
 		<div class="cm-qNa-content cm-question-content" flex="85">
 			<div class="cm-qNa-font cm-qNa-bold">{{questionCtrl.questionData.authorDisplayName}}</div>
 			<div class="cm-qNa-font">
@@ -11,7 +10,7 @@
 	</div>
 	<div class="cm-answer-container cm-answer-bg-color">
 		<div ng-repeat="answer in questionCtrl.answersList" class="cm-reply-pull-right layout-row">
-			<img class="cm-qNa-avatar" ng-src="{{answer.authorAvatarUrl}}">
+			<img class="cm-qNa-avatar" ng-src="{{answer.authorAvatarUrl}}" alt="Answer author avatar">
 			<div class="cm-qNa-content" flex="85">
 				<div class="cm-qNa-font cm-qNa-bold">{{answer.authorDisplayName}}</div>
 				<div class="cm-qNa-font">
@@ -24,12 +23,12 @@
 	<form name="answerForm" ng-submit="questionCtrl.submitAnswer()">
 		<div class="cm-reply-form cm-reply-form-bg-color layout-row">
 			<md-input-container class="cm-reply-input">
-				<input ng-model="questionCtrl.newAnswerContent" type="text" aria-label="reply" required></input>
+				<input ng-model="questionCtrl.newAnswerContent" type="text" aria-label="reply" required/>
 			</md-input-container>
-			<button class="button" type="submit" class="md-raised md-primary"
-					analytics-on analytics-event="question-reply" analytics-category="Buttons">
+			<button class="button md-raised md-primary" type="submit"
+					analytics-on analytics-event="answer-submit" analytics-category="{{questionCtrl.type}} Q&A">
 				Reply
-			 </button>
+			</button>
 		</div>
 	</form>
 </div>

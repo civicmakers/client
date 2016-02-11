@@ -7,6 +7,8 @@
     </div>
   </div>
   <div class="cards-board">
-    <card-directive ng-repeat="tool in tools" data="tool" class="card-on-board"></card-directive>
+    <card-directive ng-repeat="tool in tools" data="tool" class="card-on-board"
+        analytics-on  analytics-category="tools" analytics-event="view-tool" analytics-label="{{tool.$id}}">
+    </card-directive>
   </div>
 </div>
