@@ -38,6 +38,11 @@
   }
 }
 
+.cm-flex {
+  display: flex;
+  flex-direction: column;
+}
+
 .main-wrapper {
     min-height: 100%;
     width: 100%;
@@ -49,14 +54,6 @@
     .layout-column {
       margin-bottom: 50px;
     }
-}
-
-.main-content-col {
-    display: inline-block;
-    // background-color: white !important;
-    margin: 0 0 0 24px;
-    width: 625px;
-    margin-bottom: 50px; // account for footer
 }
 
 .horizontal-repeat {

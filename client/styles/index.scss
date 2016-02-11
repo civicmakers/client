@@ -1,17 +1,19 @@
 // Helpers
 @import 'variables';
- 
+@import 'mixins';
+
 // Base
 @import 'typography';
 @import 'components/buttons';
+@import 'components/images';
 @import 'components/inputs';
 @import 'components/modals';
 
 // Layout
 @import '../app/app';
 @import 'layout'; // columns, etc. (grid)
-@import 'header'; 
-@import 'footer'; 
+@import 'header';
+@import 'footer';
 @import 'card';
 
 
@@ -34,5 +36,8 @@
 @import '../app/directives/titleDirective/titleDirective';
 @import '../app/directives/questionsAndAnswers/questionsAndAnswers';
 @import '../app/directives/questionsAndAnswers/question';
+
+// Single views
+@import 'views/privacy-policy';
 
 // Third-party

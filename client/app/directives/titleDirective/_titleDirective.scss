@@ -1,30 +1,30 @@
-.title-directive {
+.cm-title-directive {
   width: 100%;
-  display: block;
-  height:80px;
-  margin:0 0 24px 0;
+  display: flex;
+  justify-content: center;
+  height: 80px;
+  margin: 0 0 24px 0;
+  @include mquery(desktop) {
+    justify-content: initial;
+  }
 }
 
-.title-directive img {
+.cm-title-data-wrapper {
+  margin-left: 10px;
+}
+
+.cm-title-directive img {
   width: 80px;
   height: 80px;
+  border-radius: 1em;
 }
 
-.title-directive span {
-  display: block;
-  margin: 0px;
-  color:gray;
+.cm-title-directive span {
+  color: $data-type-color;
   font-size: 0.75em;
 }
 
-.title-directive h1 {
-  display: block;
+.cm-title-directive h1 {
   margin: 0px;
   font-size: 2.5em;
-}
-
-.title-directive .text {
-  display: inline-block;
-  vertical-align: top;
-  margin-left: 10px;
 }
