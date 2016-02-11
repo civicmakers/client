@@ -42,8 +42,13 @@ h2 {
 .sidebar-card {}
 
 .content-card {
-    padding: 24px;
+    margin: 0 auto;
+    max-width: 593px;
+    padding: 1.5em;
     background-color: white;
+    @include mquery(desktop) {
+      min-width: 593px;
+    }
 
     p {
         margin: 0 0 20px 0;

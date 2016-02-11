@@ -25,7 +25,7 @@
   <!-- endbuild -->
   <!-- feedbackLite code -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script type="text/javascript">
     var h = document.getElementsByTagName('head')[0];
     (function(){
@@ -66,21 +66,17 @@
     -->
   <md-content class="header-container">
       <md-toolbar class="header">
-        <div class="header-nav-bar" layout="row" layout-align="space-between center" flex>
+        <div class="cm-header-wrapper">
           <!-- todo add ui-router -->
-          <h1 class="site-title" ng-click="mainCtrl.navigateHome()" flex="30">
-            <span class="site-title-left pull-left">Civic</span>
-            <span class="site-title-right pull-left">Makers</span>
-          </h1>
-          <div flex="grow"></div>
-          <button class="button" ng-if="!mainCtrl.isLoggedIn" flex="30" ng-click="mainCtrl.loginToTwitter()"
+          <img ng-click="mainCtrl.navigateHome()" src="/assets/images/civicmakers_logo.png" alt="logo" class="cm-site-logo">
+          <button class="button cm-login-button" ng-if="!mainCtrl.isLoggedIn" flex="30" ng-click="mainCtrl.loginToTwitter()"
                   analytics-on analytics-event="login" analytics-category="Buttons" analytics-label="twitter">
-            <span>Login with Twitter</span>
+            <span>Login<span class="cm-hide"> with Twitter</span></span>
           </button>
-          <md-menu ng-if="mainCtrl.isLoggedIn" md-offset="0 60" flex="30" class="profile-menu">
+          <md-menu ng-if="mainCtrl.isLoggedIn" md-offset="0 60" class="cm-profile-menu">
             <md-button aria-label="Open profile menu" ng-click="mainCtrl.openUserProfileMenu($mdOpenMenu, $event)">
               <img src="{{mainCtrl.userData.avatar}}" alt="User Avatar" class="header-avatar">
-              <span class="header-username">{{mainCtrl.userData.displayName}}</span>
+              <span class="cm-hide header-username">{{mainCtrl.userData.displayName}}</span>
             </md-button>
             <md-menu-content width="3">
               <md-menu-item>

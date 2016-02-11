@@ -1,36 +1,35 @@
-.qNa-header { 
-
-	h2 { 
-		width: 50%;
-		display: inline;
-		float: left;
-	}
-	
-	.question-button {
-
-		text-align: right;
-
-		.button {
-			float: right;
-			margin: 20px 0 0 0;
-		}
-	}
-
+.cm-qNa-wrapper {
+	max-width: 625px;
+	width: 100%;
+	margin: 0 auto;
 }
 
-.submit-question-form {
+.cm-qNa-header-wrapper {
+	padding: 0 1em;
+	margin-top: 15px;
+}
+
+.cm-qNa-header {
+	width: 100%;
+}
+
+.cm-qNa-button-wrapper {
+	align-self: center;
+	width: 100%;
+	max-width: 163px;
+}
+
+.cm-submit-qNa-form {
 	background-color: white;
 	margin: 0 0 12px 0;
 	padding: 15px;
-	//rgba(150, 152, 154, 0.2)
-
-	.submit-cancel-row {
-		text-align: right;
-	}
 
 	md-input-container {
 		margin: 0;
 		padding: 0;
 	}
+}
 
+.cm-qNa-cancel-row {
+	text-align: right;
 }

@@ -1,56 +1,33 @@
-.project {
-  width: 100%;
-
-   .tool-image { // TODO - should change to project-image or something generic for both tool & project
-     max-width: 100%;
-   }
-
-  .contribute-buttons-wrapper {
-    padding: 20px;
-    text-align: center;
-
-    .button {
-      display: block;
-      margin: 0 auto;
-      margin-bottom: 10px;
-      width: 100%;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
+.cm-content-cols {
+  @include mquery(desktop) {
+    display: flex;
   }
 }
 
-.wrapper {
-  margin:10px;
-  display:inline-block;
+.cm-desc-content {
+  @include mquery(desktop) {
+    margin: 0 0 0 30px;
+  }
 }
 
-.project-image-bar {
-  height: 250px;
-  background-color: gray;
-  -webkit-box-shadow: 0px 7px 36px 0px rgba(0,0,0,0.75);
-  -moz-box-shadow: 0px 7px 36px 0px rgba(0,0,0,0.75);
-  box-shadow: 0px 7px 36px 0px rgba(0,0,0,0.75);
-  text-align: center;
+.cm-project-buttons-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em;
 }
 
-.inner-wrapper {
-  width: 690px;
-  display: relative;
-  float: right;
-  margin-left: 15px;
-  margin-top: 15px;
+.cm-project-button {
+  margin-bottom: 10px;
+  width: 100%;
+  max-width: 343px;
 }
 
-.inner-wrapper h1 {
-  font-size: 40px
+.cm-projectTools-wrapper {
+  padding: 1em;
 }
 
-.page-img {
-  position:absolute;
-  top: 200px;
-  height: 250px;
-  width: 250px;
+.cm-projectTool-header-wrapper {
+  padding: 1em;
+  margin: 0;
 }
