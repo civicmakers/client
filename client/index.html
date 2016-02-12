@@ -72,12 +72,12 @@
                 analytics-on  analytics-category="navbar" analytics-event="home-click" analytics-label="header">
           <button class="button cm-login-button" ng-if="!mainCtrl.isLoggedIn" flex="30" ng-click="mainCtrl.loginToTwitter()"
                   analytics-on  analytics-category="registration" analytics-event="login-button-click" analytics-label="header">
-            <span>Login<span class="cm-hide"> with Twitter</span></span>
+            Login
           </button>
           <md-menu ng-if="mainCtrl.isLoggedIn" md-offset="0 60" class="cm-profile-menu">
             <md-button aria-label="Open profile menu" ng-click="mainCtrl.openUserProfileMenu($mdOpenMenu, $event)">
               <img src="{{mainCtrl.userData.avatar}}" alt="User Avatar" class="header-avatar">
-              <span class="cm-hide header-username">{{mainCtrl.userData.displayName}}</span>
+              <span class="cm-tablet-plus-only header-username">{{mainCtrl.userData.displayName}}</span>
             </md-button>
             <md-menu-content width="3">
               <md-menu-item>

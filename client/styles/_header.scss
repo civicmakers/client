@@ -24,17 +24,23 @@ md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolb
 	height: 63px;
 }
 
-.cm-hide {
+.cm-desktop-only {
 	display: none;
-	@include mquery(desktop) {
+	@include mquery (desktop) {
+		display: inline;
+	}
+}
+
+.cm-tablet-plus-only {
+	display: none;
+	@include mquery (tablet) {
 		display: inline;
 	}
 }
 
 .cm-login-button {
 	font-size: 1em;
-	width: 100%;
-	max-width: 250px;
+	max-width: 150px;
 	margin: 0.75em;
 }
 
