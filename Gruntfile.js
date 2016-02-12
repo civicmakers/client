@@ -100,7 +100,7 @@ module.exports = function (grunt) {
           '!{.tmp,<%= yeoman.client %>}/{app,components}/**/*.mock.js',
           '<%= yeoman.client %>/assets/images/{,*//*}*.{png,jpg,jpeg,gif,webp,svg}'
         ],
-        tasks: ['sass:dev', 'newer:jshint:all'],
+        tasks: ['sass:dev', 'autoprefixer', 'newer:jshint:all'],
         options: {
           livereload: true
         }
