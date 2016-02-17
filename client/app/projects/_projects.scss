@@ -1,5 +1,9 @@
 .projects {
-
-	h1 span { padding: 0px 0px 0px 20px; }
-
+	.cm-projects-title-text .count {
+        padding-left: 20px;
+    }
+    
+    .add-project-button {
+        margin-left: auto;
+    }
 }

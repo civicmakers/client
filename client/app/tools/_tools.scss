@@ -1,5 +1,9 @@
 .tools {
-
-	h1 span { padding: 0px 0px 0px 20px; }
-
+	.cm-tools-title-text .count {
+        padding-left: 20px;
+    }
+    
+    .add-tool-button {
+        margin-left: auto;
+    }
 }

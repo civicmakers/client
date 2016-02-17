@@ -1,20 +1,16 @@
 <div class="main-wrapper projects clearfix">
   <div layout="row" class="title-row" layout-align="center center" flex>
-    <h1>
+    <h1 class="cm-projects-title-text">
       Projects
-      <span class="md-title">
+      <span class="md-title count">
         {{mainCtrl.projectsNum}} Projects
       </span>
     </h1>
-    <div flex>
-    </div>
-    <div>
-      <!-- todo put this into a directive -->
-      <button ng-click="mainCtrl.loginAndRedirect('/add/project')" class="md-raised md-primary button"
-              analytics-on analytics-event="add-project-submit" analytics-category="projects">
+    <!-- todo put this into a directive -->
+    <button ng-click="mainCtrl.loginAndRedirect('/add/project')" class="md-raised md-primary button add-project-button"
+            analytics-on analytics-event="add-project-click" analytics-category="projects">
         Add a project
-      </button>
-    </div>
+    </button>
   </div>
   <div class="cards-board">
     <card-directive ng-repeat="project in projects | filter:mainSearch" data="project" class="card-on-board"
