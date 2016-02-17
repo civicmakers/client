@@ -2,7 +2,10 @@
   <h1>Create New Project</h1>
 
   <p>
-    Share your project with the civic tech community! What are you working on? What outcomes are you looking for? What process are you following. Tell your peers about your success (or failure) so they can learn from your work!
+    Share your project with the civic tech community! What are you working on? What outcomes are you looking for? Tell your peers about your success (or failure) so they can learn from your work!
+  </p>
+  <p>
+    <strong>NOTE:</strong> To add a tool to your project, you'll need to confirm tool is already in our database by searching in the tool field below. If not, you will need to <a class="link" href="https://civicmakers.firebaseapp.com/add/tool">add it to our database</a> before adding your project. 
   </p>
 
   <form class="material-form-group" name="projectForm">
@@ -13,28 +16,28 @@
     </md-input-container>
 
     <md-input-container>
-      <label>Project</label>
-      <textarea ng-model="addProjectCtrl.projectFormData.description" required md-maxlength="300"></textarea>
+      <label>Project Description</label>
+      <textarea ng-model="addProjectCtrl.projectFormData.description" required md-maxlength="2000"></textarea>
     </md-input-container>
 
     <md-input-container>
-      <label>Header Image URL</label>
-      <textarea ng-model="addProjectCtrl.projectFormData.image" required></textarea>
+      <label>Image URL</label>
+      <textarea ng-model="addProjectCtrl.projectFormData.image" placeholder="Add the URL for a screenshot of this project." required></textarea>
     </md-input-container>
 
     <md-input-container>
       <label>Web URL</label>
-      <textarea ng-model="addProjectCtrl.projectFormData.link" required md-maxlength="300"></textarea>
+      <textarea ng-model="addProjectCtrl.projectFormData.link"  placeholder="If your project has a public link, add the URL." required md-maxlength="300"></textarea>
     </md-input-container>
 
     <md-input-container>
       <label>Tags</label>
-      <input type="text" ng-model="addProjectCtrl.tagsEntry" ng-change="addProjectCtrl.tagsEntryChanged()" md-maxlength="300" placeholder="Separate your tags with commas (participatory budgeting, collective dedcision-making, CRM, etc)">
+      <input type="text" ng-model="addProjectCtrl.tagsEntry" ng-change="addProjectCtrl.tagsEntryChanged()" md-maxlength="300" placeholder="Separate your tags with commas (participatory budgeting, CRM, nonprofit, etc.)">
     </md-input-container>
 
     <md-input-container>
-         <label>Search Tools To Include</label>
-         <textarea ng-model="addProjectCtrl.searchInput" md-maxlength="300"></textarea>
+         <label>What tools were used for this project?</label>
+         <textarea ng-model="addProjectCtrl.searchInput" placeholder="Search for tools in our database" md-maxlength="300"></textarea>
      </md-input-container>
 
      <div class="lil-card" ng-if="addProjectCtrl.searchInput !== undefined && addProjectCtrl.searchInput !== '' " ng-repeat="tool in addProjectCtrl.tools | filter:{name:addProjectCtrl.searchInput}" ng-click="addProjectCtrl.addToTools(tool)">

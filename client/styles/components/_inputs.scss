@@ -1,9 +1,14 @@
 input[type="text"] {
-    margin:10px; 
+    margin:0px; 
 }
 
 input, textarea {
 	border: 0;
+}
+
+md-input-container.md-input-has-placeholder label:not(.md-no-float) {
+	 transform: translate3d(0, 6px, 0) scale(1);
+	
 }
 
 .md-char-counter {
