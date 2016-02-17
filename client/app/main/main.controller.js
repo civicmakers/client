@@ -55,6 +55,14 @@
             navigateTo('/');
         };
 
+        this.navigateToAllProjects = function() {
+            navigateTo('/projects');
+        };
+
+        this.navigateToAllTools = function() {
+            navigateTo('/tools');
+        };
+
         var navigateTo = function(path) {
             $location.path(path);
         };

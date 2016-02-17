@@ -11,3 +11,23 @@
     }
   }
 }
+
+@mixin padding-vertical ($size) {
+    padding-top: $size;
+    padding-bottom: $size;
+}
+
+@mixin padding-horizontal ($size) {
+    padding-right: $size;
+    padding-left: $size;
+}
+
+@mixin margin-vertical ($size) {
+    margin-top: $size;
+    margin-bottom: $size;
+}
+
+@mixin margin-horizontal ($size) {
+    margin-right: $size;
+    margin-left: $size;
+}
