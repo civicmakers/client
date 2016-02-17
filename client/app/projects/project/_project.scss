@@ -31,3 +31,11 @@
   padding: 1em;
   margin: 0;
 }
+
+.cm-modal {
+  .md-toolbar-tools {
+    padding: 0;
+  }
+
+  h2 { font-weight: bold; }
+}
