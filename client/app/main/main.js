@@ -4,7 +4,7 @@ angular.module('civicMakersClientApp')
 	.config(function($routeProvider) {
 		$routeProvider
 			.when('/', {
-				templateUrl: 'app/main/main.html'
+				templateUrl: 'app/main/main2.html'
 			});
 	})
 	.run(function($anchorScroll) {
