@@ -1,13 +1,23 @@
-<div class="main-wrapper clearfix">
-  <div layout="row" class="title-row first-row" layout-align="center center" flex>
-    <a href="/tools"><h1>Tools</h1></a>
-    <div flex></div>
-    <div class="seemore">
-      <h4><a href="/tools">{{tools.length}} Tools</a></h4>
+<div class="main-wrapper tools clearfix">
+  <div layout="row" class="title-row" layout-align="center center" flex>
+    <h1>
+      Tools
+      <span class="md-title">
+        {{mainCtrl.toolsNum}} tools
+      </span>
+    </h1>
+    <div flex>
+    </div>
+    <div>
+      <!-- todo put this into a directive -->
+      <button ng-click="mainCtrl.loginAndRedirect('/add/tool')" class="md-raised md-primary button"
+              analytics-on analytics-event="add-tool-submit" analytics-category="tools">
+        Add a tool
+      </button>
     </div>
   </div>
   <div class="cards-board">
-    <card-directive ng-repeat="tool in tools" data="tool" class="card-on-board"
+    <card-directive ng-repeat="tool in tools | filter:mainSearch" data="tool" class="card-on-board"
         analytics-on  analytics-category="tools" analytics-event="view-tool" analytics-label="{{tool.$id}}">
     </card-directive>
   </div>
