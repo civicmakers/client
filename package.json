@@ -82,7 +82,7 @@
     "start": "node server/app.js",
     "test": "grunt test",
     "update-webdriver": "node node_modules/grunt-protractor-runner/node_modules/protractor/bin/webdriver-manager update",
-    "pre-deploy": "npm install ; node node_modules/firebase-tools/bin/firebase login ; grunt",
+    "pre-deploy": "npm install ; node node_modules/firebase-tools/bin/firebase login ; grunt build",
     "deploy": "node node_modules/firebase-tools/bin/firebase deploy"
   },
   "private": "true"
