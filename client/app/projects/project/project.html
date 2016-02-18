@@ -27,7 +27,7 @@
           <div class="big-card" ng-repeat="tool in projectCtrl.projectTools">
               <a ng-href="/tool/{{tool.id}}">
                   <div class="big-card-image-wrapper">
-                      <img class="big-card-image" ng-src="{{tool.avatar}}" alt="">
+                      <img class="big-card-image" ng-src="{{::tool.avatar || '/assets/images/civicmakers_avatar.png' }}" alt="">
                   </div>
                   <p class="big-card-title">{{tool.name}}</p>
               </a>
