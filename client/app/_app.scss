@@ -17,6 +17,11 @@ body, html {
     color:inherit;
  }
 
+a.link {
+    color: $color-secondary;
+    font-weight: bold;
+ }
+
 .browsehappy {
     margin: 0.2em 0;
     background: #ccc;

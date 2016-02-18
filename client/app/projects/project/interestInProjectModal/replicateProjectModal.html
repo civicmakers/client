@@ -1,7 +1,7 @@
 <md-dialog aria-label="Replicate Project Modal" class="cm-modal">
   <md-toolbar>
     <div class="md-toolbar-tools">
-      <h2 class="modal-title">Bring This Project To My City</h2>
+      <h2 class="modal-title">Start This Project In My City</h2>
       <span class="flex"></span>
       <button class="md-icon-button md-button md-ink-ripple" ng-click="dialogVm.closeDialog()">
         <md-icon md-svg-src="assets/icons/cancel.svg" aria-label="Close dialog"></md-icon>
@@ -9,7 +9,7 @@
     </div>
   </md-toolbar>
   <span ng-show="!dialogVm.isThankYouMessageShown">
-    <p>Thanks for your interest in bringing this project to your city! You can get started by:</p>
+    <p>Thanks for your interest in starting this project in your city! You can get started by:</p>
     <p>
       1) <a ng-click="dialogVm.askOwnerAboutHelp()" class="modal-link"
             analytics-on  analytics-category="project replicate" analytics-event="ask-question-click">
@@ -27,9 +27,7 @@
     <p>
       3) <a ng-click="dialogVm.projectGuide()" class="modal-link"
             analytics-on  analytics-category="project replicate" analytics-event="view-project-guide-click">
-            Download this guide
-         </a>
-         to civic projects to learn about the steps to starting and finishing your project.
+            View our guide for civic projects</a> to learn about the steps for starting and finishing your project.
     </p>
   </span>
   <p ng-show="dialogVm.isThankYouMessageShown">

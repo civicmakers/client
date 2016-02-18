@@ -1,7 +1,7 @@
 <a ng-href="{{::data.type}}/{{::data.$id}}">
   <div class="card">
-    <img ng-if="data.type == 'project'" class="card-img" ng-src="{{::data.image}}" alt="Project image">
-    <img ng-if="data.type == 'tool'" class="card-img" ng-src="{{::data.avatar}}" alt="Avatar">
+    <img ng-if="data.type == 'project'" class="card-img" ng-src="{{::data.image ||'/assets/images/civicmakers_avatar.png' }}" alt="Project image">
+    <img ng-if="data.type == 'tool'" class="card-img" ng-src="{{::data.avatar || '/assets/images/civicmakers_avatar.png' }}" alt="Avatar">
     <div class="homepage-container">
       <div class="row">
         <span class="card-title">{{::data.name}}</span>

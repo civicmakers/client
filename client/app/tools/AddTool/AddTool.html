@@ -12,12 +12,7 @@
 
     <label style="padding-bottom: 20px;">Description</label>
     <md-input-container>
-      <textarea ng-model="addToolCtrl.toolFormData.description" required md-maxlength="300" placeholder="Enter a brief description of your tool"></textarea>
-    </md-input-container>
-
-    <label>Primary Audiences</label>
-    <md-input-container>
-      <input type="text" ng-model="addToolCtrl.toolFormData.audience" md-maxlength="100">
+      <textarea ng-model="addToolCtrl.toolFormData.description" required md-maxlength="1000" placeholder="Enter a brief description of your tool"></textarea>
     </md-input-container>
 
     <label>Cost</label>
@@ -44,7 +39,7 @@
 
     <label>Image URL</label>
     <md-input-container>
-      <input type="text" ng-model="addToolCtrl.toolFormData.video" md-maxlength="100">
+      <input type="text" ng-model="addToolCtrl.toolFormData.video" placeholder="Add the URL for a screenshot of this tool." md-maxlength="100">
     </md-input-container>
 
     <label>Website URL</label>
@@ -54,12 +49,12 @@
 
     <label>Twitter Handle</label>
     <md-input-container>
-      <input type="text" ng-model="addToolCtrl.toolFormData.twitter" md-maxlength="100">
+      <input type="text" ng-model="addToolCtrl.toolFormData.twitter" laceholder="Just enter your handle, not the full URL." md-maxlength="100">
     </md-input-container>
 
     <label style="padding-bottom: 25px;">Tags</label>
     <md-input-container>
-      <input type="text" ng-model="addToolCtrl.tagsEntry" ng-change="addToolCtrl.tagsEntryChanged()" md-maxlength="300" placeholder="Separate your tags with commas (participatory budgeting, collective dedcision-making, CRM, etc)">
+      <input type="text" ng-model="addToolCtrl.tagsEntry" ng-change="addToolCtrl.tagsEntryChanged()" md-maxlength="300" placeholder="Separate your tags with commas (participatory budgeting, CRM, nonprofit, etc.)">
     </md-input-container>
 
   </form>
