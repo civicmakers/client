@@ -51,8 +51,6 @@ module.exports = function(config) {
 
     // list of files / patterns to exclude
     exclude: [
-      // 'client/app/topics/Topic/Topic.controller.spec.js',
-      // 'client/app/topics/topics.controller.spec.js',
       // 'client/app/authors/authors.controller.spec.js',
       // 'client/app/authors/author/author.controller.spec.js',
       // 'client/app/factories/ProjectApi/ProjectApi.service.spec.js',
@@ -60,7 +58,6 @@ module.exports = function(config) {
       'client/app/factories/ApiConfig/ApiConfig.service.spec.js',
       // 'client/app/factories/AuthorApi/AuthorApi.service.spec.js',
       // 'client/app/factories/ToolApi/ToolApi.service.spec.js',
-      // 'client/app/factories/TopicApi/TopicApi.service.spec.js',
       // 'client/app/tools/tools.controller.spec.js',
       // 'client/app/tools/Tool/Tool.controller.spec.js',
       'client/app/directives/cardDirective/cardDirective.directive.spec.js',

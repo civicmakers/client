@@ -1,13 +1,6 @@
-
-
 /**
  * App-wide Styles
  */
-
- /* md-card {
-    vertical-align: top;
- } */
-
 body, html {
   background-color: #f2f2f6;
 }
@@ -29,50 +22,6 @@ a.link {
     padding: 0.2em 0;
 }
 
-
-
-
-/*.tool-topic-card {
-    display:inline-block;
-    background-color: white !important;
-    width:220px;
-    height:125px;
-    padding:10px;
-}
-
-.tool-topic-card:hover {
-    box-shadow: 0px 0px 0px 2px gray
-}*/
-
-
-/*
-.intro-row {
-    background-color: #F19800;
-    color: white;
-    text-align: center;
-}
-
-.intro-row p {
-    margin: 10px;
-}
-
-.intro-row .seemore {
-    display:block;
-    margin-top: auto;
-    margin-bottom: auto
-} */
-
-/*
-.intro-row .seemore h5 {
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-.intro-row .seemore h4 {
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-*/
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
     .container {
