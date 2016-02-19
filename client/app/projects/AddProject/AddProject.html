@@ -40,7 +40,8 @@
          <textarea ng-model="addProjectCtrl.searchInput" placeholder="Search for tools in our database" md-maxlength="300"></textarea>
      </md-input-container>
 
-     <div class="lil-card" ng-if="addProjectCtrl.searchInput !== undefined && addProjectCtrl.searchInput !== '' " ng-repeat="tool in addProjectCtrl.tools | filter:{name:addProjectCtrl.searchInput}" ng-click="addProjectCtrl.addToTools(tool)">
+     <div ng-repeat="tool in addProjectCtrl.tools | filter: addProjectCtrl.searchToolsArrayFilter"
+            ng-click="addProjectCtrl.addToTools(tool)" class="lil-card">
        <img ng-src="{{tool.image}}" alt="">
        <p>{{tool.name}}</p>
      </div>
