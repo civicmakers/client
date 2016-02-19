@@ -13,17 +13,30 @@
     };
     // TODO: prevent duplicates
     this.selectedTools = [];
+    this.selectedToolsNames = [];
 
     ToolApi.getAllTools().then(function (tools){
-      console.log('add project tools',tools);
       self.tools = tools;
     });
 
-    this.addToTools = function (input) {
-      this.selectedTools.push(input);
-      this.projectFormData.tools.push(input.$id);
+    this.addToTools = function (selectedTool) {
+      this.selectedTools.push(selectedTool);
+      this.selectedToolsNames.push(selectedTool.name);
+      this.projectFormData.tools.push(selectedTool.$id);
+      this.searchInput = '';
     };
     
+    this.searchToolsArrayFilter = function (toolToCheck) {
+        var inputLength = self.searchInput.length;
+        if (inputLength <= 0) {
+            return false;
+        } else {
+            var toolNameToCheck = toolToCheck.name.substr(0, inputLength);
+            var isSubstringEqual = self.searchInput.toLowerCase() === toolNameToCheck.toLowerCase();
+            var isNotSelectedYet = !(_.contains(self.selectedToolsNames, toolToCheck.name));
+            return isSubstringEqual && isNotSelectedYet;
+        }
+    };
 
     this.tagsEntryChanged = function () {
         this.projectFormData.tags = this.tagsEntry.split(', ');
