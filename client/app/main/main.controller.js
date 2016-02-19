@@ -1,7 +1,7 @@
 'use strict';
 
 (function() {
-    function MainCtrl($scope, $http, $location, ProjectApi, AuthorApi, ToolApi, AuthenticationService) {
+    function MainCtrl($scope, $http, $location, ProjectApi, AuthorApi, ToolApi, AuthenticationService, $window) {
         var self = this;
         this.isLoggedIn = AuthenticationService.isLoggedIn();
         this.userData = AuthenticationService.getAuthData();
@@ -40,10 +40,10 @@
             }
         };
 
-        this.loginAndRedirect = function(path) {
+        this.loginAndRedirect = function(path, event) {
             AuthenticationService.loginWithTwitter().then(function () {
                 syncLoginData();
-                navigateTo(path);
+                navigateTo(path, event);
             });
         };
 
@@ -51,20 +51,21 @@
           $mdOpenMenu(event);
         };
 
-        this.navigateHome = function() {
-            navigateTo('/');
+        this.navigateToAllProjects = function(event) {
+            navigateTo('/projects', event);
         };
 
-        this.navigateToAllProjects = function() {
-            navigateTo('/projects');
+        this.navigateToAllTools = function(event) {
+            navigateTo('/tools', event);
         };
 
-        this.navigateToAllTools = function() {
-            navigateTo('/tools');
-        };
-
-        var navigateTo = function(path) {
-            $location.path(path);
+        var navigateTo = function(path, event) {
+            // open in new tab
+            if (event.metaKey || event.ctrlKey) {
+                $window.open(path);
+            } else {
+                $location.path(path);
+            }
         };
 
         var syncLoginData = function() {

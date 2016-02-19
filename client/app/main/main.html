@@ -18,7 +18,7 @@
         </div>
         <div class="seemore">
           <!-- todo put this into a directive -->
-          <button ng-click="mainCtrl.loginAndRedirect('/add/project')" class="md-raised md-primary button"
+          <button ng-click="mainCtrl.loginAndRedirect('/add/project', $event)" class="md-raised md-primary button"
                   analytics-on analytics-event="add-story" analytics-category="Buttons">
             Add a project
           </button>
@@ -42,7 +42,7 @@
         </div>
         <div class="seemore">
           <!-- todo put this into a directive -->
-          <button ng-click="mainCtrl.loginAndRedirect('/add/tool')" class="md-raised md-primary button"
+          <button ng-click="mainCtrl.loginAndRedirect('/add/tool', $event)" class="md-raised md-primary button"
                   analytics-on analytics-event="add-tool" analytics-category="Buttons">
             Add a tool
           </button>

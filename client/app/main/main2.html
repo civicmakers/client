@@ -36,7 +36,7 @@
                 <p class="cm-main-content-text"><span class="cm-main-content-title">Projects</span> tell the story of people working together to achieve a civic outcome.
                     Others can ask questions, contribute, or try something similar in their community.
                 </p>
-                <button ng-click="mainCtrl.navigateToAllProjects()" class="button cm-main-content-button"
+                <button ng-click="mainCtrl.navigateToAllProjects($event)" class="button cm-main-content-button"
                         analytics-on analytics-event="view-all-projects" analytics-category="homepage">
                     View all Projects
                 </button>
@@ -48,7 +48,7 @@
                 <p class="cm-main-content-text"><span class="cm-main-content-title">Tools</span> are the building blocks we use to achieve civic outcomes.
                     They could be a product or app, a best practice template, or even a code repository.
                 </p>
-                <button ng-click="mainCtrl.navigateToAllTools()" class="button cm-main-content-button"
+                <button ng-click="mainCtrl.navigateToAllTools($event)" class="button cm-main-content-button"
                         analytics-on analytics-event="view-all-tools" analytics-category="homepage">
                     View all Tools
                 </button>
