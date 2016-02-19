@@ -7,7 +7,7 @@
       </span>
     </h1>
     <!-- todo put this into a directive -->
-    <button ng-click="mainCtrl.loginAndRedirect('/add/project')" class="md-raised md-primary button add-project-button"
+    <button ng-click="mainCtrl.loginAndRedirect('/add/project', $event)" class="md-raised md-primary button add-project-button"
             analytics-on analytics-event="add-project-click" analytics-category="projects">
         Add a project
     </button>
