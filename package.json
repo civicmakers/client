@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "angular-material": "^0.9.6",
+    "bower": "^1.7.7",
     "connect-livereload": "^0.5.3",
     "firebase-tools": "^2.2.0",
     "grunt": "~0.4.4",
@@ -26,6 +27,7 @@
     "grunt-asset-injector": "^0.1.0",
     "grunt-autoprefixer": "~3.0.3",
     "grunt-build-control": "DaftMonk/grunt-build-control",
+    "grunt-cli": "^0.1.13",
     "grunt-concurrent": "~0.5.0",
     "grunt-contrib-clean": "^0.5.0",
     "grunt-contrib-concat": "^0.4.0",
@@ -83,7 +85,9 @@
     "test": "grunt test",
     "update-webdriver": "node node_modules/grunt-protractor-runner/node_modules/protractor/bin/webdriver-manager update",
     "pre-deploy": "npm install ; node node_modules/firebase-tools/bin/firebase login ; grunt build",
-    "deploy": "node node_modules/firebase-tools/bin/firebase deploy"
+    "deploy": "node node_modules/firebase-tools/bin/firebase deploy",
+    "postinstall": "bower install",
+    "develop": "grunt serve --force"
   },
   "private": "true"
 }
