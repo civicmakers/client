@@ -16,8 +16,8 @@
     3. `npm install -g npm`
   - for Mac or Linux via [NVM](https://github.com/creationix/nvm)
     1. `curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash`
-    2. `nvm install 4`
-    3. `nvm alias default 4`
+    2. `nvm install 0.10`
+    3. `nvm alias default 0.10`
     4. `echo "export NVM_DIR="$HOME/.nvm" >> $HOME/.bashrc && echo [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" >> $HOME/.bashrc` (optional)
 - Ruby/Sass
   - Linux (Ubuntu):

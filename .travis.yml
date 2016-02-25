@@ -3,7 +3,6 @@ node_js:
   - '0.10'
   - '0.11'
 before_script:
-  - npm install -g bower grunt-cli
-  - bower install
-  - grunt test
+  - npm install
+  - npm test
 services: mongodb
