@@ -2,8 +2,8 @@
 'use strict';
 
 (function () {
-  function firebase ($q) {
-    var baseUrl = 'civicmakers.firebaseIO.com';
+  function firebase ($q, ENV) {
+    var baseUrl = ENV.firebaseUrl;
 
     function getRef (){
       var ref = new Firebase(baseUrl);
