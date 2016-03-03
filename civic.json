@@ -1,10 +1,9 @@
 {
     "conformsTo": "http://codefordc.org/resources/specification.html",
-    "status": "alpha",
+    "status": "beta",
     "thumbnailUrl": "http://civicmakers.com/wp-content/images/CivicMakers_screenshot.png",
     "contact": {
         "name": "CivicMakers",
-        "email": "lawrence@civicmakers.com",
         "twitter": "civicmakers"
     },
     "bornAt": "Code for San Francisco",
