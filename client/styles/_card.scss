@@ -144,12 +144,16 @@ h2 {
     }
 }
 
-$card-columns: 4;
-$card-column-gap: 10px;
 .cards-board {
-    column-count: $card-columns;
-    column-gap: $card-column-gap;
-    float: left;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+    @include mquery(tablet) {
+        display: block;
+        column-count: 4;
+        column-gap: 10px;
+    }
 
     .card-on-board {
         break-inside: avoid;
