@@ -18,7 +18,8 @@ module.exports = function (grunt) {
     cdnify: 'grunt-google-cdn',
     protractor: 'grunt-protractor-runner',
     injector: 'grunt-asset-injector',
-    buildcontrol: 'grunt-build-control'
+    buildcontrol: 'grunt-build-control',
+    ngconstant: 'grunt-ng-constant'
   });
 
   // Time how long tasks take. Can help when optimizing build times
@@ -532,6 +533,38 @@ module.exports = function (grunt) {
         src: '.tmp/concat/app/styles/app.css',
         dest: 'dist/public/app/styles/app.min.css'
       }
+    },
+    
+    ngconstant: {
+        // Options for all targets
+        options: {
+            space: '  ',
+            wrap: '\'use strict\';\n\n {%= __ngModule %}',
+            name: 'config',
+        },
+        // Environment targets
+        development: {
+            options: {
+                dest: '<%= yeoman.client %>/app/config.js'
+            },
+            constants: {
+                ENV: {
+                    name: 'development',
+                    firebaseUrl: 'civicmakers-dev.firebaseio.com'
+                }
+            }
+        },
+        production: {
+            options: {
+                dest: '<%= yeoman.client %>/app/config.js'
+            },
+            constants: {
+                ENV: {
+                    name: 'production',
+                    firebaseUrl: 'civicmakers.firebaseio.com'
+                }
+            }
+        }
     }
   });
 
@@ -572,6 +605,7 @@ module.exports = function (grunt) {
       'clean:dev',
       'newer:jshint:all',
       'env:all',
+      'ngconstant:development',
       'concurrent:server',
       'injector',
       'wiredep',
@@ -632,6 +666,7 @@ module.exports = function (grunt) {
   grunt.registerTask('build', [
     'newer:jshint:all',
     'clean:dist',
+    'ngconstant:production',
     'sass:dist',
     'autoprefixer',
     'cssmin:dist',

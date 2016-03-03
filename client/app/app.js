@@ -6,6 +6,7 @@ angular.module('civicMakersClientApp', [
   'ngSanitize',
   'ngRoute',
   'ngMaterial',
+  'config',
   'firebase',
   'angulartics', 
   'angulartics.google.analytics'
