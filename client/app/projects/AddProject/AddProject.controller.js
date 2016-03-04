@@ -2,15 +2,28 @@
 'use strict';
 
 (function() {
-  function AddProjectCtrl($scope, ProjectApi, $location, ToolApi, AuthenticationService, UserApi, BIEventService) {
+  function AddProjectCtrl($scope, ProjectApi, $location, ToolApi, AuthenticationService, UserApi, BIEventService, $routeParams) {
     var self = this;
     this.projectFormData = {
         // TODO: prevent duplicates
-        tools: []
+        tools: [],
         // authorIp:
         // cfApiProjId:
-        // cfApiOrgId
+        // cfApiOrgId,
+        // pull data from URL parameters
+        description: $routeParams.description || '',
+        image: $routeParams.screenshot || '',
+        link: $routeParams.link || '',
+        name: $routeParams.name || '',
+        tags: [$routeParams.tags] || []
     };
+    // Format tags from URL
+    if (this.projectFormData.tags[0] && this.projectFormData.tags[0].indexOf(',') > -1) {
+      this.projectFormData.tags = this.projectFormData.tags[0].split(',');
+    }
+    // Fill tagsEntry
+    this.tagsEntry = this.projectFormData.tags.join(', ');
+
     // TODO: prevent duplicates
     this.selectedTools = [];
     this.selectedToolsNames = [];
@@ -25,7 +38,7 @@
       this.projectFormData.tools.push(selectedTool.$id);
       this.searchInput = '';
     };
-    
+
     this.searchToolsArrayFilter = function (toolToCheck) {
         var inputLength = self.searchInput.length;
         if (inputLength <= 0) {

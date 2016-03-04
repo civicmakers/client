@@ -4,12 +4,25 @@
 (function() {
   function AddToolCtrl($scope, $routeParams, ToolApi, $location, AuthenticationService, UserApi, BIEventService) {
     var self = this;
+
     this.toolFormData = {
         // authorIp:
         // cfApiProjId:
         // cfApiOrgId
+        avatar: $routeParams.avatar || '',
+        description: $routeParams.description || '',
+        license: $routeParams.license || '',
+        link: $routeParams.link || '',
+        name: $routeParams.name || '',
+        pricing: $routeParams.pricing || '',
+        tags: [$routeParams.tags] || [],
+        twitter: $routeParams.twitter || '',
+        video: $routeParams.screenshot || ''
     };
-
+    if (this.toolFormData.tags[0] && this.toolFormData.tags[0].indexOf(',') > -1) {
+      this.toolFormData.tags = this.toolFormData.tags[0].split(',');
+    }
+    this.tagsEntry = this.toolFormData.tags.join(', ');
     this.tagsEntryChanged = function () {
         this.toolFormData.tags = this.tagsEntry.split(', ');
     };
