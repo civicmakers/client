@@ -1,56 +1,65 @@
-<div class="main-hero">
-  <div class="main-hero-text">
-    <div id="first-line" class="hero-text">TALENT, TOOLS & KNOWLEDGE</div></br>
-    <div id="second-line" class="hero-text">FOR PUBLIC GOOD PROJECTS</div>
-  </div>
-</div>
-<div class="main-wrapper">
-  <div layout="row" flex>
-    <div layout="column" layout-fill layout-align="center start" class="horizontal-repeat">
-      <div layout="row" class="title-row first-row" layout-align="center center" flex>
-        <h1>
-          Projects
-          <a href="/projects" class="md-title" style="padding: 0px 0px 0px 20px;">
-            View All {{mainCtrl.projectsNum}} Projects
-          </a>
-        </h1>
-        <div flex>
-        </div>
-        <div class="seemore">
-          <!-- todo put this into a directive -->
-          <button ng-click="mainCtrl.loginAndRedirect('/add/project', $event)" class="md-raised md-primary button"
-                  analytics-on analytics-event="add-story" analytics-category="Buttons">
-            Add a project
-          </button>
-        </div>
-      </div>
-      <div class="main-card-board">
-        <card-directive ng-repeat="project in mainCtrl.projects | filter:mainSearch" data="project"></card-directive>
-      </div>
+<div class="cm-main-wrapper">
+    <div class="cm-main-header">
+        <h2 class="cm-main-header-title">Talent, tools and knowledge for more impactful civic collaborations.</h2>
+        <p class="cm-main-header-text">CivicMakers serves civic innovators by providing knowledge, 
+            resources and connections to increase the success and impact of their projects.
+        </p>
     </div>
-  </div>
-  <div layout="row" flex>
-    <div layout="column" layout-fill layout-align="center start" class="horizontal-repeat">
-      <div layout="row" class="title-row" layout-align="center center" flex>
-        <h1>
-          Tools
-          <a href="/tools" class="md-title" style="padding: 0px 0px 0px 20px;">
-            View all {{mainCtrl.toolsNum}} tools
-          </a>
-        </h1>
-        <div flex>
+    <div class="cm-main-action">
+        <h3 class="cm-main-action-title">Join a community of makers for social good</h3>
+        <div class="cm-main-action-icons">
+            <div class="cm-action-icon">
+                <a ng-href="/projects" analytics-on analytics-event="question-icon-view-projects" analytics-category="homepage">
+                    <img ng-src="assets/icons/question-action-icon.svg" class="cm-action-icon-image cm-tablet-plus-only" alt="Question action icon">
+                    <p class="cm-action-text">Ask questions about projects you’re interested in</p>
+                </a>
+            </div>
+            <div class="cm-action-icon">
+                <a ng-href="/projects" analytics-on analytics-event="contribute-icon-view-projects" analytics-category="homepage">
+                    <img ng-src="assets/icons/contribute-action-icon.svg" class="cm-action-icon-image cm-tablet-plus-only" alt="Contribute action icon">
+                    <p class="cm-action-text">Contribute to a project or start your own</p>
+                </a>
+            </div>
+            <div class="cm-action-icon">
+                <a ng-href="/add/project" analytics-on analytics-event="share-icon-add-project" analytics-category="homepage">
+                    <img ng-src="assets/icons/share-action-icon.svg" class="cm-action-icon-image cm-tablet-plus-only" alt="Share action icon">
+                    <p class="cm-action-text">Share what you’re making</p>
+                </a>
+            </div>
         </div>
-        <div class="seemore">
-          <!-- todo put this into a directive -->
-          <button ng-click="mainCtrl.loginAndRedirect('/add/tool', $event)" class="md-raised md-primary button"
-                  analytics-on analytics-event="add-tool" analytics-category="Buttons">
-            Add a tool
-          </button>
-        </div>
-      </div>
-      <div class="main-card-board">
-        <card-directive ng-repeat="tool in mainCtrl.tools" data="tool"></card-directive>
-      </div>
+        <button class="button cm-login-button" ng-if="!mainCtrl.isLoggedIn" ng-click="mainCtrl.loginToTwitter()"
+                analytics-on  analytics-category="registration" analytics-event="signup-button-click">
+            Sign Up
+        </button>
     </div>
-  </div>
+    <div class="cm-main-content">
+        <div class="cm-main-content-projects reverse-order">
+            <a ng-href="/projects" analytics-on analytics-event="project-example-image-view-projects" analytics-category="homepage">
+                <img ng-src="assets/images/projects-example.png" class="cm-main-content-image" alt="Projects example image">
+            </a>            
+            <div class="cm-main-content-text-wrapper">
+                <p class="cm-main-content-text"><span class="cm-main-content-title">Projects</span> tell the story of people working together to achieve a civic outcome.
+                    Others can ask questions, contribute, or try something similar in their community.
+                </p>
+                <button ng-click="mainCtrl.navigateToAllProjects($event)" class="button cm-main-content-button"
+                        analytics-on analytics-event="view-all-projects" analytics-category="homepage">
+                    View all Projects
+                </button>
+            </div>
+        </div>
+        <div class="cm-main-content-tools">
+            <a ng-href="/tools" analytics-on analytics-event="tool-example-image-view-tools" analytics-category="homepage">
+                <img ng-src="assets/images/tools-example.png" class="cm-main-content-image" alt="Tools example image">
+            </a>
+            <div class="cm-main-content-text-wrapper">
+                <p class="cm-main-content-text"><span class="cm-main-content-title">Tools</span> are the building blocks we use to achieve civic outcomes.
+                    They could be a product or app, a best practice template, or even a code repository.
+                </p>
+                <button ng-click="mainCtrl.navigateToAllTools($event)" class="button cm-main-content-button"
+                        analytics-on analytics-event="view-all-tools" analytics-category="homepage">
+                    View all Tools
+                </button>
+            </div>
+        </div>
+    </div>
 </div>

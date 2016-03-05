@@ -4,6 +4,7 @@
 (function() {
   function AddProjectCtrl($scope, ProjectApi, $location, ToolApi, AuthenticationService, UserApi, BIEventService, $routeParams) {
     var self = this;
+    this.searchInput = '';
     this.projectFormData = {
         // TODO: prevent duplicates
         tools: [],
@@ -49,6 +50,12 @@
             var isNotSelectedYet = !(_.contains(self.selectedToolsNames, toolToCheck.name));
             return isSubstringEqual && isNotSelectedYet;
         }
+    };
+    
+    this.removeSelectedTool = function (toolToRemove) {
+        _.pull(this.selectedTools, toolToRemove);
+        _.pull(this.selectedToolsNames, toolToRemove.name);
+        _.pull(this.projectFormData.tools, toolToRemove.$id);
     };
 
     this.tagsEntryChanged = function () {
