@@ -9,19 +9,22 @@
         <h3 class="cm-main-action-title">Join a community of makers for social good</h3>
         <div class="cm-main-action-icons">
             <div class="cm-action-icon">
-                <img ng-src="assets/icons/question-action-icon.svg" class="cm-action-icon-image cm-tablet-plus-only" alt="Question action icon"
-                    analytics-on analytics-event="question-icon" analytics-category="homepage">
-                <p class="cm-action-text">Ask questions about projects you’re interested in</p>
+                <a ng-href="/projects" analytics-on analytics-event="question-icon-view-projects" analytics-category="homepage">
+                    <img ng-src="assets/icons/question-action-icon.svg" class="cm-action-icon-image cm-tablet-plus-only" alt="Question action icon">
+                    <p class="cm-action-text">Ask questions about projects you’re interested in</p>
+                </a>
             </div>
             <div class="cm-action-icon">
-                <img ng-src="assets/icons/contribute-action-icon.svg" class="cm-action-icon-image cm-tablet-plus-only" alt="Contribute action icon"
-                    analytics-on analytics-event="contribute-icon" analytics-category="homepage">
-                <p class="cm-action-text">Contribute to a project or start your own</p>
+                <a ng-href="/projects" analytics-on analytics-event="contribute-icon-view-projects" analytics-category="homepage">
+                    <img ng-src="assets/icons/contribute-action-icon.svg" class="cm-action-icon-image cm-tablet-plus-only" alt="Contribute action icon">
+                    <p class="cm-action-text">Contribute to a project or start your own</p>
+                </a>
             </div>
             <div class="cm-action-icon">
-                <img ng-src="assets/icons/share-action-icon.svg" class="cm-action-icon-image cm-tablet-plus-only" alt="Share action icon"
-                    analytics-on analytics-event="share-icon" analytics-category="homepage">
-                <p class="cm-action-text">Share what you’re making</p>
+                <a ng-href="/add/project" analytics-on analytics-event="share-icon-add-project" analytics-category="homepage">
+                    <img ng-src="assets/icons/share-action-icon.svg" class="cm-action-icon-image cm-tablet-plus-only" alt="Share action icon">
+                    <p class="cm-action-text">Share what you’re making</p>
+                </a>
             </div>
         </div>
         <button class="button cm-login-button" ng-if="!mainCtrl.isLoggedIn" ng-click="mainCtrl.loginToTwitter()"
@@ -31,7 +34,9 @@
     </div>
     <div class="cm-main-content">
         <div class="cm-main-content-projects reverse-order">
-            <img ng-src="assets/images/projects-example.png" class="cm-main-content-image" alt="Projects example image">
+            <a ng-href="/projects" class="cm-main-content-image-link" analytics-on analytics-event="project-example-image-view-projects" analytics-category="homepage">
+                <img ng-src="assets/images/projects-example.png" class="cm-main-content-image" alt="Projects example image">
+            </a>            
             <div class="cm-main-content-text-wrapper">
                 <p class="cm-main-content-text"><span class="cm-main-content-title">Projects</span> tell the story of people working together to achieve a civic outcome.
                     Others can ask questions, contribute, or try something similar in their community.
@@ -43,7 +48,9 @@
             </div>
         </div>
         <div class="cm-main-content-tools">
-            <img ng-src="assets/images/tools-example.png" class="cm-main-content-image" alt="Toosl example image">
+            <a ng-href="/tools" class="cm-main-content-image-link" analytics-on analytics-event="tool-example-image-view-tools" analytics-category="homepage">
+                <img ng-src="assets/images/tools-example.png" class="cm-main-content-image" alt="Tools example image">
+            </a>
             <div class="cm-main-content-text-wrapper">
                 <p class="cm-main-content-text"><span class="cm-main-content-title">Tools</span> are the building blocks we use to achieve civic outcomes.
                     They could be a product or app, a best practice template, or even a code repository.
