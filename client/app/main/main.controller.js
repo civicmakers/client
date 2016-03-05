@@ -1,7 +1,7 @@
 'use strict';
 
 (function() {
-    function MainCtrl($scope, $http, $location, ProjectApi, AuthorApi, ToolApi, AuthenticationService, $window) {
+    function MainCtrl($scope, $http, $location, ProjectApi, ToolApi, AuthenticationService, $window) {
         var self = this;
         this.isLoggedIn = AuthenticationService.isLoggedIn();
         this.userData = AuthenticationService.getAuthData();
