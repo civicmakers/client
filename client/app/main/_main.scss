@@ -138,13 +138,21 @@
             
             @include mquery (tablet) {
                 margin-left: 5%;
+                width: 50%;
                 align-items: flex-start;
             }
         }
     }
-    
+
+    .cm-main-content-image-link {
+
+        @include mquery (tablet) {
+            width: 50%;
+        }
+    }
+
     .cm-main-content-image {
-        width: 95%;
+        width: 100%;
         max-height: 250px;
         box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.2);
         
