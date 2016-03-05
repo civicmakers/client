@@ -17,7 +17,7 @@
         pricing: $routeParams.pricing || '',
         tags: [$routeParams.tags] || [],
         twitter: $routeParams.twitter || '',
-        video: $routeParams.screenshot || ''
+        image: $routeParams.screenshot || ''
     };
     if (this.toolFormData.tags[0] && this.toolFormData.tags[0].indexOf(',') > -1) {
       this.toolFormData.tags = this.toolFormData.tags[0].split(',');

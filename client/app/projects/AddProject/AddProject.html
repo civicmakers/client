@@ -22,17 +22,22 @@
 
     <md-input-container>
       <label>Image URL</label>
-      <textarea ng-model="addProjectCtrl.projectFormData.image" placeholder="Add the URL for a screenshot of this project." required></textarea>
+      <textarea ng-model="addProjectCtrl.projectFormData.image" placeholder="Add the URL for a screenshot of this project."
+                required md-maxlength="500">
+      </textarea>
     </md-input-container>
 
     <md-input-container>
       <label>Web URL</label>
-      <textarea ng-model="addProjectCtrl.projectFormData.link"  placeholder="If your project has a public link, add the URL." required md-maxlength="300"></textarea>
+      <textarea ng-model="addProjectCtrl.projectFormData.link"  placeholder="If your project has a public link, add the URL."
+                required md-maxlength="300">
+      </textarea>
     </md-input-container>
 
     <md-input-container>
       <label>Tags</label>
-      <input type="text" ng-model="addProjectCtrl.tagsEntry" ng-change="addProjectCtrl.tagsEntryChanged()" md-maxlength="300" placeholder="Separate your tags with commas (participatory budgeting, CRM, nonprofit, etc.)">
+      <input type="text" ng-model="addProjectCtrl.tagsEntry" ng-change="addProjectCtrl.tagsEntryChanged()"
+                md-maxlength="300" placeholder="Separate your tags with commas (participatory budgeting, CRM, nonprofit, etc.)">
     </md-input-container>
 
     <md-input-container>
@@ -41,8 +46,8 @@
      </md-input-container>
 
      <div ng-repeat="tool in addProjectCtrl.tools | filter: addProjectCtrl.searchToolsArrayFilter"
-            ng-click="addProjectCtrl.addToTools(tool)" class="lil-card">
-       <img ng-src="{{tool.image}}" alt="">
+            ng-click="addProjectCtrl.addToTools(tool)" class="lil-card clickable">
+       <img ng-src="{{tool.avatar || 'assets/images/civicmakers_avatar.png'}}" alt="Tool avatar">
        <p>{{tool.name}}</p>
      </div>
 
@@ -50,8 +55,10 @@
       <h3>Your Selected Tools:</h3>
       <div class="card-container">
         <div class="lil-card" ng-repeat="selectedTool in addProjectCtrl.selectedTools track by $index">
-         <img ng-src="{{selectedTool.image}}" alt="">
+         <img ng-src="{{selectedTool.avatar || 'assets/images/civicmakers_avatar.png'}}" alt="Tool avatar">
          <p>{{selectedTool.name}}</p>
+         <img ng-click="addProjectCtrl.removeSelectedTool(selectedTool)"
+              ng-src="assets/icons/remove.svg" class="remove-tool-icon" alt="Remove tool from list">
         </div>
       </div>
      </div>
