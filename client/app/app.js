@@ -11,7 +11,7 @@ angular.module('civicMakersClientApp', [
   'angulartics', 
   'angulartics.google.analytics'
 ])
-  .config(function ($routeProvider, $locationProvider) {
+  .config(function ($routeProvider, $locationProvider, $analyticsProvider, ENV) {
     $routeProvider
     .when('/privacy-policy', {
         templateUrl: 'views/privacy-policy.html'
@@ -20,4 +20,7 @@ angular.module('civicMakersClientApp', [
         redirectTo: '/'
     });
     $locationProvider.html5Mode(true);
+    if (ENV.name === 'development') {
+        $analyticsProvider.developerMode(true);
+    }
   });
