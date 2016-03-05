@@ -12,7 +12,9 @@
 
     <md-input-container>
       <label style="padding-bottom: 20px;">Description</label>
-      <textarea ng-model="addToolCtrl.toolFormData.description" required md-maxlength="1000" placeholder="Enter a brief description of your tool"></textarea>
+      <textarea ng-model="addToolCtrl.toolFormData.description" required md-maxlength="2000"
+                placeholder="Enter a brief description of your tool">
+      </textarea>
     </md-input-container>
 
     <md-input-container>
@@ -34,27 +36,31 @@
 
     <md-input-container>
       <label style="padding-bottom: 20px;">Avatar URL</label>
-      <input type="text" ng-model="addToolCtrl.toolFormData.avatar" placeholder="If you have a logo, add a URL where we can download it.">
+      <input type="text" ng-model="addToolCtrl.toolFormData.avatar" md-maxlength="500"
+             placeholder="If you have a logo, add a URL where we can download it.">
     </md-input-container>
 
     <md-input-container>
       <label>Image URL</label>
-      <input type="text" ng-model="addToolCtrl.toolFormData.video" placeholder="Add the URL for a screenshot of this tool." md-maxlength="100">
+      <input type="text" ng-model="addToolCtrl.toolFormData.image" md-maxlength="500"
+             placeholder="Add the URL for a screenshot of this tool.">
     </md-input-container>
 
     <md-input-container>
       <label>Website URL</label>
-      <input type="text" ng-model="addToolCtrl.toolFormData.link" md-maxlength="100" required>
+      <input type="text" ng-model="addToolCtrl.toolFormData.link" md-maxlength="300" required>
     </md-input-container>
 
     <md-input-container>
       <label>Twitter Handle</label>
-      <input type="text" ng-model="addToolCtrl.toolFormData.twitter" placeholder="Just enter your handle, not the full URL." md-maxlength="100">
+      <input type="text" ng-model="addToolCtrl.toolFormData.twitter" md-maxlength="100"
+             placeholder="Just enter your handle, not the full URL.">
     </md-input-container>
 
     <md-input-container>
       <label style="padding-bottom: 25px;">Tags</label>
-      <input type="text" ng-model="addToolCtrl.tagsEntry" ng-change="addToolCtrl.tagsEntryChanged()" md-maxlength="300" placeholder="Separate your tags with commas (participatory budgeting, CRM, nonprofit, etc.)">
+      <input type="text" ng-model="addToolCtrl.tagsEntry" ng-change="addToolCtrl.tagsEntryChanged()" md-maxlength="300"
+             placeholder="Separate your tags with commas (participatory budgeting, CRM, nonprofit, etc.)">
     </md-input-container>
   </form>
   

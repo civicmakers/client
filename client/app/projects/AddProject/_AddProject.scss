@@ -1,0 +1,29 @@
+.lil-card {
+    position: relative;
+    
+    .remove-tool-icon {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        top: 0;
+        right: 0;
+        margin-top: 5px; 
+        margin-right: 5px;
+        
+        @include mquery(desktop) {
+            display: none;
+            cursor: pointer;
+            width: 15px;
+            height: 15px;
+        }
+    }
+    
+    // on desktop - show remove icon only on card hover 
+    &:hover {
+        @include mquery(desktop) {
+            .remove-tool-icon {
+                display: block;
+            }
+        }
+    }
+}
